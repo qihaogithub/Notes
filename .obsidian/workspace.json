@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/项目笔记/广场改版.md",
+                "file": "收藏/obsidan插件/索引.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "广场改版"
+              "title": "索引"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 241.5
   },
   "right": {
     "id": "df12f23aa4846d7d",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/项目笔记/广场改版.md",
+                "file": "收藏/obsidan插件/索引.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "广场改版 的反向链接列表"
+              "title": "索引 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/项目笔记/广场改版.md",
+                "file": "收藏/obsidan插件/索引.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "广场改版 的出链列表"
+              "title": "索引 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/项目笔记/广场改版.md",
+                "file": "收藏/obsidan插件/索引.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "广场改版 的大纲"
+              "title": "索引 的大纲"
             }
           },
           {
@@ -182,13 +182,37 @@
   },
   "active": "9d575a7b2e9b91b2",
   "lastOpenFiles": [
+    "工作/项目笔记/学习页改版.md",
+    "收藏/obsidan插件/索引.md",
+    "工作/项目笔记/加老师页改版.md",
+    "工作/项目笔记/广场改版.md",
+    "收藏/obsidan插件/calendar.md",
+    "收藏/obsidan插件/obsidian-tasks.md",
+    "收藏/obsidan插件/todoist-sync.md",
+    "收藏/obsidan插件/templater.md",
+    "收藏/obsidan插件/tag-wrangler.md",
+    "收藏/obsidan插件/smart-composer.md",
+    "收藏/obsidan插件/simple-canvasearch.md",
+    "收藏/obsidan插件/remotely-save.md",
+    "收藏/obsidan插件/remember-cursor-position.md",
+    "收藏/obsidan插件/recent-files-obsidian.md",
+    "收藏/obsidan插件/quickadd.md",
+    "收藏/obsidan插件/pc.pdfjs.md",
+    "收藏/obsidan插件/pane-relief.md",
+    "收藏/obsidan插件/oz-clear-unused-images.md",
+    "收藏/obsidan插件/omnisearch.md",
+    "收藏/obsidan插件/obsidian-timestamper.md",
+    "收藏/obsidan插件/obsidian-spaced-repetition.md",
+    "收藏/obsidan插件/obsidian-projects.md",
+    "收藏/obsidan插件/obsidian-plugin-groups.md",
+    "工作/项目笔记/未命名.md",
+    "收藏/obsidan插件/obsidian-pandoc.md",
+    "收藏/obsidan插件/obsidian-outliner.md",
     "收藏/obsidan插件",
     "收藏/obsidan脚本",
     "其他/obsidan脚本",
     "兴趣/obsidan脚本",
     "兴趣/obsidan",
-    "工作/项目笔记/广场改版.md",
-    "工作/项目笔记/加老师页改版.md",
     "工作/项目笔记",
     "脚本/翻译脚本/词典文件/obsidian-git.txt"
   ]
