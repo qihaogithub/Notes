@@ -1,0 +1,79 @@
+{
+  "id": "64092aac-7af0-461b-ab3c-2cae39c8e432",
+  "title": "我要做一ui设计的作品集，给我写一份大纲",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "我要做一ui设计的作品集，给我写一份大纲",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n我要做一ui设计的作品集，给我写一份大纲\n\n"
+        }
+      ],
+      "id": "adfca505-6c85-48b3-806f-d4c7c7488e44",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/工作/6·总结/未命名.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block language=\"markdown\">\n# UI设计作品集大纲\n\n## 封面\n- 姓名/联系方式/个人LOGO\n\n## 个人简介\n- 设计理念/擅长领域/工作年限\n\n## 精选项目（3-5个）\n### 项目1\n- 项目背景\n- 设计目标\n- 设计过程（调研→原型→视觉）\n- 成果展示（配图+说明）\n\n### 项目2\n- （同上结构）\n\n## 其他技能\n- 工具掌握（Figma/Sketch等）\n- 附加能力（动效/插画等）\n\n## 联系方式\n- 邮箱/社交账号\n</smtcmp_block>\n\n建议：每个项目用2-3页展示关键节点，保持视觉风格统一。",
+      "id": "dbb34b41-1046-4ad2-9e85-bcea34cebff8",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 448,
+          "completion_tokens": 166,
+          "total_tokens": 614,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 64
+        }
+      }
+    }
+  ],
+  "createdAt": 1751268174564,
+  "updatedAt": 1751268486378,
+  "schemaVersion": 1
+}

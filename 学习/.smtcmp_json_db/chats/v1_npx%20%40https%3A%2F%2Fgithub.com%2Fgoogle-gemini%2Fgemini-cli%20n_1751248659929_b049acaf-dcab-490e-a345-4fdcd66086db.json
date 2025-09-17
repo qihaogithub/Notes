@@ -1,0 +1,849 @@
+{
+  "id": "b049acaf-dcab-490e-a345-4fdcd66086db",
+  "title": "npx @https://github.com/google-gemini/gemini-cli n",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npx ",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@https://github.com/google-gemini/gemini-cli",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "https://github.com/google-gemini/gemini-cli",
+                  "mentionable": {
+                    "type": "url",
+                    "url": "https://github.com/google-gemini/gemini-cli"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm install -g @google/gemini-cli",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "type": "linebreak",
+                  "version": 1
+                },
+                {
+                  "type": "linebreak",
+                  "version": 1
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "讲解这两个命令的差别",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "## Potentially Relevant Websearch Results\n```\nWebsite URL: https://github.com/google-gemini/gemini-cli\nWebsite Content:\n                                                               \n\n[Skip to content](#start-of-content)  \n\n## Navigation Menu\n\nToggle navigation\n\n[](/)\n\n[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgoogle-gemini%2Fgemini-cli)\n\nAppearance settings\n\n- Product\n    \n    - [\n        \n        GitHub Copilot\n        \n        Write better code with AI\n        \n        ](https://github.com/features/copilot)\n    - [\n        \n        GitHub Models New\n        \n        Manage and compare prompts\n        \n        ](https://github.com/features/models)\n    - [\n        \n        GitHub Advanced Security\n        \n        Find and fix vulnerabilities\n        \n        ](https://github.com/security/advanced-security)\n    - [\n        \n        Actions\n        \n        Automate any workflow\n        \n        ](https://github.com/features/actions)\n    - [\n        \n        Codespaces\n        \n        Instant dev environments\n        \n        ](https://github.com/features/codespaces)\n    \n    - [\n        \n        Issues\n        \n        Plan and track work\n        \n        ](https://github.com/features/issues)\n    - [\n        \n        Code Review\n        \n        Manage code changes\n        \n        ](https://github.com/features/code-review)\n    - [\n        \n        Discussions\n        \n        Collaborate outside of code\n        \n        ](https://github.com/features/discussions)\n    - [\n        \n        Code Search\n        \n        Find more, search less\n        \n        ](https://github.com/features/code-search)\n    \n    Explore\n    \n    - [Why GitHub](https://github.com/why-github)\n    - [All features](https://github.com/features)\n    - [Documentation](https://docs.github.com)\n    - [GitHub Skills](https://skills.github.com)\n    - [Blog](https://github.blog)\n    \n- Solutions\n    \n    By company size\n    \n    - [Enterprises](https://github.com/enterprise)\n    - [Small and medium teams](https://github.com/team)\n    - [Startups](https://github.com/enterprise/startups)\n    - [Nonprofits](/solutions/industry/nonprofits)\n    \n    By use case\n    \n    - [DevSecOps](/solutions/use-case/devsecops)\n    - [DevOps](/solutions/use-case/devops)\n    - [CI/CD](/solutions/use-case/ci-cd)\n    - [View all use cases](/solutions/use-case)\n    \n    By industry\n    \n    - [Healthcare](/solutions/industry/healthcare)\n    - [Financial services](/solutions/industry/financial-services)\n    - [Manufacturing](/solutions/industry/manufacturing)\n    - [Government](/solutions/industry/government)\n    - [View all industries](/solutions/industry)\n    \n    [View all solutions](/solutions)\n    \n- Resources\n    \n    Topics\n    \n    - [AI](/resources/articles/ai)\n    - [DevOps](/resources/articles/devops)\n    - [Security](/resources/articles/security)\n    - [Software Development](/resources/articles/software-development)\n    - [View all](/resources/articles)\n    \n    Explore\n    \n    - [Learning Pathways](https://resources.github.com/learn/pathways)\n    - [Events & Webinars](https://resources.github.com)\n    - [Ebooks & Whitepapers](https://github.com/resources/whitepapers)\n    - [Customer Stories](https://github.com/customer-stories)\n    - [Partners](https://partner.github.com)\n    - [Executive Insights](https://github.com/solutions/executive-insights)\n    \n- Open Source\n    \n    - [\n        \n        GitHub Sponsors\n        \n        Fund open source developers\n        \n        ](/sponsors)\n    \n    - [\n        \n        The ReadME Project\n        \n        GitHub community articles\n        \n        ](https://github.com/readme)\n    \n    Repositories\n    \n    - [Topics](https://github.com/topics)\n    - [Trending](https://github.com/trending)\n    - [Collections](https://github.com/collections)\n    \n- Enterprise\n    \n    - [\n        \n        Enterprise platform\n        \n        AI-powered developer platform\n        \n        ](/enterprise)\n    \n    Available add-ons\n    \n    - [\n        \n        GitHub Advanced Security\n        \n        Enterprise-grade security features\n        \n        ](https://github.com/security/advanced-security)\n    - [\n        \n        Copilot for business\n        \n        Enterprise-grade AI features\n        \n        ](/features/copilot/copilot-business)\n    - [\n        \n        Premium Support\n        \n        Enterprise-grade 24/7 support\n        \n        ](/premium-support)\n    \n- [Pricing](https://github.com/pricing)\n\nSearch or jump to...\n\n# Search code, repositories, users, issues, pull requests...\n\nSearch\n\nClear\n\n[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)\n\n# Provide feedback\n\nWe read every piece of feedback, and take your input very seriously.\n\n Include my email address so I can be contacted\n\nCancel Submit feedback\n\n# Saved searches\n\n## Use saved searches to filter your results more quickly\n\nName  \n\nQuery \n\nTo see all available qualifiers, see our [documentation](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax).\n\nCancel Create saved search\n\n[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgoogle-gemini%2Fgemini-cli)\n\n[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=google-gemini%2Fgemini-cli)\n\nAppearance settings\n\nResetting focus\n\nYou signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert\n\n[google-gemini](/google-gemini) / **[gemini-cli](/google-gemini/gemini-cli)** Public\n\n- [Notifications](/login?return_to=%2Fgoogle-gemini%2Fgemini-cli) You must be signed in to change notification settings\n- [Fork 3.5k](/login?return_to=%2Fgoogle-gemini%2Fgemini-cli)\n- [Star 43.3k](/login?return_to=%2Fgoogle-gemini%2Fgemini-cli)\n    \n\nAn open-source AI agent that brings the power of Gemini directly into your terminal.\n\n### License\n\n[Apache-2.0 license](/google-gemini/gemini-cli/blob/main/LICENSE)\n\n[43.3k stars](/google-gemini/gemini-cli/stargazers) [3.5k forks](/google-gemini/gemini-cli/forks) [Branches](/google-gemini/gemini-cli/branches) [Tags](/google-gemini/gemini-cli/tags) [Activity](/google-gemini/gemini-cli/activity)\n\n[Star](/login?return_to=%2Fgoogle-gemini%2Fgemini-cli)\n\n[Notifications](/login?return_to=%2Fgoogle-gemini%2Fgemini-cli) You must be signed in to change notification settings\n\n- [Code](/google-gemini/gemini-cli)\n- [Issues 653](/google-gemini/gemini-cli/issues)\n- [Pull requests 131](/google-gemini/gemini-cli/pulls)\n- [Discussions](/google-gemini/gemini-cli/discussions)\n- [Actions](/google-gemini/gemini-cli/actions)\n- [Projects 0](/google-gemini/gemini-cli/projects)\n- [Security](/google-gemini/gemini-cli/security)\n    \n    [](/google-gemini/gemini-cli/security)\n    \n    [](/google-gemini/gemini-cli/security)\n    \n    [](/google-gemini/gemini-cli/security)\n    \n    [\n    \n    ### Uh oh!\n    \n    ](/google-gemini/gemini-cli/security)\n    \n    [There was an error while loading.](/google-gemini/gemini-cli/security) Please reload this page.\n    \n- [Insights](/google-gemini/gemini-cli/pulse)\n\nAdditional navigation options\n\n- [Code](/google-gemini/gemini-cli)\n- [Issues](/google-gemini/gemini-cli/issues)\n- [Pull requests](/google-gemini/gemini-cli/pulls)\n- [Discussions](/google-gemini/gemini-cli/discussions)\n- [Actions](/google-gemini/gemini-cli/actions)\n- [Projects](/google-gemini/gemini-cli/projects)\n- [Security](/google-gemini/gemini-cli/security)\n- [Insights](/google-gemini/gemini-cli/pulse)\n\n# google-gemini/gemini-cli\n\n \n\n main\n\n[Branches](/google-gemini/gemini-cli/branches)[Tags](/google-gemini/gemini-cli/tags)\n\n[](/google-gemini/gemini-cli/branches)[](/google-gemini/gemini-cli/tags)\n\nGo to file\n\nCode\n\nOpen more actions menu\n\n## Folders and files\n\n|Name|   |Name|Last commit message|Last commit date|\n|---|---|---|---|---|\n|## Latest commit<br><br>## History<br><br>[1,098 Commits](/google-gemini/gemini-cli/commits/main/)<br><br>[](/google-gemini/gemini-cli/commits/main/)|   |   |\n|[.gcp](/google-gemini/gemini-cli/tree/main/.gcp \".gcp\")|   |[.gcp](/google-gemini/gemini-cli/tree/main/.gcp \".gcp\")|||\n|[.gemini](/google-gemini/gemini-cli/tree/main/.gemini \".gemini\")|   |[.gemini](/google-gemini/gemini-cli/tree/main/.gemini \".gemini\")|||\n|[.github](/google-gemini/gemini-cli/tree/main/.github \".github\")|   |[.github](/google-gemini/gemini-cli/tree/main/.github \".github\")|||\n|[.vscode](/google-gemini/gemini-cli/tree/main/.vscode \".vscode\")|   |[.vscode](/google-gemini/gemini-cli/tree/main/.vscode \".vscode\")|||\n|[docs](/google-gemini/gemini-cli/tree/main/docs \"docs\")|   |[docs](/google-gemini/gemini-cli/tree/main/docs \"docs\")|||\n|[eslint-rules](/google-gemini/gemini-cli/tree/main/eslint-rules \"eslint-rules\")|   |[eslint-rules](/google-gemini/gemini-cli/tree/main/eslint-rules \"eslint-rules\")|||\n|[integration-tests](/google-gemini/gemini-cli/tree/main/integration-tests \"integration-tests\")|   |[integration-tests](/google-gemini/gemini-cli/tree/main/integration-tests \"integration-tests\")|||\n|[packages](/google-gemini/gemini-cli/tree/main/packages \"packages\")|   |[packages](/google-gemini/gemini-cli/tree/main/packages \"packages\")|||\n|[scripts](/google-gemini/gemini-cli/tree/main/scripts \"scripts\")|   |[scripts](/google-gemini/gemini-cli/tree/main/scripts \"scripts\")|||\n|[.editorconfig](/google-gemini/gemini-cli/blob/main/.editorconfig \".editorconfig\")|   |[.editorconfig](/google-gemini/gemini-cli/blob/main/.editorconfig \".editorconfig\")|||\n|[.gitattributes](/google-gemini/gemini-cli/blob/main/.gitattributes \".gitattributes\")|   |[.gitattributes](/google-gemini/gemini-cli/blob/main/.gitattributes \".gitattributes\")|||\n|[.gitignore](/google-gemini/gemini-cli/blob/main/.gitignore \".gitignore\")|   |[.gitignore](/google-gemini/gemini-cli/blob/main/.gitignore \".gitignore\")|||\n|[.npmrc](/google-gemini/gemini-cli/blob/main/.npmrc \".npmrc\")|   |[.npmrc](/google-gemini/gemini-cli/blob/main/.npmrc \".npmrc\")|||\n|[.prettierrc.json](/google-gemini/gemini-cli/blob/main/.prettierrc.json \".prettierrc.json\")|   |[.prettierrc.json](/google-gemini/gemini-cli/blob/main/.prettierrc.json \".prettierrc.json\")|||\n|[CONTRIBUTING.md](/google-gemini/gemini-cli/blob/main/CONTRIBUTING.md \"CONTRIBUTING.md\")|   |[CONTRIBUTING.md](/google-gemini/gemini-cli/blob/main/CONTRIBUTING.md \"CONTRIBUTING.md\")|||\n|[Dockerfile](/google-gemini/gemini-cli/blob/main/Dockerfile \"Dockerfile\")|   |[Dockerfile](/google-gemini/gemini-cli/blob/main/Dockerfile \"Dockerfile\")|||\n|[GEMINI.md](/google-gemini/gemini-cli/blob/main/GEMINI.md \"GEMINI.md\")|   |[GEMINI.md](/google-gemini/gemini-cli/blob/main/GEMINI.md \"GEMINI.md\")|||\n|[LICENSE](/google-gemini/gemini-cli/blob/main/LICENSE \"LICENSE\")|   |[LICENSE](/google-gemini/gemini-cli/blob/main/LICENSE \"LICENSE\")|||\n|[Makefile](/google-gemini/gemini-cli/blob/main/Makefile \"Makefile\")|   |[Makefile](/google-gemini/gemini-cli/blob/main/Makefile \"Makefile\")|||\n|[README.md](/google-gemini/gemini-cli/blob/main/README.md \"README.md\")|   |[README.md](/google-gemini/gemini-cli/blob/main/README.md \"README.md\")|||\n|[esbuild.config.js](/google-gemini/gemini-cli/blob/main/esbuild.config.js \"esbuild.config.js\")|   |[esbuild.config.js](/google-gemini/gemini-cli/blob/main/esbuild.config.js \"esbuild.config.js\")|||\n|[eslint.config.js](/google-gemini/gemini-cli/blob/main/eslint.config.js \"eslint.config.js\")|   |[eslint.config.js](/google-gemini/gemini-cli/blob/main/eslint.config.js \"eslint.config.js\")|||\n|[package-lock.json](/google-gemini/gemini-cli/blob/main/package-lock.json \"package-lock.json\")|   |[package-lock.json](/google-gemini/gemini-cli/blob/main/package-lock.json \"package-lock.json\")|||\n|[package.json](/google-gemini/gemini-cli/blob/main/package.json \"package.json\")|   |[package.json](/google-gemini/gemini-cli/blob/main/package.json \"package.json\")|||\n|[tsconfig.json](/google-gemini/gemini-cli/blob/main/tsconfig.json \"tsconfig.json\")|   |[tsconfig.json](/google-gemini/gemini-cli/blob/main/tsconfig.json \"tsconfig.json\")|||\n|View all files|   |   |\n\n## Repository files navigation\n\n- [README](#)\n- [Apache-2.0 license](#)\n- [Security](#)\n\n# Gemini CLI\n\n[](#gemini-cli)\n\n[![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)\n\n[![Gemini CLI Screenshot](/google-gemini/gemini-cli/raw/main/docs/assets/gemini-screenshot.png)](/google-gemini/gemini-cli/blob/main/docs/assets/gemini-screenshot.png)\n\nThis repository contains the Gemini CLI, a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.\n\nWith the Gemini CLI you can:\n\n- Query and edit large codebases in and beyond Gemini's 1M token context window.\n- Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.\n- Automate operational tasks, like querying pull requests or handling complex rebases.\n- Use tools and MCP servers to connect new capabilities, including [media generation with Imagen, Veo or Lyria](https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia)\n- Ground your queries with the [Google Search](https://ai.google.dev/gemini-api/docs/grounding) tool, built in to Gemini.\n\n## Quickstart\n\n[](#quickstart)\n\n1. **Prerequisites:** Ensure you have [Node.js version 18](https://nodejs.org/en/download) or higher installed.\n    \n2. **Run the CLI:** Execute the following command in your terminal:\n    \n    ```shell\n    npx https://github.com/google-gemini/gemini-cli\n    ```\n    \n    Or install it with:\n    \n    ```shell\n    npm install -g @google/gemini-cli\n    gemini\n    ```\n    \n3. **Pick a color theme**\n    \n4. **Authenticate:** When prompted, sign in with your personal Google account. This will grant you up to 60 model requests per minute and 1,000 model requests per day using Gemini.\n    \n\nYou are now ready to use the Gemini CLI!\n\n### For advanced use or increased limits:\n\n[](#for-advanced-use-or-increased-limits)\n\nIf you need to use a specific model or require a higher request capacity, you can use an API key:\n\n1. Generate a key from [Google AI Studio](https://aistudio.google.com/apikey).\n    \n2. Set it as an environment variable in your terminal. Replace `YOUR_API_KEY` with your generated key.\n    \n    ```shell\n    export GEMINI_API_KEY=\"YOUR_API_KEY\"\n    ```\n    \n\nFor other authentication methods, including Google Workspace accounts, see the [authentication](/google-gemini/gemini-cli/blob/main/docs/cli/authentication.md) guide.\n\n## Examples\n\n[](#examples)\n\nOnce the CLI is running, you can start interacting with Gemini from your shell.\n\nYou can start a project from a new directory:\n\n```shell\ncd new-project/\ngemini\n> Write me a Gemini Discord bot that answers questions using a FAQ.md file I will provide\n```\n\nOr work with an existing project:\n\n```shell\ngit clone https://github.com/google-gemini/gemini-cli\ncd gemini-cli\ngemini\n> Give me a summary of all of the changes that went in yesterday\n```\n\n### Next steps\n\n[](#next-steps)\n\n- Learn how to [contribute to or build from the source](/google-gemini/gemini-cli/blob/main/CONTRIBUTING.md).\n- Explore the available **[CLI Commands](/google-gemini/gemini-cli/blob/main/docs/cli/commands.md)**.\n- If you encounter any issues, review the **[Troubleshooting guide](/google-gemini/gemini-cli/blob/main/docs/troubleshooting.md)**.\n- For more comprehensive documentation, see the [full documentation](/google-gemini/gemini-cli/blob/main/docs/index.md).\n- Take a look at some [popular tasks](#popular-tasks) for more inspiration.\n\n### Troubleshooting\n\n[](#troubleshooting)\n\nHead over to the [troubleshooting](/google-gemini/gemini-cli/blob/main/docs/troubleshooting.md) guide if you're having issues.\n\n## Popular tasks\n\n[](#popular-tasks)\n\n### Explore a new codebase\n\n[](#explore-a-new-codebase)\n\nStart by `cd`ing into an existing or newly-cloned repository and running `gemini`.\n\n```\n> Describe the main pieces of this system's architecture.\n```\n\n```\n> What security mechanisms are in place?\n```\n\n### Work with your existing code\n\n[](#work-with-your-existing-code)\n\n```\n> Implement a first draft for GitHub issue #123.\n```\n\n```\n> Help me migrate this codebase to the latest version of Java. Start with a plan.\n```\n\n### Automate your workflows\n\n[](#automate-your-workflows)\n\nUse MCP servers to integrate your local system tools with your enterprise collaboration suite.\n\n```\n> Make me a slide deck showing the git history from the last 7 days, grouped by feature and team member.\n```\n\n```\n> Make a full-screen web app for a wall display to show our most interacted-with GitHub issues.\n```\n\n### Interact with your system\n\n[](#interact-with-your-system)\n\n```\n> Convert all the images in this directory to png, and rename them to use dates from the exif data.\n```\n\n```\n> Organise my PDF invoices by month of expenditure.\n```\n\n### Uninstall\n\n[](#uninstall)\n\nHead over to the [Uninstall](/google-gemini/gemini-cli/blob/main/docs/Uninstall.md) guide for uninstallation instructions.\n\n## Terms of Service and Privacy Notice\n\n[](#terms-of-service-and-privacy-notice)\n\nFor details on the terms of service and privacy notice applicable to your use of Gemini CLI, see the [Terms of Service and Privacy Notice](/google-gemini/gemini-cli/blob/main/docs/tos-privacy.md).\n\n## About\n\nAn open-source AI agent that brings the power of Gemini directly into your terminal.\n\n### Topics\n\n[gemini](/topics/gemini \"Topic: gemini\") [gemini-api](/topics/gemini-api \"Topic: gemini-api\")\n\n### Resources\n\n[Readme](#readme-ov-file)\n\n### License\n\n[Apache-2.0 license](#Apache-2.0-1-ov-file)\n\n### Security policy\n\n[Security policy](#security-ov-file)\n\n### Uh oh!\n\nThere was an error while loading. Please reload this page.\n\n[Activity](/google-gemini/gemini-cli/activity)\n\n[Custom properties](/google-gemini/gemini-cli/custom-properties)\n\n### Stars\n\n[**43.3k** stars](/google-gemini/gemini-cli/stargazers)\n\n### Watchers\n\n[**225** watching](/google-gemini/gemini-cli/watchers)\n\n### Forks\n\n[**3.5k** forks](/google-gemini/gemini-cli/forks)\n\n[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fgoogle-gemini%2Fgemini-cli&report=google-gemini+%28user%29)\n\n## [Releases 3](/google-gemini/gemini-cli/releases)\n\n[\n\nv0.1.7 Latest\n\nJun 28, 2025\n\n\n\n](/google-gemini/gemini-cli/releases/tag/v0.1.7)\n\n[+ 2 releases](/google-gemini/gemini-cli/releases)\n\n### Uh oh!\n\nThere was an error while loading. Please reload this page.\n\n## [Contributors 92](/google-gemini/gemini-cli/graphs/contributors)\n\n- [![@NTaylorMullen](https://avatars.githubusercontent.com/u/2008729?s=64&v=4)](https://github.com/NTaylorMullen)\n- [![@olcan](https://avatars.githubusercontent.com/u/747196?s=64&v=4)](https://github.com/olcan)\n- [![@KeijiBranshi](https://avatars.githubusercontent.com/u/10525281?s=64&v=4)](https://github.com/KeijiBranshi)\n- [![@allenhutchison](https://avatars.githubusercontent.com/u/3849061?s=64&v=4)](https://github.com/allenhutchison)\n- [![@jacob314](https://avatars.githubusercontent.com/u/1226812?s=64&v=4)](https://github.com/jacob314)\n- [![@scidomino](https://avatars.githubusercontent.com/u/13950003?s=64&v=4)](https://github.com/scidomino)\n- [![@jerop](https://avatars.githubusercontent.com/u/18076400?s=64&v=4)](https://github.com/jerop)\n- [![@sethtroisi](https://avatars.githubusercontent.com/u/10172976?s=64&v=4)](https://github.com/sethtroisi)\n- [![@mattKorwel](https://avatars.githubusercontent.com/u/1538695?s=64&v=4)](https://github.com/mattKorwel)\n- [![@scottdensmore](https://avatars.githubusercontent.com/u/125055?s=64&v=4)](https://github.com/scottdensmore)\n- [![@cperry-goog](https://avatars.githubusercontent.com/u/78765543?s=64&v=4)](https://github.com/cperry-goog)\n- [![@rakyll](https://avatars.githubusercontent.com/u/108380?s=64&v=4)](https://github.com/rakyll)\n- [![@miguelsolorio](https://avatars.githubusercontent.com/u/35271042?s=64&v=4)](https://github.com/miguelsolorio)\n- [![@abhipatel12](https://avatars.githubusercontent.com/u/43648792?s=64&v=4)](https://github.com/abhipatel12)\n\n[+ 78 contributors](/google-gemini/gemini-cli/graphs/contributors)\n\n## Languages\n\n- [TypeScript 95.3%](/google-gemini/gemini-cli/search?l=typescript)\n- [JavaScript 4.4%](/google-gemini/gemini-cli/search?l=javascript)\n- Other 0.3%\n\n## Footer\n\n[](https://github.com)© 2025 GitHub, Inc.\n\n### Footer navigation\n\n- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)\n- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)\n- [Security](https://github.com/security)\n- [Status](https://www.githubstatus.com/)\n- [Docs](https://docs.github.com/)\n- [Contact](https://support.github.com?tags=dotcom-footer)\n- Manage cookies\n- Do not share my personal information\n\nYou can’t perform that action at this time.\n```\n\n\nnpx @https://github.com/google-gemini/gemini-cli npm install -g @google/gemini-cli\n\n讲解这两个命令的差别\n\n"
+        }
+      ],
+      "id": "279b5068-ffb6-4bc8-9ace-1c187e147c3d",
+      "mentionables": [
+        {
+          "type": "url",
+          "url": "https://github.com/google-gemini/gemini-cli"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "这两个命令的主要区别在于安装方式和执行方式：\n\n1. `npx https://github.com/google-gemini/gemini-cli`\n   - 直接通过GitHub仓库URL临时运行gemini-cli\n   - 每次执行都会下载最新代码\n   - 不会全局安装，适合一次性试用\n\n2. `npm install -g @google/gemini-cli`\n   - 从npm官方仓库全局安装gemini-cli\n   - 安装后可以通过`gemini`命令直接使用\n   - 会保留在系统中，适合长期使用\n\n简单来说：\n- 用npx是临时试用\n- 用npm install是正式安装",
+      "id": "b88c8075-a4b0-4c2e-81d7-322fe40c6715",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 6401,
+          "completion_tokens": 141,
+          "total_tokens": 6542,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 6017
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "我应该使用全局安装吗",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n我应该使用全局安装吗\n\n"
+        }
+      ],
+      "id": "bee5216e-3d5a-46ca-b96b-50e979f8b643",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/Gemini CLI.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "是否全局安装取决于你的使用场景：\n\n**推荐全局安装(`npm install -g`)的情况：**\n- 需要频繁使用Gemini CLI\n- 希望在任何目录都能直接运行`gemini`命令\n- 需要固定使用某个稳定版本\n\n**推荐临时使用(`npx`)的情况：**\n- 只是偶尔试用\n- 想始终使用最新版本（每次运行自动更新）\n- 不想占用全局npm空间\n\n**建议：**\n如果你计划长期使用，推荐全局安装，使用更方便。可以随时通过`npm update -g`来升级版本。",
+      "id": "1bb0dac7-ce90-4fb9-aa6d-26d50eba0199",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 9924,
+          "completion_tokens": 120,
+          "total_tokens": 10044,
+          "prompt_tokens_details": {
+            "cached_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 448,
+          "prompt_cache_miss_tokens": 9476
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "如何查看npm install -g安装了哪些工具，如何管理比较方便，如何删除不用的工具",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n如何查看npm install -g安装了哪些工具，如何管理比较方便，如何删除不用的工具\n\n"
+        }
+      ],
+      "id": "8cac5045-a4c2-4ec2-8702-1cef3567ce9a",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/Gemini CLI.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "### 查看已安装的全局工具\n```bash\nnpm list -g --depth=0\n```\n这会列出所有全局安装的包（不显示依赖项）\n\n### 管理建议\n1. **定期检查**：每月运行上述命令查看不再需要的工具\n2. **使用`npm update -g`**：批量更新所有全局工具\n3. **记录用途**：建议维护个简单的Markdown清单记录安装原因\n\n### 删除工具\n```bash\nnpm uninstall -g 包名\n# 例如删除gemini-cli\nnpm uninstall -g @google/gemini-cli\n```\n\n### 进阶技巧\n- 使用`npm outdated -g`查看需要更新的包\n- 通过`npm cache clean -f`清理缓存（删除后操作）",
+      "id": "ef7efa21-7784-43a7-87a3-7022bc26db51",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 6697,
+          "completion_tokens": 168,
+          "total_tokens": 6865,
+          "prompt_tokens_details": {
+            "cached_tokens": 6400
+          },
+          "prompt_cache_hit_tokens": 6400,
+          "prompt_cache_miss_tokens": 297
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "qh2@qihao-3 ~ % npm install -g @google/gemini-cli",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm warn EBADENGINE Unsupported engine {",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm warn EBADENGINE   package: 'undici@7.11.0',",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm warn EBADENGINE   required: { node: '>=20.18.1' },",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm warn EBADENGINE   current: { node: 'v20.12.1', npm: '10.8.2' }",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm warn EBADENGINE }",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error code EACCES",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error syscall symlink",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error path ../lib/node_modules/@google/gemini-cli/dist/index.js",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error dest /usr/local/bin/gemini",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error errno -13",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error [Error: EACCES: permission denied, symlink '../lib/node_modules/@google/gemini-cli/dist/index.js' -> '/usr/local/bin/gemini'] {",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error   errno: -13,",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error   code: 'EACCES',",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error   syscall: 'symlink',",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error   path: '../lib/node_modules/@google/gemini-cli/dist/index.js',",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error   dest: '/usr/local/bin/gemini'",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error }",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error The operation was rejected by your operating system.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error It is likely you do not have the permissions to access this file as the current user",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error If you believe this might be a permissions issue, please double-check the",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error permissions of the file and its containing directories, or try running",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error the command again as root/Administrator.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "npm error A complete log of this run can be found in: /Users/qh2/.npm/_logs/2025-06-30T01_55_37_968Z-debug-0.log",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nqh2@qihao-3 ~ % npm install -g @google/gemini-clinpm warn EBADENGINE Unsupported engine {npm warn EBADENGINE   package: 'undici@7.11.0',npm warn EBADENGINE   required: { node: '>=20.18.1' },npm warn EBADENGINE   current: { node: 'v20.12.1', npm: '10.8.2' }npm warn EBADENGINE }npm error code EACCESnpm error syscall symlinknpm error path ../lib/node_modules/@google/gemini-cli/dist/index.jsnpm error dest /usr/local/bin/gemininpm error errno -13npm error [Error: EACCES: permission denied, symlink '../lib/node_modules/@google/gemini-cli/dist/index.js' -> '/usr/local/bin/gemini'] {npm error   errno: -13,npm error   code: 'EACCES',npm error   syscall: 'symlink',npm error   path: '../lib/node_modules/@google/gemini-cli/dist/index.js',npm error   dest: '/usr/local/bin/gemini'npm error }npm errornpm error The operation was rejected by your operating system.npm error It is likely you do not have the permissions to access this file as the current usernpm errornpm error If you believe this might be a permissions issue, please double-check thenpm error permissions of the file and its containing directories, or try runningnpm error the command again as root/Administrator.npm error A complete log of this run can be found in: /Users/qh2/.npm/_logs/2025-06-30T01_55_37_968Z-debug-0.log\n\n"
+        }
+      ],
+      "id": "96c557ae-bec4-4ae5-bb7e-bf3efa8dcd78",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/Gemini CLI.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "这个错误有两个关键问题需要解决：\n\n### 1. 权限问题（主要错误）\n错误显示你没有权限写入`/usr/local/bin`目录。有两种解决方案：\n\n**推荐方案**：使用`sudo`临时提权\n```bash\nsudo npm install -g @google/gemini-cli\n```\n\n**更安全的方案**：修改npm全局安装目录权限\n```bash\n# 先创建全局目录（如果不存在）\nmkdir -p ~/.npm-global\n# 配置npm使用新目录\nnpm config set prefix '~/.npm-global'\n# 将路径添加到环境变量\necho 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc\nsource ~/.zshrc\n# 重新安装\nnpm install -g @google/gemini-cli\n```\n\n### 2. Node版本警告（次要警告）\n提示你的Node版本(v20.12.1)低于undici依赖要求(>=20.18.1)。建议升级Node：\n```bash\n# 使用nvm管理（推荐）\nnvm install 20.18.1\nnvm use 20.18.1\n\n# 或直接升级\nsudo npm install -g n\nsudo n 20.18.1\n```\n\n安装完成后可通过`gemini --version`验证是否成功。",
+      "id": "5e99f389-0ade-4899-be51-f1bc08354844",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 7248,
+          "completion_tokens": 280,
+          "total_tokens": 7528,
+          "prompt_tokens_details": {
+            "cached_tokens": 6656
+          },
+          "prompt_cache_hit_tokens": 6656,
+          "prompt_cache_miss_tokens": 592
+        }
+      }
+    }
+  ],
+  "createdAt": 1751248261456,
+  "updatedAt": 1751248659929,
+  "schemaVersion": 1
+}

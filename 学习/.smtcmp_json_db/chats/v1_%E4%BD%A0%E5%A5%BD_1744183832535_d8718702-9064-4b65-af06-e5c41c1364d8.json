@@ -1,0 +1,57 @@
+{
+  "id": "d8718702-9064-4b65-af06-e5c41c1364d8",
+  "title": "你好",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你好",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你好\n\n"
+        }
+      ],
+      "id": "3dd00b60-cfa8-4416-98af-50170366fdca",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "id": "8e68123f-db09-46a7-8344-09f4b447122a",
+      "metadata": {}
+    }
+  ],
+  "createdAt": 1744183594283,
+  "updatedAt": 1744183832535,
+  "schemaVersion": 1
+}

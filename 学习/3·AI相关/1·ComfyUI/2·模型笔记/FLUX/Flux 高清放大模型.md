@@ -1,0 +1,2 @@
+[B 站教程](https://www.bilibili.com/video/BV1KyxFePEhd/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=81223299ca5d449a34daaab3e1102d1d)
+[模型地址](https://hf-mirror.com/jasperai/Flux.1-dev-Controlnet-Upscaler/tree/main)

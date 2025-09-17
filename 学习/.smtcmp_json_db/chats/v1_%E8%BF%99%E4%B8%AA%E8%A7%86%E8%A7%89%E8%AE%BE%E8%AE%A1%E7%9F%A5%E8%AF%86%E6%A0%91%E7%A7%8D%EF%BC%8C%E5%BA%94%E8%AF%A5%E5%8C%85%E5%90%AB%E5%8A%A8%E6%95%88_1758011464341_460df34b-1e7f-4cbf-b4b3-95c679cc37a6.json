@@ -1,0 +1,56 @@
+{
+  "id": "460df34b-1e7f-4cbf-b4b3-95c679cc37a6",
+  "title": "这个视觉设计知识树种，应该包含动效",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "这个视觉设计知识树种，应该包含动效",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n这个视觉设计知识树种，应该包含动效\n\n"
+        }
+      ],
+      "id": "4f465d8e-eb0f-4041-b3d1-b58e5d07c6e1",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "2·专业/视觉/·视觉设计知识树.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1758011436220,
+  "updatedAt": 1758011464341,
+  "schemaVersion": 1
+}

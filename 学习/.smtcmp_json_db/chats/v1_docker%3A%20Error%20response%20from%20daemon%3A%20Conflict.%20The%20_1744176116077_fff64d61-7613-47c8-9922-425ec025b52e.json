@@ -1,0 +1,82 @@
+{
+  "id": "fff64d61-7613-47c8-9922-425ec025b52e",
+  "title": "docker: Error response from daemon: Conflict. The ",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "docker: Error response from daemon: Conflict. The container name \"/sub-store\" is already in use by container \"9ef51eb6cdf9b5fb7b1ab3a2fb5555fe8515a9aed4a5d2519d59603f6b4d9a08\". You have to remove (or rename) that container to be able to reuse that name.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "See 'docker run --help'.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\ndocker: Error response from daemon: Conflict. The container name \"/sub-store\" is already in use by container \"9ef51eb6cdf9b5fb7b1ab3a2fb5555fe8515a9aed4a5d2519d59603f6b4d9a08\". You have to remove (or rename) that container to be able to reuse that name.See 'docker run --help'.\n\n"
+        }
+      ],
+      "id": "ed468309-8e14-4193-8112-d6305cf1f987",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "Clippings/在宝塔面板上利用Docker和nginx搭建Sub-Store - MiasaMoe.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "id": "60c414b3-c40e-4a91-8a64-54654dae62cc",
+      "metadata": {}
+    }
+  ],
+  "createdAt": 1744175932961,
+  "updatedAt": 1744176116077,
+  "schemaVersion": 1
+}

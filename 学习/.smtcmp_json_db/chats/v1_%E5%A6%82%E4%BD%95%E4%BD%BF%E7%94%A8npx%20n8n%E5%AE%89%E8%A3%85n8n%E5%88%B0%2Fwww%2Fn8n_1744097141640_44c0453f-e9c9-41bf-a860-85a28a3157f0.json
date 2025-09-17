@@ -1,0 +1,69 @@
+{
+  "id": "44c0453f-e9c9-41bf-a860-85a28a3157f0",
+  "title": "如何使用npx n8n安装n8n到/www/n8n",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "如何使用npx n8n安装n8n到/www/n8n",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n如何使用npx n8n安装n8n到/www/n8n\n\n"
+        }
+      ],
+      "id": "ee5d7b06-f312-40b5-8dc8-521fefde3467",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "要使用 `npx n8n` 将 n8n 安装到 `/www/n8n` 目录，您需要执行以下步骤：\n\n1.  **创建目录：** 确保 `/www/n8n` 目录存在。如果不存在，请使用 `mkdir -p /www/n8n` 命令创建它。\n2.  **更改目录所有者：** 确保您（或将运行 n8n 的用户）对该目录具有读写权限。可以使用 `chown` 命令更改所有者。\n3.  **使用 npx 安装：** 使用 `npx n8n` 命令并指定安装目录。\n\n以下是具体的命令：\n\n```bash\nsudo mkdir -p /www/n8n\nsudo chown $USER:$USER /www/n8n\nnpx n8n install --path /www/n8n\n```\n\n解释：\n\n*   `sudo mkdir -p /www/n8n`:  创建 `/www/n8n` 目录。`sudo` 确保您具有创建目录所需的权限，`-p` 选项确保如果 `/www` 目录不存在，也会一并创建。\n*   `sudo chown $USER:$USER /www/n8n`:  将 `/www/n8n` 目录的所有者更改为您当前的用户。 `$USER` 是一个环境变量，代表当前用户名。\n*   `npx n8n install --path /www/n8n`: 使用 `npx` 运行 `n8n install` 命令，并将安装路径设置为 `/www/n8n`。\n\n**重要提示:**\n\n*   确保您已经安装了 Node.js 和 npm (或 yarn)。\n*   使用 `npx` 安装 n8n 时，它会将 n8n 安装到指定的目录中。\n*   安装完成后，您需要在该目录中配置和启动 n8n。\n\n",
+      "id": "72eaaf5f-0814-4bfc-b88c-57e2ad81f182",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 474,
+          "completion_tokens": 414,
+          "total_tokens": 888
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744097116145,
+  "updatedAt": 1744097141640,
+  "schemaVersion": 1
+}

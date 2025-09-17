@@ -1,0 +1,79 @@
+{
+  "id": "4e622374-b6ad-4569-aa32-29441fbc4c41",
+  "title": "整理文章，提高可读性，保持意思不变",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "整理文章，提高可读性，保持意思不变",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n整理文章，提高可读性，保持意思不变\n\n"
+        }
+      ],
+      "id": "b38914f6-6e7d-4df2-8e66-f50a10630b5b",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/工作/5·周报/3·按结论整理/学豆消耗.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"3·笔记/工作/5·周报/3·按结论整理/学豆消耗.md\" language=\"markdown\">\n# 学豆消耗分析\n\n## 背景与目标\n通过清零机制和日常消耗策略，减少财务负债。\n\n## 数据追踪\n\n### 6月7日\n- **消耗量**：4781万  \n- **差距**：落后5000万  \n- **核心问题**：参与率仅20%（预期70%）  \n- **改进**：6月14日上线入口优化/套装功能/儿童季活动  \n\n### 6月14日\n- **消耗量**：1.13亿（↑130.61%）  \n- **装扮占比**：59.82%（↑316.50%）  \n- **进度**：落后46.19%  \n- **展望**：活动初见成效，新功能覆盖率提升后将持续改善  \n\n### 6月21日\n- **消耗量**：1.6亿（预估6月总量2.5亿）  \n- **问题**：  \n  - 装扮购买用户仅20万  \n  - 高学豆存量用户（500+）购买意愿更强（占比65%）  \n- **策略**：  \n  - 即时沟通弥补差距  \n  - 迭代装扮/互动功能提升长期消耗  \n![数据图示|375](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/202506251011858.png)\n\n### 6月28日（预测）\n- **预计消耗**：2.5亿  \n- **瓶颈**：  \n  - 商城访问率仅30%（但访问用户购买率达90%）  \n- **优化方向**：  \n  - 核心玩法改进  \n  - 迭代\"连胜火焰\"\"学伴\"等功能提升参与度  \n</smtcmp_block>\n\n调整说明：\n1. 统一了标题层级和日期格式\n2. 突出关键数据与行动项\n3. 移除冗余描述，保留核心结论\n4. 保持原有图片链接和数值准确性",
+      "id": "c7d13e72-23b3-481c-957e-165b3ba46c3c",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 963,
+          "completion_tokens": 442,
+          "total_tokens": 1405,
+          "prompt_tokens_details": {
+            "cached_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 448,
+          "prompt_cache_miss_tokens": 515
+        }
+      }
+    }
+  ],
+  "createdAt": 1751252306316,
+  "updatedAt": 1751252328561,
+  "schemaVersion": 1
+}

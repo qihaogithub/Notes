@@ -1,0 +1,79 @@
+{
+  "id": "22562711-e980-4e67-b5e1-54fcdfd93988",
+  "title": "悠哈页面排版",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "​页面排版",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n优化页面排版\n\n"
+        }
+      ],
+      "id": "db2b40dd-e512-4b9b-aa05-10cecfb06d54",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/工作/5·周报/按项目整理/家长端小程序/6·数据.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"3·笔记/工作/5·周报/按项目整理/家长端小程序/6·数据.md\" language=\"markdown\">\n- 家长端增长显著，随着新版本更新及用户习惯逐渐养成后持续增长\n    - 活跃：WAU 稳定在18W+\n    - 留存：次日 45%（原15%）\n        \n| 活跃 | 留存 |\n|------|------|\n| ![](https://static.dingtalk.com/media/lALPD1za8-CHJn7NA_zNBpA_1680_1020.png_810x10000.jpg?bizType=report) | ![](https://static.dingtalk.com/media/lALPD2BocoVOWq3NAefNAog_648_487.png_810x10000.jpg?bizType=report) |\n\n## 家长端首页学情 \"新老\"版本对比\n\n结论：新版家长端首页已基本满足大部分家长查看学情的诉求，新版首页可通过【学习数据】【答题表现】【学习总结】快速简洁让家长了解孩子学情。通过数据看到新版本进入\"报告\"CTR低于老版本，侧面证明新版首页学情已满足大部分家长。\n\n| 老版本 | 新版本 |\n|--------|--------|\n| ![](https://static.dingtalk.com/media/lADPM3HpLUtWxM7NBQDNAlA_592_1280.jpg_810x10000.jpg?bizType=report) | ![](https://static.dingtalk.com/media/lALPM3kEKqoh_U3NBeTNAXc_375_1508.png_810x10000.jpg?bizType=report) |\n| 查看报告CTR: 40+% | 查看报告CTR: 30+% |\n</smtcmp_block>\n\n主要优化：\n1. 简化表格边框线\n2. 调整中英文间距\n3. 统一CTR大小写\n4. 优化标点符号使用\n5. 删除冗余空行",
+      "id": "454c7078-b1a9-4869-9bf2-a45801bd5a48",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 892,
+          "completion_tokens": 442,
+          "total_tokens": 1334,
+          "prompt_tokens_details": {
+            "cached_tokens": 832
+          },
+          "prompt_cache_hit_tokens": 832,
+          "prompt_cache_miss_tokens": 60
+        }
+      }
+    }
+  ],
+  "createdAt": 1750057358678,
+  "updatedAt": 1750057471383,
+  "schemaVersion": 1
+}

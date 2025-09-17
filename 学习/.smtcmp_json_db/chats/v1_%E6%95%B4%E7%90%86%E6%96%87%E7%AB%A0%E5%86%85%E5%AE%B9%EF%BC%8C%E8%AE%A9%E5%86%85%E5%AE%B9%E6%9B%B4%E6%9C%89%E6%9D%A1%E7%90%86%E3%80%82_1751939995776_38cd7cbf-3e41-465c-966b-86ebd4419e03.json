@@ -1,0 +1,75 @@
+{
+  "id": "38cd7cbf-3e41-465c-966b-86ebd4419e03",
+  "title": "整理文章内容，让内容更有条理。",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "整理文章内容，让内容更有条理。",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n整理文章内容，让内容更有条理。\n\n"
+        }
+      ],
+      "id": "8df3a0cd-9356-4fed-b7ae-378f215ae6b3",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/工作/5·周报/1·按人整理/首长.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "以下是整理后的文件内容，调整了日期格式、标题层级和内容结构，使逻辑更清晰：\n\n<smtcmp_block filename=\"3·笔记/工作/5·周报/1·按人整理/首长.md\" language=\"markdown\">\n[[学豆消耗]]\n\n## 2025.06.28\n### 业绩完成情况\n- **App业务**：703万  \n- **转介绍业务**：301万  \n- **扩科业务**：1335万（其中指导师直扩550万）  \n- **预计6月最后两天**：App+转介绍合计1100万  \n- **转介绍业务**：有望追回2024年业绩缺口  \n\n### 核心指标\n| 指标        | 目标   | 达成  | 达成率 |\n|-------------|--------|-------|--------|\n| GMV         | 1679万 | 703万 | 44.8%  |\n| Leads       | 57万   | 33万  | 58.7%  |\n| 转化率      | 2.2%   | 1.4%  | 63.5%  |\n\n### 流量观察\n- 各渠道流量持续攀升（含APP暑期高峰）  \n- 周末阅读低转版位控量约2000（近期峰值）  \n\n### 总结\n当前业绩达成仍有提升空间，需重点优化转化效率，强化转化环节以实现业绩突破。\n\n## 2025.07\n### 整体预估\n- App+转介绍：1300万  \n- 扩科：1400万  \n\n### APP业务\n**当月进展**  \n- GMV目标1951万，当前190万，进度60.8%  \n- Leads目标67万，达成16万，完成78.9%  \n- 转化率目标2.2%，现1.2%，达标55.7%  \n- **问题**：转化率偏低\n</smtcmp_block>\n\n主要改进：\n1. 统一日期格式：修正`2025 .06.28`为`2025.06.28`，`2025 .07`为`2025.07`\n2. 拆分7月内容：新增`整体预估`二级标题，将业务数据归入`APP业务`二级标题\n3. 优化数据呈现：将7月APP业务描述转为清晰条目\n4. 突出核心问题：单独标注\"转化率偏低\"",
+      "id": "e8417bec-e635-4e3b-899c-1f6c316927ca",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "阿里百炼",
+          "id": "阿里/deepseek-r1",
+          "model": "deepseek-r1",
+          "promptLevel": 1
+        },
+        "usage": {
+          "prompt_tokens": 830,
+          "completion_tokens": 1431,
+          "total_tokens": 2261
+        }
+      }
+    }
+  ],
+  "createdAt": 1751939875899,
+  "updatedAt": 1751939995776,
+  "schemaVersion": 1
+}

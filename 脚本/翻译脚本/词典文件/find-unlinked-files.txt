@@ -1,0 +1,23 @@
+Settings for finding orphaned files
+查找孤立文件的设置
+
+Open output file
+打开输出文件
+
+Output file name
+输出文件名
+
+Set name of output file (without file extension). Make sure no file exists with this name because it will be overwritten! If the name is empty, the default name is set.
+设置输出文件名（不带扩展名）。请确保不存在具有此名称的文件，因为它将被覆盖！如果名称为空，则设置默认名称。
+
+Disable working links
+禁用工作链接
+
+Indent lines to disable the link and to clean up the graph view
+缩进线条以禁用链接并清理图形视图
+
+Exclude files in the given directories
+排除给定目录中的文件
+
+Enable to exclude files in the given directories. Disable to only include files in the given directories
+启用排除给定目录中的文件。禁用仅包含给定目录中的文件

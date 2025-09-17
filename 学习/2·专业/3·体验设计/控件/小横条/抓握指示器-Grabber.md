@@ -1,0 +1,19 @@
+> 用于指示用户抓握滑动即可改变当前视图尺寸，使得原本隐藏的手势操作变得可见。
+
+我们可以统称所有小横条为：Grabber（抓握指示器），但不同位置的 Grabber 也有其专属名称。
+
+*   屏幕底部上滑返回桌面的 Grabber 称为 Home Indicator（桌面指示器）。
+
+*   控制分屏比例的 Grabber 是 App Divider（App 分割条）。
+
+*   位于 iPad 顶部负责快速设置分屏模式的 3 个点，名为：Multitasking Indicator（多任务指示器）。
+
+*   为了区别统称，位于 Modal view 上的 Grabber 可以叫它：Resizable Indicator（可调指示器）。
+
+![](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/uisdc-lz-20211230-26.jpg)
+
+注意「改变」不等于「关闭」。 在 iOS 中凡是有 Grabber 的地方，如果滑动让视图变小甚至消失，只是改变视图尺寸，并不是让视图彻底关闭。
+
+参考文章
+
+<https://www.uisdc.com/grabber>
