@@ -1,0 +1,74 @@
+{
+  "id": "f2265a45-f665-47e3-8e3b-165adab2ac35",
+  "title": "你好",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你好",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你好\n\n"
+        }
+      ],
+      "id": "0595ddc5-eb44-4875-8b60-82e4e10ba3cf",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "你好！有什么可以帮你的吗？",
+      "id": "50c7ab2b-3fe3-4e99-a3a7-6db925ff855b",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 437,
+          "completion_tokens": 8,
+          "total_tokens": 445,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 437
+        }
+      }
+    }
+  ],
+  "createdAt": 1748223816712,
+  "updatedAt": 1748223822068,
+  "schemaVersion": 1
+}

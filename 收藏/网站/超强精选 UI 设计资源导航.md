@@ -1,0 +1,3 @@
+链接直达：[https://uigoodies.com/](https://link.uisdc.com/?redirect=https%3A%2F%2Fuigoodies.com%2F)
+![专门帮你发掘 AI 新工具的 「侦察兵」.png](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/%E4%B8%93%E9%97%A8%E5%B8%AE%E4%BD%A0%E5%8F%91%E6%8E%98%20AI%20%E6%96%B0%E5%B7%A5%E5%85%B7%E7%9A%84%20%E3%80%8C%E4%BE%A6%E5%AF%9F%E5%85%B5%E3%80%8D.png)
+务实一点，用对素材能够省出大量的时间，无论是在做平面设计还是 UI 设计的时候。这个名为 UI Goodies 的素材合集网站，将网上最佳的 UI 相关的设计资源汇聚于此，它根据常用的素材类型分成了图标、插画、灵感、配色、字体排版和图片 6 个大类。虽然每个门类下的素材数量都只有 2 位数的数量，但是这些素材大都经过仔细的筛选，素质相当过硬。

@@ -1,0 +1,79 @@
+{
+  "id": "ebd93025-3fa0-4d10-ba7a-8293cbe1b55a",
+  "title": "如何卸载重装",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "如何卸载重装",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n如何卸载重装\n\n"
+        }
+      ],
+      "id": "211095c3-79cf-4117-82d1-565d43bd0371",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/1·学习/ubuntu/安装clash-verge.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"3·笔记/兴趣/编程/1·学习/ubuntu/安装clash-verge.md\" language=\"markdown\">\n## 卸载\n```bash\nsudo apt remove clash-verge\n# 彻底清除配置\nsudo apt purge clash-verge\n```\n\n## 重新安装\n```bash\nsudo apt install ./clash-verge*.deb\n```\n</smtcmp_block>\n\n添加了卸载和重装部分：\n1. `remove` 只卸载软件\n2. `purge` 会连带删除配置文件\n3. 重装时使用通配符`*.deb`匹配下载的安装包",
+      "id": "098eb618-0a77-414e-a6ad-2a5969ef970a",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 658,
+          "completion_tokens": 139,
+          "total_tokens": 797,
+          "prompt_tokens_details": {
+            "cached_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 448,
+          "prompt_cache_miss_tokens": 210
+        }
+      }
+    }
+  ],
+  "createdAt": 1749109340479,
+  "updatedAt": 1749109351810,
+  "schemaVersion": 1
+}

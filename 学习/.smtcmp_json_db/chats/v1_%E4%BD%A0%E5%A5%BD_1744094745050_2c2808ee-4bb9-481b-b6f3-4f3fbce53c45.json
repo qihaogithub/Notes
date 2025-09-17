@@ -1,0 +1,69 @@
+{
+  "id": "2c2808ee-4bb9-481b-b6f3-4f3fbce53c45",
+  "title": "你好",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你好",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你好\n\n"
+        }
+      ],
+      "id": "ed4e1dfd-02ff-4523-8f8e-7b34ecf62d73",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "你好！有什么我可以帮到你的吗？\n",
+      "id": "dbdc2c49-9546-4939-b04c-8f3fb687f8e3",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 457,
+          "completion_tokens": 10,
+          "total_tokens": 467
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744094743177,
+  "updatedAt": 1744094745050,
+  "schemaVersion": 1
+}

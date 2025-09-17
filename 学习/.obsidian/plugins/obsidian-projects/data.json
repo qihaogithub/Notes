@@ -1,0 +1,182 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [
+        "3·笔记/其他/模板文件/插件模版.md"
+      ],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "3·笔记/其他/工具篇/obsidan/插件",
+          "recursive": false
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "fieldConfig": {
+              "path": {
+                "hide": true
+              }
+            },
+            "orderFields": [
+              "name",
+              "标签",
+              "介绍",
+              "评级",
+              "预览图",
+              "github",
+              "path",
+              "更新状态"
+            ]
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "1253c26d-fc4f-4790-b090-b7fcd493ec21",
+          "name": "Table",
+          "type": "table"
+        },
+        {
+          "config": {
+            "coverField": "预览图"
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "5823a0f9-3c4b-4f6f-943e-0c0722a39ad5",
+          "name": "Gallery",
+          "type": "gallery"
+        }
+      ],
+      "id": "fa3cc206-a3c3-478f-aa8c-4b559fd4faf5",
+      "name": "ob插件"
+    },
+    {
+      "fieldConfig": {
+        "类型": {}
+      },
+      "defaultName": "",
+      "templates": [
+        "3·笔记/其他/模板文件/插件模版.md"
+      ],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "3·笔记/专业/软件/figma/figma插件",
+          "recursive": false
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "fieldConfig": {
+              "path": {
+                "width": 180,
+                "hide": true
+              },
+              "状态": {
+                "hide": false
+              },
+              "date": {
+                "hide": false
+              }
+            },
+            "orderFields": [
+              "name",
+              "path",
+              "due",
+              "priority",
+              "Published",
+              "Status",
+              "tags"
+            ]
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": [
+              {
+                "color": "#a882ff",
+                "condition": {
+                  "field": "name",
+                  "operator": "is-not-empty",
+                  "enabled": true
+                }
+              }
+            ]
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "79889276-d9c9-4202-b434-e58e7288b212",
+          "name": "Table",
+          "type": "table"
+        },
+        {
+          "config": {
+            "coverField": "预览图",
+            "fitStyle": "contain",
+            "includeFields": []
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "679a1fd1-b5a6-4119-99b7-68277edc3acf",
+          "name": "画册",
+          "type": "gallery"
+        }
+      ],
+      "id": "8bca31a0-8a09-4799-b0d9-7b52fd111695",
+      "name": "figma插件"
+    }
+  ],
+  "archives": [],
+  "preferences": {
+    "projectSizeLimit": 1000,
+    "frontmatter": {
+      "quoteStrings": "PLAIN"
+    },
+    "locale": {
+      "firstDayOfWeek": "default"
+    },
+    "commands": [
+      {
+        "project": "8bca31a0-8a09-4799-b0d9-7b52fd111695",
+        "view": "79889276-d9c9-4202-b434-e58e7288b212"
+      },
+      {
+        "project": "8bca31a0-8a09-4799-b0d9-7b52fd111695"
+      }
+    ],
+    "linkBehavior": "open-editor"
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "groups": [
+    {
+      "loadAtStartup": false,
+      "disableOnStartup": false,
+      "delay": 2,
+      "id": "pg",
+      "name": "立即启动",
+      "plugins": [
+        {
+          "id": "obsidian-tasks-plugin",
+          "name": "Tasks"
+        },
+        {
+          "id": "obsidian-activity-history",
+          "name": "Activity History"
+        },
+        {
+          "id": "consistent-attachments-and-links",
+          "name": "Consistent Attachments and Links"
+        },
+        {
+          "id": "dataview",
+          "name": "Dataview"
+        },
+        {
+          "id": "editing-toolbar",
+          "name": "Editing Toolbar"
+        },
+        {
+          "id": "easy-typing-obsidian",
+          "name": "Easy Typing"
+        },
+        {
+          "id": "obsidian-excalidraw-plugin",
+          "name": "Excalidraw"
+        },
+        {
+          "id": "homepage",
+          "name": "Homepage"
+        },
+        {
+          "id": "ProxyGithub",
+          "name": "proxy github"
+        },
+        {
+          "id": "remotely-save",
+          "name": "Remotely Save"
+        },
+        {
+          "id": "obsidian-projects",
+          "name": "Projects"
+        },
+        {
+          "id": "make-md",
+          "name": "MAKE.md"
+        },
+        {
+          "id": "obsidian-git",
+          "name": "Git"
+        }
+      ],
+      "groupIds": [],
+      "generateCommands": false,
+      "assignedDevices": []
+    },
+    {
+      "loadAtStartup": true,
+      "disableOnStartup": false,
+      "delay": 10,
+      "id": "pg0",
+      "name": "延迟启动",
+      "plugins": [
+        {
+          "id": "obsidian-admonition",
+          "name": "Admonition"
+        },
+        {
+          "id": "obsidian-annotator",
+          "name": "Annotator"
+        },
+        {
+          "id": "oz-clear-unused-images",
+          "name": "Clear Unused Images"
+        },
+        {
+          "id": "obsidian-file-cleaner",
+          "name": "File Cleaner"
+        },
+        {
+          "id": "find-unlinked-files",
+          "name": "Find orphaned files and broken links"
+        },
+        {
+          "id": "floating-toc",
+          "name": "floating toc"
+        },
+        {
+          "id": "folder-note-plugin",
+          "name": "Folder Note"
+        },
+        {
+          "id": "global-search-and-replace",
+          "name": "Global Search and Replace"
+        },
+        {
+          "id": "obsidian-hider",
+          "name": "Hider"
+        },
+        {
+          "id": "highlightr-plugin",
+          "name": "Highlightr"
+        },
+        {
+          "id": "obsidian-image-auto-upload-plugin",
+          "name": "Image auto upload Plugin"
+        },
+        {
+          "id": "obsidian-image-toolkit",
+          "name": "Image Toolkit"
+        },
+        {
+          "id": "obsidian-kanban",
+          "name": "Kanban"
+        },
+        {
+          "id": "link-exploder",
+          "name": "Link Exploder"
+        },
+        {
+          "id": "obsidian-markdown-formatting-assistant-plugin",
+          "name": "Markdown Formatting Assistant"
+        },
+        {
+          "id": "obsidian-mind-map",
+          "name": "Mind Map"
+        },
+        {
+          "id": "obsidian-minimal-settings",
+          "name": "Minimal Theme Settings"
+        },
+        {
+          "id": "mousewheel-image-zoom",
+          "name": "Mousewheel Image zoom"
+        },
+        {
+          "id": "nldates-obsidian",
+          "name": "Natural Language Dates"
+        },
+        {
+          "id": "note-refactor-obsidian",
+          "name": "Note Refactor"
+        },
+        {
+          "id": "note-synchronizer",
+          "name": "Note Synchronizer"
+        },
+        {
+          "id": "obsidian-columns",
+          "name": "Obsidian Columns"
+        },
+        {
+          "id": "obsidian-floating-toc",
+          "name": "obsidian floating toc"
+        },
+        {
+          "id": "obsidian-markmind",
+          "name": "obsidian markmind"
+        },
+        {
+          "id": "obsidian-memos",
+          "name": "Obsidian Memos"
+        },
+        {
+          "id": "obsidian-to-anki-plugin",
+          "name": "Obsidian_to_Anki"
+        },
+        {
+          "id": "omnisearch",
+          "name": "Omnisearch"
+        },
+        {
+          "id": "optimize-canvas-connections",
+          "name": "Optimize Canvas Connections"
+        },
+        {
+          "id": "obsidian-pandoc",
+          "name": "Pandoc Plugin"
+        },
+        {
+          "id": "pane-relief",
+          "name": "Pane Relief"
+        },
+        {
+          "id": "url-into-selection",
+          "name": "Paste URL into selection"
+        },
+        {
+          "id": "plugin-manager",
+          "name": "Plugin Manager"
+        },
+        {
+          "id": "ProxyGithub",
+          "name": "proxy github"
+        },
+        {
+          "id": "quickadd",
+          "name": "QuickAdd"
+        },
+        {
+          "id": "recent-files-obsidian",
+          "name": "Recent Files"
+        },
+        {
+          "id": "remember-cursor-position",
+          "name": "Remember cursor position"
+        },
+        {
+          "id": "remotely-save",
+          "name": "Remotely Save"
+        },
+        {
+          "id": "repeat-plugin",
+          "name": "Repeat"
+        },
+        {
+          "id": "obsidian-spaced-repetition",
+          "name": "Spaced Repetition"
+        },
+        {
+          "id": "obsidian-style-settings",
+          "name": "Style Settings"
+        },
+        {
+          "id": "tag-wrangler",
+          "name": "Tag Wrangler"
+        },
+        {
+          "id": "templater-obsidian",
+          "name": "Templater"
+        },
+        {
+          "id": "various-complements",
+          "name": "Various Complements"
+        },
+        {
+          "id": "vocabulary-cards",
+          "name": "Vocabulary Cards"
+        },
+        {
+          "id": "obsidian-activity-history",
+          "name": "Activity History"
+        },
+        {
+          "id": "dbfolder",
+          "name": "DB Folder"
+        },
+        {
+          "id": "obsidian-tasks-plugin",
+          "name": "Tasks"
+        },
+        {
+          "id": "advanced-random-note",
+          "name": "Advanced Random Note"
+        },
+        {
+          "id": "ai-mentor",
+          "name": "AI Mentor"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "canvas-mindmap",
+          "name": "Canvas Mindmap"
+        },
+        {
+          "id": "card-board",
+          "name": "CardBoard"
+        },
+        {
+          "id": "obsidian-awesome-flashcard",
+          "name": "Awesome Flashcard"
+        },
+        {
+          "id": "table-editor-obsidian",
+          "name": "Advanced Tables"
+        },
+        {
+          "id": "word-bank",
+          "name": "Word Bank"
+        },
+        {
+          "id": "obsidian-linter",
+          "name": "Linter"
+        },
+        {
+          "id": "link-headers-directly",
+          "name": "Link Headers Directly"
+        },
+        {
+          "id": "obsidian-copy-block-link",
+          "name": "Copy Block Link"
+        },
+        {
+          "id": "obsidian-dictionary-plugin",
+          "name": "Dictionary"
+        },
+        {
+          "id": "obsidian-outliner",
+          "name": "Outliner"
+        },
+        {
+          "id": "mermaid-tools",
+          "name": "Mermaid Tools"
+        },
+        {
+          "id": "smart-gantt",
+          "name": "Smart Gantt"
+        },
+        {
+          "id": "mermaid-themes",
+          "name": "Mermaid Themes"
+        },
+        {
+          "id": "advanced-canvas",
+          "name": "Advanced Canvas"
+        },
+        {
+          "id": "simple-canvasearch",
+          "name": "Simple CanvaSearch"
+        },
+        {
+          "id": "dictionary-translator",
+          "name": "Dictionary translator"
+        },
+        {
+          "id": "better-recall",
+          "name": "Better Recall"
+        },
+        {
+          "id": "zettelkasten-navigation",
+          "name": "zettelkasten navigation"
+        },
+        {
+          "id": "file-tree-alternative",
+          "name": "File Tree Alternative"
+        },
+        {
+          "id": "obsidian-folder-index",
+          "name": "Folder Index"
+        },
+        {
+          "id": "obsidian-day-planner",
+          "name": "Day Planner"
+        },
+        {
+          "id": "obsidian-epub-plugin",
+          "name": "ePub Reader"
+        },
+        {
+          "id": "obsidian-gallery",
+          "name": "Gallery"
+        },
+        {
+          "id": "media-extended",
+          "name": "Media Extended"
+        },
+        {
+          "id": "mx-bili-plugin",
+          "name": "Media Extended BiliBili Plugin"
+        },
+        {
+          "id": "excalibrain",
+          "name": "ExcaliBrain"
+        },
+        {
+          "id": "copilot",
+          "name": "Copilot"
+        },
+        {
+          "id": "smart-connections",
+          "name": "Smart Connections"
+        },
+        {
+          "id": "smart-composer",
+          "name": "Smart Composer"
+        },
+        {
+          "id": "auto-anki",
+          "name": "Auto Anki"
+        },
+        {
+          "id": "obsidian-timestamper",
+          "name": "TimeStamper"
+        },
+        {
+          "id": "obisidian-note-linker",
+          "name": "Note Linker"
+        },
+        {
+          "id": "virtual-linker",
+          "name": "Virtual Linker / Glossary"
+        }
+      ],
+      "groupIds": [],
+      "generateCommands": false,
+      "assignedDevices": [],
+      "autoAdd": true
+    }
+  ],
+  "generateCommands": true,
+  "showNoticeOnGroupLoad": "none",
+  "devLogs": false,
+  "devices": [
+    "公司电脑",
+    "手机"
+  ],
+  "doLoadSynchronously": true,
+  "showStatusbarIcon": "None"
+}

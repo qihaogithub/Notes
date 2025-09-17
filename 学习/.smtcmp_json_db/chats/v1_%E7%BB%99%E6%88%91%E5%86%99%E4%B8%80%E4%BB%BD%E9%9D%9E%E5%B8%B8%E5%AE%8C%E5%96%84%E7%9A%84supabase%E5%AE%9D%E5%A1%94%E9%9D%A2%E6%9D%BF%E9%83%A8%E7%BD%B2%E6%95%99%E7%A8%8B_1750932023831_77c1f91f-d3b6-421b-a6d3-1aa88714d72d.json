@@ -1,0 +1,79 @@
+{
+  "id": "77c1f91f-d3b6-421b-a6d3-1aa88714d72d",
+  "title": "给我写一份非常完善的supabase宝塔面板部署教程",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "给我写一份非常完善的supabase宝塔面板部署教程",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n给我写一份非常完善的supabase宝塔面板部署教程\n\n"
+        }
+      ],
+      "id": "81bd6c86-1ca6-42e9-9847-0893b3d1b3d0",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/supabase.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"3·笔记/兴趣/编程/supabase.md\" language=\"markdown\">\n# Supabase 宝塔面板部署教程\n\n## 准备工作\n1. 服务器要求\n   - 推荐配置：2核4G以上\n   - 系统：Ubuntu 20.04+/CentOS 7+\n   - 硬盘：50GB+ SSD\n\n2. 环境准备\n   - 已安装宝塔面板（建议7.9+版本）\n   - 开放端口：3000, 5432, 8000\n\n## 安装步骤\n\n### 1. 安装Docker\n```bash\ncurl -fsSL https://get.docker.com | bash\nsystemctl start docker\nsystemctl enable docker\n```\n\n### 2. 安装Docker Compose\n```bash\ncurl -L \"https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose\nchmod +x /usr/local/bin/docker-compose\n```\n\n### 3. 创建Supabase目录\n```bash\nmkdir -p /www/supabase\ncd /www/supabase\n```\n\n### 4. 下载配置文件\n```bash\nwget https://raw.githubusercontent.com/supabase/supabase/master/docker/docker-compose.yml\n```\n\n### 5. 修改配置\n```bash\nnano docker-compose.yml\n```\n主要修改：\n- `POSTGRES_PASSWORD`：数据库密码\n- `JWT_SECRET`：随机字符串（可用`openssl rand -base64 32`生成）\n\n### 6. 启动服务\n```bash\ndocker-compose up -d\n```\n\n## 宝塔面板配置\n\n### 1. 添加反向代理\n位置：网站 → 添加站点 → 反向代理\n```\n目标URL：http://127.0.0.1:3000\n```\n\n### 2. 配置SSL证书\n在宝塔面板申请Let's Encrypt证书并强制HTTPS\n\n## 验证安装\n访问 `https://你的域名` 应能看到Supabase管理界面\n\n## 常见问题\n1. 端口冲突：检查3000/5432端口是否被占用\n2. 内存不足：增加SWAP空间\n3. 启动失败：查看日志 `docker-compose logs`\n</smtcmp_block>",
+      "id": "cc476de0-7b77-4dec-a8c9-4381994b7aea",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 479,
+          "completion_tokens": 523,
+          "total_tokens": 1002,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 479
+        }
+      }
+    }
+  ],
+  "createdAt": 1750931993581,
+  "updatedAt": 1750932023831,
+  "schemaVersion": 1
+}

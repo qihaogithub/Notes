@@ -1,0 +1,254 @@
+{
+  "id": "9f55fc3a-6426-4dda-a181-55385ccbdaba",
+  "title": "你好",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你好",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你好\n\n"
+        }
+      ],
+      "id": "09672cd6-211e-4c04-b7dc-46b5e76c5fbb",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "你好！有什么我可以帮到你的吗？\n",
+      "id": "aeb32615-252e-4c19-9a3b-1d8d1514954f",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 457,
+          "completion_tokens": 10,
+          "total_tokens": 467
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你是谁",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你是谁\n\n"
+        }
+      ],
+      "id": "6f4f7f3b-2eba-474a-afd1-5952037086d7",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "Clippings/大模型本地化部署1-Ollama安装（Windows）_ollama安装包-CSDN博客.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "我是一个大型语言模型，由 Google 训练。\n",
+      "id": "fd264b6b-1f17-4cb3-a21a-3cd13a5aa9d3",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 3084,
+          "completion_tokens": 12,
+          "total_tokens": 3096
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "gemini哪个模型是免费的",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\ngemini哪个模型是免费的\n\n"
+        }
+      ],
+      "id": "dcd695df-3d09-4dfa-8dc2-9a350062bd83",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "Gemini 1.5 Pro 通过 Google AI Studio 提供有限的免费使用。\n",
+      "id": "b86848b1-2bc4-4ff0-8a96-d1304ddb8210",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 491,
+          "completion_tokens": 18,
+          "total_tokens": 509
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你的知识到什么时候",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你的知识到什么时候\n\n"
+        }
+      ],
+      "id": "494736bb-6c5a-4a47-a831-382257a267d8",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "我的知识截止日期是 2024 年 4 月。这意味着我没有 2024 年 4 月之后的信息。\n",
+      "id": "0fc2945f-350f-4f8d-9075-ef11ee90dfac",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 514,
+          "completion_tokens": 30,
+          "total_tokens": 544
+        },
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini-2.0-flash",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    }
+  ],
+  "createdAt": 1740115892291,
+  "updatedAt": 1740116091696,
+  "schemaVersion": 1
+}

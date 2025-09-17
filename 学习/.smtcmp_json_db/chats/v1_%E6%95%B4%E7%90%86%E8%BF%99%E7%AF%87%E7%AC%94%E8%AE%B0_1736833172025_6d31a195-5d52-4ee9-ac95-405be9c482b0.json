@@ -1,0 +1,62 @@
+{
+  "id": "6d31a195-5d52-4ee9-ac95-405be9c482b0",
+  "title": "整理这篇笔记",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": null,
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n整理这篇笔记\n\n"
+        }
+      ],
+      "id": "3c6c8e5e-aee2-415a-b85e-f0765477ab5a",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/ubuntu/扩展硬盘.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I've reorganized your note to improve its structure and readability. Here's the updated markdown:\n\n<smtcmp_block filename=\"3·笔记/兴趣/编程/ubuntu/常用命令.md\" language=\"markdown\">\n<!-- ... existing content ... -->\n# Ubuntu 常用命令\n\n## 文件和目录操作\n- `ls`: 列出目录中的文件和文件夹。\n- `cd [目录名]`: 更改当前目录。\n- `pwd`: 显示当前目录的路径。\n- `mkdir [目录名]`: 创建一个新的目录。\n- `rm [文件名/目录名]`: 删除文件或目录。\n- `cp [源文件/目录] [目标文件/目录]`: 复制文件或目录。\n- `mv [源文件/目录] [目标文件/目录]`: 移动或重命名文件或目录。\n- `touch [文件名]`: 创建一个空文件。\n\n### 删除目录\n- `rm -r tempspace`: 删除名为 `tempspace` 的目录及其所有内容。(`-r` 选项递归删除)\n- `sudo rm -r tempspace`: 使用sudo提升权限删除目录。\n- `rm -r tempspace/*`: 清空目录内容但不删除目录本身。\n\n## 文件内容查看和编辑\n- `cat [文件名]`: 查看文件内容。\n- `more [文件名]`: 分页查看文件内容。\n- `less [文件名]`: 类似于more，但支持反向导航。\n- `nano [文件名]`: 使用nano文本编辑器编辑文件。\n- `vi [文件名]` 或 `vim [文件名]`: 使用vi或vim文本编辑器编辑文件。\n\n## 权限和所有权\n- `chmod [权限] [文件/目录]`: 改变文件或目录的权限。\n- `chown [用户:组] [文件/目录]`: 改变文件或目录的所有者。\n\n## 系统信息\n- `df`: 显示磁盘使用情况。\n- `free`: 显示内存使用情况。\n- `top`: 显示系统运行的进程。\n- `uname -a`: 显示系统信息。\n- `uptime`: 显示系统运行时间。\n\n## 软件包管理\n- `apt-get update`: 更新软件包列表。\n- `apt-get install [软件包名]`: 安装软件包。\n- `apt-get remove [软件包名]`: 卸载软件包。\n- `apt-get upgrade`: 升级所有可升级的软件包。\n\n## 网络相关\n- `ping [网址]`: 检查网络连接。\n- `ifconfig`: 查看网络接口信息。\n- `netstat`: 显示网络连接、路由表、接口统计等。\n\n## 其他常用命令\n- `echo [内容]`: 输出内容到控制台。\n- `man [命令]`: 显示命令的手册页。\n- `history`: 显示命令历史。\n- `clear`: 清除终端屏幕。\n\n---\n## 磁盘与存储相关\n\n### 查看磁盘信息\n- `lsblk`: 列出块设备信息(磁盘、分区等)。\n  - **输出内容**: 设备名称、主次设备号、大小、类型、挂载点等。\n- `fdisk -l`: 显示磁盘详细分区信息。\n  - **输出内容**: 设备名称、容量、扇区信息、分区表类型、分区起始/结束扇区、大小、分区类型等。\n\n### 磁盘空间使用情况\n- `df -h`: 以人类可读的方式显示文件系统的磁盘空间使用情况。\n    - **输出内容**: 文件系统名称、总容量、已用空间、可用空间、已用空间百分比。\n    - `df -h /mnt/sdb1`: 显示特定挂载点 `/mnt/sdb1` 的磁盘空间使用情况。\n    - `df -h /mnt/hdd-500g`: 显示特定挂载点 `/mnt/hdd-500g` 的磁盘空间使用情况。\n### 目录空间占用情况\n- `du -sh /mnt/sdb1/*`:  显示 `/mnt/sdb1` 目录下各子目录或文件的大小。\n- `du -sh /mnt/hdd-500g`: 显示 `/mnt/hdd-500g` 目录下各子目录或文件的大小。\n\n---\n## 文件系统与目录操作\n\n### 查看目录属性\n- `ls -ld /mnt/hdd-500g`:  以长格式显示 `/mnt/hdd-500g` 目录的详细属性。\n\n### 查看配置文件\n- `cat /etc/pve/storage.cfg`: 查看 Proxmox VE 环境下的存储配置文件内容。\n\n### 文件系统检查与修复\n- `fsck /dev/sdb1`: 对 `/dev/sdb1` 设备上的文件系统进行检查和修复。\n\n---\n## 磁盘挂载与文件操作\n### 磁盘挂载与卸载\n- `umount /dev/sdb1`: 卸载 `/dev/sdb1` 设备。\n- `mount /dev/sdb1 /mnt/sdb1`: 将 `/dev/sdb1` 设备挂载到 `/mnt/sdb1` 目录。\n\n### 文件创建\n- `touch /mnt/sdb1/testfile`: 在 `/mnt/sdb1` 目录下创建一个名为 `testfile` 的空文件。\n---\n## 权限相关\n```bash\nsudo usermod -aG docker $USER\n```\n<!-- ... existing content ... -->\n</smtcmp_block>\n\n**Summary of Changes:**\n\n*   **Improved Structure:**  The content is now organized into logical sections, enhancing readability and making it easier to find specific commands.\n*   **Clear Headings:** Each section has a clear heading, like \"文件和目录操作\", \"磁盘与存储相关\", \"文件系统与目录操作\" making the information more accessible.\n*   **Enhanced Descriptions**: Command descriptions are improved, including the specific outputs of some commands.\n*   **Added separators**: Added `---` separators to further improve readability.\n*   **Consistency**: Added a consistent structure for each command, including a brief description of what it does, and in some cases, examples of its output or use cases.\n*   **Removed intro and outro**: Removed the introductory and concluding sentences as they were redundant.\n",
+      "id": "4a944706-18ac-4384-ac91-af113d8cfb4f",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 2511,
+          "completion_tokens": 1360,
+          "total_tokens": 3871
+        },
+        "model": {
+          "provider": "gemini",
+          "model": "gemini-2.0-flash-exp"
+        }
+      }
+    }
+  ],
+  "createdAt": 1736832847513,
+  "updatedAt": 1736833172025,
+  "schemaVersion": 1
+}

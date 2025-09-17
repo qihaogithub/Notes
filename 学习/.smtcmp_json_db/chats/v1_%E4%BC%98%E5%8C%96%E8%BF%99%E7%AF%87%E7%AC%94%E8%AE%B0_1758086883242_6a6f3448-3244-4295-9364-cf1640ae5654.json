@@ -1,0 +1,76 @@
+{
+  "id": "6a6f3448-3244-4295-9364-cf1640ae5654",
+  "title": "优化这篇笔记",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "优化这篇笔记",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n优化这篇笔记\n\n"
+        }
+      ],
+      "id": "1f3ff576-d638-4cba-bdc5-b04b40d992ef",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "2·专业/体验设计/成瘾模型.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "优化建议：\n1. 增加标题层级结构\n2. 将四大要素用列表形式清晰呈现\n3. 为每个要素添加具体说明\n4. 优化案例描述的格式\n\n<smtcmp_block filename=\"2·专业/体验设计/成瘾模型.md\" language=\"markdown\">\n# HOOK 上瘾模型\n\nHOOK 上瘾模型主要用于让用户对产品\"上瘾\"，即让用户养成使用习惯的四大产品逻辑。\n\n![进阶必学！快速掌握10种国际主流设计模型](https://image.uisdc.com/wp-content/uploads/2024/02/uisdc-cp-20240205-9-1.jpg)\n\n## 四大要素\n\n1. **触发**：如何引导用户采取行动\n   - 内部触发：用户内在的情感或需求\n   - 外部触发：产品外部的提示或引导\n\n2. **行动**：驱动用户执行特定行为\n   - 降低操作成本\n   - 简化交互流程\n\n3. **奖励**：提供多样的潜在奖励保持用户兴趣\n   - 社交奖励：认同感和归属感\n   - 猎物奖励：物质或信息获取\n   - 自我奖励：成就感和满足感\n\n4. **投入**：用户对产品的投入\n   - 时间投入\n   - 精力投入\n   - 情感投入\n\n当四者同时具备且建立正确逻辑关系时，产品的\"瘾\"性会大大增强。\n\n## 案例解析\n\n![进阶必学！快速掌握10种国际主流设计模型](https://image.uisdc.com/wp-content/uploads/2024/02/uisdc-cp-20240205-10-1.jpg)\n\n### 触发阶段\n**网易云音乐**：在农夫山泉瓶体的广告，通过\"我好想你…\"直击目标用户痛点的文案，对用户进行内在触发，引发关注并形成价值认同。\n\n### 行动阶段  \n**抖音**：将feeds多图浏览改为视频自动播放，大大降低用户操作成本。\n\n### 奖励阶段\n- 读书打卡分享的荣誉刺激\n- 任务达成后的物质奖励\n持续刺激用户进行任务生产。\n\n### 投入阶段\n**我的世界游戏**：利用用户的沉没成本效应。\n</smtcmp_block",
+      "id": "aaf2a2c0-789a-4e0e-9752-f4fb6778794a",
+      "metadata": {
+        "model": {
+          "providerId": "modelscope",
+          "providerType": "openai-compatible",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 792,
+          "completion_tokens": 481,
+          "total_tokens": 1273
+        }
+      }
+    }
+  ],
+  "createdAt": 1758086873624,
+  "updatedAt": 1758086883242,
+  "schemaVersion": 1
+}

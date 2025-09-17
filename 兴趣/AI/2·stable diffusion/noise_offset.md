@@ -1,0 +1,1 @@
+有助于生成特别暗或特别亮的图像，通常设置为 0.1，见 [https://www.crosslabs.org//blog/diffusion-with-offset-noise](https://link.zhihu.com/?target=https%3A//www.crosslabs.org//blog/diffusion-with-offset-noise)

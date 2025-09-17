@@ -1,0 +1,18 @@
+# 忽略 .obsidian 目录及其所有内容
+.obsidian/**
+.obsidian/remember-cursor-position/**
+.obsidian/plugins/recent-files-obsidian/**
+
+# 不忽略 .obsidian/plugins 目录及其所有内容
+!.obsidian/plugins/
+!.obsidian/plugins/**
+!.obsidian/app
+!.obsidian/appearance
+!.obsidian/community-plugins
+!.obsidian/core-plugins
+!.obsidian/core-plugins-migration
+
+
+
+# Ignore Smart Environment folder
+.smart-env

@@ -1,0 +1,349 @@
+{
+  "id": "97ad5950-338d-4990-b187-da1157c2c8e8",
+  "title": "qihao@qihao-Standard-PC-i440FX-PIIX-1996:~$ sudo f",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "qihao@qihao-Standard-PC-i440FX-PIIX-1996:~$ sudo fdisk -l /dev/sda",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "[sudo] qihao 的密码： ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "GPT PMBR size mismatch (67108863 != 243269631) will be corrected by write.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "The backup GPT table is not on the end of the device.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Disk /dev/sda：116 GiB，124554051584 字节，243269632 个扇区",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Disk model: QEMU HARDDISK   ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "单元：扇区 / 1 * 512 = 512 字节",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "扇区大小(逻辑/物理)：512 字节 / 512 字节",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "I/O 大小(最小/最佳)：512 字节 / 512 字节",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "磁盘标签类型：gpt",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "磁盘标识符：F73DE29C-DFB4-4D6C-ABAB-EA474F0EF1D0",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "设备        起点     末尾     扇区 大小 类型",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "/dev/sda1   2048     4095     2048   1M BIOS 启动",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "/dev/sda2   4096 67106815 67102720  32G Linux 文件系统",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nqihao@qihao-Standard-PC-i440FX-PIIX-1996:~$ sudo fdisk -l /dev/sda[sudo] qihao 的密码： GPT PMBR size mismatch (67108863 != 243269631) will be corrected by write.The backup GPT table is not on the end of the device.Disk /dev/sda：116 GiB，124554051584 字节，243269632 个扇区Disk model: QEMU HARDDISK   单元：扇区 / 1 * 512 = 512 字节扇区大小(逻辑/物理)：512 字节 / 512 字节I/O 大小(最小/最佳)：512 字节 / 512 字节磁盘标签类型：gpt磁盘标识符：F73DE29C-DFB4-4D6C-ABAB-EA474F0EF1D0设备        起点     末尾     扇区 大小 类型/dev/sda1   2048     4095     2048   1M BIOS 启动/dev/sda2   4096 67106815 67102720  32G Linux 文件系统\n\n"
+        }
+      ],
+      "id": "9a8c4b8d-e968-4572-8974-a19cb4c3fc3f",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/兴趣/编程/1·学习/ubuntu/关于硬盘/扩展硬盘.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "根据你的 `fdisk -l` 输出，当前 `/dev/sda` 磁盘实际有 116GiB 空间，但分区表只使用了前 32GiB。以下是扩容步骤：\n\n<smtcmp_block filename=\"3·笔记/兴趣/编程/1·学习/ubuntu/关于硬盘/扩展硬盘.md\" language=\"markdown\">\n## 一、实例：扩容根分区 sda2\n\n### 问题分析\n1. 磁盘总空间 116GiB，但 sda2 只用了 32GiB\n2. 存在 GPT 分区表错误需要修复\n\n### 解决方案\n1. 修复 GPT 分区表：\n```bash\nsudo gdisk /dev/sda\n# 输入 w → Y → Y 确认修复\n```\n\n2. 扩展分区：\n```bash\nsudo parted /dev/sda\n(parted) resizepart 2 100%  # 扩展分区2到全部空间\n(parted) quit\n```\n\n3. 刷新并扩展文件系统：\n```bash\nsudo partprobe /dev/sda\nsudo resize2fs /dev/sda2\n```\n</smtcmp_block>\n\n操作完成后，用 `df -h` 检查根分区应显示约 116GiB 容量。",
+      "id": "0412446a-47a3-4411-b4b1-e769facdfbc8",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 2870,
+          "completion_tokens": 272,
+          "total_tokens": 3142,
+          "prompt_tokens_details": {
+            "cached_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 448,
+          "prompt_cache_miss_tokens": 2422
+        }
+      }
+    }
+  ],
+  "createdAt": 1751007387249,
+  "updatedAt": 1751007404693,
+  "schemaVersion": 1
+}

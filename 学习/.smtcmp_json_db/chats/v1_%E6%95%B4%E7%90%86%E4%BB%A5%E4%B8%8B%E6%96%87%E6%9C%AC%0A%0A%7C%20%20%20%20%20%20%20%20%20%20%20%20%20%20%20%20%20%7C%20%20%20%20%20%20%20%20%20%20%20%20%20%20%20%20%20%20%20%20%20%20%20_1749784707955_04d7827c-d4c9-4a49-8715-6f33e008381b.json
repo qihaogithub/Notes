@@ -1,0 +1,417 @@
+{
+  "id": "04d7827c-d4c9-4a49-8715-6f33e008381b",
+  "title": "整理以下文本\n\n|                 |                       ",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "整理以下文本，逻辑更清晰，不要表格展示",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "type": "linebreak",
+                  "version": 1
+                },
+                {
+                  "type": "linebreak",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "|                 |                                                                                                                                                                                                                                                                                        |                                                                                                           |       |         |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----- | ------- |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| 功能点             | 新增/优化功能点说明                                                                                                                                                                                                                                                                             | 示意图（真实效果以上线功能为准）                                                                                          | 产品负责人 | 功能操作说明图 |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| 补学助手新增【课时搜索】功能  | 功能背景：课程列表滑动效率低，找补学或复习不方便<br><br>功能目的：高效找补学课时<br><br>功能说明<br><br>1. 在补学助手详情页，新增搜索工具<br>    <br>2. 支持搜索当前课程的课时名称和课时序号<br>    <br>    1. 注意：部分课时在后台同时配置了主标题和副标题，课程列表会展示副标题，因此搜索时，也只能搜到副标题                                                                                                 | ![](https://static.dingtalk.com/media/lALPM3kEKqqwgLTNBljNDVY_3414_1624.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| 课前准备卡片在开课后，默认折叠 | 优化背景：学前准备卡片较大，占用空间比较多，在课程开课后，该处的信息就没有那么重要了<br><br>优化说明<br><br>1. 学前前准备板块，在课程开课后，默认状态变更为【收起状态】<br>    <br>2. 收起时，如果学前准备还有未完成的任务，会展示“X个未完成”提示，用户可手动展开                                                                                                                                    | ![](https://static.dingtalk.com/media/lALPD2P18Sqsl1DNBljNCWI_2402_1624.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| 平板学习页放大字号       | 学习页-平板，各处字体适当调大了，解决用户反馈关于“字体小”的问题                                                                                                                                                                                                                                                      | ![](https://static.dingtalk.com/media/lALPD0P8fV-yCDnNDeDNCVs_2395_3552.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "| 连续学分享           | 功能背景：「连续学习分享」功能，需求通过社交裂变，增强用户的学习成就感，并促进自然传播。<br><br>功能说明：<br><br>1. 在连续学结算页中，如果用户连续学天数有增加，会在结算页中出现【分享我的高光时刻】，点击后可分享到：QQ/微信朋友圈/微信好友/保存在本地<br>    <br>2. 分享海报设计：<br>    <br>    1. 学科背景<br>        <br>    2. 个人形象<br>        <br>    3. 连续学的天数<br>        <br>    4. 转介绍的二维码链接（目前仅阅读领课） |                                                                                                           | 金莎莎   |         |",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "1. C端支持同步练换课",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "    ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "    1. 目的：阅读线新增专项同步练课包，作为用户购买年课时的赠品，由于阅读线年课有年龄匹配问题，无法精准提供赠课内容，用户会有换课诉求，同时为了减少人工换课成本，要支持用户自助更换课包。",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "        ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "![](https://static.dingtalk.com/media/lALPD0eJ_AR41ejNFb7NHfg_7672_5566.png?bizType=report)",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "2. 进度：",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "    ",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            },
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "    1. 本周明确业务规范细节和异常场景，并和商场对齐了配合事项，跟随SP156迭代开发",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n整理以下文本，逻辑更清晰，不要表格展示\n\n|                 |                                                                                                                                                                                                                                                                                        |                                                                                                           |       |         || --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----- | ------- || 功能点             | 新增/优化功能点说明                                                                                                                                                                                                                                                                             | 示意图（真实效果以上线功能为准）                                                                                          | 产品负责人 | 功能操作说明图 || 补学助手新增【课时搜索】功能  | 功能背景：课程列表滑动效率低，找补学或复习不方便<br><br>功能目的：高效找补学课时<br><br>功能说明<br><br>1. 在补学助手详情页，新增搜索工具<br>    <br>2. 支持搜索当前课程的课时名称和课时序号<br>    <br>    1. 注意：部分课时在后台同时配置了主标题和副标题，课程列表会展示副标题，因此搜索时，也只能搜到副标题                                                                                                 | ![](https://static.dingtalk.com/media/lALPM3kEKqqwgLTNBljNDVY_3414_1624.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       || 课前准备卡片在开课后，默认折叠 | 优化背景：学前准备卡片较大，占用空间比较多，在课程开课后，该处的信息就没有那么重要了<br><br>优化说明<br><br>1. 学前前准备板块，在课程开课后，默认状态变更为【收起状态】<br>    <br>2. 收起时，如果学前准备还有未完成的任务，会展示“X个未完成”提示，用户可手动展开                                                                                                                                    | ![](https://static.dingtalk.com/media/lALPD2P18Sqsl1DNBljNCWI_2402_1624.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       || 平板学习页放大字号       | 学习页-平板，各处字体适当调大了，解决用户反馈关于“字体小”的问题                                                                                                                                                                                                                                                      | ![](https://static.dingtalk.com/media/lALPD0P8fV-yCDnNDeDNCVs_2395_3552.png_810x10000.jpg?bizType=report) | 陈晓芳   | /       || 连续学分享           | 功能背景：「连续学习分享」功能，需求通过社交裂变，增强用户的学习成就感，并促进自然传播。<br><br>功能说明：<br><br>1. 在连续学结算页中，如果用户连续学天数有增加，会在结算页中出现【分享我的高光时刻】，点击后可分享到：QQ/微信朋友圈/微信好友/保存在本地<br>    <br>2. 分享海报设计：<br>    <br>    1. 学科背景<br>        <br>    2. 个人形象<br>        <br>    3. 连续学的天数<br>        <br>    4. 转介绍的二维码链接（目前仅阅读领课） |                                                                                                           | 金莎莎   |         |1. C端支持同步练换课        1. 目的：阅读线新增专项同步练课包，作为用户购买年课时的赠品，由于阅读线年课有年龄匹配问题，无法精准提供赠课内容，用户会有换课诉求，同时为了减少人工换课成本，要支持用户自助更换课包。        ![](https://static.dingtalk.com/media/lALPD0eJ_AR41ejNFb7NHfg_7672_5566.png?bizType=report)2. 进度：        1. 本周明确业务规范细节和异常场景，并和商场对齐了配合事项，跟随SP156迭代开发\n\n"
+        }
+      ],
+      "id": "df6607d6-92de-4672-82bf-a8a686401664",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/工作/5·周报/按项目整理/APP框架优化/5·进度记录.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block language=\"markdown\">\n## 功能优化说明\n\n### 补学助手新增课时搜索功能\n**背景**：课程列表滑动效率低，找补学或复习不方便  \n**目的**：高效找补学课时  \n**说明**：\n- 在补学助手详情页新增搜索工具\n- 支持搜索当前课程的课时名称和课时序号\n- 注意：部分课时在后台配置了主/副标题时，课程列表仅展示副标题，因此只能搜索到副标题  \n![](https://static.dingtalk.com/media/lALPM3kEKqqwgLTNBljNDVY_3414_1624.png_810x10000.jpg?bizType=report)  \n**负责人**：陈晓芳\n\n### 课前准备卡片优化\n**背景**：学前准备卡片在开课后占用空间且重要性降低  \n**优化**：\n- 开课后默认折叠该板块\n- 收起时若存在未完成任务，显示\"X个未完成\"提示（可手动展开）  \n![](https://static.dingtalk.com/media/lALPD2P18Sqsl1DNBljNCWI_2402_1624.png_810x10000.jpg?bizType=report)  \n**负责人**：陈晓芳\n\n### 平板学习页字号放大\n**优化**：适当调大平板学习页字体，解决用户反馈的\"字体小\"问题  \n![](https://static.dingtalk.com/media/lALPD0P8fV-yCDnNDeDNCVs_2395_3552.png_810x10000.jpg?bizType=report)  \n**负责人**：陈晓芳\n\n### 连续学分享功能\n**背景**：通过社交裂变增强学习成就感并促进传播  \n**功能**：\n- 连续学结算页中，若天数增加则显示【分享我的高光时刻】\n- 支持分享至QQ/微信朋友圈/微信好友/保存本地\n- 海报包含：学科背景、个人形象、连续学天数、转介绍二维码（目前仅阅读领课）  \n**负责人**：金莎莎\n\n### C端同步练换课功能\n**目的**：支持用户自助更换阅读线专项同步练课包（年课赠品）  \n**进度**：\n- 本周明确业务规范及异常场景\n- 已与商场对齐配合事项\n- 跟随SP156迭代开发  \n![](https://static.dingtalk.com/media/lALPD0eJ_AR41ejNFb7NHfg_7672_5566.png?bizType=report)\n</smtcmp_block>",
+      "id": "ae1ed928-1076-492f-a12b-a970c6bc92b6",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 1264,
+          "completion_tokens": 560,
+          "total_tokens": 1824,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 880
+        }
+      }
+    }
+  ],
+  "createdAt": 1749784633014,
+  "updatedAt": 1749784707955,
+  "schemaVersion": 1
+}

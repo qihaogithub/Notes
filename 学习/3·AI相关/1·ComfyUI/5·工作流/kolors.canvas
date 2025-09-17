@@ -1,0 +1,78 @@
+{
+	"nodes": [
+		{
+			"id": "e9fc3682aec2da05",
+			"type": "file",
+			"file": "z·附件/workflow_inpainting.png",
+			"x": 1864,
+			"y": 219,
+			"width": 400,
+			"height": 265
+		},
+		{
+			"id": "cf95bc2b653f2b1f",
+			"type": "file",
+			"file": "z·附件/workflow_controlnet.png",
+			"x": 2309,
+			"y": 219,
+			"width": 400,
+			"height": 260
+		},
+		{
+			"id": "78c4268f7f265a0d",
+			"type": "file",
+			"file": "z·附件/workflow_ipa.png",
+			"x": 2754,
+			"y": 219,
+			"width": 400,
+			"height": 251
+		},
+		{
+			"id": "4d7a9dc884d6b0ec",
+			"type": "file",
+			"file": "z·附件/工作流程相同的种子测试.png",
+			"x": 84,
+			"y": 219,
+			"width": 400,
+			"height": 298
+		},
+		{
+			"id": "8762e9869cc994e5",
+			"type": "file",
+			"file": "z·附件/kolors_controlnet.png",
+			"x": 529,
+			"y": 219,
+			"width": 400,
+			"height": 217
+		},
+		{
+			"id": "3f73cf091453b119",
+			"type": "file",
+			"file": "z·附件/workflow_ipa_legacy.png",
+			"x": 974,
+			"y": 219,
+			"width": 400,
+			"height": 251
+		},
+		{
+			"id": "bae4d6eff130a186",
+			"type": "file",
+			"file": "z·附件/workflow_ipa_faceid.png",
+			"x": 1419,
+			"y": 219,
+			"width": 400,
+			"height": 193
+		},
+		{
+			"id": "59fcb0eae5e1fc87",
+			"type": "file",
+			"file": "z·附件/workflow_legacy.png",
+			"x": -460,
+			"y": 166,
+			"width": 400,
+			"height": 202
+		}
+	],
+	"edges": [],
+	"metadata": {}
+}

@@ -1,0 +1,79 @@
+{
+  "id": "1275e104-7a36-4650-a5d9-8df525fc96f9",
+  "title": "我希望使用命令创建容器",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "我希望使用命令创建容器",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n我希望使用命令创建容器\n\n"
+        }
+      ],
+      "id": "cd8b2d4b-d73d-4043-b721-6f87f83e822a",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "3·笔记/收藏/Syncthing 同步软件.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "以下是使用 `docker run` 命令创建 Syncthing 容器的方案：\n\n<smtcmp_block filename=\"3·笔记/收藏/Syncthing 同步软件.md\" language=\"markdown\">\n### **二、部署Syncthing容器**\n1. **通过Docker命令部署**  \n   ```bash\n   docker run -d \\\n     --name=syncthing \\\n     -p 8384:8384 \\\n     -p 22000:22000 \\\n     -p 21027:21027/udp \\\n     -v /data/syncthing/config:/config \\\n     -v /data/syncthing/data:/data \\\n     -e PUID=0 \\\n     -e PGID=0 \\\n     --restart unless-stopped \\\n     syncthing/syncthing:latest\n   ```\n\n<!-- 其余部分保持不变 -->\n</smtcmp_block>\n\n这个命令与之前 Docker Compose 的配置完全等效，参数含义也一致。",
+      "id": "27319e21-b07c-4f96-9b84-d9cf0c840396",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/deepseek-chat",
+          "model": "deepseek-chat"
+        },
+        "usage": {
+          "prompt_tokens": 1789,
+          "completion_tokens": 207,
+          "total_tokens": 1996,
+          "prompt_tokens_details": {
+            "cached_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 448,
+          "prompt_cache_miss_tokens": 1341
+        }
+      }
+    }
+  ],
+  "createdAt": 1749088894935,
+  "updatedAt": 1749088908300,
+  "schemaVersion": 1
+}

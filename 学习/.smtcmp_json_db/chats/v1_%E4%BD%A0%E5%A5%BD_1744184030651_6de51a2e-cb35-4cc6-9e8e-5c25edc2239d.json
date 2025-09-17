@@ -1,0 +1,69 @@
+{
+  "id": "6de51a2e-cb35-4cc6-9e8e-5c25edc2239d",
+  "title": "你好",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "你好",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n你好\n\n"
+        }
+      ],
+      "id": "e487355e-0870-445b-8532-b5f6389cc8af",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "你好！我能帮你做什么？\n",
+      "id": "73517fcd-b290-4c71-bbcd-36794d9c5fb7",
+      "metadata": {
+        "usage": {
+          "completion_tokens": 7,
+          "prompt_tokens": 457,
+          "total_tokens": 464
+        },
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "NEWAPI",
+          "id": "NEWAPI/gemini-2.0-flash",
+          "model": "gemini-2.0-flash"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744183889768,
+  "updatedAt": 1744184030651,
+  "schemaVersion": 1
+}

@@ -1,0 +1,1 @@
+/Users/qh2/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat
