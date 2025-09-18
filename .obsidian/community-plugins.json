@@ -3,5 +3,7 @@
   "editing-toolbar",
   "smart-composer",
   "obsidian-excalidraw-plugin",
-  "obsidian-image-auto-upload-plugin"
+  "obsidian-image-auto-upload-plugin",
+  "easy-typing-obsidian",
+  "obsidian-linter"
 ]

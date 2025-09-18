@@ -1,0 +1,76 @@
+{
+  "id": "61afd473-686f-434c-b441-df9b644f1157",
+  "title": "优化文档排版",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "优化文档排版",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n优化文档排版\n\n"
+        }
+      ],
+      "id": "150ae3fe-ba51-42c1-934a-c486245f4d92",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "工作/项目笔记/学习页改版/2025版/项目资料/资料汇总.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"工作/项目笔记/学习页改版/2025版/项目资料/资料汇总.md\" language=\"markdown\">\n# 2025学习页改版项目汇总文档\n\n## 项目概述\n\n2025学习页改版项目旨在优化学习路径、提升用户体验并增强学习激励体系。通过重新设计APP框架，简化用户路径，明确各板块定位，并新增激励体系以提高用户学习参与度和完课率。\n\n---\n\n## 项目背景\n\n### 改版原因\n\n1. **原有框架问题**\n   - APP框架不清晰，用户链路冗杂，学习路径复杂\n   - 学习服务分散在多个场景（如练习场、指导师服务、学习地图等），用户查找不便[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0Ee4)][[3](https://alidocs.dingtalk.com/i/nodes/vy20BglGWOeD5vNmHqg5bEYAJA7depqY)]\n\n2. **用户需求**\n   - 用户对学习路径的简化和激励体系的增强有较高需求[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0EE4)]\n\n3. **新增功能**\n   - 新增激励体系，包括连续学、货币、成就和个人形象等，以提升用户学习动力[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0Ee4)][[1](https://alidocs.dingtalk.com/i/nodes/amweZ92PV6v4Yj7LI9MvbLNKVxEKBD6p)]\n\n---\n\n## 项目关键过程\n\n### 1. 改版设计\n\n1. **学习框架优化**\n   - 设计清晰的学习框架，包括科目+课程展示、课表、课后服务等模块[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0Ee4)]\n\n2. **激励体系整合**\n   - 将激励体系（连续学、学豆、奖章等）融入学习路径，提升用户完课率[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0Ee4)][[1](https://alidocs.dingtalk.com/i/nodes/amweZ92PV6v4Yj7LI9MvbLNKVxEKBD6p)]\n\n3. **课后服务集中**\n   - 将原有分散的服务集中到统一的\"课后\"入口，便于用户查找和使用[[3](https://alidocs.dingtalk.com/i/nodes/vy20BglGWOeD5vNmHqg5bEYAJA7depqY)]\n\n### 2. 功能开发\n\n1. **学习路径优化**\n   - 设计完整的课前、课中、课后学习链路，提升用户学习效率[[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db�D37jbBgineXmoQAJxLq0Ee4)][[1](https://alidocs.dingtalk.com/i/nodes/amweZ92PV6v4Yj7LI9MvbLNKVxEKBD6p)]\n\n2. **激励功能实现**\n   - 开发连续学、学豆小铺、奖章墙等功能，增强用户学习动力[[1](https://alidocs.dingtalk.com/i/nodes/amweZ92PV6v4Yj7LI9MvbLNKVxEKBD6p)][[2](https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJl7K4QvjikgXPAqoVdqbropQ)]\n\n3. **课后服务功能**\n   - 新增课后服务列表，支持多种服务类型（如学习报告、知识专栏等）[[3](https://alidocs.dingtalk.com/i/nodes/vy20BglGWOeD5vNmHqg5bEYAJA7depqY)]\n\n### 3. 测试与优化\n\n1. **灰度测试**\n   - 通过灰度测试收集用户反馈，优化学习路径和激励功能[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n2. **数据监控**\n   - 监控用户学习数据和功能使用情况，分析改版效果[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n---\n\n## 项目结果\n\n### 1. 学习数据提升\n\n1. **正学参课率和完课率**\n   - 灰度期间，命中改版的用户正学参课率和完课率显著提升，差值分别为9.46个百分点和10.67个百分点[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n2. **激励功能使用情况**\n   - 连续学功能对用户补学行为有显著促进作用，补学完成率为85.18%[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n### 2. 功能使用表现\n\n1. **学习路径**\n   - 用户从参课到完课的转化率为95.92%，主要流失环节为完课后进入激励loading页[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n2. **激励板块**\n   - 激励区域入口按钮整体CTR偏低，但个人主页点击率较高[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n### 3. 用户反馈\n\n1. **课后服务入口**\n   - 课后服务入口CTR为25.2%，用户倾向于逐个服务查看探索[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z极9)]\n\n2. **激励功能**\n   - 用户对连续学功能的使用意愿较高，但部分功能（如学豆小铺）CTR较低[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4x极ZRUbj21zynW47Z3je9)]\n\n---\n\n## 风险与挑战\n\n1. **用户习惯改变**\n   - 行课中用户从旧版升级到新版时，习惯切换成本较高，学习路径转化率较低[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n2. **技术问题**\n   - 部分用户在完课后无法进入激励loading页，流失率较高[[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]\n\n3. **功能迭代压力**\n   - 激励功能和课后服务功能仍在持续迭代中，需关注用户反馈和数据表现[[2](https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJl7K4QvjikgXPAqoVdqbropQ)]\n\n---\n\n## 附录\n\n### 引用资料\n\n1. [[4](https://alidocs.dingtalk.com/i/nodes/Gl6Pm2Db8D37jbBgineXmoQAJxLq0Ee4)]：改版背景和目的\n2. [[3](https://alidocs.dingtalk.com/i/nodes/vy20BglGWOeD极5vNmHqg5bEYAJA7depqY)]：学习页-课后板块功能说明\n3. [[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]：灰度期间年课用户情况总结\n4. [[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]：灰度期间年课用户情况总结（更新至5月31日）\n5. [[5](https://alidocs.dingtalk.com/i/nodes/qnYMoO1rWxD4xQZRUbj21zynW47Z3je9)]：激励板块和课后服务数据表现\n6. [[6](https://alidocs.dingtalk.com/i/nodes/YMyQA2dXW79vyNRQtDZr7PDkJzlwrZgb)]：学习流程演示\n7. [[1](https://alidocs.dingtalk.com/i/nodes/amweZ92PV6v4Yj7LI9MvbLNKVxEKBD6p)]：学习流程说明\n8. [[2](https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJl7极K4Q极vjikgXPAqoVdqbropQ)]：2025版学习页-相关功能迭代信息同步\n\n### 引用图片\n\n1. ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn4L3rG7VxnDQ4/img/697f711b-a3d0-4bd1-a6ed-eb005d25ef12.png)：完整链路示意图\n2. ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn4L3rG7VxnDQ4/img/566622c5-0b61-4985-ac0e-e0821d7d0c49.png) ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn4L3rG7VxnDQ4/img/98e37490-7c6d-422f-91e6-43243bd0f4ca.png)：课后服务入口示意图\n3. ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn4极L3rG7VxnDQ4/img/d156dc34-3008-4556-9b17-4ce8eafb1673.png)：课后服务列表示意图\n4. ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4maOg8gmXe3XlWNX/img/cfcba704-efb8-4242-8b极0c-3d3bfc7c7f31.png)：课后服务后续规划示意图\n5. ![](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4maOg8yvRDGvlWNX/img/7fddce38-f59e-421f-a15e-f6a0d420e857.png)：课后激励总流程示意图\n</smtcmp_block>\n\n主要优化：\n- 简化了编号格式，使用标准的Markdown标题和列表格式\n- 移除了重复的编号（如\"1. 1.\"改为\"1.\"）\n- 统一了项目符号格式\n- 保持了原有的链接引用和图片嵌入\n- 优化了段落间距和结构",
+      "id": "2a25c907-4f9e-4477-9c54-0cb99d13284f",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 3297,
+          "completion_tokens": 2632,
+          "total_tokens": 5929
+        }
+      }
+    }
+  ],
+  "createdAt": 1758175524084,
+  "updatedAt": 1758175588155,
+  "schemaVersion": 1
+}
