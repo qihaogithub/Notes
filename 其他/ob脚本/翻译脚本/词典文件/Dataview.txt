@@ -1,0 +1,83 @@
+Enable inline queries
+启用内联查询
+
+Enable or disable executing regular inline Dataview queries.
+启用或禁用执行常规内联Dataview查询。
+
+Enable JavaScript queries
+启用JavaScript查询
+
+Enable inline JavaScript queries
+启用内联JavaScript查询
+
+Enable inline field highlighting in reading view
+在阅读视图中启用内联字段高亮显示
+
+Enable inline field highlighting in Live Preview
+在实时预览中启用内联字段高亮显示
+
+Codeblocks
+代码块
+
+DataviewJS keyword
+DataviewJS关键字
+
+Inline query prefix
+内联查询前缀
+
+JavaScript inline query prefix
+JavaScript内联查询前缀
+
+Code block inline queries
+代码块内联查询
+
+View
+视图
+
+Display result count
+显示结果计数
+
+Warn on empty result
+空结果时警告
+
+Render null as
+将null渲染为
+
+Automatic view refreshing
+自动视图刷新
+
+Refresh interval
+刷新间隔
+
+Date format
+日期格式
+
+Date + time format
+日期+时间格式
+
+Tables
+表格
+
+Primary column name
+主列名称
+
+Grouped column name
+分组列名称
+
+Tasks
+任务
+
+Automatic task completion tracking
+自动任务完成跟踪
+
+Use emoji shorthand for completion
+使用表情符号简写表示完成
+
+Completion field name
+完成字段名称
+
+Completion date format
+完成日期格式
+
+Recursive sub-task completion
+递归子任务完成

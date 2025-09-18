@@ -16,3 +16,6 @@
 
 # Ignore Smart Environment folder
 .smart-env
+
+# Ignore all MP4 files
+*.mp4

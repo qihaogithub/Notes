@@ -1,5 +1,8 @@
 [
   "obsidian-git",
-  "consistent-attachments-and-links",
-  "editing-toolbar"
+  "editing-toolbar",
+  "copilot",
+  "smart-composer",
+  "obsidian-excalidraw-plugin",
+  "obsidian-image-auto-upload-plugin"
 ]
