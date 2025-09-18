@@ -1,0 +1,76 @@
+{
+  "id": "53dcd041-6f6b-4322-8c71-d83244db3b10",
+  "title": "优化文档排版",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "优化文档排版，提高可读性，但保持意思不变",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n优化文档排版，提高可读性，但保持意思不变\n\n"
+        }
+      ],
+      "id": "2453a590-09bd-4b01-b2d4-b752d9c6be9c",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "工作/项目笔记/学习页改版/2024版/项目资料/2024日历版本品牌宣传内容.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"工作/项目笔记/学习页改版/2024版/项目资料/2024日历版本品牌宣传内容.md\" language=\"markdown\">\n# 主题：叫叫服务 焕然一新\n\n为了让孩子养成更良好的自主学习习惯，结合小朋友的学习特性，叫叫重磅推出【计划日历】功能，打造每个孩子在叫叫专属的学习日历，科学有效培养孩子学习习惯。\n\n- **每日任务**\n- **全年计划** \n- **小组件，好帮手**\n- **更多选择**\n- **提前准备**\n- **内容预告**\n\n*辅助说明（非正文）：以上功能重点优先级按照上述顺序从左到右排列*\n\n---\n\n## 1. 科学呈现学习安排，每日任务更清晰\n\n叫叫引入日历模式，将每日学习计划和日历相结合，学没学一目",
+      "id": "44697028-16eb-46e8-8aaf-18ac37ae069e",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    }
+  ],
+  "createdAt": 1758171663881,
+  "updatedAt": 1758172387974,
+  "schemaVersion": 1
+}

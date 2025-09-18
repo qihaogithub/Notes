@@ -523,7 +523,7 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "gemini中转/gemini-2.5-pro",
+  "chatModelId": "魔塔/DeepSeek-V3.1",
   "applyModelId": "魔塔/DeepSeek-V3.1",
   "embeddingModelId": "openai/text-embedding-3-small",
   "systemPrompt": "Always respond in 中文",
