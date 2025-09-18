@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a27ff837ba2d309d",
+        "id": "185269f82ed2840d",
         "type": "tabs",
         "children": [
           {
-            "id": "9d575a7b2e9b91b2",
+            "id": "752f5ff6476392ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +20,37 @@
               "icon": "lucide-file",
               "title": "索引"
             }
+          },
+          {
+            "id": "d142ea33b91c8d56",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/项目笔记/学习页改版/2024版/项目资料/2024 学习页改版宣讲文档.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024 学习页改版宣讲文档"
+            }
+          },
+          {
+            "id": "321aa031c3bc71a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/项目笔记/学习页改版/2024版/项目资料/·项目资料汇总.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "·项目资料汇总"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -78,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 344.5
   },
   "right": {
     "id": "df12f23aa4846d7d",
@@ -94,7 +123,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "收藏/obsidan插件/索引.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "索引 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +141,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "收藏/obsidan插件/索引.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "索引 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -142,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "收藏/obsidan插件/索引.md",
+                "file": "工作/项目笔记/学习页改版/2024版/项目资料/·项目资料汇总.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "索引 的大纲"
+              "title": "·项目资料汇总 的大纲"
             }
           },
           {
@@ -160,13 +187,33 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "d4f165d5b9997542",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
+            "id": "82492a4c61449a88",
+            "type": "leaf",
+            "state": {
+              "type": "smtcmp-chat-view",
+              "state": {},
+              "icon": "wand-sparkles",
+              "title": "Smart composer chat"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 410.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,43 +224,51 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "copilot:Open Copilot Chat": false,
+      "smart-composer:Open smart composer": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "9d575a7b2e9b91b2",
+  "active": "39354fccc9b1e1ef",
   "lastOpenFiles": [
-    "工作/项目笔记/学习页改版.md",
-    "收藏/obsidan插件/索引.md",
-    "工作/项目笔记/加老师页改版.md",
+    "工作/项目笔记/学习页改版/2024版/项目资料/2024 学习页改版宣讲文档.md",
+    "工作/项目笔记/学习页改版/2024版/项目资料/·项目资料汇总.md",
+    "工作/项目笔记/学习页改版/2024版/项目资料/2024日历版本品牌宣传内容.md",
+    "工作/项目笔记/学习页改版/2024版/PPT版本汇报.md",
+    "工作/项目笔记/学习页改版/2025版/2025改版说明.md",
+    "工作/项目笔记/学习页改版/2025版",
+    "工作/项目笔记/学习页改版/2024版",
+    "工作/周报/1·按人整理/潘晨/未命名.md",
+    "工作/项目笔记/学习页改版/项目资料/2024学习页改版运营侧宣讲.mp3",
+    "工作/项目笔记/学习页改版/2024版/项目资料/2024学习页改版运营侧宣讲.mp4",
+    "工作/项目笔记/学习页改版/项目资料/项目资料汇总.md",
+    "工作/项目笔记/学习页改版/2024版/项目资料",
+    "工作/周报/1·按人整理/潘晨/未命名 1.md",
+    "工作/周报/1·按人整理/潘晨/24.6.23.md",
+    "工作/周报/1·按人整理/潘晨/24.6.2.md",
+    "工作/周报/1·按人整理/潘晨/24.5.26.md",
+    "工作/周报/1·按人整理/潘晨/24.6.10.md",
+    "工作/周报/1·按人整理/潘晨/6.10.md",
+    "工作/项目笔记/模版/项目资料模版.md",
     "工作/项目笔记/广场改版.md",
-    "收藏/obsidan插件/calendar.md",
-    "收藏/obsidan插件/obsidian-tasks.md",
-    "收藏/obsidan插件/todoist-sync.md",
-    "收藏/obsidan插件/templater.md",
-    "收藏/obsidan插件/tag-wrangler.md",
-    "收藏/obsidan插件/smart-composer.md",
-    "收藏/obsidan插件/simple-canvasearch.md",
-    "收藏/obsidan插件/remotely-save.md",
-    "收藏/obsidan插件/remember-cursor-position.md",
-    "收藏/obsidan插件/recent-files-obsidian.md",
-    "收藏/obsidan插件/quickadd.md",
-    "收藏/obsidan插件/pc.pdfjs.md",
-    "收藏/obsidan插件/pane-relief.md",
-    "收藏/obsidan插件/oz-clear-unused-images.md",
-    "收藏/obsidan插件/omnisearch.md",
-    "收藏/obsidan插件/obsidian-timestamper.md",
-    "收藏/obsidan插件/obsidian-spaced-repetition.md",
-    "收藏/obsidan插件/obsidian-projects.md",
-    "收藏/obsidan插件/obsidian-plugin-groups.md",
-    "工作/项目笔记/未命名.md",
-    "收藏/obsidan插件/obsidian-pandoc.md",
-    "收藏/obsidan插件/obsidian-outliner.md",
-    "收藏/obsidan插件",
-    "收藏/obsidan脚本",
-    "其他/obsidan脚本",
-    "兴趣/obsidan脚本",
-    "兴趣/obsidan",
-    "工作/项目笔记",
-    "脚本/翻译脚本/词典文件/obsidian-git.txt"
+    "工作/项目笔记/模版",
+    "收藏/obsidan插件/obsidian-image-auto-upload-plugin.md",
+    "收藏/obsidan插件/索引.md",
+    "Pasted image 20250918111857.png",
+    "Pasted image 20250918111713.png",
+    "Pasted image 20250918110657.png",
+    "Excalidraw/PPT版本汇报 2025-09-18 11.09.04.excalidraw.md",
+    "Excalidraw",
+    "工作/项目笔记/学习页改版/文章版本.md",
+    "工作/项目笔记/学习页改版/ai建议/学习页改版.md",
+    "工作/项目笔记/学习页改版/ai建议/改版汇报2.0.md",
+    "copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot-custom-prompts/Remove URLs.md",
+    "copilot-custom-prompts/Generate glossary.md",
+    "copilot-custom-prompts",
+    "工作/项目笔记/学习页改版/ai建议",
+    "工作/项目笔记/学习页改版"
   ]
 }
