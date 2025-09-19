@@ -436,7 +436,7 @@
       "id": "阿里/deepseek-r1",
       "model": "deepseek-r1",
       "promptLevel": 1,
-      "enable": true
+      "enable": false
     },
     {
       "providerType": "openai-compatible",
@@ -444,7 +444,7 @@
       "id": "阿里/deepseek-v3",
       "model": "deepseek-v3",
       "promptLevel": 1,
-      "enable": true
+      "enable": false
     },
     {
       "providerType": "openai-compatible",
@@ -475,6 +475,22 @@
       "providerId": "gemini中转",
       "id": "gemini中转/gemini-2.5-pro",
       "model": "gemini-2.5-pro",
+      "promptLevel": 1,
+      "enable": true
+    },
+    {
+      "providerType": "openai-compatible",
+      "providerId": "魔塔",
+      "id": "魔塔/GLM-4.5",
+      "model": "ZhipuAI/GLM-4.5",
+      "promptLevel": 1,
+      "enable": true
+    },
+    {
+      "providerType": "openai-compatible",
+      "providerId": "魔塔",
+      "id": "魔塔/Qwen3-Next-80B-A3B-Instruct",
+      "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
       "promptLevel": 1,
       "enable": true
     }
@@ -523,8 +539,8 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "魔塔/DeepSeek-V3.1",
-  "applyModelId": "魔塔/DeepSeek-V3.1",
+  "chatModelId": "gemini中转/gemini-2.5-pro",
+  "applyModelId": "魔塔/Qwen3-Next-80B-A3B-Instruct",
   "embeddingModelId": "openai/text-embedding-3-small",
   "systemPrompt": "Always respond in 中文",
   "ragOptions": {
