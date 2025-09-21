@@ -3,7 +3,7 @@ views:
     name: 当前
     filters:
       and:
-        - file.folder.startsWith("项目")
+        - file.folder.startsWith("工作/项目")
         - not:
             - file.basename.contains("索引")
             - file.basename.contains("_AI")
@@ -20,7 +20,7 @@ views:
     name: 全部
     filters:
       and:
-        - file.path.startsWith("项目")
+        - file.path.startsWith("工作/项目")
         - '!file.basename.contains("索引")'
         - '!file.basename.contains("_AI")'
     order:
