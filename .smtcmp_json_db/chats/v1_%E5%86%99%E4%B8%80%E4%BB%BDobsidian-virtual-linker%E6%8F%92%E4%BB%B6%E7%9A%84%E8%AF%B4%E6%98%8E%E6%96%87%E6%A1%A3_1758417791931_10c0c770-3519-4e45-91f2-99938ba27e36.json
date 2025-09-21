@@ -1,0 +1,76 @@
+{
+  "id": "10c0c770-3519-4e45-91f2-99938ba27e36",
+  "title": "写一份obsidian-virtual-linker插件的说明文档",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "写一份obsidian-virtual-linker插件的说明文档",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n写一份obsidian-virtual-linker插件的说明文档\n\n"
+        }
+      ],
+      "id": "899acd61-4403-45dd-be26-f4e948203ba3",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "obsidian-virtual-linker.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"obsidian-virtual-linker.md\" language=\"markdown\">\n---\n简介: 自动为Obsidian笔记中的关键词创建虚拟链接的插件\n分类: Obsidian插件/工具类\n---\n\n# Obsidian Virtual Linker 插件文档\n\n## 功能概述\n自动检测笔记中的关键词并创建虚拟链接，无需手动添加双括号\n\n## 安装方法\n1. 在Obsidian社区插件市场中搜索 \"Virtual Linker\"\n2. 点击安装并启用插件\n3. 在插件设置中配置相关选项\n\n## 基本使用\n- 插件会自动扫描笔记内容\n- 为识别到的关键词创建虚拟链接\n- 支持自定义关键词列表\n- 可设置排除词条\n\n## 配置选项\n- 启用/禁用自动链接\n- 设置链接检测灵敏度\n- 自定义关键词词典\n- 排除特定词语\n\n## 注意事项\n- 虚拟链接不会实际创建笔记文件\n- 仅在当前笔记中显示为可点击链接\n- 不影响现有笔记链接结构\n</smtcmp_block>",
+      "id": "8674a23b-edec-4d4e-a2e2-6361d3577736",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 480,
+          "completion_tokens": 227,
+          "total_tokens": 707
+        }
+      }
+    }
+  ],
+  "createdAt": 1758417786464,
+  "updatedAt": 1758417791931,
+  "schemaVersion": 1
+}
