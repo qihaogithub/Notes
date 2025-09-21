@@ -4,8 +4,15 @@ views:
     filters:
       and:
         - file.folder.startsWith("收藏/obsidian插件")
+        - '!file.basename.contains("索引")'
     order:
       - file.name
+      - 简介
+      - 分类
     sort:
+      - property: 分类
+        direction: ASC
       - property: file.ctime
         direction: DESC
+    columnSize:
+      note.简介: 183

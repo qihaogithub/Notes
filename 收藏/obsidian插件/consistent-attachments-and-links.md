@@ -1,4 +1,10 @@
-# Consistent Attachments and Links 插件说明
+---
+简介: 保持附件和链接路径的一致性。
+分类:
+  - 链接
+  - 附件
+---
+
 
 ## 插件简介
 Consistent Attachments and Links 是 Obsidian 的一个实用插件，用于保持附件和链接路径的一致性。它解决了在 Obsidian 中移动或重命名文件时，附件和链接路径容易失效的问题。
