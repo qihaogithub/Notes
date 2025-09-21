@@ -11,7 +11,7 @@ views:
       - 分类
     sort:
       - property: 分类
-        direction: ASC
+        direction: DESC
       - property: file.ctime
         direction: DESC
     columnSize:
