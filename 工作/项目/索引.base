@@ -1,0 +1,33 @@
+views:
+  - type: table
+    name: 当前
+    filters:
+      and:
+        - file.folder.startsWith("项目")
+        - not:
+            - file.basename.contains("索引")
+            - file.basename.contains("_AI")
+            - file.path.contains("归档")
+    order:
+      - file.name
+      - projects
+      - Parent_project
+      - tags
+      - status
+    columnSize:
+      note.tags: 130
+  - type: table
+    name: 全部
+    filters:
+      and:
+        - file.path.startsWith("项目")
+        - '!file.basename.contains("索引")'
+        - '!file.basename.contains("_AI")'
+    order:
+      - file.name
+      - projects
+      - Parent_project
+      - tags
+      - status
+    cardSize: 50
+    imageFit: contain

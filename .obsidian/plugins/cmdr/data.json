@@ -1,0 +1,43 @@
+{
+  "confirmDeletion": false,
+  "showAddCommand": true,
+  "debug": false,
+  "editorMenu": [
+    {
+      "id": "metadata-menu:open_fileclass_view",
+      "icon": "package",
+      "name": "Metadata Menu: Open fileClass view",
+      "mode": "any"
+    }
+  ],
+  "fileMenu": [],
+  "leftRibbon": [
+    {
+      "id": "quickadd:choice:b57880ce-28e5-4e75-93fb-74a26ad5642e",
+      "icon": "lucide-activity",
+      "name": "QuickAdd: ai生成项目笔记",
+      "mode": "any"
+    }
+  ],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [],
+  "pageHeader": [],
+  "macros": [],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": []
+  },
+  "spacing": 8,
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": false,
+    "heightOffset": 0
+  }
+}

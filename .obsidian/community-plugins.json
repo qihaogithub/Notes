@@ -5,5 +5,10 @@
   "obsidian-excalidraw-plugin",
   "obsidian-image-auto-upload-plugin",
   "easy-typing-obsidian",
-  "obsidian-linter"
+  "obsidian-linter",
+  "templater-obsidian",
+  "virtual-linker",
+  "cmdr",
+  "dataview",
+  "quickadd"
 ]

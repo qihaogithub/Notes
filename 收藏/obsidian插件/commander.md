@@ -1,4 +1,4 @@
-# Commander 插件文档
+
 
 ## 插件简介
 Commander 是 Obsidian 的一款命令面板增强工具，它允许用户自定义命令、创建快捷键以及优化工作流程。通过 Commander，用户可以更高效地管理和执行 Obsidian 中的各种操作。

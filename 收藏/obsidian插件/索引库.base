@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.folder.startsWith("收藏/obsidian插件")
+    order:
+      - file.name
+    sort:
+      - property: file.ctime
+        direction: DESC

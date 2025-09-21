@@ -58,14 +58,14 @@
       "yaml-sort-order-for-other-keys": "None"
     },
     "yaml-timestamp": {
-      "enabled": false,
+      "enabled": true,
       "date-created": true,
-      "date-created-key": "date created",
+      "date-created-key": "created",
       "date-created-source-of-truth": "file system",
       "date-modified": true,
-      "date-modified-key": "date modified",
+      "date-modified-key": "updated",
       "date-modified-source-of-truth": "file system",
-      "format": "dddd, MMMM Do YYYY, h:mm:ss a",
+      "format": "",
       "convert-to-utc": false,
       "update-on-file-contents-updated": "never"
     },
@@ -277,7 +277,13 @@
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
   "foldersToIgnore": [],
-  "filesToIgnore": [],
+  "filesToIgnore": [
+    {
+      "match": "^学习/2·专业/3·体验设计/禀赋效应\\.md$",
+      "flags": "",
+      "label": ""
+    }
+  ],
   "linterLocale": "system-default",
   "logLevel": "ERROR",
   "lintCommands": [],
