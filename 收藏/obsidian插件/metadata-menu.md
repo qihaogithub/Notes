@@ -1,3 +1,6 @@
+---
+简介: 管理笔记的元数据
+---
 obsidian社区插件
 
 Obsidian 插件：Metadata Menu 图形化的 Frontmater 管理器

@@ -54,10 +54,4 @@
 - [[smart-composer|Smart Composer]] - 智能文本编辑
 - [[收藏/obsidian插件/templater|Templater]] - 高级模板系统
 
-### 学习与记忆
-- [[obsidian-plugin-groups|Plugin Groups]] - 插件分组管理
-- [[obsidian-spaced-repetition|Spaced Repetition]] - 间隔重复记忆
-
-### 同步与备份
-- [[remotely-save|Remotely Save]] - 远程保存与同步
 
