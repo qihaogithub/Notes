@@ -1,0 +1,718 @@
+{
+  "id": "ac3b0b5f-a42b-4da7-93cb-960c7d6a53f6",
+  "title": "/",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "AI 角色与任务",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "你是一个顶级的产品经理和用户体验专家。你的任务是基于一份\"旧的项目笔记\"和\"一组项目的所有相关源文档\"，生成一份全新的、内容更完整、信息无冗余的项目笔记。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "你需要理解所有输入，并对信息进行\"合并\"、\"更新\"、\"提炼\"或\"新增\"，然后输出一个完整的、可直接用于覆写旧笔记的新版本。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "内容筛选原则",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "重要：智能识别与当前项目相关的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "在处理提供的源文档时，你必须进行智能内容筛选，而不是简单地将所有信息都包含进来：",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "项目相关性判断：仔细分析每个源文档，识别出真正与当前项目\"${projectName}\"相关的内容。不是所有被标记为关联的文档都包含与本项目直接相关的信息。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "内容类型识别：",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "项目专属文档（如项目计划、需求文档、设计稿等）：通常大部分内容都与当前项目相关",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "共享文档（如会议记录、周报、产品文档等）：可能包含多个项目的信息，需要仔细筛选",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "跨项目文档：只提取其中明确提及当前项目的部分",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "筛选标准：",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "直接提及项目名称\"${projectName}\"的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "涉及项目相关人员、功能、需求、进度、问题等的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "对项目有决策性影响或参考价值的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "项目背景、目标、范围相关的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "排除标准：",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "完全属于其他项目的内容",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "与当前项目无关的通用信息",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "重复或冗余的信息（保留最新或最完整的版本）",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "输出规则与指令",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "全局视角：将筛选后的\"来源文档\"视为一个整体信息池，进行综合分析和提炼，避免简单罗列。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "智能合并：识别不同文档中关于同一主题的信息（如某个功能的多次讨论），并将其整合到一处。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "保留有效信息：旧笔记中的信息，如果在新的源文档中没有被更新或推翻，应予以保留。绝不能无故删除旧笔记中的任何有效信息！",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "结构清晰：输出的笔记应结构化，参考以下标准结构：",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "项目标题",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "原因 &价值",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "关键过程",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "时间线",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "结果与复盘",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "相关文档",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "输出全文：你的最终输出必须是完整的、全新的 AI 笔记全文，严格遵循上述结构。",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "start",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "start",
+                  "indent": 0,
+                  "type": "paragraph",
+                  "version": 1,
+                  "textFormat": 0,
+                  "textStyle": ""
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nAI 角色与任务你是一个顶级的产品经理和用户体验专家。你的任务是基于一份\"旧的项目笔记\"和\"一组项目的所有相关源文档\"，生成一份全新的、内容更完整、信息无冗余的项目笔记。你需要理解所有输入，并对信息进行\"合并\"、\"更新\"、\"提炼\"或\"新增\"，然后输出一个完整的、可直接用于覆写旧笔记的新版本。内容筛选原则重要：智能识别与当前项目相关的内容在处理提供的源文档时，你必须进行智能内容筛选，而不是简单地将所有信息都包含进来：项目相关性判断：仔细分析每个源文档，识别出真正与当前项目\"${projectName}\"相关的内容。不是所有被标记为关联的文档都包含与本项目直接相关的信息。内容类型识别：项目专属文档（如项目计划、需求文档、设计稿等）：通常大部分内容都与当前项目相关共享文档（如会议记录、周报、产品文档等）：可能包含多个项目的信息，需要仔细筛选跨项目文档：只提取其中明确提及当前项目的部分筛选标准：直接提及项目名称\"${projectName}\"的内容涉及项目相关人员、功能、需求、进度、问题等的内容对项目有决策性影响或参考价值的内容项目背景、目标、范围相关的内容排除标准：完全属于其他项目的内容与当前项目无关的通用信息重复或冗余的信息（保留最新或最完整的版本）输出规则与指令全局视角：将筛选后的\"来源文档\"视为一个整体信息池，进行综合分析和提炼，避免简单罗列。智能合并：识别不同文档中关于同一主题的信息（如某个功能的多次讨论），并将其整合到一处。保留有效信息：旧笔记中的信息，如果在新的源文档中没有被更新或推翻，应予以保留。绝不能无故删除旧笔记中的任何有效信息！结构清晰：输出的笔记应结构化，参考以下标准结构：项目标题原因 &价值关键过程时间线结果与复盘相关文档输出全文：你的最终输出必须是完整的、全新的 AI 笔记全文，严格遵循上述结构。\n\n"
+        }
+      ],
+      "id": "07d000a3-42bb-4649-ab79-320b800bd31c",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "工作/项目/小程序/家长端小程序-项目笔记.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"工作/项目/小程序/家长端小程序-项目笔记.md\" language=\"markdown\">\n---\ncreated: 2025-09-20T14:23:00\nupdated: 2025-09-21T16:47:16+08:00\nstatus:\n  - 进行中\nprojects:\nParent_project:\n  - 家长端小程序\nStakeholders:\n  - Ui-祁昊\ntags:\n---\n\n## 原因 &价值\n\n为家长提供便捷的学情查看入口，外化学习效果，提升家长参与度与孩子学习连续性，最终提升用户活跃与留存。\n\n## 时间线\n\n- **5月30日**：学情AI日/周点评功能上线（焕L4/L5）\n- **6月15日**：今日学习动态功能上线\n- **6月18日**：学情点评开放阅读焕新L1-L3\n- **6月末**：学情点评开放英语学段\n- **7月中上旬**：学情点评开放思维学段\n\n## 关键过程\n\n### 学情内容优化\n\n上线【日/周】学情AI点评功能，基于学习数据提供模板文案及AI建议，并计划逐步向全学段开放。\n\n### 今日学习动态\n\n上线后家长高度关注学习过程（如拖动进度条），提出了管控诉求，验证了该模块价值。后续将结合家长端节奏输出解决方案。\n\n### 学习效果外化\n\n与企效、数仓及激励团队拉齐分工，需评估优先级。主要卡点在企效侧因高优先级需求暂无明确排期，预计下周评估。\n\n推送场景包括连学里程碑、火苗消失提醒、连胜中断、本周课程结束及课上连对等，旨在提升连学比例与亲密度。\n\n### 家长端首页改版\n\n新版首页通过【学习数据】【答题表现】【学习总结】简洁展示学情，满足大部分家长诉求。查看报告CTR从40%+降至30%+，印证了新首页的有效性。\n\n### 激励体系运营\n\n测试表明激励体系与SOP结合对完课、留存等指标无负面影响且略有提升。用户对答题连对场景关注度更高。\n\n## 结果与复盘\n\n### 活跃留存\n- **2025.6.15**: WAU 18W+，次日留存45%\n- **2025.7.20**: WAU 22W+，次日留存45%\n- **2025.8.18**: WAU 20W+，次日留存45%\n- **2025.9.21**: WAU ~18W，次日留存45%\n\n### 用户分布\n用户多为年课用户，单次使用时长约56秒，主要场景为查看学习安排及报告，符合产品定位。\n\n### 功能使用时长（秒）\n\n| 功能       | 训练营 | 年课 |\n|------------|--------|------|\n| 学情页面   | 29     | 34   |\n| 学习安排   | 28     | 51   |\n| 家长中心   | 12     | 12   |\n| 我的       | 13     | 13   |\n| 学习管控   | 7      | 13   |\n| 资料中心   | 33     | 33   |\n\n## 相关文档\n<!-- 相关文档链接可在此处补充 -->\n</smtcmp_block>\n\n已基于提供的项目笔记内容进行整合与提炼，生成了结构清晰、信息完整的更新版本。移除了冗余的图片链接和重复描述，保留了所有关键信息、数据节点和结论，并按照标准结构进行了组织。",
+      "id": "6b7784d3-f4a3-47f5-bf5b-7b6893b21376",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 2949,
+          "completion_tokens": 775,
+          "total_tokens": 3724
+        }
+      }
+    }
+  ],
+  "createdAt": 1758445344862,
+  "updatedAt": 1758445362812,
+  "schemaVersion": 1
+}

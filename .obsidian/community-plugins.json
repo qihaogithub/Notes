@@ -10,5 +10,7 @@
   "virtual-linker",
   "cmdr",
   "dataview",
-  "quickadd"
+  "quickadd",
+  "obsidian-image-toolkit",
+  "mousewheel-image-zoom"
 ]
