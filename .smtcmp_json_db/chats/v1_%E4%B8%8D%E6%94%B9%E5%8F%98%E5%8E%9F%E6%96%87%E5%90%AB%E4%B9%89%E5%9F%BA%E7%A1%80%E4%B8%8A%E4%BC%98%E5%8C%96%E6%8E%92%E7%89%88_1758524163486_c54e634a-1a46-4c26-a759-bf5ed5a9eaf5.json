@@ -1,0 +1,76 @@
+{
+  "id": "c54e634a-1a46-4c26-a759-bf5ed5a9eaf5",
+  "title": "不改变原文含义基础上优化排版",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "不改变原文含义基础上优化排版",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n不改变原文含义基础上优化排版\n\n"
+        }
+      ],
+      "id": "2b929ed6-d879-4d40-970f-38ac4d33cd7d",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "工作/资料/周报/思佳/思佳日志-8.24.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"工作/资料/周报/思佳/思佳日志-8.24.md\" language=\"markdown\">\n<!-- ... existing frontmatter ... -->\n\n# 一、产品及项目情况:\n\n## 重点项目情况\n\n| 事项 | 说明 | 本周进展 |\n|------|------|----------|\n| 叫叫app改版 | 解决新版本上线后找课、行课重点问题<br>支持各课程线学习需求 | 高段焕新：预计9月底完成课表相关内容开发；10月9日后端发布及app提审；结合业务上课时间节奏，学习数据查看等将会安排在10月内完成。目前暂无时间风险<br><br>未成年人模式：app功能开发已完成，叫叫APP下周二发布SDK内容（不包含营销/商城支付限制），发布后不会对用户开启功能开关，待国庆后通知 |\n| 家长端小程序 | 学情内容完善<br>学习效果外化链路打通 | 数据表现：<br>wau稳定在18W，留存稳定在45%<br><br>用户使用情况分布：家长端多数为年课用户，用户单次小程序使用时长均值约为56s，其中以查看学习安排及学习报告为主要使用场景，符合家长端内容定位（查看学情） |\n| 叫叫国际化 | 一期目标：8月中旬在苹果海外区、Google play上架<br>二期目标：9月底前完成语言包本地化改造 | 一期：已完成，正常上线iOS海外区和google play。[叫叫全球化产品手册](https://alidocs.dingtalk.com/i/nodes/kDnRL6jAJM3vxKMZiKjaBn35WyMoPYe1?utm_scene=team_space)<br><br>二期目标：已完成，下周app包过审后用户使用最新包，将手机系统语言切为英语时，将会看到主界面信息展示为英文（不包含业务配置内容） |\n| 课后服务改造 | 课后服务分类改造及路径优化 | 受阅读焕新影响，课后服务改造进展和节奏将会受到影响 |\n| 完课活动 | 支持app内各类完课活动的配置及展示 | 首月完课扩科活动：完课深度提升8%绝对值，但扩科领课率未达预期——卓然<br><br>累积类完课活动，已上线——丹丹、天泽<br><br>训练营完课活动：完课提升2～3%，转化率无明显变化——陆超 |\n\n## 详细项目情况（进行中）\n\n### 1. 叫叫app体验改版\n\n**原因&价值：**\n- 解决APP框架不清晰，用户链路冗杂问题：重设计app框架，将用户路径简化且每个板块定位明确\n\n**后续迭代：**\n- 受高段焕新需求影响，未来几个迭代计划需求排入情况进行了调整\n- 高段焕新：方案已确认，SP162开始开发，预计9月底完成课表相关内容开发；10月9日后端发布及app提审；结合业务上课时间节奏，学习数据查看等将会安排在10月内完成。目前暂无时间风险\n\n![](https://static.dingtalk.com/media/lALPM2LZgvAHSuHNA2DNA6M_931_864.png_810x10000.jpg?bizType=report)\n\n**9.2版本优化内容：**\n- 新增完课后视频广告位\n    - 广告位运营已交付至卓然团队\n        - AI课测试：9.5开始测试，针对5-12岁无AI课的年课在读用户，放量的10%\n        - L2结续测试：9.15开始\n\n![](https://static.dingtalk.com/media/lALPM15nu9NzEW3NElrNKsA_10944_4698.png?bizType=report)\n\n**9.16版本优化内容：**\n- 未成年人模式「初始化设置流程」、「模式开关管理」、「密码找回」、「超时限制」、「夜间限制」预SDK已开发完成\n- 叫叫APP下周二发布SDK内容（不包含营销/商城支付限制），发布后不会对用户开启功能开关，待国庆后通知；@潘晨@陈周瑜\n\n**未排入优化：**\n- Pad设备，课表两侧支持控制课表上下滑动\n\n![](https://static.dingtalk.com/media/lALPM2EkC2oRp4nNBaLNCJA_2192_1442.png_810x10000.jpg?bizType=report)\n\n- 课表复习场景，新增“上次学习”快速定位\n\n![](https://static.dingtalk.com/media/lALPM1mS0h-01U3NBljNBiY_1574_1624.png_810x10000.jpg?bizType=report)\n\n**25版本鸿蒙移植：**\n- 25版学习页已迁移至鸿蒙上线，当前依然有部分老用户，计划后续针对未升级用户发布强更提醒\n- 我的页三端统一：本周进行了第一轮产品UI走查，预计9月中完成\n\n### 2. 家长端小程序\n\n**整体数据：**\n- 家长端数据基本稳定\n    - 活跃：wau 稳定在18W左右\n    - 留存：次日 45%\n- 用户使用情况分布：家长端多数为年课用户，用户单次小程序使用时长均值约为56s，其中以查看学习安排及学习报告为主要使用场景，符合家长端内容定位（查看学情）\n\n| 用户类型分布（过去30天） | 核心功能使用分布（过去30天） |\n|-------------------------|------------------------------|\n| ![](https://static.dingtalk.com/media/lALPD1k681IZ9tHNA5LNBVo_1370_914.png_810x10000.jpg?bizType=report) | ![](https://static.dingtalk.com/media/lALPM2srjFKwRdHNA2bNBUQ_1348_870.png_810x10000.jpg?bizType=report) |\n\n| 年课核心功能使用时长（过去30天/单位s） | 训练营核心功能使用时长（过去30天/单位s） |\n|---------------------------------------|------------------------------------------|\n| ![](https://static.dingtalk.com/media/lALPM2zwehovYVHNBIjNB0I_1858_1160.png_810x10000.jpg?bizType=report) | ![](https://static.dingtalk.com/media/lALPM2O84rw3gVHNBHbNBzg_1848_1142.png_810x10000.jpg?bizType=report) |\n\n**家长端&学习报告整合：**\n- 英语阶段学情 9.5上线\n- 首页整合数据观测中\n\n**激励体系&家长端结合运营服务链路：**\n- 初步结论：测试班期一个月测试后，激励体&家长端sop的结合对于完课，留存等核心指标无负面影响，并略有提升\n- 用户反馈：用户在答题连对场景关注度更高\n\n![](https://static.dingtalk.com/media/lALPM3T3BmSjexXNBqjNAwQ_772_1704.png_810x10000.jpg?bizType=report)\n![](https://static.dingtalk.com/media/lADPM3XKB0eV61XNERDNBDg_1080_4368.jpg_810x10000.jpg?bizType=report)\n\n**后续节奏：**\n\n![](https://static.dingtalk.com/media/lALPD0gAz7FO_pXNAgLNC8o_3018_514.png_810x10000.jpg?bizType=report)\n\n### 3. 学豆项目\n\n**原因&价值：**\n- 通过清零和日常消耗，减少财务负债\n\n**进度&风险：**\n- 25年开始采用新过期规则：功能已上线，规则及用户协议替换已完成，业务侧已宣贯\n    - 2026年学豆清零方案设计[2026学豆清零](https://jojoread.yuque.com/rnmm85/xqhug1/ha4xvk22nexhwrkg?singleDoc#)，已上线，26年1月开始执行\n- 学豆清零数据：截止7.11日，24年剩余学豆数：11.6E颗，分布在446W用户身上\n    - 8月及后续计划：\n        - 上周末进行了流失年课用户学豆短信触达，下周回收效果\n            - 年课结课90天且学豆数不足600用户：叮！好久不见，叫叫新推出了很多优质学习内容，成长豆限时兑换，快来看看吧👉tef8.cn/wiU8Yv 拒收请回复R\n            - 年课结课90天且有600以上学豆用户：好久不见！老用户专属福利已送达，全场礼品成长豆限时8折兑换，千万不要错过👉tef8.cn/wiU89e 拒收请回复R\n        - 从数据效果看，短信触达效果未达预期，主要gap在短信触达后用户未点击链接，可能的原因为：1.短信被手机系统拦截或进入垃圾短信中，未有效触达；2.短信文案对用户吸引力较弱\n        - 后续优化计划：\n            - 9月学豆消耗活动\n                - 对象：年课流失90天内用户\n                - 方式：本周周六上午10点短信触达，数据结果下周回收\n                - 活动：鼓励用户使用学豆兑换实物商品[9月学豆消耗活动](https://alidocs.dingtalk.com/i/nodes/vy20BglGWOeD5vNmHqqn3E97JA7depqY?utm_scene=person_space)\n            - 10月开始启动清零通知，其中在读用户以指导师微信消息+短信+app push作为触达通道，流失用户以短信+app push作为触达通道\n\n### 4. 叫叫国际化\n\n**进度&风险：**\n- 一期目标：8月中上旬海外地区上线，支持内购支付\n    - 一期进展：已完成，正常上线\n    - [叫叫全球化产品手册](https://alidocs.dingtalk.com/i/nodes/kDnRL6jAJM3vxKMZiKjaBn35WyMoPYe1?utm_scene=team_space)\n\n![](https://static.dingtalk.com/media/lALPM16nZgL3gw3NEU_NEDo_4154_4431.png?bizType=report)\n\n- 二期目标：9月内完成语言包本地化\n    - 翻译进展：已完成梳理内容翻译[语言包翻译](https://alidocs.dingtalk.com/i/nodes/YMyQA2dXW79vyNRQt6xaaw09JzlwrZgb?utm_scene=team_space&iframeQuery=sheet_range%3Dst-5a602511-57297_0_0_1_1)\n    - 开发进展：已完成，下周app包过审后用户使用最新包，将手机系统语言切为英语时，将会看到主界面信息展示为英文（不包含业务配置内容），如下图所示。@彭首長\n\n![](https://static.dingtalk.com/media/lALPM2l1LArTywHNDgrNFvg_5880_3594.png?bizType=report)\n\n### 5. 活动相关\n\n**原因&价值：**\n- 搭建通用灵活的活动系统，快速支撑品牌和运营等团队，举办不同类型的活动，达到促活，转化，品牌宣传等活动目的\n\n**进度&风险：**\n\n**主题月完课活动/暑期全学科活动：**\n- 首月扩科激励活动（业务方：app产品运营）：已上线，业务测试中\n    - 活动数据：截至8.28，活动曝光率92%，活动详情页浏览率46%\n        - 完课数据：测试班期已完整行课3周，目前累计参课率98.57%、正学完课率63.38%、完课深度95.17%，完课深度对比L4均值（88%）高出7%绝对值\n    - 累计完课任务（业务方：思维英语项目组）：已上线，暂无效果反馈（属于原有功能产品化，且周期较长，暂未收集数据）\n    - 增加\"优惠券/伴读权益\"奖励（业务方：训练营增长）：沟通产品及技术实现，因优先级暂未排上\n\n| 活动 | 数据结论 | 后续计划 |\n|------|----------|----------|\n| 训练营：5日打卡活动 | 完课率提升2-3%，转化率无明显变化<br>![](https://static.dingtalk.com/media/lALPM2N8T6AyuAXNAu7NBMQ_1220_750.png_810极10000.jpg?bizType=report) | 训练营已全量，继续看数据<br>链路体验优化 |\n| 扩科：年课首月激励活动 | 完课提升8%<br>领课率17%，不及预计<br>![](https://static.dingtalk.com/media/lALPM14V4RNKxgXNAmbNCT4_2366_614.png_810x10000.jpg?极izType=report) | 推扩科领课及分析领课数据 |\n| 焕新：年课L2M6完课活动 | 还未与历史基线对比分析，下周有分析结果 | 对比往期分析数据<br>L5M9近期上线（打点：主题月相关的装扮） |\n| 思维：全线暑期完课活动 | 本周活动结束，下周数据分析 | 拉数据及分析 |\n| 品牌：全学科IP完课活动 | 10月13日上线 |  |\n\n**其他活动及排期：**\n\n| 项目名称 | 业务方 | 对接人 | 进度 | 相关截图&链接 |\n|----------|--------|--------|------|---------------|\n| 【思维】暑期完课活动 | 思维 | 泓丹 | 已结束 | ![](https://static.dingtalk.com/media/lADPD0aUGp0VYAnNCeTNBJI_1170_2532.jpg_810x10000.jpg?bizType=report) |\n| 【平台】完课扩科活动 | 平台 | 蘑菇 | 已结束 | ![](https://static.dingtalk.com/media/lADPM3U_yOcXUE3极CeTNBJI_1170_2532.jpg_810x10000.jpg?bizType=report) |\n| 【焕新】阅读L2M6完课活动 | 焕新 | 晓洁 | 已结束 | ![](https://static.dingtalk.com/media/lALPM22ld3YFh-HNCfzNBJs_1179_2556.png_810x10000.jpg?bizType=report) |\n| 【训练营】自转化完课活动 | 训练营 | 曾曾 | 已结束 | ![](https://static.dingtalk.com/media/lADPM2E2PBGzXWXNCeTNBJI_1170_2532.jpg_810x10000.jpg?bizType=report) |\n| 【平台】嘎嘎唱翻天 | 平台 | 薇薇 | 已结束 | [![](https://static.dingtalk.com/media/lADPD1pwLeYZvCXNCeTNBJI_1170_2532.jpg_810x10000.jpg?bizType=report)](https://alidocs.dingtalk.com/i/nodes/mExel2BLV54K0MnQCEkwD7GrWgk9rpMq?utm_scene=person_space) |\n| 【焕新】L4极完课活动 | 焕新 | 晓洁 | 业务内测中 | ![](https://static.dingtalk.com/media/lALPM1tQe极3haj3NCfzNBJs_1179_2556.png_810x10000.jpg?bizType=report)<br>[活动链接](https://alidocs.dingtalk.com/i/nodes/AR4GpnMqJzM95QmbupmlPlwpVKe0xjE3?utm_scene=team_space) |\n| 【品牌】IP完课活动 | 品牌 | 雨薇 | 素材制作中 | ![](https://static.dingtalk.com/media/lALPM2FRhQBdXv3NBKLNA3o_890_1186.png_810x10000.jpg?bizType=report) |\n| 【转介绍】完课活动 | 转介绍 | 小凤 | 待对接 |  |\n\n### 6. 课后服务\n\n**原因&价值：**\n- 课内场景用户通过日常的学习，会沉淀部分适合课后巩固复习的内容；内容侧除了日常教学外，教研会产生各类的教辅内容，以上内容都适合作为课后复习巩固的场景使用\n- 基于上述背景，需要在app内和家长端小程序合适的位置提供一个整体的资料中心，作为该场景的使用入口，增强在教育教学上的价值感\n\n**进度&风险：**\n- 受高段焕新影响，课后服务板块优先级和节奏进行调整\n    - 原本计划：\n\n| 迭代计划 | 功能点 | 科目灰度节奏 |\n|----------|--------|--------------|\n| SP161-SP162<br>9月中旬完成 | 1. 课后服务详情页C端页面调整，B端配置支持 | 9月中旬，思维科目可灰度上线课后板块 |\n| SP162<br>9月中旬完成 | 2. 课后服务入口调整 |  |\n|  | 3. 课表支持展示思维\"星际口算\"服务节点 |  |\n| SP163 | 4. 课后服务支持活动bannar | 9月底，美育、小作家可灰度上线课后板块 |\n| SP164 | 5. 课后服务支持展示英语\"周复习\"、\"趣开口\"服务节点 | 10月中，英语、阅读可灰度上线课后板块 |\n\n![](https://static.dingtalk.com/media/lALPM1rRJQ_ZE-XNCC7ND_I_4082_2094.png_810x10000.jpg?bizType=report)\n\n### 7. 业务支撑\n\n**原因&价值：** 在课程激活解锁、激励等场景支持C端业务，提供对应的能力\n\n**进度&风险：** [业务支撑文档](https://alidocs.dingtalk.com/i/nodes/P7QG4Yx2Jp7DkQMpib3G2lGYV9dEq3XD?utm_scene=person_space)\n\n- 虚拟资产操作合规管理流程：\n    - 新流程加课预计会以小喇叭的方式push公司员工；定期收集反馈，优化链路\n    - 员工离职自动移除课程：预计164迭代进\n    - h5加课支持公司测试机账号需求调研（包括审校部门和测试部门的账号）：基础权限平台评估中@汪宇@邢胖\n\n![](https://static.dingtalk.com/media/lQLPJxdk3wVJqI3NAyfNBaOw-RZjPH1Jb_gIfLEaZ1w_AA_144极_807.png_720x10000.jpg?bizType=report)\n\n- 测评业务支撑：初中接入测评后，转化数据有较好提升，比常规班期转化率高约15%\n\n![](https://static.dingtalk.com/media/lALPM2jQjcR6dB3NAwHNBJY_1174_769.png_810x10000.jpg?bizType=report)\n\n- 激励系统支撑：\n    - 目前正常支持服务焕新团队，益智线进行完课活动配置及投放\n    - 持续支持各业务方对于\"完课活动\"的后台配置需求\n\n- 流量分配/课程激活等业务支撑：\n    - 加课激活收敛：线上观察中\n\n- 初中建课建商品链路优化：\n    - 商品取消\"激活分组\"配置，而是配置\"有无老师服务+有无随材\"等字段，同时销管在分组上打上该字段标签，教务进行加班时根据两侧字段关系匹配将用户激活至对应分组；方案待上游同步后确定，排期待定\n    - 版本后置数据问题优化：教务感知商城以\"版本后置\"方式售卖的课程，并正常加课，用户在C端完成选课后再走替换货流程进行替换课；已置入SP160迭代进行开发，随迭代正常上线\n\n# 二、业务沟通及学习情况:\n\n# 三、本周问题反馈:\n\n# 四、本周思考总结:\n\n# 五、下周计划:\n\n1.  25版本优化跟进\n2.  家长端跟进\n3.  全球化跟进\n4.  课后服务相关事项跟进\n5.  学豆消耗跟进\n</smtcmp_block>\n\n已优化排版，主要改进：\n- 使用二级标题组织内容结构\n- 规范表格格式和间距\n- 统一项目编号格式\n- 优化段落间距和换行\n- 保持原有内容完整性和图片",
+      "id": "bd391c75-9359-4342-956c-b60ea44744e4",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 5154,
+          "completion_tokens": 4622,
+          "total_tokens": 9776
+        }
+      }
+    }
+  ],
+  "createdAt": 1758524073796,
+  "updatedAt": 1758524163486,
+  "schemaVersion": 1
+}
