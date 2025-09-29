@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.path.startsWith("收藏/figma插件")
+        - '!file.fullname.endsWith(".base")'
+    order:
+      - file.name
+      - 描述
+    columnSize:
+      file.name: 228
