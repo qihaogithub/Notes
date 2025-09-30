@@ -1,0 +1,71 @@
+{
+  "id": "ee84dc9f-715e-4828-97be-9f904a2e0423",
+  "title": "写一篇关于OKLCH 色彩的笔记",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "写一篇关于OKLCH 色彩的笔记",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n写一篇关于OKLCH 色彩的笔记\n\n"
+        }
+      ],
+      "id": "37105842-eb04-435d-ae19-158a2c76ea80",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "# OKLCH 色彩空间\n\nOKLCH 是一种现代的色彩空间，基于人类视觉感知设计，比传统的 RGB 或 HSL 更符合人眼对颜色的感知方式。\n\n## 核心概念\n\n- **L**（Lightness）：亮度，范围 0-100%\n- **C**（Chroma）：色度，表示颜色饱和度\n- **H**（Hue）：色相，范围 0-360 度\n\n## 优势\n\n1. **感知均匀性**：颜色变化与人眼感知一致\n2. **设备无关**：在不同设备上显示更一致\n3. **更好的可访问性**：更容易确保颜色对比度达标\n\n## 语法示例\n\n```css\ncolor: oklch(70% 0.2 120deg);\nbackground: oklch(90% 0.1 45deg);\n```\n\n## 使用场景\n\n- 现代 Web 开发\n- 无障碍设计\n- 品牌色彩系统\n- 数据可视化\n\n## 注意事项\n\n- 浏览器支持仍在完善中\n- 需要为不支持浏览器提供备用方案\n- 与传统色彩空间转换时可能略有差异\n\nOKLCH 代表了色彩管理的未来方向，特别适合需要精确色彩控制和无障碍要求的项目。",
+      "id": "aea909da-e22e-4c04-9fc1-38c143c7da6a",
+      "metadata": {
+        "model": {
+          "providerType": "openai-compatible",
+          "providerId": "魔塔",
+          "id": "魔塔/DeepSeek-V3.1",
+          "model": "deepseek-ai/DeepSeek-V3.1",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 445,
+          "completion_tokens": 266,
+          "total_tokens": 711
+        }
+      }
+    }
+  ],
+  "createdAt": 1759200586955,
+  "updatedAt": 1759200592944,
+  "schemaVersion": 1
+}

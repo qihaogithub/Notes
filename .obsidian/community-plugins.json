@@ -3,7 +3,6 @@
   "editing-toolbar",
   "smart-composer",
   "obsidian-excalidraw-plugin",
-  "obsidian-image-auto-upload-plugin",
   "easy-typing-obsidian",
   "obsidian-linter",
   "templater-obsidian",
@@ -11,5 +10,6 @@
   "dataview",
   "quickadd",
   "obsidian-image-toolkit",
-  "mousewheel-image-zoom"
+  "mousewheel-image-zoom",
+  "smart-connections"
 ]
