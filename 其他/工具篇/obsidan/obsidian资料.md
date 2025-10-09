@@ -44,8 +44,8 @@ mindmap-plugin: basic
 
 ### [[PDF标注链接的规则]]
 
-### [[obsidian常用快捷键]]
+### [[其他/工具篇/obsidan/obsidian常用快捷键]]
 
 ### [美人鱼甘特图](https://mermaid-js.github.io/mermaid/#/)
 
-### [[双向链接]]
+### [[其他/工具篇/obsidan/双向链接]]

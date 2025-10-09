@@ -8,11 +8,11 @@
 
 关于 comfyUI 这边分为四个部分。第一个部分是介绍 comfyUI 本身的简介，相关的基础原理。本体的一些功能性节点相关的介绍。然后一些基础工作流的梳理和简介。后续的总结和相关常用插件工具的分享。
 
-##  [[Comfy UI 安装]]
+##  [[兴趣/AI/1·ComfyUI/1·基础/Comfy UI 安装]]
 
-##  [[comfyUI 的介绍以及特点]]
+##  [[兴趣/AI/1·ComfyUI/1·基础/comfyUI 的介绍以及特点]]
 
-##  [[comfyUI 的界面功能]]
+##  [[兴趣/AI/1·ComfyUI/1·基础/comfyUI 的界面功能]]
 ## 更新
 
 1. 我们在“ComfyUI_windows_portable\update”文件下可以看到“update_comfyui”、“update_comfyui_and_python_dependencies”这两个文件。分别是用来更新 ComfyUI 和配置环境的。
@@ -35,4 +35,4 @@ k.zhihu. Com/? Target=https%3 A//github. Com/ltdrdata/ComfyUI-Manager)
 
 必备插件了属于是，很多时候导入一些其他人的工作流会出现一些模型缺少或者插件工具缺少等内容。这个工具相当于是 webUI 中的从网页安装的这个插件。能够快速的结合各种工具和模型使得插件安装更加方便快捷。
 
- ##  [[comfyui模型配置]]
+ ##  [[兴趣/AI/1·ComfyUI/1·基础/comfyui模型配置]]

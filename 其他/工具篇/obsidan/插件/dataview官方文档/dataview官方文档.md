@@ -1,18 +1,18 @@
 https://blacksmithgu.github.io/obsidian-dataview/
 
-[[概述]]
+[[其他/工具篇/obsidan/插件/dataview官方文档/概述]]
 [[元数据]]
-[[DQL、JS 和内联]]
+[[其他/工具篇/obsidan/插件/dataview官方文档/DQL、JS 和内联]]
 查询语言
-	[[查询的结构]]
-	[[数据命令]]
+	[[其他/工具篇/obsidan/插件/dataview官方文档/查询的结构]]
+	[[其他/工具篇/obsidan/插件/dataview官方文档/数据命令]]
 JavaScript 参考
 常见问题解答和资源
 数据视图之友
 变更日志
 
 
-[[翻译文档·知乎]]
+[[其他/工具篇/obsidan/插件/dataview官方文档/翻译文档·知乎]]
 # 例子
 
 查找未完成任务

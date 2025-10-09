@@ -1,30 +1,30 @@
 ## 3 D
-[[ComfyUI-3D-Pack]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-3D-Pack]]
 
 ## 提示词
-[[DynamicPrompts·动态提示词]]     [[一键生成提示词 ·OneButtonPrompt]]   [[ComfyUI-VisualQueryTemplate：模板化图像反推提示词]]    [[ComfyUI Prompt Gallery提示词管理]]  [[自然语言提示词反推]]
+[[DynamicPrompts·动态提示词]]     [[兴趣/AI/1·ComfyUI/3·插件笔记/一键生成提示词 ·OneButtonPrompt]]   [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-VisualQueryTemplate：模板化图像反推提示词]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI Prompt Gallery提示词管理]]  [[兴趣/AI/1·ComfyUI/3·插件笔记/自然语言提示词反推]]
 ## 效率
-[[ComfyUI-NodeAligner·节点布局整理插件]]
-[[辣椒酱的界面汉化]] 
- [[AIGODLIKE-ComfyUl-Studio · 模型缩略图]] 
+[[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-NodeAligner·节点布局整理插件]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/辣椒酱的界面汉化]] 
+ [[兴趣/AI/1·ComfyUI/3·插件笔记/AIGODLIKE-ComfyUl-Studio · 模型缩略图]] 
 ## 其他
-[[seamless-tiling·无缝贴图]]
-[[MingNodes·仿像素蛋糕追色]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/seamless-tiling·无缝贴图]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/MingNodes·仿像素蛋糕追色]]
 
 ## ControlNet
-[[AnimeLineArt 动漫艺术线预处理器]]     [[Aux 集成预处理器]] [[Anyline]]      [[Binary二值化预处理器]]     [[Canny 细致线预处理器]]     
+[[兴趣/AI/1·ComfyUI/3·插件笔记/AnimeLineArt 动漫艺术线预处理器]]     [[兴趣/AI/1·ComfyUI/3·插件笔记/Aux 集成预处理器]] [[兴趣/AI/1·ComfyUI/3·插件笔记/Anyline]]      [[兴趣/AI/1·ComfyUI/3·插件笔记/Binary二值化预处理器]]     [[兴趣/AI/1·ComfyUI/3·插件笔记/Canny 细致线预处理器]]     
 
 ## 图片处理
- [[BRIA-AI Matting抠图节点]] 
+ [[兴趣/AI/1·ComfyUI/3·插件笔记/BRIA-AI Matting抠图节点]] 
 
 ## 反推
-[[JoyCaption2]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/JoyCaption2]]
 Florence2(所属LayerStyle) ：https://github.com/chflame163/ComfyUI_LayerStyle Joy Caption Two：https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two MiaoshouAl：https://github.com/miaoshouai/ComfyUI-Miaoshouai-Tagger Molmo：https://github.com/CY-CHENYUE/ComfyUI-Molmo MiniCPM：https://github.com/IuvenisSapiens/ComfyUI_MiniCPM-V-2_6-int4 Clip Interrogator(所属tinyterraNodes)：https://github.com/TinyTerra/ComfyUI_tinyterraNodes Ollama Vision：https://github.com/stavsap/comfyui-ollama
 ## 综合插件
-[[Impact Pack]]
-[[TTP Toolset]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/Impact Pack]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/TTP Toolset]]
 # 未分类
-   [[ComfyUI Ollama]]    [[ComfyUI Prompt Gallery提示词管理]]    [[ComfyUI-3D-Pack]]    [[ComfyUI-Custom-Scripts·瑞士军刀美化辅助]]    [[ComfyUI-IC-Light]]    [[ComfyUI-NodeAligner·节点布局整理插件]]    [[ComfyUI-VisualQueryTemplate：模板化图像反推提示词]]    [[ComfyUI-segment-anything-2]]    [[ComfyUI_FaceAnalysis]]    [[ComfyUI_FaceShaper]]    [[ComfyUI_IPAdapter_plus]]    [[ComfyUI_InstantID]]    [[ComfyUI_essentials]]    [[DepthAnythingV2]]    [[Diffusion Edge]]    [[Easy Slider Control ]]    [[Easy Use]]    [[FakeScribble 伪涂鸦预处理器]]    [[HED模糊线预处理器]]    [[IC-Light-Native]]    [[Ic light]]    [[Image Color Match   图像颜色匹配]]    [[Image Detail Transfer]]    [[Image To Prompt]]    [[ImageResize+]]    [[InstantID]]    [[K采样器-调度器]]    [[K采样器-采样器]]    [[K采样器]]    [[LLMs]]    [[LineArt 艺术线预处理器]]    [[LineArtStandard 艺术线预处理器]]    [[LongClip Flux]]    [[M-LSD 线段预处理器]]    [[Manager]]    [[MangaAnime 漫画艺术线预处理器]]    [[MingNodes·仿像素蛋糕追色]]    [[PidiNet 模糊线预处理器]]    [[PuLID_ComfyUI]]    [[Scribble 涂鸦预处理器]]    [[ScribbleXDoG 涂鸦预处理器]]    [[TEEDPreprocessor]]    [[UltimateSDUpscale]]    [[Workspace Manager]]    [[comfyui-GGUF]]    [[comfyui-browser]]    [[comfyui-nodes-docs]]    [[comfyui-sixgod_prompt]]    [[comfyui-various]]    [[comfyui_controlnet_aux]]    [[controlnet++]]    [[ergouz kaiguan]]    [[seamless-tiling·无缝贴图]]    [[sixgod_prompt]]    [[x-flux-comfyui]]    [[·comfyui插件]]    [[一键生成提示词 ·OneButtonPrompt]]    [[安装节点]]    [[自然语言提示词反推]]    [[辣椒酱的界面汉化]]
+   [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI Ollama]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI Prompt Gallery提示词管理]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-3D-Pack]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-Custom-Scripts·瑞士军刀美化辅助]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-IC-Light]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-NodeAligner·节点布局整理插件]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-VisualQueryTemplate：模板化图像反推提示词]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-segment-anything-2]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_FaceAnalysis]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_FaceShaper]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_IPAdapter_plus]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_InstantID]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_essentials]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/DepthAnythingV2]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Diffusion Edge]]    [[Easy Slider Control ]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Easy Use]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/FakeScribble 伪涂鸦预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/HED模糊线预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/IC-Light-Native]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Ic light]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Image Color Match   图像颜色匹配]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Image Detail Transfer]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Image To Prompt]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ImageResize+]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/InstantID]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/K采样器-调度器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/K采样器-采样器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/K采样器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/LLMs]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/LineArt 艺术线预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/LineArtStandard 艺术线预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/LongClip Flux]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/M-LSD 线段预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Manager]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/MangaAnime 漫画艺术线预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/MingNodes·仿像素蛋糕追色]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/PidiNet 模糊线预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/PuLID_ComfyUI]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Scribble 涂鸦预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ScribbleXDoG 涂鸦预处理器]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/TEEDPreprocessor]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/UltimateSDUpscale]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/Workspace Manager]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-GGUF]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-browser]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-nodes-docs]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-sixgod_prompt]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-various]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui_controlnet_aux]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/controlnet++]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/ergouz kaiguan]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/seamless-tiling·无缝贴图]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/sixgod_prompt]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/x-flux-comfyui]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/·comfyui插件]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/一键生成提示词 ·OneButtonPrompt]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/安装节点]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/自然语言提示词反推]]    [[兴趣/AI/1·ComfyUI/3·插件笔记/辣椒酱的界面汉化]]
 
 # AI 总结的
 

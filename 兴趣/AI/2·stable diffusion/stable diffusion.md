@@ -13,20 +13,20 @@
 
 
 # 操作教程
-[[基础操作]]
-[[模型使用]]
-[[进阶教程]]
+[[兴趣/AI/2·stable diffusion/基础操作]]
+[[兴趣/AI/2·stable diffusion/模型使用]]
+[[兴趣/AI/2·stable diffusion/进阶教程]]
 [[AI绘画/stable diffusion/模型/-stable diffusion 模型]]
 [[ComfyUI 1]]
-[[模型预览图替换]]
+[[兴趣/AI/2·stable diffusion/模型预览图替换]]
 # 插件
-[[SD插件]]
+[[兴趣/AI/2·stable diffusion/SD插件]]
 
-#  [[·ComfyUI]]
+#  [[兴趣/AI/1·ComfyUI/·ComfyUI]]
 
 # 训练
-[[训练方法介绍]]
-[[dream booth 训练方法]]
+[[兴趣/AI/2·stable diffusion/训练方法介绍]]
+[[兴趣/AI/2·stable diffusion/dream booth 训练方法]]
 [[lora 训练方法]]
 [embedding 模型训练](https://www.bilibili.com/video/BV1P84y1g7jS/?spm=wolai.workspace.0.0.392143a9Krlylg&vd_source=81223299ca5d449a34daaab3e1102d1d)
 

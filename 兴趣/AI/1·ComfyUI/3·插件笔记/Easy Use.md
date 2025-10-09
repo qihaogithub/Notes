@@ -56,10 +56,10 @@ ControlNet Names
 负面提示词
 通配符提示词
 [[easy·提示词]]
-[[提示词列表]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/节点笔记/提示词列表]]
 [[提示词行]]
 [[PromptConcat 提示词联结]]
-[[提示词替换]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/节点笔记/提示词替换]]
 风格提示词选择器
 [[肖像大师]]
 ### 加载器
@@ -124,7 +124,7 @@ Latent遮罩复合（带条件）
 简易级联k采样器
 逆（不）采样器
 ### 修复
-[[高清修复]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/节点笔记/高清修复]]
 预细节修复
 预遮罩细节修复
 检测加载器（细节修复节点束）
@@ -174,9 +174,9 @@ imageCropFromMask
 imageUncropFromBBOX
 图像保存
 图像背景移除
-[[Image Color Match   图像颜色匹配]]
-[[Image Detail Transfer]]
-[[Image To Prompt]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/Image Color Match   图像颜色匹配]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/Image Detail Transfer]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/Image To Prompt]]
 Image To Base64 
 合并图像批次
 Remove Local Image 
@@ -200,7 +200,7 @@ Text Switch
 #### 其他
 判断SDXL
 任意XY输入
-[[转换任何]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/节点笔记/转换任何]]
 展示任何
 显示Tensor形状
 Clear Cache Key

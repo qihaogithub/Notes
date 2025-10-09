@@ -3,7 +3,7 @@
 [Fast Word Query 3](https://ankiweb.net/shared/info/1956435337)
 给单词添加注释
 
-[[FSRS4Anki Helper]]
+[[其他/工具篇/anki/FSRS4Anki Helper]]
 优化算法插件
 
 [Image Occlusion Enhanced](https://ankiweb.net/shared/info/1374772155)

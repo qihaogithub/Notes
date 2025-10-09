@@ -27,7 +27,7 @@ discord官网链接:www.discord.com
 
 ##  [[seed用法]]
 
-## [[添加chatgpt 机器人]]
+## [[兴趣/AI/3·Midjourney/添加chatgpt 机器人]]
 ### 权重切分符与负面描述词反向描述词
 ![image.png](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/20230312174116.png)
 结论1：英文双冒号（权重切分符）可以起到 「切分语义」的作用。

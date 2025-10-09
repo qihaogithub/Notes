@@ -4,30 +4,30 @@
 
 [ComfyUI-wiki](https://github.com/602387193c/ComfyUI-wiki)
 ## 知识点
- [[单词本]] 
- [[comfyui基础|基础]]
- [[·comfyui插件]] 
+ [[兴趣/AI/1·ComfyUI/其他/单词本]] 
+ [[兴趣/AI/1·ComfyUI/1·基础/comfyui基础|基础]]
+ [[兴趣/AI/1·ComfyUI/3·插件笔记/·comfyui插件]] 
 
 
 
 
 ## 效率
-[[Easy Use]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/Easy Use]]
 [[mixlab-nodes]]
-[[comfyui-nodes-docs]] 节点文档
+[[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui-nodes-docs]] 节点文档
 
 
 ## 汉化
-[[辣椒酱的界面汉化]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/辣椒酱的界面汉化]]
 
 ## 控制
 综合控制 [[AI绘画/ComfyUI/插件/controlnet|controlnet]]
-风格迁移 [[ComfyUI_IPAdapter_plus]]
-换脸  [[ComfyUI_InstantID]]
-[[comfyui_controlnet_aux]]
-[[ControlNet-Union]]
+风格迁移 [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_IPAdapter_plus]]
+换脸  [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI_InstantID]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/comfyui_controlnet_aux]]
+[[兴趣/AI/1·ComfyUI/2·模型笔记/ControlNet/ControlNet-Union]]
 ## 图片处理
-抠图插件 [[ComfyUI-segment-anything-2]]
+抠图插件 [[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-segment-anything-2]]
 抠图插件 [[Image Remove Background]]
 
 ## 修复
@@ -35,10 +35,10 @@
 Brushnet
 
 ## 高清放大
-[[UltimateSDUpscale]]
+[[兴趣/AI/1·ComfyUI/3·插件笔记/UltimateSDUpscale]]
 
 
-小瑞士军刀美化辅助：[[ComfyUI-Custom-Scripts·瑞士军刀美化辅助]] 
+小瑞士军刀美化辅助：[[兴趣/AI/1·ComfyUI/3·插件笔记/ComfyUI-Custom-Scripts·瑞士军刀美化辅助]] 
 
 
 
@@ -46,4 +46,4 @@ Brushnet
 
 
 ## 常见问题
-[[安装节点时，提示IMPORT FAILED是什么原因]]
+[[兴趣/AI/1·ComfyUI/报错汇总/安装节点时，提示IMPORT FAILED是什么原因]]

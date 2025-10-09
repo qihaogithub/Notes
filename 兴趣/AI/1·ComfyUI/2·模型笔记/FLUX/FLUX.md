@@ -1,4 +1,4 @@
-[[flux Hyper加速]]
+[[兴趣/AI/1·ComfyUI/2·模型笔记/FLUX/flux Hyper加速]]
 
 官网地址： https://blackforestlabs.ai/#get-flux
 Github 地址： https://github.com/black-forest-labs/flux
@@ -60,7 +60,7 @@ _https://huggingface.co/stabilityai/stable-diffusion-3-medium/tree/main/text_enc
   
 Xlabs-ControlNet模型地址： https://huggingface.co/XLabs-AI/flux-controlnet-collections Xlabs-ControlNet插件地址： https://github.com/XLabs-AI/x-flux-comfyui 
 
-[[Flux 高清放大模型]]
+[[兴趣/AI/1·ComfyUI/2·模型笔记/FLUX/Flux 高清放大模型]]
 
 ### Lora
 Lora模型下载地址：https://huggingface.co/XLabs-AI/flux-lora-collection

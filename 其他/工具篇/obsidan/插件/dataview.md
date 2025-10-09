@@ -147,4 +147,4 @@ WHERE author = "Edgar Allan Poe"
 
 
 # 官方文档翻译
-[[dataview官方文档]]
+[[其他/工具篇/obsidan/插件/dataview官方文档/dataview官方文档]]
