@@ -1,6 +1,6 @@
 ---
 github: https://github.com/yolain/ComfyUI-Easy-Use
-类型:
+分类:
   - 效率
 ---
 [视频教程](https://www.youtube.com/@xueqinghuang5021/videos?view=0&sort=dd&shelf_id=1)

@@ -1,7 +1,7 @@
 ---
 banner: https://image.uisdc.com/wp-content/uploads/2024/03/uisdc-xt-20240306-15.jpg
 banner_y: "31"
-类型:
+分类:
   - ControlNet
 ---
 ![|400](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/202407010935648.png)

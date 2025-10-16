@@ -1,6 +1,6 @@
 ---
 简介: 深度预处理
-类型:
+分类:
   - ControlNet
 ---
 ![](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/202407221110654.png)

@@ -45,7 +45,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -112,7 +112,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -179,7 +179,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -246,7 +246,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -313,7 +313,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -339,6 +339,6 @@
     }
   ],
   "createdAt": 1759979399866,
-  "updatedAt": 1759979562232,
+  "updatedAt": 1760335410652,
   "schemaVersion": 1
 }

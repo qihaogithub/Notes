@@ -1,12 +1,12 @@
 ---
 title: "gooaclok819/sublinkX: 开源节点订阅转换生成管理系统"
-source: "https://github.com/gooaclok819/sublinkX"
+source: https://github.com/gooaclok819/sublinkX
 author:
 published:
-created: 2025-01-17
+创建日期: 2025-01-17
 description:
 tags:
-  - "clippings"
+  - clippings
 ---
 [![](https://github.com/gooaclok819/sublinkX/raw/main/webs/src/assets/logo.png)](https://github.com/gooaclok819/sublinkX/blob/main/webs/src/assets/logo.png)
 

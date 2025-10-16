@@ -1,5 +1,5 @@
 ---
-介绍: 将您的Obsidian Vault视为可以从中查询的数据库。提供 JavaScript API 和基于管道的查询语言，用于从 Markdown 页面过滤、排序和提取数据
+简介: 将您的Obsidian Vault视为可以从中查询的数据库。提供 JavaScript API 和基于管道的查询语言，用于从 Markdown 页面过滤、排序和提取数据
 评级: "5"
 ---
 

@@ -1,6 +1,6 @@
 ---
 column1: 组件库管理，付费了
-类型:
+分类:
   - 组件相关
 ---
 # Design System Organizer

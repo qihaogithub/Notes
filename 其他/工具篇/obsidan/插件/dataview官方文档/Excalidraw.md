@@ -1,5 +1,5 @@
 ---
-介绍: 用于编辑和查看ExcalidRaw图形的obsidan插件
+简介: 用于编辑和查看ExcalidRaw图形的obsidan插件
 ---
 
 The Obsidian-Excalidraw plugin integrates [Excalidraw](https://excalidraw.com/), a feature rich sketching tool, into Obsidian. You can store and edit Excalidraw files in your vault, you can embed drawings into your documents, and you can link to documents and other drawings to/and from Excalidraw. For a showcase of Excalidraw features, please read my blog post [here](https://www.zsolt.blog/2021/03/showcasing-excalidraw.html) and/or watch the videos below.

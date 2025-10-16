@@ -1,5 +1,5 @@
 ---
-介绍: 在您的OB保管库中保存活动并管理您的日历和所有其他备注。
+简介: 在您的OB保管库中保存活动并管理您的日历和所有其他备注。
 评级: "0"
 ---
 github:: [github](https://github.com/davish/obsidian-full-calendar)

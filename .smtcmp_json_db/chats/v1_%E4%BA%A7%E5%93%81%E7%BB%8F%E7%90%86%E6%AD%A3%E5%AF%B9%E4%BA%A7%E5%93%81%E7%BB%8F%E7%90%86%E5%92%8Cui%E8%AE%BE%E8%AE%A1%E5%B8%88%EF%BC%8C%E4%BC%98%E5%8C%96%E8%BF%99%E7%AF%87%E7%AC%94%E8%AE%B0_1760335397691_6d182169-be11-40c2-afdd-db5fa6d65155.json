@@ -45,7 +45,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "学习/1·卡片仓/概念设计.md"
+          "file": null
         }
       ]
     },
@@ -71,6 +71,6 @@
     }
   ],
   "createdAt": 1759979564748,
-  "updatedAt": 1759979591944,
+  "updatedAt": 1760335397691,
   "schemaVersion": 1
 }

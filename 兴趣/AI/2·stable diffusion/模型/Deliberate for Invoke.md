@@ -1,7 +1,7 @@
 ---
 column1: 基于关键词的万能类型图片生成模型
 评级: 5
-类别:
+分类:
   - 万能
   - 真实
 链接: https://civitai.com/models/5585/deliberate-for-invoke

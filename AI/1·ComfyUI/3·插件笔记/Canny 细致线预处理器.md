@@ -1,5 +1,5 @@
 ---
-类型:
+分类:
   - ControlNet
 ---
 ![|325](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/202407010928655.png)

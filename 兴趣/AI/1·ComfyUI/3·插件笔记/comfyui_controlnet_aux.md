@@ -1,6 +1,6 @@
 ---
 简介: controlnet预处理器合集
-类型:
+分类:
   - ControlNet
 ---
 ## 简介

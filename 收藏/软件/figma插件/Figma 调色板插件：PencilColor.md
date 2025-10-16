@@ -4,7 +4,7 @@
 作者: "[[四喜茶茶]]"
 发布时间:
 创建日期: 2025-09-24T09:58:53+08:00
-描述: 基于 **OKLCH 色彩科学**，可生成生产级、易访问的色彩系统。支持创建感知均匀的渐变、符合 **WCAG/APCA** 标准的调色板、自动关联的变量和即用型样式指南。结果可导出为 **CSS、SCSS、Shadcn、Tailwind、JSON、iOS、Android** 等格式。
+简介: 基于 **OKLCH 色彩科学**，可生成生产级、易访问的色彩系统。支持创建感知均匀的渐变、符合 **WCAG/APCA** 标准的调色板、自动关联的变量和即用型样式指南。结果可导出为 **CSS、SCSS、Shadcn、Tailwind、JSON、iOS、Android** 等格式。
 tags:
   - clippings
 ---

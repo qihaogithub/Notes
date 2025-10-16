@@ -1,7 +1,7 @@
 ---
 标签:
   - AI
-介绍: 文本生成器是一个开源AI助理工具，在Ob中可用它生成文本或者整理笔记
+简介: 文本生成器是一个开源AI助理工具，在Ob中可用它生成文本或者整理笔记
 评级: "0"
 ---
 [https://github.com/nhaouari/obsidian-textgenerator-plugin](https://link.zhihu.com/?target=https%3A//github.com/nhaouari/obsidian-textgenerator-plugin)

@@ -1,5 +1,5 @@
 ---
-介绍: 用于编辑和查看ExcalidRaw图形的obsidan插件
+简介: 用于编辑和查看ExcalidRaw图形的obsidan插件
 ---
 https://github.com/zsviczian/obsidian-excalidraw-plugin
 

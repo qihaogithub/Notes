@@ -1,12 +1,12 @@
 ---
-created: 2025-09-20T07:03:58.158Z
-updated: 2025-09-20T11:05:54.472Z
+创建日期: 2025-09-20T07:03:58.158Z
+修改日期: 2025-09-20T11:05:54.472Z
 last_processed: 2025-09-20T11:05:54.472Z
-status: 已完成
+状态: 已完成
 projects:
 Parent_project:
   - 激励
-Stakeholders: []
+相关人员: []
 tags:
 ---
 

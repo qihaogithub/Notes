@@ -1,6 +1,6 @@
 ---
 简介: 调用大语言模型
-类型:
+分类:
   - 提示词
 ---
 [Github 地址](https://github.com/leoleelxh/ComfyUI-LLMs)

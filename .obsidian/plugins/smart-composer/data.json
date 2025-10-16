@@ -541,7 +541,7 @@
   ],
   "chatModelId": "魔塔/DeepSeek-V3.1",
   "applyModelId": "魔塔/Qwen3-Next-80B-A3B-Instruct",
-  "embeddingModelId": "openai/text-embedding-3-small",
+  "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",
   "ragOptions": {
     "chunkSize": 1000,

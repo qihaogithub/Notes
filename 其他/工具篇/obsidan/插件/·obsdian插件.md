@@ -1,5 +1,5 @@
 ---
-介绍: 插件商场
+简介: 插件商场
 ---
 插件市场：
 [插件商场](https://obsidian-plugin-stats.vercel.app/)

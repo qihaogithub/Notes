@@ -1,10 +1,10 @@
 ---
 标签:
-介绍: 优化的长宽比计算器
+简介: 优化的长宽比计算器
 链接:
 评级:
 预览图: https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/20230809145744.png
-类型:
+分类:
   - 设计辅助
 ---
 ![image.png](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/20230809145744.png)

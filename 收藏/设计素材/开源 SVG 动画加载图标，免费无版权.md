@@ -4,7 +4,7 @@ source: https://www.ftium4.com/ux-weekly-220.html
 author:
   - "[[龙爪槐守望者]]"
 published: 2025-02-17
-created: 2025-02-17
+创建日期: 2025-02-17
 description: 系统的知识来源于对碎片的整理和思考，为了更好地输出系统知识，记录本周我发现的体验设计和思考，为构建系统知识做准备。
 tags:
   - 素材

@@ -1,13 +1,13 @@
 ---
-title: "如何快速搭建Gemini国内中转节点"
-source: "https://zhuanlan.zhihu.com/p/17087867915"
+title: 如何快速搭建Gemini国内中转节点
+source: https://zhuanlan.zhihu.com/p/17087867915
 author:
   - "[[知乎专栏]]"
 published:
-created: 2025-01-17
-description: "随着Gemini 2.0 在各大模型中崭露头角，很多国内的产品也希望可以接入Gemini，但是由于众所周知的原因，我需要一些方式方法才能完成这一步骤，同时，由于支持OpenAI的客户端工具远远超过支持Gemini，如何解决上述…"
+创建日期: 2025-01-17
+description: 随着Gemini 2.0 在各大模型中崭露头角，很多国内的产品也希望可以接入Gemini，但是由于众所周知的原因，我需要一些方式方法才能完成这一步骤，同时，由于支持OpenAI的客户端工具远远超过支持Gemini，如何解决上述…
 tags:
-  - "clippings"
+  - clippings
 ---
 随着[Gemini 2.0](https://zhida.zhihu.com/search?content_id=252439366&content_type=Article&match_order=1&q=Gemini+2.0&zhida_source=entity) 在各大模型中崭露头角，很多国内的产品也希望可以接入Gemini，但是由于众所周知的原因，我需要一些方式方法才能完成这一步骤，同时，由于支持OpenAI的客户端工具远远超过支持Gemini，如何解决上述两个问题，这里我们介绍一个基于[开源项目](https://zhida.zhihu.com/search?content_id=252439366&content_type=Article&match_order=1&q=%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE&zhida_source=entity)openai-gemini+cloudflare的方式搭建Gemini国内节点。
 

@@ -1,8 +1,8 @@
 ---
 banner: https://image.uisdc.com/wp-content/uploads/2024/02/uisdc-cj-20240207-4.jpg
 banner_y: "9.5"
-Created: 效率
-类型:
+创建日期: 效率
+分类:
   - 界面
 简介: 工作流与模型管理
 ---
