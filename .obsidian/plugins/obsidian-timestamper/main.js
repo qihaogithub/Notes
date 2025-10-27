@@ -50,7 +50,7 @@ const DEFAULT_SETTINGS = {
 //               9 ... verbose output
 const logThreshold = 9;
 const logger = (logString, logLevel = 0) => { if (logLevel <= logThreshold)
-    console.log('TimeStamper: ' + logString); };
+    console.log('时间戳记录器：' + logString); };
 const version = '1.3.0-0002';
 class TimeStamperPlugin extends obsidian.Plugin {
     onload() {
@@ -62,14 +62,14 @@ class TimeStamperPlugin extends obsidian.Plugin {
             this.addSettingTab(new TimeStamperSettingTab(this.app, this));
             this.addCommand({
                 id: 'obsidian-custom-timestamp',
-                name: 'Insert custom time/date stamp',
+                name: '插入自定义时间/日期戳',
                 editorCallback: (editor) => {
                     new TimeStamperModal(this.app, editor, this.settings, this).open();
                 },
             });
             this.addCommand({
                 id: 'obsidian-fast-timestamp',
-                name: 'Insert preconfigured time stamp',
+                name: '插入预设时间戳',
                 editorCallback: (editor) => {
                     const now = new Date();
                     const stamp = obsidian.moment(now).format(this.settings.timeStampFormat);
@@ -85,7 +85,7 @@ class TimeStamperPlugin extends obsidian.Plugin {
             });
             this.addCommand({
                 id: 'obsidian-fast-datestamp',
-                name: 'Insert preconfigured date stamp',
+                name: '插入预配置日期戳记',
                 editorCallback: (editor) => {
                     const now = new Date();
                     const stamp = obsidian.moment(now).format(this.settings.dateStampFormat);
@@ -162,7 +162,7 @@ class TimeStamperModal extends obsidian.Modal {
         targetEl.addClass('input-wrapper');
         const labelEl = document.createElement(divClass);
         labelEl.addClass('input-label');
-        labelEl.setText('Format string:');
+        labelEl.setText('格式化字符串：');
         const formatComponent = new obsidian.TextComponent(targetEl);
         formatComponent.setPlaceholder('e.g. YYYY-MM-DD');
         formatComponent.setValue(this.settings.lastFormat);
@@ -177,7 +177,7 @@ class TimeStamperModal extends obsidian.Modal {
         const submitButtonTarget = document.createElement(divClass);
         submitButtonTarget.addClass('button-wrapper');
         const submitButtonComponent = new obsidian.ButtonComponent(submitButtonTarget);
-        submitButtonComponent.setButtonText('Insert Date/Time Stamp');
+        submitButtonComponent.setButtonText('插入日期/时间戳');
         submitButtonComponent.setCta();
         submitButtonComponent.onClick(doStamp);
         // submitButtonComponent.buttonEl.addEventListener('click', (e) => doStamp)
@@ -203,8 +203,8 @@ class TimeStamperSettingTab extends obsidian.PluginSettingTab {
         const { containerEl } = this;
         containerEl.empty();
         new obsidian.Setting(containerEl)
-            .setName('Date Stamp Template')
-            .setDesc('Template String for inserting a date stamp')
+            .setName('日期戳模板')
+            .setDesc('插入日期戳的模板字符串')
             .addText(text => text
             .setValue(this.plugin.settings.dateStampFormat)
             .onChange((value) => __awaiter(this, void 0, void 0, function* () {
@@ -213,8 +213,8 @@ class TimeStamperSettingTab extends obsidian.PluginSettingTab {
             yield this.plugin.saveSettings();
         })));
         new obsidian.Setting(containerEl)
-            .setName('Time Stamp Template')
-            .setDesc('Template String for inserting a time stamp')
+            .setName('时间戳模板')
+            .setDesc('插入时间戳的模板字符串')
             .addText(text => text
             .setValue(this.plugin.settings.timeStampFormat)
             .onChange((value) => __awaiter(this, void 0, void 0, function* () {
@@ -223,8 +223,8 @@ class TimeStamperSettingTab extends obsidian.PluginSettingTab {
             yield this.plugin.saveSettings();
         })));
         new obsidian.Setting(containerEl)
-            .setName('Insert line break')
-            .setDesc('Add a line break after the time/date stamp')
+            .setName('插入换行符')
+            .setDesc('在时间/日期戳后添加换行')
             .addToggle(toggle => toggle
             .setValue(this.plugin.settings.newLine)
             .onChange((value) => __awaiter(this, void 0, void 0, function* () {

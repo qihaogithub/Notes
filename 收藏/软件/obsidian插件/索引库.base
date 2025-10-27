@@ -3,7 +3,7 @@ views:
     name: 表格
     filters:
       and:
-        - file.folder.startsWith("收藏/obsidian插件")
+        - file.path.startsWith("收藏/软件/obsidian插件")
         - '!file.basename.contains("索引")'
     order:
       - file.name

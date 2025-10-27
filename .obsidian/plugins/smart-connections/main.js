@@ -52,7 +52,7 @@ var require_base64_js = __commonJS({
     function getLens(b64) {
       var len2 = b64.length;
       if (len2 % 4 > 0) {
-        throw new Error("Invalid string. Length must be a multiple of 4");
+        throw new Error("无效的字符串。长度必须是4的倍数");
       }
       var validLen = b64.indexOf("=");
       if (validLen === -1) validLen = len2;
@@ -679,7 +679,7 @@ var SmartEnv = class {
    */
   static async create(main, main_env_opts = null) {
     if (!main || typeof main !== "object") {
-      throw new TypeError("SmartEnv: Invalid main object provided");
+      throw new TypeError("SmartEnv: 提供的主对象无效");
     }
     if (!main_env_opts) {
       if (!main.smart_env_config) {
@@ -819,7 +819,7 @@ var SmartEnv = class {
   init_module(module_key, opts = {}) {
     const module_config = this.opts.modules[module_key];
     if (!module_config) {
-      return console.warn(`SmartEnv: module ${module_key} not found`);
+      return console.warn(`SmartEnv: 模块 ${module_key} 未找到`) ;
     }
     opts = {
       ...{ ...module_config, class: null },
@@ -852,7 +852,7 @@ var SmartEnv = class {
       this.settings_container = container;
     }
     if (!container) {
-      throw new Error("Container is required");
+      throw new Error("需要容器");
     }
     const frag = await this.render_component("settings", this, {});
     this.smart_view.empty(container);
@@ -903,7 +903,7 @@ var SmartEnv = class {
           );
         }
       } catch (e) {
-        console.error("Error getting component", e);
+        console.error("获取组件时出错", e);
         console.log(
           `scope_name: ${scope_name}; component_key: ${component_key}; this.opts.components: ${Object.keys(
             this.opts.components || {}
@@ -1260,7 +1260,7 @@ var SmartFs = class {
     this.env = env;
     this.opts = opts;
     this.fs_path = opts.fs_path || opts.env_path || "";
-    if (!opts.adapter) throw new Error("SmartFs requires an adapter");
+    if (!opts.adapter) throw new Error("SmartFs 需要一个适配器");
     this.adapter = new opts.adapter(this);
     this.excluded_patterns = [];
     if (Array.isArray(opts.exclude_patterns)) {
@@ -1340,8 +1340,8 @@ var SmartFs = class {
       if (!this.excluded_patterns.length) return false;
       return this.excluded_patterns.some((pattern) => pattern.test(_path));
     } catch (e) {
-      console.error(`Error checking if path is excluded: ${e.message}`);
-      console.error(`Path: `, _path);
+      console.error(`检查路径是否被排除时出错: ${e.message}`);
+      console.error(`路径：`, _path);
       throw e;
     }
   }
@@ -1363,7 +1363,7 @@ var SmartFs = class {
    */
   pre_process(paths) {
     if (this.has_excluded_patterns(paths)) {
-      throw new Error(`Path is excluded: ${paths.find((p) => this.is_excluded(p))}`);
+      throw new Error(`路径已排除: ${paths.find((p) => this.is_excluded(p))}`);
     }
     return paths;
   }
@@ -1394,13 +1394,13 @@ var SmartFs = class {
    * @returns {Promise<any>} The result of the method
    */
   async use_adapter(method, paths, ...args) {
-    if (!this.adapter[method]) throw new Error(`Method ${method} not found in adapter`);
+    if (!this.adapter[method]) throw new Error(`在适配器中未找到方法 ${method}`);
     paths = this.pre_process(paths ?? []);
     let resp = await this.adapter[method](...paths, ...args);
     return this.post_process(resp);
   }
   use_adapter_sync(method, paths, ...args) {
-    if (!this.adapter[method]) throw new Error(`Method ${method} not found in adapter`);
+    if (!this.adapter[method]) throw new Error(`在适配器中未找到方法 ${method}`);
     paths = this.pre_process(paths ?? []);
     let resp = this.adapter[method](...paths, ...args);
     return this.post_process(resp);
@@ -1526,7 +1526,7 @@ var SmartFs = class {
     try {
       await this.adapter.write(rel_path, content);
     } catch (error) {
-      console.error("Error during write:", error);
+      console.error("写入过程中发生错误:", error);
       throw error;
     }
   }
@@ -1535,7 +1535,7 @@ var SmartFs = class {
   // async update(rel_path, content) { return await this.use_adapter('write', [rel_path], content); }
   get_link_target_path(link_target, source_path) {
     if (this.adapter.get_link_target_path) return this.adapter.get_link_target_path(link_target, source_path);
-    if (!this.file_paths) return console.warn("get_link_target_path: file_paths not found");
+    if (!this.file_paths) return console.warn("get_link_target_path: 未找到 file_paths");
     const matching_file_paths = this.file_paths.filter((path) => path.includes(link_target));
     return fuzzy_search(matching_file_paths, link_target)[0];
   }
@@ -1899,7 +1899,7 @@ function fmix_32(h) {
 // node_modules/obsidian-smart-env/node_modules/smart-utils/cos_sim.js
 function cos_sim(vector1 = [], vector2 = []) {
   if (vector1.length !== vector2.length) {
-    throw new Error("Vectors must have the same length");
+    throw new Error("向量必须具有相同的长度");
   }
   let dot_product = 0;
   let magnitude1 = 0;
@@ -2232,7 +2232,7 @@ var SmartViewAdapter = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   get setting_class() {
-    throw new Error("setting_class() not implemented");
+    throw new Error("setting_class() 未实现");
   }
   /**
    * Generates the HTML for a specified icon.
@@ -2243,7 +2243,7 @@ var SmartViewAdapter = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   get_icon_html(icon_name) {
-    throw new Error("get_icon_html() not implemented");
+    throw new Error("get_icon_html() 未实现");
   }
   /**
    * Renders Markdown content within a specific scope.
@@ -2255,7 +2255,7 @@ var SmartViewAdapter = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   async render_markdown(markdown, scope = null) {
-    throw new Error("render_markdown() not implemented");
+    throw new Error("render_markdown() 未实现");
   }
   /**
    * Opens a specified URL.
@@ -2264,7 +2264,7 @@ var SmartViewAdapter = class {
    * @param {string} url - The URL to open.
    */
   open_url(url) {
-    throw new Error("open_url() not implemented");
+    throw new Error("open_url() 未实现");
   }
   /**
    * Handles the selection of a folder by invoking the folder selection dialog and updating the setting.
@@ -2275,7 +2275,7 @@ var SmartViewAdapter = class {
    * @param {object} scope - The current scope containing settings and actions.
    */
   handle_folder_select(path, value, elm, scope) {
-    throw new Error("handle_folder_select not implemented");
+    throw new Error("handle_folder_select 未实现");
   }
   /**
    * Handles the selection of a file by invoking the file selection dialog and updating the setting.
@@ -2286,7 +2286,7 @@ var SmartViewAdapter = class {
    * @param {object} scope - The current scope containing settings and actions.
    */
   handle_file_select(path, value, elm, scope) {
-    throw new Error("handle_file_select not implemented");
+    throw new Error("handle_file_select 未实现");
   }
   /**
    * Performs actions before a setting is changed, such as clearing notices and updating the UI.
@@ -2316,7 +2316,7 @@ var SmartViewAdapter = class {
    * @param {object} scope - The current scope containing settings.
    */
   revert_setting(path, elm, scope) {
-    console.warn("revert_setting() not implemented");
+    console.warn("revert_setting() 尚未实现");
   }
   // DEFAULT IMPLEMENTATIONS (may be overridden)
   get setting_renderers() {
@@ -2355,7 +2355,7 @@ var SmartViewAdapter = class {
       }
       const renderer = this.setting_renderers[elm.dataset.type];
       if (!renderer) {
-        console.warn(`Unsupported setting type: ${elm.dataset.type}`);
+        console.warn(`不支持的设置类型: ${elm.dataset.type}`);
         return elm;
       }
       const setting = renderer.call(this, elm, path, value, scope, settings_scope);
@@ -2377,7 +2377,7 @@ var SmartViewAdapter = class {
     const smart_setting = new this.setting_class(elm);
     let options;
     if (elm.dataset.optionsCallback) {
-      console.log(`getting options callback: ${elm.dataset.optionsCallback}`);
+      console.log(`获取选项回调：${elm.data.optionsCallback}`);
       const opts_callback = this.main.get_by_path(scope, elm.dataset.optionsCallback);
       if (typeof opts_callback === "function") options = opts_callback();
       else console.warn(`optionsCallback is not a function: ${elm.dataset.optionsCallback}`, scope);
@@ -2505,7 +2505,7 @@ var SmartViewAdapter = class {
   render_remove_component(elm, path, value, scope, settings_scope) {
     const smart_setting = new this.setting_class(elm);
     smart_setting.addButton((button) => {
-      button.setButtonText(elm.dataset.btnText || elm.dataset.name || "Remove");
+      button.setButtonText(elm.dataset.btnText || elm.dataset.name || "清除");
       button.onClick(async () => {
         this.main.delete_by_path(scope.settings, path, settings_scope);
         if (elm.dataset.callback) {
@@ -2726,7 +2726,7 @@ var SmartViewAdapter = class {
           } else if (elm.dataset.href) {
             this.open_url(elm.dataset.href);
           } else {
-            console.error("No callback or href found for button.");
+            console.error("未找到按钮的回调或链接。");
           }
         });
         if (elm.dataset.btnDisabled || elm.dataset.disabled && elm.dataset.btnDisabled !== "false") {
@@ -2831,7 +2831,7 @@ var SmartViewObsidianAdapter = class extends SmartViewAdapter {
   }
   async render_markdown(markdown, scope) {
     const component = scope.env.smart_connections_plugin?.connections_view || new import_obsidian.Component();
-    if (!scope) return console.warn("Scope required for rendering markdown in Obsidian adapter");
+    if (!scope) return console.warn("Obsidian 适配器渲染 markdown 需要 scope");
     const frag = this.main.create_doc_fragment("<div><div class='inner'></div></div>");
     const container = frag.querySelector(".inner");
     try {
@@ -2843,7 +2843,7 @@ var SmartViewObsidianAdapter = class extends SmartViewAdapter {
         component
       );
     } catch (e) {
-      console.warn("Error rendering markdown in Obsidian adapter", e);
+      console.warn("Obsidian 适配器渲染 markdown 出错", e);
     }
     return frag;
   }
@@ -3418,7 +3418,7 @@ var Collection = class {
    */
   get_many(keys = []) {
     if (!Array.isArray(keys)) {
-      console.error("get_many called with non-array keys:", keys);
+      console.error("get_many被非数组键调用:", keys);
       return [];
     }
     return keys.map((key) => this.get(key)).filter(Boolean);
@@ -3963,7 +3963,7 @@ var DefaultEntitiesVectorAdapter = class extends EntitiesVectorAdapter {
    */
   async process_embed_queue() {
     if (this._is_processing_embed_queue) {
-      console.log("process_embed_queue is already running, skipping concurrent call.");
+      console.log("process_embed_queue 已经在运行，跳过并发调用。");
       return;
     }
     this._is_processing_embed_queue = true;
@@ -3980,20 +3980,20 @@ var DefaultEntitiesVectorAdapter = class extends EntitiesVectorAdapter {
       const embed_queue = this.collection.embed_queue;
       this._reset_embed_queue_stats();
       if (this.collection.embed_model_key === "None") {
-        console.log(`Smart Connections: No active embedding model for ${this.collection.collection_key}, skipping embedding`);
+        console.log(`智能连接：${this.collection.collection_key}没有活动的嵌入模型，跳过嵌入`);
         return;
       }
       if (!this.collection.embed_model) {
-        console.log(`Smart Connections: No active embedding model for ${this.collection.collection_key}, skipping embedding`);
+        console.log(`智能连接：${this.collection.collection_key}没有活动的嵌入模型，跳过嵌入`);
         return;
       }
       const datetime_start = /* @__PURE__ */ new Date();
       if (!embed_queue.length) {
-        console.log(`Smart Connections: No items in ${this.collection.collection_key} embed queue`);
+        console.log(`智能连接：${this.collection.collection_key}嵌入队列中没有项目`);
         return;
       }
       console.log(`Time spent getting embed queue: ${(/* @__PURE__ */ new Date()).getTime() - datetime_start.getTime()}ms`);
-      console.log(`Processing ${this.collection.collection_key} embed queue: ${embed_queue.length} items`);
+      console.log(`正在处理$｛this.collection.collection_key｝嵌入队列：$｛embed_queue.length｝个项目`);
       for (let i = 0; i < embed_queue.length; i += this.collection.embed_model.batch_size) {
         if (this.is_queue_halted) {
           this.is_queue_halted = false;
@@ -4012,7 +4012,7 @@ var DefaultEntitiesVectorAdapter = class extends EntitiesVectorAdapter {
 Please set the API key in the settings.`);
           }
           console.error(e);
-          console.error(`Error processing ${this.collection.collection_key} embed queue: ` + JSON.stringify(e || {}, null, 2));
+          console.error(`处理$｛this.collection.collection_key｝嵌入队列时出错：` + JSON.stringify(e || {}, null, 2));
         }
         batch.forEach((item) => {
           item.embed_hash = item.read_hash;
@@ -4024,7 +4024,7 @@ Please set the API key in the settings.`);
           this.last_save_total = this.embedded_total;
           await this.collection.process_save_queue();
           if (this.collection.block_collection) {
-            console.log(`Saving ${this.collection.block_collection.collection_key} block collection`);
+            console.log(`保存 ${this.collection.block_collection.collection_key} 区块集合`);
             await this.collection.block_collection.process_save_queue();
           }
         }
@@ -4093,7 +4093,7 @@ Please set the API key in the settings.`);
    */
   halt_embed_queue_processing(msg = null) {
     this.is_queue_halted = true;
-    console.log("Embed queue processing halted");
+    console.log("嵌入队列处理已停止");
     this.notices?.remove("embedding_progress");
     this.collection.emit_event("embedding:paused", {
       progress: this.embedded_total,
@@ -4114,7 +4114,7 @@ Please set the API key in the settings.`);
    * @returns {void}
    */
   resume_embed_queue_processing(delay = 0) {
-    console.log("resume_embed_queue_processing");
+    console.log("恢复嵌入队列处理");
     this.notices?.remove("embedding_paused");
     setTimeout(() => {
       this.embedded_total = 0;
@@ -4504,7 +4504,7 @@ var SmartEntities = class extends Collection {
     await super.init();
     await this.load_smart_embed();
     if (!this.embed_model) {
-      console.log(`SmartEmbed not loaded for **${this.collection_key}**. Continuing without embedding capabilities.`);
+      console.log(`**${this.collection_key}**未加载SmartEmbed。继续而不嵌入功能。`);
     }
   }
   /**
@@ -4515,13 +4515,13 @@ var SmartEntities = class extends Collection {
   async load_smart_embed() {
     if (this.embed_model_key === "None") return;
     if (!this.embed_model) return;
-    if (this.embed_model.is_loading) return console.log(`SmartEmbedModel already loading for ${this.embed_model_key}`);
-    if (this.embed_model.is_loaded) return console.log(`SmartEmbedModel already loaded for ${this.embed_model_key}`);
+    if (this.embed_model.is_loading) return console.log(`${this.embed_model_key}已经加载了SmartEmbedModel`);
+    if (this.embed_model.is_loaded) return console.log(`${this.embedde_model_key}的SmartEmbedModel已加载`);
     try {
-      console.log(`Loading SmartEmbedModel in ${this.collection_key}, current state: ${this.embed_model.state}`);
+      console.log(`正在加载SmartEmbedModel在${this.collection_key}中，当前状态：${this.embed_model.state}。`);
       await this.embed_model.load();
     } catch (e) {
-      console.error(`Error loading SmartEmbedModel for ${this.embed_model.model_key}`);
+      console.error(`加载${this.embed_model.model_key}的SmartEmbedModel时出错`);
       console.error(e);
     }
   }
@@ -4550,9 +4550,9 @@ var SmartEntities = class extends Collection {
    * @returns {HTMLElement|undefined} The container element or undefined if not available.
    */
   get smart_embed_container() {
-    if (!this.model_instance_id) return console.log("model_key not set");
+    if (!this.model_instance_id) return console.log("未设置model_key");
     const id = this.model_instance_id.replace(/[^a-zA-Z0-9]/g, "_");
-    if (!window.document) return console.log("window.document not available");
+    if (!window.document) return console.log("window.document 不可用");
     if (window.document.querySelector(`#${id}`)) return window.document.querySelector(`#${id}`);
     const container = window.document.createElement("div");
     container.id = id;
@@ -4585,7 +4585,7 @@ var SmartEntities = class extends Collection {
     this.env._embed_model = embed_model;
   }
   reload_embed_model() {
-    console.log("reload_embed_model");
+    console.log("重新加载嵌入模型");
     this.embed_model.unload();
     this.env._embed_model = null;
   }
@@ -4713,8 +4713,8 @@ var SmartEntities = class extends Collection {
    */
   async lookup(params = {}) {
     const { hypotheticals = [] } = params;
-    if (!hypotheticals?.length) return { error: "hypotheticals is required" };
-    if (!this.embed_model) return { error: "Embedding search is not enabled." };
+    if (!hypotheticals?.length) return { error: "hypotheticals 是必需的" };
+    if (!this.embed_model) return { error: "嵌入搜索未启用。" };
     const hyp_vecs = await this.embed_model.embed_batch(hypotheticals.map((h) => ({ embed_input: h })));
     const limit = params.filter?.limit || params.k || this.env.settings.lookup_k || 10;
     if (params.filter?.limit) delete params.filter.limit;
@@ -4741,7 +4741,7 @@ var SmartEntities = class extends Collection {
       return acc;
     }, Promise.resolve({}));
     const top_k = Object.values(results).sort(sort_by_score).slice(0, limit);
-    console.log(`Found and returned ${top_k.length} ${this.collection_key}.`);
+    console.log(`找到并返回了 ${top_k.length} 个 ${this.collection_key}。`);
     return top_k;
   }
   /**
@@ -4807,47 +4807,47 @@ var SmartEntities = class extends Collection {
 };
 var settings_config = {
   "min_chars": {
-    name: "Minimum length",
+    name: "最小长度",
     type: "number",
-    description: "Minimum length of entity to embed (in characters).",
-    placeholder: "Enter number ex. 300",
+    description: "要嵌入的实体的最小长度（以字符为单位）。",
+    placeholder: "输入数字,例如:300",
     default: 300
   }
 };
 var connections_filter_config = {
   "smart_view_filter.show_full_path": {
-    "name": "Show full path",
+    "name": "显示完整路径",
     "type": "toggle",
     "description": "Turning on will include the folder path in the connections results."
   },
   "smart_view_filter.render_markdown": {
-    "name": "Render markdown",
+    "name": "渲染markdown",
     "type": "toggle",
     "description": "Turn off to prevent rendering markdown and display connection results as plain text."
   },
   "smart_view_filter.results_limit": {
-    "name": "Results limit",
+    "name": "结果限制",
     "type": "number",
     "description": "Adjust the number of connections displayed in the connections view (default 20).",
     "default": 20
   },
   "smart_view_filter.exclude_inlinks": {
-    "name": "Exclude inlinks (backlinks)",
+    "name": "排除内联（反向链接）",
     "type": "toggle",
     "description": "Exclude notes that already link to the current note from the connections results."
   },
   "smart_view_filter.exclude_outlinks": {
-    "name": "Exclude outlinks",
+    "name": "排除外部链接",
     "type": "toggle",
     "description": "Exclude notes that are already linked from within the current note from appearing in the connections results."
   },
   "smart_view_filter.include_filter": {
-    "name": "Include filter",
+    "name": "包含筛选器",
     "type": "text",
     "description": "Notes must match this value in their file/folder path. Matching notes will be included in the connections results. Separate multiple values with commas."
   },
   "smart_view_filter.exclude_filter": {
-    "name": "Exclude filter",
+    "name": "排除筛选器",
     "type": "text",
     "description": "Notes must *not* match this value in their file/folder path. Matching notes will be *excluded* from the connections results. Separate multiple values with commas."
   },
@@ -4966,7 +4966,7 @@ var SmartSource = class extends SmartEntity {
       await this.source_adapter?.import();
     } catch (err) {
       if (err.code === "ENOENT") {
-        console.log(`Smart Connections: Deleting ${this.path} data because it no longer exists on disk`);
+        console.log(`智能连接：删除 ${this.path} 数据，因为它在磁盘上不再存在。`);
         this.delete();
       } else {
         console.warn("Smart Connections: Error during import: re-queueing import", err);
@@ -5071,7 +5071,7 @@ ${content}`.substring(0, max_chars);
   async search(search_filter = {}) {
     const { keywords, type = "any", limit } = search_filter;
     if (!keywords || !Array.isArray(keywords)) {
-      console.warn("Entity.search: keywords not set or is not an array");
+      console.warn("Entity.search: 关键词未设置或不是数组");
       return 0;
     }
     if (limit && this.collection.search_results_ct >= limit) return 0;
@@ -5579,7 +5579,7 @@ var SmartSources = class extends SmartEntities {
       }
     }
     const end_time = Date.now();
-    console.log(`Time spent building links: ${end_time - start_time}ms`);
+    console.log(`构建链接所花费的时间：${end_Time-start_Time}ms`);
     return this.links;
   }
   /**
@@ -5611,7 +5611,7 @@ var SmartSources = class extends SmartEntities {
       ...filter_opts
     } = search_filter;
     if (!keywords) {
-      console.warn("search_filter.keywords not set");
+      console.warn("search_filter.keywords 未设置");
       return [];
     }
     this.search_results_ct = 0;
@@ -5628,7 +5628,7 @@ var SmartSources = class extends SmartEntities {
               return { item, score: matches };
             } else return null;
           } catch (error) {
-            console.error(`Error searching item ${item.id || "unknown"}:`, error);
+            console.error(`搜索项目 ${item.id || "未知"} 时出错：`, error);
             return null;
           }
         })
@@ -5702,7 +5702,7 @@ var SmartSources = class extends SmartEntities {
     const { process_embed_queue = true, force = false } = opts;
     if (force) Object.values(this.items).forEach((item) => item._queue_import = true);
     const import_queue = Object.values(this.items).filter((item) => item._queue_import);
-    console.log("import_queue " + import_queue.length);
+    console.log("导入队列" + import_queue.length);
     if (import_queue.length) {
       const time_start = Date.now();
       for (let i = 0; i < import_queue.length; i += 100) {
@@ -5724,7 +5724,7 @@ var SmartSources = class extends SmartEntities {
     }
     this.build_links_map();
     if (process_embed_queue) await this.process_embed_queue();
-    else console.log("skipping process_embed_queue");
+    else console.log("跳过处理嵌入队列");
     await this.process_save_queue();
     await this.block_collection?.process_save_queue();
   }
@@ -5829,7 +5829,7 @@ var SmartSources = class extends SmartEntities {
           return acc;
         }, []);
       } catch (e) {
-        console.error(`Error getting embed queue:`, e);
+        console.error(`获取嵌入队列时出错：`, e);
       }
     }
     return this._embed_queue;
@@ -5896,7 +5896,7 @@ var SmartSources = class extends SmartEntities {
     }
     this.notices?.remove("pruning_collection");
     this.notices?.show("done_pruning_collection", { collection_key: this.block_collection.collection_key, count: remove_smart_blocks.length });
-    console.log(`Pruned ${remove_smart_blocks.length} blocks:
+    console.log(`修剪了 ${remove_smart_blocks.length} 块:
 ${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join("\n")}`);
     await this.data_fs.remove_dir(this.data_dir, true);
     await this.process_save_queue({ force: true });
@@ -5975,21 +5975,21 @@ ${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join("\n")}`
 };
 var settings_config2 = {
   file_exclusions: {
-    name: "File Exclusions",
+    name: "文件排除",
     description: "Comma-separated list of files to exclude.",
     type: "text",
     default: "",
     callback: "update_exclusions"
   },
   folder_exclusions: {
-    name: "Folder Exclusions",
+    name: "文件夹排除",
     description: "Comma-separated list of folders to exclude.",
     type: "text",
     default: "",
     callback: "update_exclusions"
   },
   excluded_headings: {
-    name: "Excluded Headings",
+    name: "排除的标题",
     description: "Comma-separated list of headings to exclude.",
     type: "text",
     default: ""
@@ -6030,7 +6030,7 @@ var CollectionDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save a single item by its key using its associated `ItemDataAdapter`.
@@ -6039,7 +6039,7 @@ var CollectionDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete a single item by its key. This may involve updating or removing its file,
@@ -6049,7 +6049,7 @@ var CollectionDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is deleted.
    */
   async delete_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued load operations. Typically orchestrates calling `load_item()` 
@@ -6058,7 +6058,7 @@ var CollectionDataAdapter = class {
    * @returns {Promise<void>}
    */
   async process_load_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued save operations. Typically orchestrates calling `save_item()` 
@@ -6067,7 +6067,7 @@ var CollectionDataAdapter = class {
    * @returns {Promise<void>}
    */
   async process_save_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Load the item's data from storage if it has been updated externally.
@@ -6095,7 +6095,7 @@ var ItemDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is fully loaded.
    */
   async load() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save the item's data to storage. May involve writing to a file or appending 
@@ -6106,7 +6106,7 @@ var ItemDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save(ajson = null) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete the item's data from storage. May involve removing a file or writing 
@@ -6115,7 +6115,7 @@ var ItemDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item’s data is deleted.
    */
   async delete() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Returns the file path or unique identifier used by this adapter to locate and store 
@@ -6123,7 +6123,7 @@ var ItemDataAdapter = class {
    * @returns {string} The path or identifier for the item's data.
    */
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @returns {CollectionDataAdapter} The collection data adapter that this item data adapter belongs to.
@@ -6140,7 +6140,7 @@ var ItemDataAdapter = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_if_updated() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
 };
 
@@ -6166,7 +6166,7 @@ var FileItemDataAdapter = class extends ItemDataAdapter {
     return this.item.collection.data_fs || this.item.collection.env.data_fs;
   }
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   async load_if_updated() {
     const data_path = this.data_path;
@@ -6174,7 +6174,7 @@ var FileItemDataAdapter = class extends ItemDataAdapter {
       const loaded_at = this.item.loaded_at || 0;
       const data_file_stat = await this.fs.stat(data_path);
       if (data_file_stat.mtime > loaded_at + 1 * 60 * 1e3) {
-        console.log(`Smart Collections: Re-loading item ${this.item.key} because it has been updated on disk`);
+        console.log(`智能集合：重新加载项目 ${this.item.key}，因为它在磁盘上已更新`);
         await this.load();
       }
     }
@@ -6235,7 +6235,7 @@ var AjsonMultiFileCollectionDataAdapter = class extends FileCollectionDataAdapte
       this.collection.clear_process_notice("loading_collection");
       return;
     }
-    console.log(`Loading ${this.collection.collection_key}: ${load_queue.length} items`);
+    console.log(`正在加载 ${this.collection.collection_key}: ${load_queue.length}个项目`);
     const batch_size = 100;
     for (let i = 0; i < load_queue.length; i += batch_size) {
       const batch = load_queue.slice(i, i + batch_size);
@@ -6260,7 +6260,7 @@ var AjsonMultiFileCollectionDataAdapter = class extends FileCollectionDataAdapte
     this.collection.emit_event("collection:save_started");
     this.collection.show_process_notice("saving_collection");
     const save_queue = Object.values(this.collection.items).filter((item) => item._queue_save);
-    console.log(`Saving ${this.collection.collection_key}: ${save_queue.length} items`);
+    console.log(`正在保存${this.collection.collection_key}: ${save_queue.length} 个项目`);
     const time_start = Date.now();
     const batch_size = 50;
     for (let i = 0; i < save_queue.length; i += batch_size) {
@@ -6813,7 +6813,7 @@ var FileSourceContentAdapter = class extends SourceContentAdapter {
   }
   async move_to(move_to_ref) {
     if (!move_to_ref) {
-      throw new Error("Invalid entity reference for move_to operation");
+      throw new Error("无效的实体引用用于 move_to 操作");
     }
     const move_content = await this.read();
     let has_existing = false;
@@ -6846,7 +6846,7 @@ var FileSourceContentAdapter = class extends SourceContentAdapter {
   async move_to_v1(entity_ref) {
     const new_path = typeof entity_ref === "string" ? entity_ref : entity_ref.key;
     if (!new_path) {
-      throw new Error("Invalid entity reference for move_to operation");
+      throw new Error("无效的实体引用用于 move_to 操作");
     }
     const current_content = await this.read();
     const [target_source_key, ...headings] = new_path.split("#");
@@ -7683,7 +7683,7 @@ var SmartBlock = class extends SmartEntity {
       return true;
     } catch (e) {
       console.error(e, e.stack);
-      console.error(`Error getting should_embed for ${this.key}: ` + JSON.stringify(e || {}, null, 2));
+      console.error(`获取 ${this.key} 的 should_embed 时发生错误: ` + JSON.stringify(e || {}, null, 2));
     }
   }
   /**
@@ -7925,7 +7925,7 @@ var AjsonMultiFileBlocksDataAdapter = class extends AjsonMultiFileCollectionData
     this.collection.emit_event("collection:save_started");
     this.collection.show_process_notice("saving_collection");
     const save_queue = Object.values(this.collection.items).filter((item) => item._queue_save);
-    console.log(`Saving ${this.collection.collection_key}: ${save_queue.length} items`);
+    console.log(`正在保存${this.collection.collection_key}: ${save_queue.length} 个项目`);
     const time_start = Date.now();
     const save_files = Object.entries(save_queue.reduce((acc, item) => {
       const file_name = this.get_item_data_path(item.key);
@@ -7946,7 +7946,7 @@ var AjsonMultiFileBlocksDataAdapter = class extends AjsonMultiFileCollectionData
     this.collection.emit_event("collection:save_completed");
   }
   process_load_queue() {
-    console.log(`Skipping loading ${this.collection.collection_key}...`);
+    console.log(`跳过加载${this.collection.collection_key}。。。`);
   }
 };
 var AjsonMultiFileBlockDataAdapter = class extends AjsonMultiFileItemDataAdapter {
@@ -7970,7 +7970,7 @@ var BlockContentAdapter = class {
    * @throws {Error} If not implemented by subclass.
    */
   async read() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @async
@@ -7981,7 +7981,7 @@ var BlockContentAdapter = class {
    * @throws {Error} If not implemented by subclass.
    */
   async append(content) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @async
@@ -7993,7 +7993,7 @@ var BlockContentAdapter = class {
    * @throws {Error} If not implemented by subclass.
    */
   async update(new_content, opts = {}) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @async
@@ -8003,7 +8003,7 @@ var BlockContentAdapter = class {
    * @throws {Error} If not implemented by subclass.
    */
   async remove() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @async
@@ -8014,7 +8014,7 @@ var BlockContentAdapter = class {
    * @throws {Error} If not implemented by subclass.
    */
   async move_to(to_key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @name data
@@ -8219,7 +8219,7 @@ function settings_header_html(collection, opts = {}) {
 function get_source_heading_html(collection) {
   const item_count = Object.keys(collection.items).length;
   if (!collection.loaded) {
-    return `<span>${item_count} sources (embeddings not currently loaded)</span>`;
+    return `<span>${item_count} 源(嵌入尚未加载)</span>`;
   }
   const total_count = collection.total_files;
   const included_count = collection.included_files;
@@ -8230,7 +8230,7 @@ function get_source_heading_html(collection) {
   const embedded_percentage = Math.round(embedded_items.length / item_count * 100);
   const load_time_html = collection.load_time_ms ? `<span>Load time: ${collection.load_time_ms}ms</span>` : "";
   return `
-    <span>${embedded_percentage}% embedded</span>
+    <span>${embedded_percentage}% 已嵌入</span>
     ${embedded_percentage === 0 ? "<span><b>Should run Re-import to re-embed</b></span>" : ""}
     <span>${included_count} included</span>
     <span>${total_count - included_count} excluded</span>
@@ -8240,7 +8240,7 @@ function get_source_heading_html(collection) {
 function get_block_heading_html(collection) {
   const item_count = Object.keys(collection.items).length;
   if (!collection.loaded) {
-    return `<span>${item_count} blocks (embeddings not currently loaded)</span>`;
+    return `<span>${item_count} 块(嵌入尚未加载)</span>`;
   }
   if (collection.loaded !== item_count) {
     return `<span>${collection.loaded}/${item_count} (loaded/total)</span>`;
@@ -8553,9 +8553,9 @@ var SmartModel = class {
   get settings_config() {
     return this.process_settings_config({
       adapter: {
-        name: "Model Platform",
+        name: "模型平台",
         type: "dropdown",
-        description: "Select a model platform to use with Smart Model.",
+        description: "选择要与Smart model一起使用的模型平台。",
         options_callback: "get_platforms_as_options",
         is_scope: true,
         // trigger re-render of settings when changed
@@ -8830,7 +8830,7 @@ var SmartModelAdapter = class {
     if (params_valid !== true) return params_valid;
     if (!Object.keys(models || {}).length) {
       this.get_models(true);
-      return [{ value: "", name: "No models currently available" }];
+      return [{ value: "", name: "当前" }];
     }
     return Object.entries(models).map(([id, model]) => ({ value: id, name: model.name || id })).sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -8922,7 +8922,7 @@ var SmartEmbedAdapter = class extends SmartModelAdapter {
       "[ADAPTER].model_key": {
         name: "Embedding model",
         type: "dropdown",
-        description: "Select an embedding model.",
+        description: "选择一个嵌入模型。",
         options_callback: "adapter.get_models_as_options",
         callback: "model_changed",
         default: this.constructor.defaults.default_model
@@ -9158,13 +9158,13 @@ var SmartEmbedModelApiAdapter = class extends SmartEmbedAdapter {
     const request_params = _req.to_platform();
     const resp = await this.request(request_params);
     if (!resp) {
-      console.error("No response received for embedding request.");
+      console.error("未收到嵌入请求的响应。");
       return [];
     }
     const _res = new this.res_adapter(this, resp);
     const embeddings = _res.to_openai();
     if (!embeddings) {
-      console.error("Failed to parse embeddings.");
+      console.error("解析嵌入失败。");
       return [];
     }
     return inputs.map((item, i) => {
@@ -9228,7 +9228,7 @@ var SmartEmbedModelApiAdapter = class extends SmartEmbedAdapter {
   async handle_request_err(error, req, retries) {
     if (error.status === 429 && retries < 3) {
       const backoff = Math.pow(retries + 1, 2);
-      console.log(`Retrying request (429) in ${backoff} seconds...`);
+      console.log(`正在重试请求 (429)，将在 ${backoff} 秒后重试...`);
       await new Promise((r) => setTimeout(r, 1e3 * backoff));
       return await this.request(req, retries + 1);
     }
@@ -9432,7 +9432,7 @@ var _Tiktoken = class {
       const specialMatch = text.match(disallowedSpecialRegex);
       if (specialMatch != null) {
         throw new Error(
-          `The text contains a special token that is not allowed: ${specialMatch[0]}`
+          `文本中包含不允许的特殊标记：${specialMatch[0]}`
         );
       }
     }
@@ -9526,7 +9526,7 @@ var CL100K_URL = "https://raw.githubusercontent.com/brianpetro/jsbrains/refs/hea
 var SmartEmbedOpenAIAdapter = class extends SmartEmbedModelApiAdapter {
   static defaults = {
     adapter: "openai",
-    description: "OpenAI (API)",
+    description: "OpenAI（API）",
     default_model: "text-embedding-3-small",
     endpoint: "https://api.openai.com/v1/embeddings"
   };
@@ -9563,10 +9563,10 @@ var SmartEmbedOpenAIAdapter = class extends SmartEmbedModelApiAdapter {
    */
   async prepare_embed_input(embed_input) {
     if (typeof embed_input !== "string") {
-      throw new TypeError("embed_input must be a string");
+      throw new TypeError("embed_input 必须是一个字符串");
     }
     if (embed_input.length === 0) {
-      console.log("Warning: prepare_embed_input received an empty string");
+      console.log("警告：prepare_membed_input收到空字符串");
       return null;
     }
     const { tokens } = await this.count_tokens(embed_input);
@@ -9593,7 +9593,7 @@ var SmartEmbedOpenAIAdapter = class extends SmartEmbedModelApiAdapter {
     const prepared_input = await this.prepare_embed_input(trimmed_input);
     if (prepared_input === null) {
       console.log(
-        "Warning: prepare_embed_input resulted in an empty string after trimming"
+        "警告：在修剪后，prepare_embed_input 导致空字符串。"
       );
       return null;
     }
@@ -9715,7 +9715,7 @@ var SmartEmbedOpenAIResponseAdapter = class extends SmartEmbedModelResponseAdapt
   parse_response() {
     const resp = this.response;
     if (!resp || !resp.data || !resp.usage) {
-      console.error("Invalid response format", resp);
+      console.error("响应格式无效", resp);
       return [];
     }
     const avg_tokens = resp.usage.total_tokens / resp.data.length;
@@ -9764,7 +9764,7 @@ var SmartEmbedMessageAdapter = class extends SmartEmbedAdapter {
   _handle_message_result(id, result, error) {
     if (!id.startsWith(this.message_prefix)) return;
     if (result?.model_loaded) {
-      console.log("model loaded");
+      console.log("模型已加载");
       this.model.model_loaded = true;
     }
     if (this.message_queue[id]) {
@@ -9845,7 +9845,7 @@ var SmartEmbedIframeAdapter = class extends SmartEmbedMessageAdapter {
                 ${this.connector}
                 // Set up a message listener in the iframe
                 window.addEventListener('message', async (event) => {
-                    if (event.origin !== '${this.origin}' || event.data.iframe_id !== '${this.iframe_id}') return console.log('message ignored (listener)', event);
+                    if (event.origin !== '${this.origin}' || event.data.iframe_id !== '${this.iframe_id}') return console.log('消息被忽略(监听器)', event);
                     // Process the message and send the response back
                     const response = await process_message(event.data);
                     window.parent.postMessage({ ...response, iframe_id: '${this.iframe_id}' }, '${this.origin}');
@@ -9897,12 +9897,12 @@ var SmartEmbedIframeAdapter = class extends SmartEmbedMessageAdapter {
 };
 
 // node_modules/obsidian-smart-env/node_modules/smart-embed-model/connectors/transformers_iframe.js
-var transformers_connector = 'var __defProp = Object.defineProperty;\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;\nvar __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);\n\n// ../smart-model/smart_model.js\nvar SmartModel = class {\n  /**\n   * Create a SmartModel instance.\n   * @param {Object} opts - Configuration options\n   * @param {Object} opts.adapters - Map of adapter names to adapter classes\n   * @param {Object} opts.settings - Model settings configuration\n   * @param {Object} opts.model_config - Model-specific configuration\n   * @param {string} opts.model_config.adapter - Name of the adapter to use\n   * @param {string} [opts.model_key] - Optional model identifier to override settings\n   * @throws {Error} If required options are missing\n   */\n  constructor(opts = {}) {\n    __publicField(this, "scope_name", "smart_model");\n    this.opts = opts;\n    this.validate_opts(opts);\n    this.state = "unloaded";\n    this._adapter = null;\n  }\n  /**\n   * Initialize the model by loading the configured adapter.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async initialize() {\n    this.load_adapter(this.adapter_name);\n    await this.load();\n  }\n  /**\n   * Validate required options.\n   * @param {Object} opts - Configuration options\n   */\n  validate_opts(opts) {\n    if (!opts.adapters) throw new Error("opts.adapters is required");\n    if (!opts.settings) throw new Error("opts.settings is required");\n  }\n  /**\n   * Get the current settings\n   * @returns {Object} Current settings\n   */\n  get settings() {\n    if (!this.opts.settings) this.opts.settings = {\n      ...this.constructor.defaults\n    };\n    return this.opts.settings;\n  }\n  /**\n   * Get the current adapter name\n   * @returns {string} Current adapter name\n   */\n  get adapter_name() {\n    let adapter_key = this.opts.model_config?.adapter || this.opts.adapter || this.settings.adapter || Object.keys(this.adapters)[0];\n    if (!adapter_key || !this.adapters[adapter_key]) {\n      console.warn(`Platform "${adapter_key}" not supported`);\n      adapter_key = Object.keys(this.adapters)[0];\n    }\n    return adapter_key;\n  }\n  /**\n   * Get adapter-specific settings.\n   * @returns {Object} Settings for current adapter\n   */\n  get adapter_settings() {\n    if (!this.settings[this.adapter_name]) this.settings[this.adapter_name] = {};\n    return this.settings[this.adapter_name];\n  }\n  get adapter_config() {\n    const base_config = this.adapters[this.adapter_name]?.defaults || {};\n    return {\n      ...base_config,\n      ...this.adapter_settings,\n      ...this.opts.adapter_config\n    };\n  }\n  /**\n   * Get available models.\n   * @returns {Object} Map of model objects\n   */\n  get models() {\n    return this.adapter.models;\n  }\n  /**\n   * Get default model key.\n   * @returns {string} Default model key\n   */\n  get default_model_key() {\n    return this.adapter.constructor.defaults.default_model;\n  }\n  /**\n   * Get the current model key\n   * @returns {string} Current model key\n   */\n  get model_key() {\n    return this.opts.model_key || this.adapter_config.model_key || this.settings.model_key || this.default_model_key;\n  }\n  /**\n   * Get the current model configuration\n   * @returns {Object} Combined base and custom model configuration\n   */\n  get model_config() {\n    const model_key = this.model_key;\n    const base_model_config = this.models[model_key] || {};\n    return {\n      ...this.adapter_config,\n      ...base_model_config,\n      ...this.opts.model_config\n    };\n  }\n  get model_settings() {\n    if (!this.settings[this.model_key]) this.settings[this.model_key] = {};\n    return this.settings[this.model_key];\n  }\n  /**\n   * Load the current adapter and transition to loaded state.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async load() {\n    this.set_state("loading");\n    try {\n      if (!this.adapter?.is_loaded) {\n        await this.invoke_adapter_method("load");\n      }\n    } catch (err) {\n      this.set_state("unloaded");\n      if (!this.reload_model_timeout) {\n        this.reload_model_timeout = setTimeout(async () => {\n          this.reload_model_timeout = null;\n          await this.load();\n          this.set_state("loaded");\n          this.notices?.show("Loaded model: " + this.model_key);\n        }, 6e4);\n      }\n      throw new Error(`Failed to load model: ${err.message}`);\n    }\n    this.set_state("loaded");\n  }\n  /**\n   * Unload the current adapter and transition to unloaded state.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async unload() {\n    if (this.adapter?.is_loaded) {\n      this.set_state("unloading");\n      await this.invoke_adapter_method("unload");\n      this.set_state("unloaded");\n    }\n  }\n  /**\n   * Set the model\'s state.\n   * @param {(\'unloaded\'|\'loading\'|\'loaded\'|\'unloading\')} new_state - The new state\n   * @throws {Error} If the state is invalid\n   */\n  set_state(new_state) {\n    const valid_states = ["unloaded", "loading", "loaded", "unloading"];\n    if (!valid_states.includes(new_state)) {\n      throw new Error(`Invalid state: ${new_state}`);\n    }\n    this.state = new_state;\n  }\n  get is_loading() {\n    return this.state === "loading";\n  }\n  get is_loaded() {\n    return this.state === "loaded";\n  }\n  get is_unloading() {\n    return this.state === "unloading";\n  }\n  get is_unloaded() {\n    return this.state === "unloaded";\n  }\n  // ADAPTERS\n  /**\n   * Get the map of available adapters\n   * @returns {Object} Map of adapter names to adapter classes\n   */\n  get adapters() {\n    return this.opts.adapters || {};\n  }\n  /**\n   * Load a specific adapter by name.\n   * @async\n   * @param {string} adapter_name - Name of the adapter to load\n   * @throws {Error} If adapter not found or loading fails\n   * @returns {Promise<void>}\n   */\n  async load_adapter(adapter_name) {\n    this.set_adapter(adapter_name);\n    if (!this._adapter.loaded) {\n      this.set_state("loading");\n      try {\n        await this.invoke_adapter_method("load");\n        this.set_state("loaded");\n      } catch (err) {\n        this.set_state("unloaded");\n        throw new Error(`Failed to load adapter: ${err.message}`);\n      }\n    }\n  }\n  /**\n   * Set an adapter instance by name without loading it.\n   * @param {string} adapter_name - Name of the adapter to set\n   * @throws {Error} If adapter not found\n   */\n  set_adapter(adapter_name) {\n    const AdapterClass = this.adapters[adapter_name];\n    if (!AdapterClass) {\n      throw new Error(`Adapter "${adapter_name}" not found.`);\n    }\n    if (this._adapter?.constructor.name.toLowerCase() === adapter_name.toLowerCase()) {\n      return;\n    }\n    this._adapter = new AdapterClass(this);\n  }\n  /**\n   * Get the current active adapter instance\n   * @returns {Object} The active adapter instance\n   * @throws {Error} If adapter not found\n   */\n  get adapter() {\n    const adapter_name = this.adapter_name;\n    if (!adapter_name) {\n      throw new Error(`Adapter not set for model.`);\n    }\n    if (!this._adapter) {\n      this.load_adapter(adapter_name);\n    }\n    return this._adapter;\n  }\n  /**\n   * Ensure the adapter is ready to execute a method.\n   * @param {string} method - Name of the method to check\n   * @throws {Error} If adapter not loaded or method not implemented\n   */\n  ensure_adapter_ready(method) {\n    if (!this.adapter) {\n      throw new Error("No adapter loaded.");\n    }\n    if (typeof this.adapter[method] !== "function") {\n      throw new Error(`Adapter does not implement method: ${method}`);\n    }\n  }\n  /**\n   * Invoke a method on the current adapter.\n   * @async\n   * @param {string} method - Name of the method to call\n   * @param {...any} args - Arguments to pass to the method\n   * @returns {Promise<any>} Result from the adapter method\n   * @throws {Error} If adapter not ready or method fails\n   */\n  async invoke_adapter_method(method, ...args) {\n    this.ensure_adapter_ready(method);\n    return await this.adapter[method](...args);\n  }\n  /**\n   * Get platforms as dropdown options.\n   * @returns {Array<Object>} Array of {value, name} option objects\n   */\n  get_platforms_as_options() {\n    return Object.entries(this.adapters).map(([key, AdapterClass]) => ({ value: key, name: AdapterClass.defaults.description || key }));\n  }\n  // SETTINGS\n  /**\n   * Get the settings configuration schema\n   * @returns {Object} Settings configuration object\n   */\n  get settings_config() {\n    return this.process_settings_config({\n      adapter: {\n        name: "Model Platform",\n        type: "dropdown",\n        description: "Select a model platform to use with Smart Model.",\n        options_callback: "get_platforms_as_options",\n        is_scope: true,\n        // trigger re-render of settings when changed\n        callback: "adapter_changed",\n        default: "default"\n      }\n    });\n  }\n  /**\n   * Process settings configuration with conditionals and prefixes.\n   * @param {Object} _settings_config - Raw settings configuration\n   * @param {string} [prefix] - Optional prefix for setting keys\n   * @returns {Object} Processed settings configuration\n   */\n  process_settings_config(_settings_config, prefix = null) {\n    return Object.entries(_settings_config).reduce((acc, [key, val]) => {\n      const new_key = (prefix ? prefix + "." : "") + this.process_setting_key(key);\n      acc[new_key] = val;\n      return acc;\n    }, {});\n  }\n  /**\n   * Process an individual setting key.\n   * Example: replace placeholders with actual adapter names.\n   * @param {string} key - The setting key with placeholders.\n   * @returns {string} Processed setting key.\n   */\n  process_setting_key(key) {\n    return key.replace(/\\[ADAPTER\\]/g, this.adapter_name);\n  }\n  re_render_settings() {\n    if (typeof this.opts.re_render_settings === "function") this.opts.re_render_settings();\n    else console.warn("re_render_settings is not a function (must be passed in model opts)");\n  }\n  /**\n   * Reload model.\n   */\n  reload_model() {\n    if (typeof this.opts.reload_model === "function") this.opts.reload_model();\n    else console.warn("reload_model is not a function (must be passed in model opts)");\n  }\n  adapter_changed() {\n    this.reload_model();\n    this.re_render_settings();\n  }\n  model_changed() {\n    this.reload_model();\n    this.re_render_settings();\n  }\n};\n__publicField(SmartModel, "defaults", {\n  // override in sub-class if needed\n});\n\n// smart_embed_model.js\nvar SmartEmbedModel = class extends SmartModel {\n  /**\n   * Create a SmartEmbedModel instance\n   * @param {Object} opts - Configuration options\n   * @param {Object} [opts.adapters] - Map of available adapter implementations\n   * @param {boolean} [opts.use_gpu] - Whether to enable GPU acceleration\n   * @param {number} [opts.gpu_batch_size] - Batch size when using GPU\n   * @param {number} [opts.batch_size] - Default batch size for processing\n   * @param {Object} [opts.model_config] - Model-specific configuration\n   * @param {string} [opts.model_config.adapter] - Override adapter type\n   * @param {number} [opts.model_config.dims] - Embedding dimensions\n   * @param {number} [opts.model_config.max_tokens] - Maximum tokens to process\n   * @param {Object} [opts.settings] - User settings\n   * @param {string} [opts.settings.api_key] - API key for remote models\n   * @param {number} [opts.settings.min_chars] - Minimum text length to embed\n   */\n  constructor(opts = {}) {\n    super(opts);\n    __publicField(this, "scope_name", "smart_embed_model");\n  }\n  /**\n   * Count tokens in an input string\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   * @property {number} tokens - Number of tokens in input\n   * \n   * @example\n   * ```javascript\n   * const result = await model.count_tokens("Hello world");\n   * console.log(result.tokens); // 2\n   * ```\n   */\n  async count_tokens(input) {\n    return await this.invoke_adapter_method("count_tokens", input);\n  }\n  /**\n   * Generate embeddings for a single input\n   * @param {string|Object} input - Text or object with embed_input property\n   * @returns {Promise<Object>} Embedding result\n   * @property {number[]} vec - Embedding vector\n   * @property {number} tokens - Token count\n   * \n   * @example\n   * ```javascript\n   * const result = await model.embed("Hello world");\n   * console.log(result.vec); // [0.1, 0.2, ...]\n   * ```\n   */\n  async embed(input) {\n    if (typeof input === "string") input = { embed_input: input };\n    return (await this.embed_batch([input]))[0];\n  }\n  /**\n   * Generate embeddings for multiple inputs in batch\n   * @param {Array<string|Object>} inputs - Array of texts or objects with embed_input\n   * @returns {Promise<Array<Object>>} Array of embedding results\n   * @property {number[]} vec - Embedding vector for each input\n   * @property {number} tokens - Token count for each input\n   * \n   * @example\n   * ```javascript\n   * const results = await model.embed_batch([\n   *   { embed_input: "First text" },\n   *   { embed_input: "Second text" }\n   * ]);\n   * ```\n   */\n  async embed_batch(inputs) {\n    return await this.invoke_adapter_method("embed_batch", inputs);\n  }\n  /**\n   * Get the current batch size based on GPU settings\n   * @returns {number} Current batch size for processing\n   */\n  get batch_size() {\n    return this.adapter.batch_size || 1;\n  }\n  /**\n   * Get settings configuration schema\n   * @returns {Object} Settings configuration object\n   */\n  get settings_config() {\n    const _settings_config = {\n      adapter: {\n        name: "Embedding model platform",\n        type: "dropdown",\n        description: "Select an embedding model platform. The default \'transformers\' utilizes built-in local models.",\n        options_callback: "get_platforms_as_options",\n        callback: "adapter_changed",\n        default: this.constructor.defaults.adapter\n      },\n      ...this.adapter.settings_config || {}\n    };\n    return this.process_settings_config(_settings_config);\n  }\n  process_setting_key(key) {\n    return key.replace(/\\[ADAPTER\\]/g, this.adapter_name);\n  }\n  /**\n   * Get available embedding model options\n   * @returns {Array<Object>} Array of model options with value and name\n   */\n  get_embedding_model_options() {\n    return Object.entries(this.models).map(([key, model2]) => ({ value: key, name: key }));\n  }\n  // /**\n  //  * Get embedding model options including \'None\' option\n  //  * @returns {Array<Object>} Array of model options with value and name\n  //  */\n  // get_block_embedding_model_options() {\n  //   const options = this.get_embedding_model_options();\n  //   options.unshift({ value: \'None\', name: \'None\' });\n  //   return options;\n  // }\n};\n__publicField(SmartEmbedModel, "defaults", {\n  adapter: "transformers"\n});\n\n// ../smart-model/adapters/_adapter.js\nvar SmartModelAdapter = class {\n  /**\n   * Create a SmartModelAdapter instance.\n   * @param {SmartModel} model - The parent SmartModel instance\n   */\n  constructor(model2) {\n    this.model = model2;\n    this.state = "unloaded";\n  }\n  /**\n   * Load the adapter.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async load() {\n    this.set_state("loaded");\n  }\n  /**\n   * Unload the adapter.\n   * @returns {void}\n   */\n  unload() {\n    this.set_state("unloaded");\n  }\n  /**\n   * Get all settings.\n   * @returns {Object} All settings\n   */\n  get settings() {\n    return this.model.settings;\n  }\n  /**\n   * Get the current model key.\n   * @returns {string} Current model identifier\n   */\n  get model_key() {\n    return this.model.model_key;\n  }\n  /**\n   * Get the current model configuration.\n   * @returns {Object} Model configuration\n   */\n  get model_config() {\n    return this.model.model_config;\n  }\n  /**\n   * Get model-specific settings.\n   * @returns {Object} Settings for current model\n   */\n  get model_settings() {\n    return this.model.model_settings;\n  }\n  /**\n   * Get adapter-specific configuration.\n   * @returns {Object} Adapter configuration\n   */\n  get adapter_config() {\n    return this.model.adapter_config;\n  }\n  /**\n   * Get adapter-specific settings.\n   * @returns {Object} Adapter settings\n   */\n  get adapter_settings() {\n    return this.model.adapter_settings;\n  }\n  /**\n   * Get the models.\n   * @returns {Object} Map of model objects\n   */\n  get models() {\n    if (typeof this.adapter_config.models === "object" && Object.keys(this.adapter_config.models || {}).length > 0) return this.adapter_config.models;\n    else {\n      return {};\n    }\n  }\n  /**\n   * Get available models from the API.\n   * @abstract\n   * @param {boolean} [refresh=false] - Whether to refresh cached models\n   * @returns {Promise<Object>} Map of model objects\n   */\n  async get_models(refresh = false) {\n    throw new Error("get_models not implemented");\n  }\n  /**\n   * Validate the parameters for get_models.\n   * @returns {boolean|Array<Object>} True if parameters are valid, otherwise an array of error objects\n   */\n  validate_get_models_params() {\n    return true;\n  }\n  /**\n   * Get available models as dropdown options synchronously.\n   * @returns {Array<Object>} Array of model options.\n   */\n  get_models_as_options() {\n    const models = this.models;\n    const params_valid = this.validate_get_models_params();\n    if (params_valid !== true) return params_valid;\n    if (!Object.keys(models || {}).length) {\n      this.get_models(true);\n      return [{ value: "", name: "No models currently available" }];\n    }\n    return Object.entries(models).map(([id, model2]) => ({ value: id, name: model2.name || id })).sort((a, b) => a.name.localeCompare(b.name));\n  }\n  /**\n   * Set the adapter\'s state.\n   * @deprecated should be handled in SmartModel (only handle once)\n   * @param {(\'unloaded\'|\'loading\'|\'loaded\'|\'unloading\')} new_state - The new state\n   * @throws {Error} If the state is invalid\n   */\n  set_state(new_state) {\n    const valid_states = ["unloaded", "loading", "loaded", "unloading"];\n    if (!valid_states.includes(new_state)) {\n      throw new Error(`Invalid state: ${new_state}`);\n    }\n    this.state = new_state;\n  }\n  // Replace individual state getters/setters with a unified state management\n  get is_loading() {\n    return this.state === "loading";\n  }\n  get is_loaded() {\n    return this.state === "loaded";\n  }\n  get is_unloading() {\n    return this.state === "unloading";\n  }\n  get is_unloaded() {\n    return this.state === "unloaded";\n  }\n};\n\n// adapters/_adapter.js\nvar SmartEmbedAdapter = class extends SmartModelAdapter {\n  /**\n   * Create adapter instance\n   * @param {SmartEmbedModel} model - Parent model instance\n   */\n  constructor(model2) {\n    super(model2);\n    this.smart_embed = model2;\n  }\n  /**\n   * Count tokens in input text\n   * @abstract\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   * @property {number} tokens - Number of tokens in input\n   * @throws {Error} If not implemented by subclass\n   */\n  async count_tokens(input) {\n    throw new Error("count_tokens method not implemented");\n  }\n  /**\n   * Generate embeddings for single input\n   * @abstract\n   * @param {string|Object} input - Text to embed\n   * @returns {Promise<Object>} Embedding result\n   * @property {number[]} vec - Embedding vector\n   * @property {number} tokens - Number of tokens in input\n   * @throws {Error} If not implemented by subclass\n   */\n  async embed(input) {\n    throw new Error("embed method not implemented");\n  }\n  /**\n   * Generate embeddings for multiple inputs\n   * @abstract\n   * @param {Array<string|Object>} inputs - Texts to embed\n   * @returns {Promise<Array<Object>>} Array of embedding results\n   * @property {number[]} vec - Embedding vector for each input\n   * @property {number} tokens - Number of tokens in each input\n   * @throws {Error} If not implemented by subclass\n   */\n  async embed_batch(inputs) {\n    throw new Error("embed_batch method not implemented");\n  }\n  get settings_config() {\n    return {\n      "[ADAPTER].model_key": {\n        name: "Embedding model",\n        type: "dropdown",\n        description: "Select an embedding model.",\n        options_callback: "adapter.get_models_as_options",\n        callback: "model_changed",\n        default: this.constructor.defaults.default_model\n      }\n    };\n  }\n  get dims() {\n    return this.model_config.dims;\n  }\n  get max_tokens() {\n    return this.model_config.max_tokens;\n  }\n  // get batch_size() { return this.model_config.batch_size; }\n  get use_gpu() {\n    if (typeof this._use_gpu === "undefined") {\n      if (typeof this.model.opts.use_gpu !== "undefined") this._use_gpu = this.model.opts.use_gpu;\n      else this._use_gpu = typeof navigator !== "undefined" && !!navigator?.gpu && this.model_settings.gpu_batch_size !== 0;\n    }\n    return this._use_gpu;\n  }\n  set use_gpu(value) {\n    this._use_gpu = value;\n  }\n  get batch_size() {\n    if (this.use_gpu && this.model_config?.gpu_batch_size) return this.model_config.gpu_batch_size;\n    return this.model.opts.batch_size || this.model_config.batch_size || 1;\n  }\n};\n/**\n * @override in sub-class with adapter-specific default configurations\n * @property {string} id - The adapter identifier\n * @property {string} description - Human-readable description\n * @property {string} type - Adapter type ("API")\n * @property {string} endpoint - API endpoint\n * @property {string} adapter - Adapter identifier\n * @property {string} default_model - Default model to use\n */\n__publicField(SmartEmbedAdapter, "defaults", {});\n\n// adapters/transformers.js\nvar transformers_defaults = {\n  adapter: "transformers",\n  description: "Transformers (Local, built-in)",\n  default_model: "TaylorAI/bge-micro-v2"\n};\nvar SmartEmbedTransformersAdapter = class extends SmartEmbedAdapter {\n  /**\n   * Create transformers adapter instance\n   * @param {SmartEmbedModel} model - Parent model instance\n   */\n  constructor(model2) {\n    super(model2);\n    this.pipeline = null;\n    this.tokenizer = null;\n  }\n  /**\n   * Load model and tokenizer\n   * @returns {Promise<void>}\n   */\n  async load() {\n    await this.load_transformers();\n    this.loaded = true;\n    this.set_state("loaded");\n  }\n  /**\n   * Unload model and free resources\n   * @returns {Promise<void>}\n   */\n  async unload() {\n    if (this.pipeline) {\n      if (this.pipeline.destroy) this.pipeline.destroy();\n      this.pipeline = null;\n    }\n    if (this.tokenizer) {\n      this.tokenizer = null;\n    }\n    this.loaded = false;\n    this.set_state("unloaded");\n  }\n  /**\n   * Initialize transformers pipeline and tokenizer\n   * @private\n   * @returns {Promise<void>}\n   */\n  async load_transformers() {\n    const { pipeline, env, AutoTokenizer } = await import("@huggingface/transformers");\n    env.allowLocalModels = false;\n    const pipeline_opts = {\n      quantized: true\n    };\n    if (this.use_gpu) {\n      console.log("[Transformers] Using GPU");\n      pipeline_opts.device = "webgpu";\n      pipeline_opts.dtype = "fp32";\n    } else {\n      console.log("[Transformers] Using CPU");\n      env.backends.onnx.wasm.numThreads = 8;\n    }\n    this.pipeline = await pipeline("feature-extraction", this.model_key, pipeline_opts);\n    this.tokenizer = await AutoTokenizer.from_pretrained(this.model_key);\n  }\n  /**\n   * Count tokens in input text\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   */\n  async count_tokens(input) {\n    if (!this.tokenizer) await this.load();\n    const { input_ids } = await this.tokenizer(input);\n    return { tokens: input_ids.data.length };\n  }\n  /**\n   * Generate embeddings for multiple inputs\n   * @param {Array<Object>} inputs - Array of input objects\n   * @returns {Promise<Array<Object>>} Processed inputs with embeddings\n   */\n  async embed_batch(inputs) {\n    if (!this.pipeline) await this.load();\n    const filtered_inputs = inputs.filter((item) => item.embed_input?.length > 0);\n    if (!filtered_inputs.length) return [];\n    if (filtered_inputs.length > this.batch_size) {\n      console.log(`Processing ${filtered_inputs.length} inputs in batches of ${this.batch_size}`);\n      const results = [];\n      for (let i = 0; i < filtered_inputs.length; i += this.batch_size) {\n        const batch = filtered_inputs.slice(i, i + this.batch_size);\n        const batch_results = await this._process_batch(batch);\n        results.push(...batch_results);\n      }\n      return results;\n    }\n    return await this._process_batch(filtered_inputs);\n  }\n  /**\n   * Process a single batch of inputs\n   * @private\n   * @param {Array<Object>} batch_inputs - Batch of inputs to process\n   * @returns {Promise<Array<Object>>} Processed batch results\n   */\n  async _process_batch(batch_inputs) {\n    const tokens = await Promise.all(batch_inputs.map((item) => this.count_tokens(item.embed_input)));\n    const embed_inputs = await Promise.all(batch_inputs.map(async (item, i) => {\n      if (tokens[i].tokens < this.max_tokens) return item.embed_input;\n      let token_ct = tokens[i].tokens;\n      let truncated_input = item.embed_input;\n      while (token_ct > this.max_tokens) {\n        const pct = this.max_tokens / token_ct;\n        const max_chars = Math.floor(truncated_input.length * pct * 0.9);\n        truncated_input = truncated_input.substring(0, max_chars) + "...";\n        token_ct = (await this.count_tokens(truncated_input)).tokens;\n      }\n      tokens[i].tokens = token_ct;\n      return truncated_input;\n    }));\n    try {\n      const resp = await this.pipeline(embed_inputs, { pooling: "mean", normalize: true });\n      return batch_inputs.map((item, i) => {\n        item.vec = Array.from(resp[i].data).map((val) => Math.round(val * 1e8) / 1e8);\n        item.tokens = tokens[i].tokens;\n        return item;\n      });\n    } catch (err) {\n      console.error("error_processing_batch", err);\n      this.pipeline?.dispose();\n      this.pipeline = null;\n      await this.load();\n      return Promise.all(batch_inputs.map(async (item) => {\n        try {\n          const result = await this.pipeline(item.embed_input, { pooling: "mean", normalize: true });\n          item.vec = Array.from(result[0].data).map((val) => Math.round(val * 1e8) / 1e8);\n          item.tokens = (await this.count_tokens(item.embed_input)).tokens;\n          return item;\n        } catch (single_err) {\n          console.error("error_processing_single_item", single_err);\n          return {\n            ...item,\n            vec: [],\n            tokens: 0,\n            error: single_err.message\n          };\n        }\n      }));\n    }\n  }\n  /** @returns {Object} Settings configuration for transformers adapter */\n  get settings_config() {\n    return transformers_settings_config;\n  }\n  /**\n   * Get available models (hardcoded list)\n   * @returns {Promise<Object>} Map of model objects\n   */\n  get_models() {\n    return Promise.resolve(this.models);\n  }\n  get models() {\n    return transformers_models;\n  }\n};\n__publicField(SmartEmbedTransformersAdapter, "defaults", transformers_defaults);\nvar transformers_models = {\n  "TaylorAI/bge-micro-v2": {\n    "id": "TaylorAI/bge-micro-v2",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "BGE-micro-v2",\n    "description": "Local, 512 tokens, 384 dim (recommended)",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-xs": {\n    "id": "Snowflake/snowflake-arctic-embed-xs",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed XS",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-s": {\n    "id": "Snowflake/snowflake-arctic-embed-s",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed Small",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-m": {\n    "id": "Snowflake/snowflake-arctic-embed-m",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed Medium",\n    "description": "Local, 512 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "TaylorAI/gte-tiny": {\n    "id": "TaylorAI/gte-tiny",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "GTE-tiny",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "onnx-community/embeddinggemma-300m-ONNX": {\n    "id": "onnx-community/embeddinggemma-300m-ONNX",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "EmbeddingGemma-300M",\n    "description": "Local, 2,048 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "Mihaiii/Ivysaur": {\n    "id": "Mihaiii/Ivysaur",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Ivysaur",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "andersonbcdefg/bge-small-4096": {\n    "id": "andersonbcdefg/bge-small-4096",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 4096,\n    "name": "BGE-small-4K",\n    "description": "Local, 4,096 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  // Too slow and persistent crashes\n  // "jinaai/jina-embeddings-v2-base-de": {\n  //   "id": "jinaai/jina-embeddings-v2-base-de",\n  //   "batch_size": 1,\n  //   "dims": 768,\n  //   "max_tokens": 4096,\n  //   "name": "jina-embeddings-v2-base-de",\n  //   "description": "Local, 4,096 tokens, 768 dim, German",\n  //   "adapter": "transformers"\n  // },\n  "Xenova/jina-embeddings-v2-base-zh": {\n    "id": "Xenova/jina-embeddings-v2-base-zh",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 8192,\n    "name": "Jina-v2-base-zh-8K",\n    "description": "Local, 8,192 tokens, 768 dim, Chinese/English bilingual",\n    "adapter": "transformers"\n  },\n  "Xenova/jina-embeddings-v2-small-en": {\n    "id": "Xenova/jina-embeddings-v2-small-en",\n    "batch_size": 1,\n    "dims": 512,\n    "max_tokens": 8192,\n    "name": "Jina-v2-small-en",\n    "description": "Local, 8,192 tokens, 512 dim",\n    "adapter": "transformers"\n  },\n  "nomic-ai/nomic-embed-text-v1.5": {\n    "id": "nomic-ai/nomic-embed-text-v1.5",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "Nomic-embed-text-v1.5",\n    "description": "Local, 8,192 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "Xenova/bge-small-en-v1.5": {\n    "id": "Xenova/bge-small-en-v1.5",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "BGE-small",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "nomic-ai/nomic-embed-text-v1": {\n    "id": "nomic-ai/nomic-embed-text-v1",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "Nomic-embed-text",\n    "description": "Local, 2,048 tokens, 768 dim",\n    "adapter": "transformers"\n  }\n};\nvar transformers_settings_config = {\n  "[ADAPTER].gpu_batch_size": {\n    name: "GPU batch size",\n    type: "number",\n    description: "Number of embeddings to process per batch on GPU. Use 0 to disable GPU.",\n    placeholder: "Enter number ex. 10"\n  },\n  "[ADAPTER].legacy_transformers": {\n    name: "Legacy transformers (no GPU)",\n    type: "toggle",\n    description: "Use legacy transformers (v2) instead of v3. This may resolve issues if the local embedding isn\'t working.",\n    callback: "embed_model_changed",\n    default: true\n  }\n};\n\n// build/transformers_iframe_script.js\nvar model = null;\nasync function process_message(data) {\n  const { method, params, id, iframe_id } = data;\n  try {\n    let result;\n    switch (method) {\n      case "init":\n        console.log("init");\n        break;\n      case "load":\n        console.log("load", params);\n        model = new SmartEmbedModel({\n          ...params,\n          adapters: { transformers: SmartEmbedTransformersAdapter },\n          adapter: "transformers",\n          settings: {}\n        });\n        await model.load();\n        result = { model_loaded: true };\n        break;\n      case "embed_batch":\n        if (!model) throw new Error("Model not loaded");\n        result = await model.embed_batch(params.inputs);\n        break;\n      case "count_tokens":\n        if (!model) throw new Error("Model not loaded");\n        result = await model.count_tokens(params);\n        break;\n      default:\n        throw new Error(`Unknown method: ${method}`);\n    }\n    return { id, result, iframe_id };\n  } catch (error) {\n    console.error("Error processing message:", error);\n    return { id, error: error.message, iframe_id };\n  }\n}\nprocess_message({ method: "init" });\n';
+var transformers_connector = 'var __defProp = Object.defineProperty;\nvar __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;\nvar __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);\n\n// ../smart-model/smart_model.js\nvar SmartModel = class {\n  /**\n   * Create a SmartModel instance.\n   * @param {Object} opts - Configuration options\n   * @param {Object} opts.adapters - Map of adapter names to adapter classes\n   * @param {Object} opts.settings - Model settings configuration\n   * @param {Object} opts.model_config - Model-specific configuration\n   * @param {string} opts.model_config.adapter - Name of the adapter to use\n   * @param {string} [opts.model_key] - Optional model identifier to override settings\n   * @throws {Error} If required options are missing\n   */\n  constructor(opts = {}) {\n    __publicField(this, "scope_name", "smart_model");\n    this.opts = opts;\n    this.validate_opts(opts);\n    this.state = "unloaded";\n    this._adapter = null;\n  }\n  /**\n   * Initialize the model by loading the configured adapter.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async initialize() {\n    this.load_adapter(this.adapter_name);\n    await this.load();\n  }\n  /**\n   * Validate required options.\n   * @param {Object} opts - Configuration options\n   */\n  validate_opts(opts) {\n    if (!opts.adapters) throw new Error("opts.adapters is required");\n    if (!opts.settings) throw new Error("opts.settings is required");\n  }\n  /**\n   * Get the current settings\n   * @returns {Object} Current settings\n   */\n  get settings() {\n    if (!this.opts.settings) this.opts.settings = {\n      ...this.constructor.defaults\n    };\n    return this.opts.settings;\n  }\n  /**\n   * Get the current adapter name\n   * @returns {string} Current adapter name\n   */\n  get adapter_name() {\n    let adapter_key = this.opts.model_config?.adapter || this.opts.adapter || this.settings.adapter || Object.keys(this.adapters)[0];\n    if (!adapter_key || !this.adapters[adapter_key]) {\n      console.warn(`Platform "${adapter_key}" not supported`);\n      adapter_key = Object.keys(this.adapters)[0];\n    }\n    return adapter_key;\n  }\n  /**\n   * Get adapter-specific settings.\n   * @returns {Object} Settings for current adapter\n   */\n  get adapter_settings() {\n    if (!this.settings[this.adapter_name]) this.settings[this.adapter_name] = {};\n    return this.settings[this.adapter_name];\n  }\n  get adapter_config() {\n    const base_config = this.adapters[this.adapter_name]?.defaults || {};\n    return {\n      ...base_config,\n      ...this.adapter_settings,\n      ...this.opts.adapter_config\n    };\n  }\n  /**\n   * Get available models.\n   * @returns {Object} Map of model objects\n   */\n  get models() {\n    return this.adapter.models;\n  }\n  /**\n   * Get default model key.\n   * @returns {string} Default model key\n   */\n  get default_model_key() {\n    return this.adapter.constructor.defaults.default_model;\n  }\n  /**\n   * Get the current model key\n   * @returns {string} Current model key\n   */\n  get model_key() {\n    return this.opts.model_key || this.adapter_config.model_key || this.settings.model_key || this.default_model_key;\n  }\n  /**\n   * Get the current model configuration\n   * @returns {Object} Combined base and custom model configuration\n   */\n  get model_config() {\n    const model_key = this.model_key;\n    const base_model_config = this.models[model_key] || {};\n    return {\n      ...this.adapter_config,\n      ...base_model_config,\n      ...this.opts.model_config\n    };\n  }\n  get model_settings() {\n    if (!this.settings[this.model_key]) this.settings[this.model_key] = {};\n    return this.settings[this.model_key];\n  }\n  /**\n   * Load the current adapter and transition to loaded state.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async load() {\n    this.set_state("loading");\n    try {\n      if (!this.adapter?.is_loaded) {\n        await this.invoke_adapter_method("load");\n      }\n    } catch (err) {\n      this.set_state("unloaded");\n      if (!this.reload_model_timeout) {\n        this.reload_model_timeout = setTimeout(async () => {\n          this.reload_model_timeout = null;\n          await this.load();\n          this.set_state("loaded");\n          this.notices?.show("Loaded model: " + this.model_key);\n        }, 6e4);\n      }\n      throw new Error(`Failed to load model: ${err.message}`);\n    }\n    this.set_state("loaded");\n  }\n  /**\n   * Unload the current adapter and transition to unloaded state.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async unload() {\n    if (this.adapter?.is_loaded) {\n      this.set_state("unloading");\n      await this.invoke_adapter_method("unload");\n      this.set_state("unloaded");\n    }\n  }\n  /**\n   * Set the model\'s state.\n   * @param {(\'unloaded\'|\'loading\'|\'loaded\'|\'unloading\')} new_state - The new state\n   * @throws {Error} If the state is invalid\n   */\n  set_state(new_state) {\n    const valid_states = ["unloaded", "loading", "loaded", "unloading"];\n    if (!valid_states.includes(new_state)) {\n      throw new Error(`Invalid state: ${new_state}`);\n    }\n    this.state = new_state;\n  }\n  get is_loading() {\n    return this.state === "loading";\n  }\n  get is_loaded() {\n    return this.state === "loaded";\n  }\n  get is_unloading() {\n    return this.state === "unloading";\n  }\n  get is_unloaded() {\n    return this.state === "unloaded";\n  }\n  // ADAPTERS\n  /**\n   * Get the map of available adapters\n   * @returns {Object} Map of adapter names to adapter classes\n   */\n  get adapters() {\n    return this.opts.adapters || {};\n  }\n  /**\n   * Load a specific adapter by name.\n   * @async\n   * @param {string} adapter_name - Name of the adapter to load\n   * @throws {Error} If adapter not found or loading fails\n   * @returns {Promise<void>}\n   */\n  async load_adapter(adapter_name) {\n    this.set_adapter(adapter_name);\n    if (!this._adapter.loaded) {\n      this.set_state("loading");\n      try {\n        await this.invoke_adapter_method("load");\n        this.set_state("loaded");\n      } catch (err) {\n        this.set_state("unloaded");\n        throw new Error(`Failed to load adapter: ${err.message}`);\n      }\n    }\n  }\n  /**\n   * Set an adapter instance by name without loading it.\n   * @param {string} adapter_name - Name of the adapter to set\n   * @throws {Error} If adapter not found\n   */\n  set_adapter(adapter_name) {\n    const AdapterClass = this.adapters[adapter_name];\n    if (!AdapterClass) {\n      throw new Error(`Adapter "${adapter_name}" not found.`);\n    }\n    if (this._adapter?.constructor.name.toLowerCase() === adapter_name.toLowerCase()) {\n      return;\n    }\n    this._adapter = new AdapterClass(this);\n  }\n  /**\n   * Get the current active adapter instance\n   * @returns {Object} The active adapter instance\n   * @throws {Error} If adapter not found\n   */\n  get adapter() {\n    const adapter_name = this.adapter_name;\n    if (!adapter_name) {\n      throw new Error(`Adapter not set for model.`);\n    }\n    if (!this._adapter) {\n      this.load_adapter(adapter_name);\n    }\n    return this._adapter;\n  }\n  /**\n   * Ensure the adapter is ready to execute a method.\n   * @param {string} method - Name of the method to check\n   * @throws {Error} If adapter not loaded or method not implemented\n   */\n  ensure_adapter_ready(method) {\n    if (!this.adapter) {\n      throw new Error("No adapter loaded.");\n    }\n    if (typeof this.adapter[method] !== "function") {\n      throw new Error(`Adapter does not implement method: ${method}`);\n    }\n  }\n  /**\n   * Invoke a method on the current adapter.\n   * @async\n   * @param {string} method - Name of the method to call\n   * @param {...any} args - Arguments to pass to the method\n   * @returns {Promise<any>} Result from the adapter method\n   * @throws {Error} If adapter not ready or method fails\n   */\n  async invoke_adapter_method(method, ...args) {\n    this.ensure_adapter_ready(method);\n    return await this.adapter[method](...args);\n  }\n  /**\n   * Get platforms as dropdown options.\n   * @returns {Array<Object>} Array of {value, name} option objects\n   */\n  get_platforms_as_options() {\n    return Object.entries(this.adapters).map(([key, AdapterClass]) => ({ value: key, name: AdapterClass.defaults.description || key }));\n  }\n  // SETTINGS\n  /**\n   * Get the settings configuration schema\n   * @returns {Object} Settings configuration object\n   */\n  get settings_config() {\n    return this.process_settings_config({\n      adapter: {\n        name: "模型平台",\n        type: "dropdown",\n        description: "选择要与Smart model一起使用的模型平台。",\n        options_callback: "get_platforms_as_options",\n        is_scope: true,\n        // trigger re-render of settings when changed\n        callback: "adapter_changed",\n        default: "default"\n      }\n    });\n  }\n  /**\n   * Process settings configuration with conditionals and prefixes.\n   * @param {Object} _settings_config - Raw settings configuration\n   * @param {string} [prefix] - Optional prefix for setting keys\n   * @returns {Object} Processed settings configuration\n   */\n  process_settings_config(_settings_config, prefix = null) {\n    return Object.entries(_settings_config).reduce((acc, [key, val]) => {\n      const new_key = (prefix ? prefix + "." : "") + this.process_setting_key(key);\n      acc[new_key] = val;\n      return acc;\n    }, {});\n  }\n  /**\n   * Process an individual setting key.\n   * Example: replace placeholders with actual adapter names.\n   * @param {string} key - The setting key with placeholders.\n   * @returns {string} Processed setting key.\n   */\n  process_setting_key(key) {\n    return key.replace(/\\[ADAPTER\\]/g, this.adapter_name);\n  }\n  re_render_settings() {\n    if (typeof this.opts.re_render_settings === "function") this.opts.re_render_settings();\n    else console.warn("re_render_settings is not a function (must be passed in model opts)");\n  }\n  /**\n   * Reload model.\n   */\n  reload_model() {\n    if (typeof this.opts.reload_model === "function") this.opts.reload_model();\n    else console.warn("reload_model is not a function (must be passed in model opts)");\n  }\n  adapter_changed() {\n    this.reload_model();\n    this.re_render_settings();\n  }\n  model_changed() {\n    this.reload_model();\n    this.re_render_settings();\n  }\n};\n__publicField(SmartModel, "defaults", {\n  // override in sub-class if needed\n});\n\n// smart_embed_model.js\nvar SmartEmbedModel = class extends SmartModel {\n  /**\n   * Create a SmartEmbedModel instance\n   * @param {Object} opts - Configuration options\n   * @param {Object} [opts.adapters] - Map of available adapter implementations\n   * @param {boolean} [opts.use_gpu] - Whether to enable GPU acceleration\n   * @param {number} [opts.gpu_batch_size] - Batch size when using GPU\n   * @param {number} [opts.batch_size] - Default batch size for processing\n   * @param {Object} [opts.model_config] - Model-specific configuration\n   * @param {string} [opts.model_config.adapter] - Override adapter type\n   * @param {number} [opts.model_config.dims] - Embedding dimensions\n   * @param {number} [opts.model_config.max_tokens] - Maximum tokens to process\n   * @param {Object} [opts.settings] - User settings\n   * @param {string} [opts.settings.api_key] - API key for remote models\n   * @param {number} [opts.settings.min_chars] - Minimum text length to embed\n   */\n  constructor(opts = {}) {\n    super(opts);\n    __publicField(this, "scope_name", "smart_embed_model");\n  }\n  /**\n   * Count tokens in an input string\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   * @property {number} tokens - Number of tokens in input\n   * \n   * @example\n   * ```javascript\n   * const result = await model.count_tokens("Hello world");\n   * console.log(result.tokens); // 2\n   * ```\n   */\n  async count_tokens(input) {\n    return await this.invoke_adapter_method("count_tokens", input);\n  }\n  /**\n   * Generate embeddings for a single input\n   * @param {string|Object} input - Text or object with embed_input property\n   * @returns {Promise<Object>} Embedding result\n   * @property {number[]} vec - Embedding vector\n   * @property {number} tokens - Token count\n   * \n   * @example\n   * ```javascript\n   * const result = await model.embed("Hello world");\n   * console.log(result.vec); // [0.1, 0.2, ...]\n   * ```\n   */\n  async embed(input) {\n    if (typeof input === "string") input = { embed_input: input };\n    return (await this.embed_batch([input]))[0];\n  }\n  /**\n   * Generate embeddings for multiple inputs in batch\n   * @param {Array<string|Object>} inputs - Array of texts or objects with embed_input\n   * @returns {Promise<Array<Object>>} Array of embedding results\n   * @property {number[]} vec - Embedding vector for each input\n   * @property {number} tokens - Token count for each input\n   * \n   * @example\n   * ```javascript\n   * const results = await model.embed_batch([\n   *   { embed_input: "First text" },\n   *   { embed_input: "Second text" }\n   * ]);\n   * ```\n   */\n  async embed_batch(inputs) {\n    return await this.invoke_adapter_method("embed_batch", inputs);\n  }\n  /**\n   * Get the current batch size based on GPU settings\n   * @returns {number} Current batch size for processing\n   */\n  get batch_size() {\n    return this.adapter.batch_size || 1;\n  }\n  /**\n   * Get settings configuration schema\n   * @returns {Object} Settings configuration object\n   */\n  get settings_config() {\n    const _settings_config = {\n      adapter: {\n        name: "Embedding model platform",\n        type: "dropdown",\n        description: "Select an embedding model platform. The default \'transformers\' utilizes built-in local models.",\n        options_callback: "get_platforms_as_options",\n        callback: "adapter_changed",\n        default: this.constructor.defaults.adapter\n      },\n      ...this.adapter.settings_config || {}\n    };\n    return this.process_settings_config(_settings_config);\n  }\n  process_setting_key(key) {\n    return key.replace(/\\[ADAPTER\\]/g, this.adapter_name);\n  }\n  /**\n   * Get available embedding model options\n   * @returns {Array<Object>} Array of model options with value and name\n   */\n  get_embedding_model_options() {\n    return Object.entries(this.models).map(([key, model2]) => ({ value: key, name: key }));\n  }\n  // /**\n  //  * Get embedding model options including \'None\' option\n  //  * @returns {Array<Object>} Array of model options with value and name\n  //  */\n  // get_block_embedding_model_options() {\n  //   const options = this.get_embedding_model_options();\n  //   options.unshift({ value: \'None\', name: \'None\' });\n  //   return options;\n  // }\n};\n__publicField(SmartEmbedModel, "defaults", {\n  adapter: "transformers"\n});\n\n// ../smart-model/adapters/_adapter.js\nvar SmartModelAdapter = class {\n  /**\n   * Create a SmartModelAdapter instance.\n   * @param {SmartModel} model - The parent SmartModel instance\n   */\n  constructor(model2) {\n    this.model = model2;\n    this.state = "unloaded";\n  }\n  /**\n   * Load the adapter.\n   * @async\n   * @returns {Promise<void>}\n   */\n  async load() {\n    this.set_state("loaded");\n  }\n  /**\n   * Unload the adapter.\n   * @returns {void}\n   */\n  unload() {\n    this.set_state("unloaded");\n  }\n  /**\n   * Get all settings.\n   * @returns {Object} All settings\n   */\n  get settings() {\n    return this.model.settings;\n  }\n  /**\n   * Get the current model key.\n   * @returns {string} Current model identifier\n   */\n  get model_key() {\n    return this.model.model_key;\n  }\n  /**\n   * Get the current model configuration.\n   * @returns {Object} Model configuration\n   */\n  get model_config() {\n    return this.model.model_config;\n  }\n  /**\n   * Get model-specific settings.\n   * @returns {Object} Settings for current model\n   */\n  get model_settings() {\n    return this.model.model_settings;\n  }\n  /**\n   * Get adapter-specific configuration.\n   * @returns {Object} Adapter configuration\n   */\n  get adapter_config() {\n    return this.model.adapter_config;\n  }\n  /**\n   * Get adapter-specific settings.\n   * @returns {Object} Adapter settings\n   */\n  get adapter_settings() {\n    return this.model.adapter_settings;\n  }\n  /**\n   * Get the models.\n   * @returns {Object} Map of model objects\n   */\n  get models() {\n    if (typeof this.adapter_config.models === "object" && Object.keys(this.adapter_config.models || {}).length > 0) return this.adapter_config.models;\n    else {\n      return {};\n    }\n  }\n  /**\n   * Get available models from the API.\n   * @abstract\n   * @param {boolean} [refresh=false] - Whether to refresh cached models\n   * @returns {Promise<Object>} Map of model objects\n   */\n  async get_models(refresh = false) {\n    throw new Error("get_models not implemented");\n  }\n  /**\n   * Validate the parameters for get_models.\n   * @returns {boolean|Array<Object>} True if parameters are valid, otherwise an array of error objects\n   */\n  validate_get_models_params() {\n    return true;\n  }\n  /**\n   * Get available models as dropdown options synchronously.\n   * @returns {Array<Object>} Array of model options.\n   */\n  get_models_as_options() {\n    const models = this.models;\n    const params_valid = this.validate_get_models_params();\n    if (params_valid !== true) return params_valid;\n    if (!Object.keys(models || {}).length) {\n      this.get_models(true);\n      return [{ value: "", name: "当前" }];\n    }\n    return Object.entries(models).map(([id, model2]) => ({ value: id, name: model2.name || id })).sort((a, b) => a.name.localeCompare(b.name));\n  }\n  /**\n   * Set the adapter\'s state.\n   * @deprecated should be handled in SmartModel (only handle once)\n   * @param {(\'unloaded\'|\'loading\'|\'loaded\'|\'unloading\')} new_state - The new state\n   * @throws {Error} If the state is invalid\n   */\n  set_state(new_state) {\n    const valid_states = ["unloaded", "loading", "loaded", "unloading"];\n    if (!valid_states.includes(new_state)) {\n      throw new Error(`Invalid state: ${new_state}`);\n    }\n    this.state = new_state;\n  }\n  // Replace individual state getters/setters with a unified state management\n  get is_loading() {\n    return this.state === "loading";\n  }\n  get is_loaded() {\n    return this.state === "loaded";\n  }\n  get is_unloading() {\n    return this.state === "unloading";\n  }\n  get is_unloaded() {\n    return this.state === "unloaded";\n  }\n};\n\n// adapters/_adapter.js\nvar SmartEmbedAdapter = class extends SmartModelAdapter {\n  /**\n   * Create adapter instance\n   * @param {SmartEmbedModel} model - Parent model instance\n   */\n  constructor(model2) {\n    super(model2);\n    this.smart_embed = model2;\n  }\n  /**\n   * Count tokens in input text\n   * @abstract\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   * @property {number} tokens - Number of tokens in input\n   * @throws {Error} If not implemented by subclass\n   */\n  async count_tokens(input) {\n    throw new Error("count_tokens method not implemented");\n  }\n  /**\n   * Generate embeddings for single input\n   * @abstract\n   * @param {string|Object} input - Text to embed\n   * @returns {Promise<Object>} Embedding result\n   * @property {number[]} vec - Embedding vector\n   * @property {number} tokens - Number of tokens in input\n   * @throws {Error} If not implemented by subclass\n   */\n  async embed(input) {\n    throw new Error("embed method not implemented");\n  }\n  /**\n   * Generate embeddings for multiple inputs\n   * @abstract\n   * @param {Array<string|Object>} inputs - Texts to embed\n   * @returns {Promise<Array<Object>>} Array of embedding results\n   * @property {number[]} vec - Embedding vector for each input\n   * @property {number} tokens - Number of tokens in each input\n   * @throws {Error} If not implemented by subclass\n   */\n  async embed_batch(inputs) {\n    throw new Error("embed_batch method not implemented");\n  }\n  get settings_config() {\n    return {\n      "[ADAPTER].model_key": {\n        name: "Embedding model",\n        type: "dropdown",\n        description: "选择一个嵌入模型。",\n        options_callback: "adapter.get_models_as_options",\n        callback: "model_changed",\n        default: this.constructor.defaults.default_model\n      }\n    };\n  }\n  get dims() {\n    return this.model_config.dims;\n  }\n  get max_tokens() {\n    return this.model_config.max_tokens;\n  }\n  // get batch_size() { return this.model_config.batch_size; }\n  get use_gpu() {\n    if (typeof this._use_gpu === "undefined") {\n      if (typeof this.model.opts.use_gpu !== "undefined") this._use_gpu = this.model.opts.use_gpu;\n      else this._use_gpu = typeof navigator !== "undefined" && !!navigator?.gpu && this.model_settings.gpu_batch_size !== 0;\n    }\n    return this._use_gpu;\n  }\n  set use_gpu(value) {\n    this._use_gpu = value;\n  }\n  get batch_size() {\n    if (this.use_gpu && this.model_config?.gpu_batch_size) return this.model_config.gpu_batch_size;\n    return this.model.opts.batch_size || this.model_config.batch_size || 1;\n  }\n};\n/**\n * @override in sub-class with adapter-specific default configurations\n * @property {string} id - The adapter identifier\n * @property {string} description - Human-readable description\n * @property {string} type - Adapter type ("API")\n * @property {string} endpoint - API endpoint\n * @property {string} adapter - Adapter identifier\n * @property {string} default_model - Default model to use\n */\n__publicField(SmartEmbedAdapter, "defaults", {});\n\n// adapters/transformers.js\nvar transformers_defaults = {\n  adapter: "transformers",\n  description: "变压器（本地，内置）",\n  default_model: "TaylorAI/bge-micro-v2"\n};\nvar SmartEmbedTransformersAdapter = class extends SmartEmbedAdapter {\n  /**\n   * Create transformers adapter instance\n   * @param {SmartEmbedModel} model - Parent model instance\n   */\n  constructor(model2) {\n    super(model2);\n    this.pipeline = null;\n    this.tokenizer = null;\n  }\n  /**\n   * Load model and tokenizer\n   * @returns {Promise<void>}\n   */\n  async load() {\n    await this.load_transformers();\n    this.loaded = true;\n    this.set_state("loaded");\n  }\n  /**\n   * Unload model and free resources\n   * @returns {Promise<void>}\n   */\n  async unload() {\n    if (this.pipeline) {\n      if (this.pipeline.destroy) this.pipeline.destroy();\n      this.pipeline = null;\n    }\n    if (this.tokenizer) {\n      this.tokenizer = null;\n    }\n    this.loaded = false;\n    this.set_state("unloaded");\n  }\n  /**\n   * Initialize transformers pipeline and tokenizer\n   * @private\n   * @returns {Promise<void>}\n   */\n  async load_transformers() {\n    const { pipeline, env, AutoTokenizer } = await import("@huggingface/transformers");\n    env.allowLocalModels = false;\n    const pipeline_opts = {\n      quantized: true\n    };\n    if (this.use_gpu) {\n      console.log("[Transformers] 正在使用 GPU");\n      pipeline_opts.device = "webgpu";\n      pipeline_opts.dtype = "fp32";\n    } else {\n      console.log("[Transformers] 正在使用 CPU");\n      env.backends.onnx.wasm.numThreads = 8;\n    }\n    this.pipeline = await pipeline("feature-extraction", this.model_key, pipeline_opts);\n    this.tokenizer = await AutoTokenizer.from_pretrained(this.model_key);\n  }\n  /**\n   * Count tokens in input text\n   * @param {string} input - Text to tokenize\n   * @returns {Promise<Object>} Token count result\n   */\n  async count_tokens(input) {\n    if (!this.tokenizer) await this.load();\n    const { input_ids } = await this.tokenizer(input);\n    return { tokens: input_ids.data.length };\n  }\n  /**\n   * Generate embeddings for multiple inputs\n   * @param {Array<Object>} inputs - Array of input objects\n   * @returns {Promise<Array<Object>>} Processed inputs with embeddings\n   */\n  async embed_batch(inputs) {\n    if (!this.pipeline) await this.load();\n    const filtered_inputs = inputs.filter((item) => item.embed_input?.length > 0);\n    if (!filtered_inputs.length) return [];\n    if (filtered_inputs.length > this.batch_size) {\n      console.log(`处理 ${filtered_inputs.length} 个输入，每批 ${this.batch_size} 个。`);\n      const results = [];\n      for (let i = 0; i < filtered_inputs.length; i += this.batch_size) {\n        const batch = filtered_inputs.slice(i, i + this.batch_size);\n        const batch_results = await this._process_batch(batch);\n        results.push(...batch_results);\n      }\n      return results;\n    }\n    return await this._process_batch(filtered_inputs);\n  }\n  /**\n   * Process a single batch of inputs\n   * @private\n   * @param {Array<Object>} batch_inputs - Batch of inputs to process\n   * @returns {Promise<Array<Object>>} Processed batch results\n   */\n  async _process_batch(batch_inputs) {\n    const tokens = await Promise.all(batch_inputs.map((item) => this.count_tokens(item.embed_input)));\n    const embed_inputs = await Promise.all(batch_inputs.map(async (item, i) => {\n      if (tokens[i].tokens < this.max_tokens) return item.embed_input;\n      let token_ct = tokens[i].tokens;\n      let truncated_input = item.embed_input;\n      while (token_ct > this.max_tokens) {\n        const pct = this.max_tokens / token_ct;\n        const max_chars = Math.floor(truncated_input.length * pct * 0.9);\n        truncated_input = truncated_input.substring(0, max_chars) + "...";\n        token_ct = (await this.count_tokens(truncated_input)).tokens;\n      }\n      tokens[i].tokens = token_ct;\n      return truncated_input;\n    }));\n    try {\n      const resp = await this.pipeline(embed_inputs, { pooling: "mean", normalize: true });\n      return batch_inputs.map((item, i) => {\n        item.vec = Array.from(resp[i].data).map((val) => Math.round(val * 1e8) / 1e8);\n        item.tokens = tokens[i].tokens;\n        return item;\n      });\n    } catch (err) {\n      console.error("处理批量错误", err);\n      this.pipeline?.dispose();\n      this.pipeline = null;\n      await this.load();\n      return Promise.all(batch_inputs.map(async (item) => {\n        try {\n          const result = await this.pipeline(item.embed_input, { pooling: "mean", normalize: true });\n          item.vec = Array.from(result[0].data).map((val) => Math.round(val * 1e8) / 1e8);\n          item.tokens = (await this.count_tokens(item.embed_input)).tokens;\n          return item;\n        } catch (single_err) {\n          console.error("错误处理_单个项目", single_err);\n          return {\n            ...item,\n            vec: [],\n            tokens: 0,\n            error: single_err.message\n          };\n        }\n      }));\n    }\n  }\n  /** @returns {Object} Settings configuration for transformers adapter */\n  get settings_config() {\n    return transformers_settings_config;\n  }\n  /**\n   * Get available models (hardcoded list)\n   * @returns {Promise<Object>} Map of model objects\n   */\n  get_models() {\n    return Promise.resolve(this.models);\n  }\n  get models() {\n    return transformers_models;\n  }\n};\n__publicField(SmartEmbedTransformersAdapter, "defaults", transformers_defaults);\nvar transformers_models = {\n  "TaylorAI/bge-micro-v2": {\n    "id": "TaylorAI/bge-micro-v2",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "BGE-micro-v2",\n    "description": "Local, 512 tokens, 384 dim (recommended)",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-xs": {\n    "id": "Snowflake/snowflake-arctic-embed-xs",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed XS",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-s": {\n    "id": "Snowflake/snowflake-arctic-embed-s",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed Small",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "Snowflake/snowflake-arctic-embed-m": {\n    "id": "Snowflake/snowflake-arctic-embed-m",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 512,\n    "name": "Snowflake Arctic Embed Medium",\n    "description": "Local, 512 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "TaylorAI/gte-tiny": {\n    "id": "TaylorAI/gte-tiny",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "GTE-tiny",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "onnx-community/embeddinggemma-300m-ONNX": {\n    "id": "onnx-community/embeddinggemma-300m-ONNX",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "EmbeddingGemma-300M",\n    "description": "Local, 2,048 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "Mihaiii/Ivysaur": {\n    "id": "Mihaiii/Ivysaur",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "Ivysaur",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "andersonbcdefg/bge-small-4096": {\n    "id": "andersonbcdefg/bge-small-4096",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 4096,\n    "name": "BGE-small-4K",\n    "description": "Local, 4,096 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  // Too slow and persistent crashes\n  // "jinaai/jina-embeddings-v2-base-de": {\n  //   "id": "jinaai/jina-embeddings-v2-base-de",\n  //   "batch_size": 1,\n  //   "dims": 768,\n  //   "max_tokens": 4096,\n  //   "name": "jina-embeddings-v2-base-de",\n  //   "description": "Local, 4,096 tokens, 768 dim, German",\n  //   "adapter": "transformers"\n  // },\n  "Xenova/jina-embeddings-v2-base-zh": {\n    "id": "Xenova/jina-embeddings-v2-base-zh",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 8192,\n    "name": "Jina-v2-base-zh-8K",\n    "description": "Local, 8,192 tokens, 768 dim, Chinese/English bilingual",\n    "adapter": "transformers"\n  },\n  "Xenova/jina-embeddings-v2-small-en": {\n    "id": "Xenova/jina-embeddings-v2-small-en",\n    "batch_size": 1,\n    "dims": 512,\n    "max_tokens": 8192,\n    "name": "Jina-v2-small-en",\n    "description": "Local, 8,192 tokens, 512 dim",\n    "adapter": "transformers"\n  },\n  "nomic-ai/nomic-embed-text-v1.5": {\n    "id": "nomic-ai/nomic-embed-text-v1.5",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "Nomic-embed-text-v1.5",\n    "description": "Local, 8,192 tokens, 768 dim",\n    "adapter": "transformers"\n  },\n  "Xenova/bge-small-en-v1.5": {\n    "id": "Xenova/bge-small-en-v1.5",\n    "batch_size": 1,\n    "dims": 384,\n    "max_tokens": 512,\n    "name": "BGE-small",\n    "description": "Local, 512 tokens, 384 dim",\n    "adapter": "transformers"\n  },\n  "nomic-ai/nomic-embed-text-v1": {\n    "id": "nomic-ai/nomic-embed-text-v1",\n    "batch_size": 1,\n    "dims": 768,\n    "max_tokens": 2048,\n    "name": "Nomic-embed-text",\n    "description": "Local, 2,048 tokens, 768 dim",\n    "adapter": "transformers"\n  }\n};\nvar transformers_settings_config = {\n  "[ADAPTER].gpu_batch_size": {\n    name: "GPU batch size",\n    type: "number",\n    description: "Number of embeddings to process per batch on GPU. Use 0 to disable GPU.",\n    placeholder: "输入数字,例如:10"\n  },\n  "[ADAPTER].legacy_transformers": {\n    name: "Legacy transformers (no GPU)",\n    type: "toggle",\n    description: "Use legacy transformers (v2) instead of v3. This may resolve issues if the local embedding isn\'t working.",\n    callback: "embed_model_changed",\n    default: true\n  }\n};\n\n// build/transformers_iframe_script.js\nvar model = null;\nasync function process_message(data) {\n  const { method, params, id, iframe_id } = data;\n  try {\n    let result;\n    switch (method) {\n      case "init":\n        console.log("初始化");\n        break;\n      case "load":\n        console.log("加载", params);\n        model = new SmartEmbedModel({\n          ...params,\n          adapters: { transformers: SmartEmbedTransformersAdapter },\n          adapter: "transformers",\n          settings: {}\n        });\n        await model.load();\n        result = { model_loaded: true };\n        break;\n      case "embed_batch":\n        if (!model) throw new Error("模型未加载");\n        result = await model.embed_batch(params.inputs);\n        break;\n      case "count_tokens":\n        if (!model) throw new Error("模型未加载");\n        result = await model.count_tokens(params);\n        break;\n      default:\n        throw new Error(`未知方法: ${method}`);\n    }\n    return { id, result, iframe_id };\n  } catch (error) {\n    console.error("处理消息时出现错误:", error);\n    return { id, error: error.message, iframe_id };\n  }\n}\nprocess_message({ method: "init" });\n';
 
 // node_modules/obsidian-smart-env/node_modules/smart-embed-model/adapters/transformers.js
 var transformers_defaults = {
   adapter: "transformers",
-  description: "Transformers (Local, built-in)",
+  description: "变压器（本地，内置）",
   default_model: "TaylorAI/bge-micro-v2"
 };
 var transformers_models = {
@@ -10039,7 +10039,7 @@ var transformers_settings_config = {
     name: "GPU batch size",
     type: "number",
     description: "Number of embeddings to process per batch on GPU. Use 0 to disable GPU.",
-    placeholder: "Enter number ex. 10"
+    placeholder: "输入数字,例如:10"
   },
   "[ADAPTER].legacy_transformers": {
     name: "Legacy transformers (no GPU)",
@@ -10087,7 +10087,7 @@ var SmartEmbedTransformersIframeAdapter = class extends SmartEmbedIframeAdapter 
 // node_modules/obsidian-smart-env/node_modules/smart-embed-model/adapters/ollama.js
 var SmartEmbedOllamaAdapter = class extends SmartEmbedModelApiAdapter {
   static defaults = {
-    description: "Ollama (Local)",
+    description: "Ollama（本地）",
     type: "API",
     host: "http://localhost:11434",
     endpoint: "/api/embed",
@@ -10132,7 +10132,7 @@ var SmartEmbedOllamaAdapter = class extends SmartEmbedModelApiAdapter {
    * @returns {Promise<string|null>} Processed input text
    */
   async prepare_embed_input(embed_input) {
-    if (typeof embed_input !== "string") throw new TypeError("embed_input must be a string");
+    if (typeof embed_input !== "string") throw new TypeError("embed_input 必须是一个字符串");
     if (embed_input.length === 0) return null;
     const { tokens } = await this.count_tokens(embed_input);
     if (tokens <= this.max_tokens) return embed_input;
@@ -10212,7 +10212,7 @@ var SmartEmbedOllamaAdapter = class extends SmartEmbedModelApiAdapter {
     const models = this.model_data;
     if (!Object.keys(models || {}).length) {
       this.get_models(true);
-      return [{ value: "", name: "No models currently available" }];
+      return [{ value: "", name: "当前" }];
     }
     return Object.values(models).map((model) => ({ value: model.id, name: model.name || model.id })).sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -10230,7 +10230,7 @@ var SmartEmbedOllamaAdapter = class extends SmartEmbedModelApiAdapter {
     if (model_data.length === 0) {
       this.model_data = { "no_models_available": {
         id: "no_models_available",
-        name: "No models currently available"
+        name: "当前"
       } };
       return this.model_data;
     }
@@ -10383,10 +10383,10 @@ var GeminiEmbedModelAdapter = class extends SmartEmbedModelApiAdapter {
    */
   async prepare_embed_input(embed_input) {
     if (typeof embed_input !== "string") {
-      throw new TypeError("embed_input must be a string");
+      throw new TypeError("embed_input 必须是一个字符串");
     }
     if (embed_input.length === 0) {
-      console.log("Warning: prepare_embed_input received an empty string");
+      console.log("警告：prepare_membed_input收到空字符串");
       return null;
     }
     const { tokens } = await this.count_tokens(embed_input);
@@ -10413,7 +10413,7 @@ var GeminiEmbedModelAdapter = class extends SmartEmbedModelApiAdapter {
     const prepared_input = await this.prepare_embed_input(trimmed_input);
     if (prepared_input === null) {
       console.log(
-        "Warning: prepare_embed_input resulted in an empty string after trimming"
+        "警告：在修剪后，prepare_embed_input 导致空字符串。"
       );
       return null;
     }
@@ -10545,7 +10545,7 @@ function parse_lm_studio_models(list, adapter_key = "lm_studio") {
       id: m.id,
       model_name: m.id,
       max_tokens: m.loaded_context_length || 512,
-      description: `LM Studio model: ${m.id}`,
+      description: `LM Studio型号：${m.id}`,
       adapter: adapter_key
     };
     return acc;
@@ -10584,9 +10584,9 @@ var LmStudioEmbedModelAdapter = class extends SmartEmbedModelApiAdapter {
     const cfg = { ...super.settings_config };
     delete cfg["[ADAPTER].api_key"];
     cfg["[ADAPTER].refresh_models"] = {
-      name: "Refresh Models",
+      name: "刷新模型",
       type: "button",
-      description: "Refresh the list of available models.",
+      description: "刷新可用型号列表。",
       callback: "adapter.refresh_models"
     };
     cfg["[ADAPTER].current_model"] = {
@@ -10638,7 +10638,7 @@ var LmStudioEmbedModelAdapter = class extends SmartEmbedModelApiAdapter {
    * @returns {Promise<string|null>} Processed input text
    */
   async prepare_embed_input(embed_input) {
-    if (typeof embed_input !== "string") throw new TypeError("embed_input must be a string");
+    if (typeof embed_input !== "string") throw new TypeError("embed_input 必须是一个字符串");
     if (embed_input.length === 0) return null;
     const { tokens } = await this.count_tokens(embed_input);
     if (tokens <= this.max_tokens) return embed_input;
@@ -10648,7 +10648,7 @@ var LmStudioEmbedModelAdapter = class extends SmartEmbedModelApiAdapter {
    * Refresh available models.
    */
   refresh_models() {
-    console.log("refresh_models");
+    console.log("刷新模型");
     this.get_models(true);
   }
   // no usaqge stats from LM Studio so need to estimate tokens
@@ -10682,7 +10682,7 @@ var LmStudioEmbedModelResponseAdapter = class extends SmartEmbedModelResponseAda
   parse_response() {
     const resp = this.response;
     if (!resp || !resp.data) {
-      console.error("Invalid response format", resp);
+      console.error("响应格式无效", resp);
       return [];
     }
     return resp.data.map((item) => ({
@@ -10785,7 +10785,7 @@ var SmartChatModel = class extends SmartModel {
   get settings_config() {
     const _settings_config = {
       adapter: {
-        name: "Chat Model Platform",
+        name: "聊天模型平台",
         type: "dropdown",
         description: "Select a platform/provider for chat models.",
         options_callback: "get_platforms_as_options",
@@ -10966,7 +10966,7 @@ var SmartStreamer = class {
     this.chunk = "";
   }
   #parseEventChunk(chunk) {
-    if (!chunk) return console.log("no chunk");
+    if (!chunk) return console.log("无分块");
     const event = new CustomEvent("message");
     event.data = chunk;
     event.last_event_id = this.last_event_id;
@@ -11042,7 +11042,7 @@ var SmartChatModelAdapter = class extends SmartModelAdapter {
    * Refresh available models.
    */
   refresh_models() {
-    console.log("refresh_models");
+    console.log("刷新模型");
     this.get_models(true);
   }
   /**
@@ -11052,7 +11052,7 @@ var SmartChatModelAdapter = class extends SmartModelAdapter {
   get settings_config() {
     return {
       "[CHAT_ADAPTER].model_key": {
-        name: "Chat Model",
+        name: "聊天模块",
         type: "dropdown",
         description: "Select a chat model.",
         options_callback: "adapter.get_models_as_options",
@@ -11060,9 +11060,9 @@ var SmartChatModelAdapter = class extends SmartModelAdapter {
         default: this.constructor.defaults.default_model
       },
       "[CHAT_ADAPTER].refresh_models": {
-        name: "Refresh Models",
+        name: "刷新模型",
         type: "button",
-        description: "Refresh the list of available models.",
+        description: "刷新可用型号列表。",
         callback: "adapter.refresh_models"
       }
     };
@@ -11121,9 +11121,9 @@ var SmartChatModelApiAdapter = class extends SmartChatModelAdapter {
     return {
       ...super.settings_config,
       "[CHAT_ADAPTER].api_key": {
-        name: "API Key",
+        name: "API密钥",
         type: "password",
-        description: "Enter your API key for the chat model platform.",
+        description: "输入您在聊天模型平台的API密钥。",
         callback: "test_api_key",
         is_scope: true
         // trigger re-render of settings when changed (reload models dropdown)
@@ -11297,22 +11297,22 @@ var SmartChatModelApiAdapter = class extends SmartChatModelAdapter {
             resp_adapter.handle_chunk(e.data);
             handlers.chunk && await handlers.chunk(resp_adapter.to_openai());
           } catch (error) {
-            console.error("Error processing stream chunk:", error);
+            console.error("处理流块时出错：", error);
             handlers.error && handlers.error(e.data);
             this.stop_stream();
             reject(error);
           }
         });
         this.active_stream.addEventListener("error", (e) => {
-          console.error("Stream error:", e);
-          handlers.error && handlers.error("*API Error. See console logs for details.*");
+          console.error("流错误:", e);
+          handlers.error && handlers.error("*API错误。有关详细信息，请参阅控制台日志*");
           this.stop_stream();
           reject(e);
         });
         this.active_stream.stream();
       } catch (err) {
-        console.error("Failed to start stream:", err);
-        handlers.error && handlers.error("*API Error. See console logs for details.*");
+        console.error("无法启动流：", err);
+        handlers.error && handlers.error("*API错误。有关详细信息，请参阅控制台日志*");
         this.stop_stream();
         reject(err);
       }
@@ -11428,7 +11428,7 @@ var SmartChatModelApiAdapter = class extends SmartChatModelAdapter {
       return Object.entries(this.model_data).map(([id, model]) => ({ value: id, name: model.name || id })).sort((a, b) => a.name.localeCompare(b.name));
     }
     this.get_models(true);
-    return [{ value: "", name: "No models currently available" }];
+    return [{ value: "", name: "当前" }];
   }
   get model_data() {
     if (!MODEL_ADAPTER_CACHE[this.constructor.key]) MODEL_ADAPTER_CACHE[this.constructor.key] = {};
@@ -12355,7 +12355,7 @@ var EXCLUDED_PREFIXES = [
 var SmartChatModelOpenaiAdapter = class extends SmartChatModelApiAdapter {
   static key = "openai";
   static defaults = {
-    description: "OpenAI",
+    description: "OpenAI 是一个人工智能研究实验室。",
     type: "API",
     endpoint: "https://api.openai.com/v1/chat/completions",
     streaming: true,
@@ -12405,9 +12405,9 @@ var SmartChatModelOpenaiAdapter = class extends SmartChatModelApiAdapter {
     const config = super.settings_config;
     if (this.adapter?.model_config?.multimodal) {
       config["[CHAT_ADAPTER].image_resolution"] = {
-        name: "Image Resolution",
+        name: "图像分辨率",
         type: "dropdown",
-        description: "Select the image resolution for the chat model.",
+        description: "选择聊天模型的图像分辨率。",
         option_1: "low",
         option_2: "high",
         default: "low"
@@ -12449,7 +12449,7 @@ var SmartChatModelOpenaiResponseAdapter = class extends SmartChatModelResponseAd
 var SmartChatModelAzureAdapter = class extends SmartChatModelOpenaiAdapter {
   static key = "azure";
   static defaults = {
-    description: "Azure OpenAI",
+    description: "Azure OpenAI -> Azure 开放人工智能",
     type: "API",
     adapter: "AzureOpenAI",
     streaming: true,
@@ -12469,21 +12469,21 @@ var SmartChatModelAzureAdapter = class extends SmartChatModelOpenaiAdapter {
     return {
       ...super.settings_config,
       "[CHAT_ADAPTER].azure_resource_name": {
-        name: "Azure Resource Name",
+        name: "Azure 资源名称",
         type: "text",
-        description: "The name of your Azure OpenAI resource (e.g. 'my-azure-openai').",
+        description: "Azure OpenAI 资源的名称（例如 'my-azure-openai'）。",
         default: ""
       },
       "[CHAT_ADAPTER].azure_deployment_name": {
-        name: "Azure Deployment Name",
+        name: "Azure部署名称",
         type: "text",
-        description: "The name of your specific model deployment (e.g. 'gpt35-deployment').",
+        description: "您的特定模型部署的名称（例如“gpt35部署”）。",
         default: ""
       },
       "[CHAT_ADAPTER].azure_api_version": {
-        name: "Azure API Version",
+        name: "Azure API版本",
         type: "text",
-        description: "The API version for Azure OpenAI (e.g. '2024-10-01-preview').",
+        description: "Azure OpenAI的API版本（例如'2024-10-01-preview'）。",
         default: "2024-10-01-preview"
       }
     };
@@ -12542,7 +12542,7 @@ var SmartChatModelAzureAdapter = class extends SmartChatModelOpenaiAdapter {
         id: d.id,
         raw: d,
         // You can add more details if you want:
-        description: `Model: ${d.model}, Status: ${d.status}`,
+        description: `型号：${d.model}，状态：${d.status}｝`,
         // Hard to guess tokens; omit or guess:
         max_input_tokens: 4e3
       };
@@ -13097,18 +13097,18 @@ var SmartChatModelLmStudioAdapter = class extends SmartChatModelApiAdapter {
     can_use_tools: true,
     api_key: "no api key required"
   };
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Request / Response classes
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   get req_adapter() {
     return SmartChatModelLmStudioRequestAdapter;
   }
   get res_adapter() {
     return SmartChatModelLmStudioResponseAdapter;
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Settings
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   /**
    * Extend the base settings with a read‑only HTML block that reminds the
    * user to enable CORS inside LM Studio. The Smart View renderer treats
@@ -13127,9 +13127,9 @@ var SmartChatModelLmStudioAdapter = class extends SmartChatModelApiAdapter {
       }
     };
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Model list helpers
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   /**
    * LM Studio returns an OpenAI‑style list; normalise to the project shape.
    */
@@ -13142,7 +13142,7 @@ var SmartChatModelLmStudioAdapter = class extends SmartChatModelApiAdapter {
       out[m.id] = {
         id: m.id,
         model_name: m.id,
-        description: `LM Studio model: ${m.id}`,
+        description: `LM Studio型号：${m.id}`,
         multimodal: false
       };
     }
@@ -13194,7 +13194,7 @@ var SmartChatModelLmStudioRequestAdapter = class extends SmartChatModelRequestAd
       }
       last_msg.content.push({
         type: "text",
-        text: `Use the "${this.tool_choice.function.name}" tool.`
+        text: `使用“${this.tool_choice.function.name}”工具。`
       });
       body.tool_choice = "required";
     } else if (body.tool_choice && typeof body.tool_choice === "object") {
@@ -13211,7 +13211,7 @@ var SmartChatModelLmStudioResponseAdapter = class extends SmartChatModelResponse
 var SmartChatModelOllamaAdapter = class extends SmartChatModelApiAdapter {
   static key = "ollama";
   static defaults = {
-    description: "Ollama (Local)",
+    description: "Ollama（本地）",
     type: "API",
     // models_endpoint: "http://localhost:11434/api/tags",
     // endpoint: "http://localhost:11434/api/chat",
@@ -13263,7 +13263,7 @@ var SmartChatModelOllamaAdapter = class extends SmartChatModelApiAdapter {
       this.model_data_loaded_at = Date.now();
       return this.model_data;
     } catch (error) {
-      console.error("Failed to fetch model data:", error);
+      console.error("获取模型数据失败:", error);
       return { "_": { id: `Failed to fetch models from ${this.model.adapter_name}` } };
     }
   }
@@ -13281,7 +13281,7 @@ var SmartChatModelOllamaAdapter = class extends SmartChatModelApiAdapter {
     if (model_data.length === 0) {
       this.model_data = { "no_models_available": {
         id: "no_models_available",
-        name: "No models currently available"
+        name: "当前"
       } };
       return this.model_data;
     }
@@ -13540,7 +13540,7 @@ var adapters_map = {
 var SmartChatModelCustomAdapter = class extends SmartChatModelApiAdapter {
   static key = "custom";
   static defaults = {
-    description: "Custom API (Local or Remote, OpenAI format)",
+    description: "自定义API（本地或远程，OpenAI格式）",
     type: "API",
     /**
      * new default property: 'api_adapter' indicates which
@@ -13551,7 +13551,7 @@ var SmartChatModelCustomAdapter = class extends SmartChatModelApiAdapter {
   /**
    * Provide dynamic request/response classes
    * based on current adapter_config.api_adapter setting
-   * ----------------------------------------------------
+   * ----------------------------------------------------------
    */
   /**
    * @override
@@ -13600,52 +13600,52 @@ var SmartChatModelCustomAdapter = class extends SmartChatModelApiAdapter {
        * you'd like to use for your custom endpoint.
        */
       "[CHAT_ADAPTER].api_adapter": {
-        name: "API Adapter",
+        name: "API适配器",
         type: "dropdown",
-        description: "Pick a built-in or external adapter to parse request/response data.",
+        description: "选择一个内置或外部适配器来解析请求/响应数据。",
         // Provide a short selection set, or dynamically gather from keys of adapters_map
         options_callback: "adapter.get_adapters_as_options",
         default: "openai"
       },
       "[CHAT_ADAPTER].id": {
-        name: "Model Name",
+        name: "型号名称",
         type: "text",
-        description: "Enter the model name for your endpoint if needed."
+        description: "如果需要，请输入端点的模型名称。"
       },
       "[CHAT_ADAPTER].protocol": {
-        name: "Protocol",
+        name: "协议",
         type: "text",
-        description: "e.g. http or https"
+        description: "例如 http 或 https"
       },
       "[CHAT_ADAPTER].hostname": {
-        name: "Hostname",
+        name: "主机名",
         type: "text",
-        description: "e.g. localhost or some.remote.host"
+        description: "例如 localhost 或 some.remote.host"
       },
       "[CHAT_ADAPTER].port": {
-        name: "Port",
+        name: "端口",
         type: "number",
-        description: "Port number or leave blank"
+        description: "端口号或留空"
       },
       "[CHAT_ADAPTER].path": {
-        name: "Path",
+        name: "路径",
         type: "text",
-        description: "Path portion of the URL (leading slash optional)"
+        description: "URL的路径部分（前导斜线可选）"
       },
       "[CHAT_ADAPTER].streaming": {
-        name: "Streaming",
+        name: "实时传输",
         type: "toggle",
-        description: "Enable streaming if your API supports it."
+        description: "如果您的API支持，启用流式传输。"
       },
       "[CHAT_ADAPTER].max_input_tokens": {
-        name: "Max Input Tokens",
+        name: "最大输入令牌数",
         type: "number",
-        description: "Max number of tokens your model can handle in the prompt."
+        description: "模型在提示中可以处理的最大令牌数。"
       },
       "[CHAT_ADAPTER].api_key": {
-        name: "API Key",
+        name: "API密钥",
         type: "password",
-        description: "If your service requires an API key, add it here."
+        description: "如果您的服务需要 API 密钥，请在此处添加。"
       }
     };
   }
@@ -13714,7 +13714,7 @@ var SmartChatModelGroqAdapter = class extends SmartChatModelApiAdapter {
    *   model_name: model.id,
    *   id: model.id,
    *   max_input_tokens: model.context_window,
-   *   description: `Owned by: ${model.owned_by}, context: ${model.context_window}`,
+   *   description: `所有者：$｛model.Owned_by｝，上下文：$｛model.context_window｝`,
    *   multimodal: Check if model name or description suggests multimodality
    * }
    */
@@ -13728,7 +13728,7 @@ var SmartChatModelGroqAdapter = class extends SmartChatModelApiAdapter {
         model_name: m.id,
         id: m.id,
         max_input_tokens: m.context_window || 8192,
-        description: `Owned by: ${m.owned_by}, context: ${m.context_window}`,
+        description: `所有者: ${m.owned_by}，上下文: ${m.context_window}`,
         // A basic heuristic for multimodal: if 'vision' or 'tool' is in model id
         // Adjust as needed based on known capabilities
         multimodal: m.id.includes("vision")
@@ -13788,9 +13788,9 @@ var SmartChatModelXaiAdapter = class extends SmartChatModelApiAdapter {
   get res_adapter() {
     return SmartChatModelResponseAdapter;
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Model-list helpers
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   /**
    * The Grok `/v1/models` route is **GET**, not POST.
    * Override the HTTP verb so `get_models()` works.
@@ -13823,9 +13823,9 @@ var SmartChatModelXaiAdapter = class extends SmartChatModelApiAdapter {
       return acc;
     }, {});
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Validation helpers
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   validate_config() {
     if (!this.adapter_config.model_key) {
       return { valid: false, message: "No model selected." };
@@ -15296,7 +15296,7 @@ var ExcludedSourcesModal = class extends import_obsidian5.Modal {
     this.env = env;
   }
   async onOpen() {
-    this.titleEl.setText("Excluded Sources");
+    this.titleEl.setText("Excluded 源");
     this.contentEl.addClass("excluded-sources-modal");
     this.render_excluded_list();
   }
@@ -15422,8 +15422,8 @@ async function build_html4(env, opts = {}) {
   return `
     <div class="sc-env-settings-container">
       <div class="sc-env-settings-header">
-        <h2>Smart Environment</h2>
-        <button type="button" class="toggle-env-settings-btn">Show environment settings</button>
+        <h2>智能环境</h2>
+        <button type="button" class="toggle-env-settings-btn">显示环境设置</button>
       </div>
       <div class="sc-env-settings-body" style="display: none;">
         <div class="smart-env-settings-header" id="smart-env-buttons">
@@ -15436,13 +15436,13 @@ async function build_html4(env, opts = {}) {
         ${env_settings_html}
 
         <div class="smart-env-settings-header">
-          <h2>Excluded folders</h2>
+          <h2>排除的文件夹</h2>
           ${add_excluded_folders_btn}
         </div>
         ${excluded_folders_list}
 
         <div class="smart-env-settings-header">
-          <h2>Excluded files</h2>
+          <h2>排除的文件</h2>
           ${add_excluded_files_btn}
         </div>
         ${excluded_files_list}
@@ -15451,9 +15451,9 @@ async function build_html4(env, opts = {}) {
 
         <div data-smart-settings="smart_sources"></div>
         <div data-smart-settings="smart_blocks"></div>
-        <p>Notes about embedding models:</p>
+        <p>关于嵌入模型的说明:</p>
         <ul>
-          <li>IMPORTANT: make sure local <code>BGE-micro-v2</code> embedding model works before trying other local models.</li>
+          <li>重要提示:在尝试其他本地模型之前,请确保本地 <code>BGE-micro-v2</code> 嵌入模型正常工作。</li>
           <li>API models require an API key and send your notes to third-party servers for processing.</li>
           <li>If notes persistently re-embed after switching models, use "Clear sources data" then "Reload sources" to reset.</li>
         </ul>
@@ -15482,7 +15482,7 @@ async function post_process5(env, container, opts = {}) {
     heading_btn.addEventListener("click", () => {
       const is_hidden = body_el.style.display === "none";
       body_el.style.display = is_hidden ? "block" : "none";
-      heading_btn.textContent = is_hidden ? "Hide environment settings" : "Show environment settings";
+      heading_btn.textContent = is_hidden ? "隐藏环境设置" : "显示环境设置";
     });
   }
   const muted_notices_frag = await env.render_component("muted_notices", env);
@@ -15651,7 +15651,7 @@ function render_sign_in_or_open_smart_plugins(env) {
 // node_modules/obsidian-smart-env/components/env_stats.js
 async function build_html5(env, opts = {}) {
   const lines = [];
-  lines.push(`<h2>Collections</h2>`);
+  lines.push(`<h2>收藏</h2>`);
   const collection_keys = Object.keys(env.collections).sort((a, b) => {
     if (a === "smart_sources" || a === "smart_blocks") return -1;
     if (b === "smart_sources" || b === "smart_blocks") return 1;
@@ -15802,7 +15802,7 @@ async function build_html7(env, opts = {}) {
       </div>`;
     }
   } else {
-    html += `<p>No muted notices.</p>`;
+    html += `<p>没有静音通知。</p>`;
   }
   html += `</div>`;
   return html;
@@ -15859,7 +15859,7 @@ function build_html8(source2, opts = {}) {
       </div>
     </div>
     <div class="smart-chat-message source-inspector">
-      <h2>Blocks</h2>
+      <h2>区块</h2>
       <div class="source-inspector-blocks-container"></div>
     </div>
   </div>`;
@@ -16279,13 +16279,13 @@ var NOTICES = {
     timeout: 0
   },
   embed_model_not_loaded: {
-    en: "Embed model not loaded. Please wait for the model to load and try again."
+    en: "嵌入模型未加载,请等待模型加载完成后重试。"
   },
   embed_search_text_failed: {
-    en: "Failed to embed search text."
+    en: "搜索文本嵌入失败。"
   },
   error_in_embedding_search: {
-    en: "Error in embedding search. See console for details."
+    en: "嵌入搜索时出错。请查看控制台获取详细信息。"
   },
   copied_to_clipboard: {
     en: "Message: {{content}} copied successfully."
@@ -16324,7 +16324,7 @@ var NOTICES = {
     button: {
       en: "Pause",
       callback: (env) => {
-        console.log("pausing");
+        console.log("暂停");
         env.smart_sources.entities_vector_adapter.halt_embed_queue_processing();
       }
     },
@@ -16357,14 +16357,14 @@ var NOTICES = {
     timeout: 0
   },
   no_import_queue: {
-    en: "No items in import queue"
+    en: "导入队列中没有项目"
   },
   clearing_all: {
-    en: "Clearing all data...",
+    en: "正在清除所有数据...",
     timeout: 0
   },
   done_clearing_all: {
-    en: "All data cleared and reimported",
+    en: "所有数据已清除并重新导入",
     timeout: 3e3
   },
   image_extracting: {
@@ -17276,7 +17276,7 @@ var SmartEnv2 = class extends SmartEnv {
       new import_obsidian20.Notice("Smart Plugins installed / updated successfully!");
       this.open_smart_plugins_settings();
     } catch (err) {
-      console.error("OAuth callback error", err);
+      console.error("OAuth回调错误", err);
       new import_obsidian20.Notice(`OAuth callback error: ${err.message}`);
     }
   }
@@ -17320,7 +17320,7 @@ var SmartEnv2 = class extends SmartEnv {
   }
   async wait_for_obsidian_sync() {
     while (this.obsidian_is_syncing) {
-      console.log("Smart Connections: Waiting for Obsidian Sync to finish");
+      console.log("智能连接：等待 Obsidian 同步完成");
       await new Promise((r) => setTimeout(r, 1e3));
       if (!this.plugin) throw new Error("Plugin disabled while waiting for obsidian sync, reload required.");
     }
@@ -17391,7 +17391,7 @@ var CollectionDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save a single item by its key using its associated `ItemDataAdapter`.
@@ -17400,7 +17400,7 @@ var CollectionDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete a single item by its key. This may involve updating or removing its file,
@@ -17410,7 +17410,7 @@ var CollectionDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is deleted.
    */
   async delete_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued load operations. Typically orchestrates calling `load_item()` 
@@ -17419,7 +17419,7 @@ var CollectionDataAdapter2 = class {
    * @returns {Promise<void>}
    */
   async process_load_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued save operations. Typically orchestrates calling `save_item()` 
@@ -17428,7 +17428,7 @@ var CollectionDataAdapter2 = class {
    * @returns {Promise<void>}
    */
   async process_save_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Load the item's data from storage if it has been updated externally.
@@ -17456,7 +17456,7 @@ var ItemDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is fully loaded.
    */
   async load() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save the item's data to storage. May involve writing to a file or appending 
@@ -17467,7 +17467,7 @@ var ItemDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save(ajson = null) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete the item's data from storage. May involve removing a file or writing 
@@ -17476,7 +17476,7 @@ var ItemDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item’s data is deleted.
    */
   async delete() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Returns the file path or unique identifier used by this adapter to locate and store 
@@ -17484,7 +17484,7 @@ var ItemDataAdapter2 = class {
    * @returns {string} The path or identifier for the item's data.
    */
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @returns {CollectionDataAdapter} The collection data adapter that this item data adapter belongs to.
@@ -17501,7 +17501,7 @@ var ItemDataAdapter2 = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_if_updated() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
 };
 
@@ -17527,7 +17527,7 @@ var FileItemDataAdapter2 = class extends ItemDataAdapter2 {
     return this.item.collection.data_fs || this.item.collection.env.data_fs;
   }
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   async load_if_updated() {
     const data_path = this.data_path;
@@ -17535,7 +17535,7 @@ var FileItemDataAdapter2 = class extends ItemDataAdapter2 {
       const loaded_at = this.item.loaded_at || 0;
       const data_file_stat = await this.fs.stat(data_path);
       if (data_file_stat.mtime > loaded_at + 1 * 60 * 1e3) {
-        console.log(`Smart Collections: Re-loading item ${this.item.key} because it has been updated on disk`);
+        console.log(`智能集合：重新加载项目 ${this.item.key}，因为它在磁盘上已更新`);
         await this.load();
       }
     }
@@ -17596,7 +17596,7 @@ var AjsonMultiFileCollectionDataAdapter2 = class extends FileCollectionDataAdapt
       this.collection.clear_process_notice("loading_collection");
       return;
     }
-    console.log(`Loading ${this.collection.collection_key}: ${load_queue.length} items`);
+    console.log(`正在加载 ${this.collection.collection_key}: ${load_queue.length}个项目`);
     const batch_size = 100;
     for (let i = 0; i < load_queue.length; i += batch_size) {
       const batch = load_queue.slice(i, i + batch_size);
@@ -17621,7 +17621,7 @@ var AjsonMultiFileCollectionDataAdapter2 = class extends FileCollectionDataAdapt
     this.collection.emit_event("collection:save_started");
     this.collection.show_process_notice("saving_collection");
     const save_queue = Object.values(this.collection.items).filter((item) => item._queue_save);
-    console.log(`Saving ${this.collection.collection_key}: ${save_queue.length} items`);
+    console.log(`正在保存${this.collection.collection_key}: ${save_queue.length} 个项目`);
     const time_start = Date.now();
     const batch_size = 50;
     for (let i = 0; i < save_queue.length; i += batch_size) {
@@ -17990,7 +17990,7 @@ var SmartFs2 = class {
     this.env = env;
     this.opts = opts;
     this.fs_path = opts.fs_path || opts.env_path || "";
-    if (!opts.adapter) throw new Error("SmartFs requires an adapter");
+    if (!opts.adapter) throw new Error("SmartFs 需要一个适配器");
     this.adapter = new opts.adapter(this);
     this.excluded_patterns = [];
     if (Array.isArray(opts.exclude_patterns)) {
@@ -18070,8 +18070,8 @@ var SmartFs2 = class {
       if (!this.excluded_patterns.length) return false;
       return this.excluded_patterns.some((pattern) => pattern.test(_path));
     } catch (e) {
-      console.error(`Error checking if path is excluded: ${e.message}`);
-      console.error(`Path: `, _path);
+      console.error(`检查路径是否被排除时出错: ${e.message}`);
+      console.error(`路径：`, _path);
       throw e;
     }
   }
@@ -18093,7 +18093,7 @@ var SmartFs2 = class {
    */
   pre_process(paths) {
     if (this.has_excluded_patterns(paths)) {
-      throw new Error(`Path is excluded: ${paths.find((p) => this.is_excluded(p))}`);
+      throw new Error(`路径已排除: ${paths.find((p) => this.is_excluded(p))}`);
     }
     return paths;
   }
@@ -18124,13 +18124,13 @@ var SmartFs2 = class {
    * @returns {Promise<any>} The result of the method
    */
   async use_adapter(method, paths, ...args) {
-    if (!this.adapter[method]) throw new Error(`Method ${method} not found in adapter`);
+    if (!this.adapter[method]) throw new Error(`在适配器中未找到方法 ${method}`);
     paths = this.pre_process(paths ?? []);
     let resp = await this.adapter[method](...paths, ...args);
     return this.post_process(resp);
   }
   use_adapter_sync(method, paths, ...args) {
-    if (!this.adapter[method]) throw new Error(`Method ${method} not found in adapter`);
+    if (!this.adapter[method]) throw new Error(`在适配器中未找到方法 ${method}`);
     paths = this.pre_process(paths ?? []);
     let resp = this.adapter[method](...paths, ...args);
     return this.post_process(resp);
@@ -18256,7 +18256,7 @@ var SmartFs2 = class {
     try {
       await this.adapter.write(rel_path, content);
     } catch (error) {
-      console.error("Error during write:", error);
+      console.error("写入过程中发生错误:", error);
       throw error;
     }
   }
@@ -18265,7 +18265,7 @@ var SmartFs2 = class {
   // async update(rel_path, content) { return await this.use_adapter('write', [rel_path], content); }
   get_link_target_path(link_target, source_path) {
     if (this.adapter.get_link_target_path) return this.adapter.get_link_target_path(link_target, source_path);
-    if (!this.file_paths) return console.warn("get_link_target_path: file_paths not found");
+    if (!this.file_paths) return console.warn("get_link_target_path: 未找到 file_paths");
     const matching_file_paths = this.file_paths.filter((path) => path.includes(link_target));
     return fuzzy_search2(matching_file_paths, link_target)[0];
   }
@@ -18650,7 +18650,7 @@ function is_plain_object4(o) {
 // node_modules/smart-utils/cos_sim.js
 function cos_sim2(vector1 = [], vector2 = []) {
   if (vector1.length !== vector2.length) {
-    throw new Error("Vectors must have the same length");
+    throw new Error("向量必须具有相同的长度");
   }
   let dot_product = 0;
   let magnitude1 = 0;
@@ -18983,7 +18983,7 @@ var SmartViewAdapter2 = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   get setting_class() {
-    throw new Error("setting_class() not implemented");
+    throw new Error("setting_class() 未实现");
   }
   /**
    * Generates the HTML for a specified icon.
@@ -18994,7 +18994,7 @@ var SmartViewAdapter2 = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   get_icon_html(icon_name) {
-    throw new Error("get_icon_html() not implemented");
+    throw new Error("get_icon_html() 未实现");
   }
   /**
    * Renders Markdown content within a specific scope.
@@ -19006,7 +19006,7 @@ var SmartViewAdapter2 = class {
    * @throws Will throw an error if not implemented in the subclass.
    */
   async render_markdown(markdown, scope = null) {
-    throw new Error("render_markdown() not implemented");
+    throw new Error("render_markdown() 未实现");
   }
   /**
    * Opens a specified URL.
@@ -19015,7 +19015,7 @@ var SmartViewAdapter2 = class {
    * @param {string} url - The URL to open.
    */
   open_url(url) {
-    throw new Error("open_url() not implemented");
+    throw new Error("open_url() 未实现");
   }
   /**
    * Handles the selection of a folder by invoking the folder selection dialog and updating the setting.
@@ -19026,7 +19026,7 @@ var SmartViewAdapter2 = class {
    * @param {object} scope - The current scope containing settings and actions.
    */
   handle_folder_select(path, value, elm, scope) {
-    throw new Error("handle_folder_select not implemented");
+    throw new Error("handle_folder_select 未实现");
   }
   /**
    * Handles the selection of a file by invoking the file selection dialog and updating the setting.
@@ -19037,7 +19037,7 @@ var SmartViewAdapter2 = class {
    * @param {object} scope - The current scope containing settings and actions.
    */
   handle_file_select(path, value, elm, scope) {
-    throw new Error("handle_file_select not implemented");
+    throw new Error("handle_file_select 未实现");
   }
   /**
    * Performs actions before a setting is changed, such as clearing notices and updating the UI.
@@ -19067,7 +19067,7 @@ var SmartViewAdapter2 = class {
    * @param {object} scope - The current scope containing settings.
    */
   revert_setting(path, elm, scope) {
-    console.warn("revert_setting() not implemented");
+    console.warn("revert_setting() 尚未实现");
   }
   // DEFAULT IMPLEMENTATIONS (may be overridden)
   get setting_renderers() {
@@ -19106,7 +19106,7 @@ var SmartViewAdapter2 = class {
       }
       const renderer = this.setting_renderers[elm.dataset.type];
       if (!renderer) {
-        console.warn(`Unsupported setting type: ${elm.dataset.type}`);
+        console.warn(`不支持的设置类型: ${elm.dataset.type}`);
         return elm;
       }
       const setting = renderer.call(this, elm, path, value, scope, settings_scope);
@@ -19128,7 +19128,7 @@ var SmartViewAdapter2 = class {
     const smart_setting = new this.setting_class(elm);
     let options;
     if (elm.dataset.optionsCallback) {
-      console.log(`getting options callback: ${elm.dataset.optionsCallback}`);
+      console.log(`获取选项回调：${elm.data.optionsCallback}`);
       const opts_callback = this.main.get_by_path(scope, elm.dataset.optionsCallback);
       if (typeof opts_callback === "function") options = opts_callback();
       else console.warn(`optionsCallback is not a function: ${elm.dataset.optionsCallback}`, scope);
@@ -19256,7 +19256,7 @@ var SmartViewAdapter2 = class {
   render_remove_component(elm, path, value, scope, settings_scope) {
     const smart_setting = new this.setting_class(elm);
     smart_setting.addButton((button) => {
-      button.setButtonText(elm.dataset.btnText || elm.dataset.name || "Remove");
+      button.setButtonText(elm.dataset.btnText || elm.dataset.name || "清除");
       button.onClick(async () => {
         this.main.delete_by_path(scope.settings, path, settings_scope);
         if (elm.dataset.callback) {
@@ -19477,7 +19477,7 @@ var SmartViewAdapter2 = class {
           } else if (elm.dataset.href) {
             this.open_url(elm.dataset.href);
           } else {
-            console.error("No callback or href found for button.");
+            console.error("未找到按钮的回调或链接。");
           }
         });
         if (elm.dataset.btnDisabled || elm.dataset.disabled && elm.dataset.btnDisabled !== "false") {
@@ -19582,7 +19582,7 @@ var SmartViewObsidianAdapter2 = class extends SmartViewAdapter2 {
   }
   async render_markdown(markdown, scope) {
     const component = scope.env.smart_connections_plugin?.connections_view || new import_obsidian21.Component();
-    if (!scope) return console.warn("Scope required for rendering markdown in Obsidian adapter");
+    if (!scope) return console.warn("Obsidian 适配器渲染 markdown 需要 scope");
     const frag = this.main.create_doc_fragment("<div><div class='inner'></div></div>");
     const container = frag.querySelector(".inner");
     try {
@@ -19594,7 +19594,7 @@ var SmartViewObsidianAdapter2 = class extends SmartViewAdapter2 {
         component
       );
     } catch (e) {
-      console.warn("Error rendering markdown in Obsidian adapter", e);
+      console.warn("Obsidian 适配器渲染 markdown 出错", e);
     }
     return frag;
   }
@@ -19860,18 +19860,18 @@ async function build_html12(collection, opts = {}) {
       <button class="sc-fold-toggle">${this.get_icon_html(expanded_view ? "fold-vertical" : "unfold-vertical")}</button>
     </div>
     <div class="sc-container">
-      <h2>Smart Lookup</h2>
+      <h2>智能查找</h2>
       <div class="sc-textarea-container">
         <textarea
           id="query"
           name="query"
-          placeholder="Describe what you're looking for (e.g., 'PKM strategies', 'story elements', 'personal AI alignment')"
+          placeholder="描述你要查找的内容(例如:'PKM 策略','故事元素','个人 AI 对齐')"
         ></textarea>
         <div class="sc-textarea-btn-container">
           <button class="send-button">${this.get_icon_html("search")}</button>
         </div>
       </div>
-      <p>Use semantic (embeddings) search to surface relevant notes. Results are sorted by similarity to your query. Note: returns different results than lexical (keyword) search.</p>
+      <p>使用语义(嵌入)搜索来展示相关笔记。结果按与查询的相似度排序。注意:与词汇(关键词)搜索返回的结果不同。</p>
     </div>
     <div class="sc-list">
     </div>
@@ -19956,11 +19956,11 @@ async function render17(results, opts = {}) {
 // src/views/smart_chat.js
 function build_html14(obsidian_view, opts = {}) {
   const top_bar_buttons = [
-    // { title: 'Open Conversation Note', icon: 'external-link' },
-    { title: "New Chat", icon: "plus" },
-    { title: "Chat History", icon: "history" },
-    { title: "Chat Options", icon: "sliders-horizontal", style: "display: none;" },
-    { title: "Chat Settings", icon: "settings" },
+    // { title: '打开对话笔记', icon: 'external-link' },
+    { title: "新建聊天", icon: "plus" },
+    { title: "聊天历史", icon: "history" },
+    { title: "聊天选项", icon: "sliders-horizontal", style: "display: none;" },
+    { title: "聊天设置", icon: "settings" },
     { title: "Help", icon: "help-circle" }
   ].map((btn) => `
     <button title="${btn.title}" ${btn.style ? `style="${btn.style}"` : ""}>
@@ -19995,7 +19995,7 @@ async function render18(obsidian_view, opts = {}) {
 }
 async function post_process16(obsidian_view, frag, opts) {
   const chat_box = frag.querySelector(".sc-thread");
-  const settings_button = frag.querySelector('button[title="Chat Settings"]');
+  const settings_button = frag.querySelector('button[title="聊天设置"]');
   const overlay_container = frag.querySelector(".smart-chat-overlay");
   const settings_container = overlay_container.querySelector(".sc-settings");
   while (!obsidian_view.env.smart_threads) {
@@ -20035,13 +20035,13 @@ async function post_process16(obsidian_view, frag, opts) {
   help_button.addEventListener("click", () => {
     window.open("https://docs.smartconnections.app/smart-chat", "_blank");
   });
-  const new_chat_button = frag.querySelector('button[title="New Chat"]');
+  const new_chat_button = frag.querySelector('button[title="新建聊天"]');
   new_chat_button.addEventListener("click", async () => {
     this.empty(threads_collection.container);
     opts.thread_key = null;
     obsidian_view.render_view();
   });
-  const chat_history_button = frag.querySelector('button[title="Chat History"]');
+  const chat_history_button = frag.querySelector('button[title="聊天历史"]');
   chat_history_button.addEventListener("click", () => {
     obsidian_view.open_chat_history();
   });
@@ -20059,9 +20059,9 @@ function setup_chat_name_input_handler(frag, thread) {
     if (new_name && new_name !== thread.key) {
       try {
         await thread.rename(new_name);
-        console.log(`Thread renamed to "${new_name}"`);
+        console.log(`线程已重命名为 "${new_name}"`);
       } catch (error) {
-        console.error("Error renaming thread:", error);
+        console.error("重命名线程时出错：", error);
         name_input.value = thread.key;
       }
     }
@@ -20349,9 +20349,9 @@ var SmartModel2 = class {
   get settings_config() {
     return this.process_settings_config({
       adapter: {
-        name: "Model Platform",
+        name: "模型平台",
         type: "dropdown",
-        description: "Select a model platform to use with Smart Model.",
+        description: "选择要与Smart model一起使用的模型平台。",
         options_callback: "get_platforms_as_options",
         is_scope: true,
         // trigger re-render of settings when changed
@@ -20495,7 +20495,7 @@ var SmartChatModel2 = class extends SmartModel2 {
   get settings_config() {
     const _settings_config = {
       adapter: {
-        name: "Chat Model Platform",
+        name: "聊天模型平台",
         type: "dropdown",
         description: "Select a platform/provider for chat models.",
         options_callback: "get_platforms_as_options",
@@ -20800,7 +20800,7 @@ var SmartStreamer2 = class {
     this.chunk = "";
   }
   #parseEventChunk(chunk) {
-    if (!chunk) return console.log("no chunk");
+    if (!chunk) return console.log("无分块");
     const event = new CustomEvent("message");
     event.data = chunk;
     event.last_event_id = this.last_event_id;
@@ -20915,7 +20915,7 @@ var SmartModelAdapter2 = class {
     if (params_valid !== true) return params_valid;
     if (!Object.keys(models || {}).length) {
       this.get_models(true);
-      return [{ value: "", name: "No models currently available" }];
+      return [{ value: "", name: "当前" }];
     }
     return Object.entries(models).map(([id, model]) => ({ value: id, name: model.name || id })).sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -21011,7 +21011,7 @@ var SmartChatModelAdapter2 = class extends SmartModelAdapter2 {
    * Refresh available models.
    */
   refresh_models() {
-    console.log("refresh_models");
+    console.log("刷新模型");
     this.get_models(true);
   }
   /**
@@ -21021,7 +21021,7 @@ var SmartChatModelAdapter2 = class extends SmartModelAdapter2 {
   get settings_config() {
     return {
       "[CHAT_ADAPTER].model_key": {
-        name: "Chat Model",
+        name: "聊天模块",
         type: "dropdown",
         description: "Select a chat model.",
         options_callback: "adapter.get_models_as_options",
@@ -21029,9 +21029,9 @@ var SmartChatModelAdapter2 = class extends SmartModelAdapter2 {
         default: this.constructor.defaults.default_model
       },
       "[CHAT_ADAPTER].refresh_models": {
-        name: "Refresh Models",
+        name: "刷新模型",
         type: "button",
-        description: "Refresh the list of available models.",
+        description: "刷新可用型号列表。",
         callback: "adapter.refresh_models"
       }
     };
@@ -21090,9 +21090,9 @@ var SmartChatModelApiAdapter2 = class extends SmartChatModelAdapter2 {
     return {
       ...super.settings_config,
       "[CHAT_ADAPTER].api_key": {
-        name: "API Key",
+        name: "API密钥",
         type: "password",
-        description: "Enter your API key for the chat model platform.",
+        description: "输入您在聊天模型平台的API密钥。",
         callback: "test_api_key",
         is_scope: true
         // trigger re-render of settings when changed (reload models dropdown)
@@ -21266,22 +21266,22 @@ var SmartChatModelApiAdapter2 = class extends SmartChatModelAdapter2 {
             resp_adapter.handle_chunk(e.data);
             handlers.chunk && await handlers.chunk(resp_adapter.to_openai());
           } catch (error) {
-            console.error("Error processing stream chunk:", error);
+            console.error("处理流块时出错：", error);
             handlers.error && handlers.error(e.data);
             this.stop_stream();
             reject(error);
           }
         });
         this.active_stream.addEventListener("error", (e) => {
-          console.error("Stream error:", e);
-          handlers.error && handlers.error("*API Error. See console logs for details.*");
+          console.error("流错误:", e);
+          handlers.error && handlers.error("*API错误。有关详细信息，请参阅控制台日志*");
           this.stop_stream();
           reject(e);
         });
         this.active_stream.stream();
       } catch (err) {
-        console.error("Failed to start stream:", err);
-        handlers.error && handlers.error("*API Error. See console logs for details.*");
+        console.error("无法启动流：", err);
+        handlers.error && handlers.error("*API错误。有关详细信息，请参阅控制台日志*");
         this.stop_stream();
         reject(err);
       }
@@ -21397,7 +21397,7 @@ var SmartChatModelApiAdapter2 = class extends SmartChatModelAdapter2 {
       return Object.entries(this.model_data).map(([id, model]) => ({ value: id, name: model.name || id })).sort((a, b) => a.name.localeCompare(b.name));
     }
     this.get_models(true);
-    return [{ value: "", name: "No models currently available" }];
+    return [{ value: "", name: "当前" }];
   }
   get model_data() {
     if (!MODEL_ADAPTER_CACHE2[this.constructor.key]) MODEL_ADAPTER_CACHE2[this.constructor.key] = {};
@@ -22324,7 +22324,7 @@ var EXCLUDED_PREFIXES2 = [
 var SmartChatModelOpenaiAdapter2 = class extends SmartChatModelApiAdapter2 {
   static key = "openai";
   static defaults = {
-    description: "OpenAI",
+    description: "OpenAI 是一个人工智能研究实验室。",
     type: "API",
     endpoint: "https://api.openai.com/v1/chat/completions",
     streaming: true,
@@ -22374,9 +22374,9 @@ var SmartChatModelOpenaiAdapter2 = class extends SmartChatModelApiAdapter2 {
     const config = super.settings_config;
     if (this.adapter?.model_config?.multimodal) {
       config["[CHAT_ADAPTER].image_resolution"] = {
-        name: "Image Resolution",
+        name: "图像分辨率",
         type: "dropdown",
-        description: "Select the image resolution for the chat model.",
+        description: "选择聊天模型的图像分辨率。",
         option_1: "low",
         option_2: "high",
         default: "low"
@@ -22418,7 +22418,7 @@ var SmartChatModelOpenaiResponseAdapter2 = class extends SmartChatModelResponseA
 var SmartChatModelAzureAdapter2 = class extends SmartChatModelOpenaiAdapter2 {
   static key = "azure";
   static defaults = {
-    description: "Azure OpenAI",
+    description: "Azure OpenAI -> Azure 开放人工智能",
     type: "API",
     adapter: "AzureOpenAI",
     streaming: true,
@@ -22438,21 +22438,21 @@ var SmartChatModelAzureAdapter2 = class extends SmartChatModelOpenaiAdapter2 {
     return {
       ...super.settings_config,
       "[CHAT_ADAPTER].azure_resource_name": {
-        name: "Azure Resource Name",
+        name: "Azure 资源名称",
         type: "text",
-        description: "The name of your Azure OpenAI resource (e.g. 'my-azure-openai').",
+        description: "Azure OpenAI 资源的名称（例如 'my-azure-openai'）。",
         default: ""
       },
       "[CHAT_ADAPTER].azure_deployment_name": {
-        name: "Azure Deployment Name",
+        name: "Azure部署名称",
         type: "text",
-        description: "The name of your specific model deployment (e.g. 'gpt35-deployment').",
+        description: "您的特定模型部署的名称（例如“gpt35部署”）。",
         default: ""
       },
       "[CHAT_ADAPTER].azure_api_version": {
-        name: "Azure API Version",
+        name: "Azure API版本",
         type: "text",
-        description: "The API version for Azure OpenAI (e.g. '2024-10-01-preview').",
+        description: "Azure OpenAI的API版本（例如'2024-10-01-preview'）。",
         default: "2024-10-01-preview"
       }
     };
@@ -22511,7 +22511,7 @@ var SmartChatModelAzureAdapter2 = class extends SmartChatModelOpenaiAdapter2 {
         id: d.id,
         raw: d,
         // You can add more details if you want:
-        description: `Model: ${d.model}, Status: ${d.status}`,
+        description: `型号：${d.model}，状态：${d.status}｝`,
         // Hard to guess tokens; omit or guess:
         max_input_tokens: 4e3
       };
@@ -23066,18 +23066,18 @@ var SmartChatModelLmStudioAdapter2 = class extends SmartChatModelApiAdapter2 {
     can_use_tools: true,
     api_key: "no api key required"
   };
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Request / Response classes
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   get req_adapter() {
     return SmartChatModelLmStudioRequestAdapter2;
   }
   get res_adapter() {
     return SmartChatModelLmStudioResponseAdapter2;
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Settings
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   /**
    * Extend the base settings with a read‑only HTML block that reminds the
    * user to enable CORS inside LM Studio. The Smart View renderer treats
@@ -23096,9 +23096,9 @@ var SmartChatModelLmStudioAdapter2 = class extends SmartChatModelApiAdapter2 {
       }
     };
   }
-  /* ------------------------------------------------------------------ *
+  /* ------------------------------------------------------------------------------ *
    *  Model list helpers
-   * ------------------------------------------------------------------ */
+   * ------------------------------------------------------------------------------ */
   /**
    * LM Studio returns an OpenAI‑style list; normalise to the project shape.
    */
@@ -23111,7 +23111,7 @@ var SmartChatModelLmStudioAdapter2 = class extends SmartChatModelApiAdapter2 {
       out[m.id] = {
         id: m.id,
         model_name: m.id,
-        description: `LM Studio model: ${m.id}`,
+        description: `LM Studio型号：${m.id}`,
         multimodal: false
       };
     }
@@ -23163,7 +23163,7 @@ var SmartChatModelLmStudioRequestAdapter2 = class extends SmartChatModelRequestA
       }
       last_msg.content.push({
         type: "text",
-        text: `Use the "${this.tool_choice.function.name}" tool.`
+        text: `使用“${this.tool_choice.function.name}”工具。`
       });
       body.tool_choice = "required";
     } else if (body.tool_choice && typeof body.tool_choice === "object") {
@@ -23180,7 +23180,7 @@ var SmartChatModelLmStudioResponseAdapter2 = class extends SmartChatModelRespons
 var SmartChatModelOllamaAdapter2 = class extends SmartChatModelApiAdapter2 {
   static key = "ollama";
   static defaults = {
-    description: "Ollama (Local)",
+    description: "Ollama（本地）",
     type: "API",
     // models_endpoint: "http://localhost:11434/api/tags",
     // endpoint: "http://localhost:11434/api/chat",
@@ -23232,7 +23232,7 @@ var SmartChatModelOllamaAdapter2 = class extends SmartChatModelApiAdapter2 {
       this.model_data_loaded_at = Date.now();
       return this.model_data;
     } catch (error) {
-      console.error("Failed to fetch model data:", error);
+      console.error("获取模型数据失败:", error);
       return { "_": { id: `Failed to fetch models from ${this.model.adapter_name}` } };
     }
   }
@@ -23250,7 +23250,7 @@ var SmartChatModelOllamaAdapter2 = class extends SmartChatModelApiAdapter2 {
     if (model_data.length === 0) {
       this.model_data = { "no_models_available": {
         id: "no_models_available",
-        name: "No models currently available"
+        name: "当前"
       } };
       return this.model_data;
     }
@@ -23509,7 +23509,7 @@ var adapters_map2 = {
 var SmartChatModelCustomAdapter2 = class extends SmartChatModelApiAdapter2 {
   static key = "custom";
   static defaults = {
-    description: "Custom API (Local or Remote, OpenAI format)",
+    description: "自定义API（本地或远程，OpenAI格式）",
     type: "API",
     /**
      * new default property: 'api_adapter' indicates which
@@ -23520,7 +23520,7 @@ var SmartChatModelCustomAdapter2 = class extends SmartChatModelApiAdapter2 {
   /**
    * Provide dynamic request/response classes
    * based on current adapter_config.api_adapter setting
-   * ----------------------------------------------------
+   * ----------------------------------------------------------
    */
   /**
    * @override
@@ -23569,52 +23569,52 @@ var SmartChatModelCustomAdapter2 = class extends SmartChatModelApiAdapter2 {
        * you'd like to use for your custom endpoint.
        */
       "[CHAT_ADAPTER].api_adapter": {
-        name: "API Adapter",
+        name: "API适配器",
         type: "dropdown",
-        description: "Pick a built-in or external adapter to parse request/response data.",
+        description: "选择一个内置或外部适配器来解析请求/响应数据。",
         // Provide a short selection set, or dynamically gather from keys of adapters_map
         options_callback: "adapter.get_adapters_as_options",
         default: "openai"
       },
       "[CHAT_ADAPTER].id": {
-        name: "Model Name",
+        name: "型号名称",
         type: "text",
-        description: "Enter the model name for your endpoint if needed."
+        description: "如果需要，请输入端点的模型名称。"
       },
       "[CHAT_ADAPTER].protocol": {
-        name: "Protocol",
+        name: "协议",
         type: "text",
-        description: "e.g. http or https"
+        description: "例如 http 或 https"
       },
       "[CHAT_ADAPTER].hostname": {
-        name: "Hostname",
+        name: "主机名",
         type: "text",
-        description: "e.g. localhost or some.remote.host"
+        description: "例如 localhost 或 some.remote.host"
       },
       "[CHAT_ADAPTER].port": {
-        name: "Port",
+        name: "端口",
         type: "number",
-        description: "Port number or leave blank"
+        description: "端口号或留空"
       },
       "[CHAT_ADAPTER].path": {
-        name: "Path",
+        name: "路径",
         type: "text",
-        description: "Path portion of the URL (leading slash optional)"
+        description: "URL的路径部分（前导斜线可选）"
       },
       "[CHAT_ADAPTER].streaming": {
-        name: "Streaming",
+        name: "实时传输",
         type: "toggle",
-        description: "Enable streaming if your API supports it."
+        description: "如果您的API支持，启用流式传输。"
       },
       "[CHAT_ADAPTER].max_input_tokens": {
-        name: "Max Input Tokens",
+        name: "最大输入令牌数",
         type: "number",
-        description: "Max number of tokens your model can handle in the prompt."
+        description: "模型在提示中可以处理的最大令牌数。"
       },
       "[CHAT_ADAPTER].api_key": {
-        name: "API Key",
+        name: "API密钥",
         type: "password",
-        description: "If your service requires an API key, add it here."
+        description: "如果您的服务需要 API 密钥，请在此处添加。"
       }
     };
   }
@@ -23683,7 +23683,7 @@ var SmartChatModelGroqAdapter2 = class extends SmartChatModelApiAdapter2 {
    *   model_name: model.id,
    *   id: model.id,
    *   max_input_tokens: model.context_window,
-   *   description: `Owned by: ${model.owned_by}, context: ${model.context_window}`,
+   *   description: `所有者：$｛model.Owned_by｝，上下文：$｛model.context_window｝`,
    *   multimodal: Check if model name or description suggests multimodality
    * }
    */
@@ -23697,7 +23697,7 @@ var SmartChatModelGroqAdapter2 = class extends SmartChatModelApiAdapter2 {
         model_name: m.id,
         id: m.id,
         max_input_tokens: m.context_window || 8192,
-        description: `Owned by: ${m.owned_by}, context: ${m.context_window}`,
+        description: `所有者: ${m.owned_by}，上下文: ${m.context_window}`,
         // A basic heuristic for multimodal: if 'vision' or 'tool' is in model id
         // Adjust as needed based on known capabilities
         multimodal: m.id.includes("vision")
@@ -24382,7 +24382,7 @@ var Collection2 = class {
    */
   get_many(keys = []) {
     if (!Array.isArray(keys)) {
-      console.error("get_many called with non-array keys:", keys);
+      console.error("get_many被非数组键调用:", keys);
       return [];
     }
     return keys.map((key) => this.get(key)).filter(Boolean);
@@ -24927,7 +24927,7 @@ var DefaultEntitiesVectorAdapter2 = class extends EntitiesVectorAdapter2 {
    */
   async process_embed_queue() {
     if (this._is_processing_embed_queue) {
-      console.log("process_embed_queue is already running, skipping concurrent call.");
+      console.log("process_embed_queue 已经在运行，跳过并发调用。");
       return;
     }
     this._is_processing_embed_queue = true;
@@ -24944,20 +24944,20 @@ var DefaultEntitiesVectorAdapter2 = class extends EntitiesVectorAdapter2 {
       const embed_queue = this.collection.embed_queue;
       this._reset_embed_queue_stats();
       if (this.collection.embed_model_key === "None") {
-        console.log(`Smart Connections: No active embedding model for ${this.collection.collection_key}, skipping embedding`);
+        console.log(`智能连接：${this.collection.collection_key}没有活动的嵌入模型，跳过嵌入`);
         return;
       }
       if (!this.collection.embed_model) {
-        console.log(`Smart Connections: No active embedding model for ${this.collection.collection_key}, skipping embedding`);
+        console.log(`智能连接：${this.collection.collection_key}没有活动的嵌入模型，跳过嵌入`);
         return;
       }
       const datetime_start = /* @__PURE__ */ new Date();
       if (!embed_queue.length) {
-        console.log(`Smart Connections: No items in ${this.collection.collection_key} embed queue`);
+        console.log(`智能连接：${this.collection.collection_key}嵌入队列中没有项目`);
         return;
       }
       console.log(`Time spent getting embed queue: ${(/* @__PURE__ */ new Date()).getTime() - datetime_start.getTime()}ms`);
-      console.log(`Processing ${this.collection.collection_key} embed queue: ${embed_queue.length} items`);
+      console.log(`正在处理$｛this.collection.collection_key｝嵌入队列：$｛embed_queue.length｝个项目`);
       for (let i = 0; i < embed_queue.length; i += this.collection.embed_model.batch_size) {
         if (this.is_queue_halted) {
           this.is_queue_halted = false;
@@ -24976,7 +24976,7 @@ var DefaultEntitiesVectorAdapter2 = class extends EntitiesVectorAdapter2 {
 Please set the API key in the settings.`);
           }
           console.error(e);
-          console.error(`Error processing ${this.collection.collection_key} embed queue: ` + JSON.stringify(e || {}, null, 2));
+          console.error(`处理$｛this.collection.collection_key｝嵌入队列时出错：` + JSON.stringify(e || {}, null, 2));
         }
         batch.forEach((item) => {
           item.embed_hash = item.read_hash;
@@ -24988,7 +24988,7 @@ Please set the API key in the settings.`);
           this.last_save_total = this.embedded_total;
           await this.collection.process_save_queue();
           if (this.collection.block_collection) {
-            console.log(`Saving ${this.collection.block_collection.collection_key} block collection`);
+            console.log(`保存 ${this.collection.block_collection.collection_key} 区块集合`);
             await this.collection.block_collection.process_save_queue();
           }
         }
@@ -25057,7 +25057,7 @@ Please set the API key in the settings.`);
    */
   halt_embed_queue_processing(msg = null) {
     this.is_queue_halted = true;
-    console.log("Embed queue processing halted");
+    console.log("嵌入队列处理已停止");
     this.notices?.remove("embedding_progress");
     this.collection.emit_event("embedding:paused", {
       progress: this.embedded_total,
@@ -25078,7 +25078,7 @@ Please set the API key in the settings.`);
    * @returns {void}
    */
   resume_embed_queue_processing(delay = 0) {
-    console.log("resume_embed_queue_processing");
+    console.log("恢复嵌入队列处理");
     this.notices?.remove("embedding_paused");
     setTimeout(() => {
       this.embedded_total = 0;
@@ -25468,7 +25468,7 @@ var SmartEntities2 = class extends Collection2 {
     await super.init();
     await this.load_smart_embed();
     if (!this.embed_model) {
-      console.log(`SmartEmbed not loaded for **${this.collection_key}**. Continuing without embedding capabilities.`);
+      console.log(`**${this.collection_key}**未加载SmartEmbed。继续而不嵌入功能。`);
     }
   }
   /**
@@ -25479,13 +25479,13 @@ var SmartEntities2 = class extends Collection2 {
   async load_smart_embed() {
     if (this.embed_model_key === "None") return;
     if (!this.embed_model) return;
-    if (this.embed_model.is_loading) return console.log(`SmartEmbedModel already loading for ${this.embed_model_key}`);
-    if (this.embed_model.is_loaded) return console.log(`SmartEmbedModel already loaded for ${this.embed_model_key}`);
+    if (this.embed_model.is_loading) return console.log(`${this.embed_model_key}已经加载了SmartEmbedModel`);
+    if (this.embed_model.is_loaded) return console.log(`${this.embedde_model_key}的SmartEmbedModel已加载`);
     try {
-      console.log(`Loading SmartEmbedModel in ${this.collection_key}, current state: ${this.embed_model.state}`);
+      console.log(`正在加载SmartEmbedModel在${this.collection_key}中，当前状态：${this.embed_model.state}。`);
       await this.embed_model.load();
     } catch (e) {
-      console.error(`Error loading SmartEmbedModel for ${this.embed_model.model_key}`);
+      console.error(`加载${this.embed_model.model_key}的SmartEmbedModel时出错`);
       console.error(e);
     }
   }
@@ -25514,9 +25514,9 @@ var SmartEntities2 = class extends Collection2 {
    * @returns {HTMLElement|undefined} The container element or undefined if not available.
    */
   get smart_embed_container() {
-    if (!this.model_instance_id) return console.log("model_key not set");
+    if (!this.model_instance_id) return console.log("未设置model_key");
     const id = this.model_instance_id.replace(/[^a-zA-Z0-9]/g, "_");
-    if (!window.document) return console.log("window.document not available");
+    if (!window.document) return console.log("window.document 不可用");
     if (window.document.querySelector(`#${id}`)) return window.document.querySelector(`#${id}`);
     const container = window.document.createElement("div");
     container.id = id;
@@ -25549,7 +25549,7 @@ var SmartEntities2 = class extends Collection2 {
     this.env._embed_model = embed_model;
   }
   reload_embed_model() {
-    console.log("reload_embed_model");
+    console.log("重新加载嵌入模型");
     this.embed_model.unload();
     this.env._embed_model = null;
   }
@@ -25677,8 +25677,8 @@ var SmartEntities2 = class extends Collection2 {
    */
   async lookup(params = {}) {
     const { hypotheticals = [] } = params;
-    if (!hypotheticals?.length) return { error: "hypotheticals is required" };
-    if (!this.embed_model) return { error: "Embedding search is not enabled." };
+    if (!hypotheticals?.length) return { error: "hypotheticals 是必需的" };
+    if (!this.embed_model) return { error: "嵌入搜索未启用。" };
     const hyp_vecs = await this.embed_model.embed_batch(hypotheticals.map((h) => ({ embed_input: h })));
     const limit = params.filter?.limit || params.k || this.env.settings.lookup_k || 10;
     if (params.filter?.limit) delete params.filter.limit;
@@ -25705,7 +25705,7 @@ var SmartEntities2 = class extends Collection2 {
       return acc;
     }, Promise.resolve({}));
     const top_k = Object.values(results).sort(sort_by_score2).slice(0, limit);
-    console.log(`Found and returned ${top_k.length} ${this.collection_key}.`);
+    console.log(`找到并返回了 ${top_k.length} 个 ${this.collection_key}。`);
     return top_k;
   }
   /**
@@ -25771,47 +25771,47 @@ var SmartEntities2 = class extends Collection2 {
 };
 var settings_config3 = {
   "min_chars": {
-    name: "Minimum length",
+    name: "最小长度",
     type: "number",
-    description: "Minimum length of entity to embed (in characters).",
-    placeholder: "Enter number ex. 300",
+    description: "要嵌入的实体的最小长度（以字符为单位）。",
+    placeholder: "输入数字,例如:300",
     default: 300
   }
 };
 var connections_filter_config2 = {
   "smart_view_filter.show_full_path": {
-    "name": "Show full path",
+    "name": "显示完整路径",
     "type": "toggle",
     "description": "Turning on will include the folder path in the connections results."
   },
   "smart_view_filter.render_markdown": {
-    "name": "Render markdown",
+    "name": "渲染markdown",
     "type": "toggle",
     "description": "Turn off to prevent rendering markdown and display connection results as plain text."
   },
   "smart_view_filter.results_limit": {
-    "name": "Results limit",
+    "name": "结果限制",
     "type": "number",
     "description": "Adjust the number of connections displayed in the connections view (default 20).",
     "default": 20
   },
   "smart_view_filter.exclude_inlinks": {
-    "name": "Exclude inlinks (backlinks)",
+    "name": "排除内联（反向链接）",
     "type": "toggle",
     "description": "Exclude notes that already link to the current note from the connections results."
   },
   "smart_view_filter.exclude_outlinks": {
-    "name": "Exclude outlinks",
+    "name": "排除外部链接",
     "type": "toggle",
     "description": "Exclude notes that are already linked from within the current note from appearing in the connections results."
   },
   "smart_view_filter.include_filter": {
-    "name": "Include filter",
+    "name": "包含筛选器",
     "type": "text",
     "description": "Notes must match this value in their file/folder path. Matching notes will be included in the connections results. Separate multiple values with commas."
   },
   "smart_view_filter.exclude_filter": {
-    "name": "Exclude filter",
+    "name": "排除筛选器",
     "type": "text",
     "description": "Notes must *not* match this value in their file/folder path. Matching notes will be *excluded* from the connections results. Separate multiple values with commas."
   },
@@ -25930,7 +25930,7 @@ var SmartSource2 = class extends SmartEntity2 {
       await this.source_adapter?.import();
     } catch (err) {
       if (err.code === "ENOENT") {
-        console.log(`Smart Connections: Deleting ${this.path} data because it no longer exists on disk`);
+        console.log(`智能连接：删除 ${this.path} 数据，因为它在磁盘上不再存在。`);
         this.delete();
       } else {
         console.warn("Smart Connections: Error during import: re-queueing import", err);
@@ -26035,7 +26035,7 @@ ${content}`.substring(0, max_chars);
   async search(search_filter = {}) {
     const { keywords, type = "any", limit } = search_filter;
     if (!keywords || !Array.isArray(keywords)) {
-      console.warn("Entity.search: keywords not set or is not an array");
+      console.warn("Entity.search: 关键词未设置或不是数组");
       return 0;
     }
     if (limit && this.collection.search_results_ct >= limit) return 0;
@@ -26543,7 +26543,7 @@ var SmartSources2 = class extends SmartEntities2 {
       }
     }
     const end_time = Date.now();
-    console.log(`Time spent building links: ${end_time - start_time}ms`);
+    console.log(`构建链接所花费的时间：${end_Time-start_Time}ms`);
     return this.links;
   }
   /**
@@ -26575,7 +26575,7 @@ var SmartSources2 = class extends SmartEntities2 {
       ...filter_opts
     } = search_filter;
     if (!keywords) {
-      console.warn("search_filter.keywords not set");
+      console.warn("search_filter.keywords 未设置");
       return [];
     }
     this.search_results_ct = 0;
@@ -26592,7 +26592,7 @@ var SmartSources2 = class extends SmartEntities2 {
               return { item, score: matches };
             } else return null;
           } catch (error) {
-            console.error(`Error searching item ${item.id || "unknown"}:`, error);
+            console.error(`搜索项目 ${item.id || "未知"} 时出错：`, error);
             return null;
           }
         })
@@ -26666,7 +26666,7 @@ var SmartSources2 = class extends SmartEntities2 {
     const { process_embed_queue = true, force = false } = opts;
     if (force) Object.values(this.items).forEach((item) => item._queue_import = true);
     const import_queue = Object.values(this.items).filter((item) => item._queue_import);
-    console.log("import_queue " + import_queue.length);
+    console.log("导入队列" + import_queue.length);
     if (import_queue.length) {
       const time_start = Date.now();
       for (let i = 0; i < import_queue.length; i += 100) {
@@ -26688,7 +26688,7 @@ var SmartSources2 = class extends SmartEntities2 {
     }
     this.build_links_map();
     if (process_embed_queue) await this.process_embed_queue();
-    else console.log("skipping process_embed_queue");
+    else console.log("跳过处理嵌入队列");
     await this.process_save_queue();
     await this.block_collection?.process_save_queue();
   }
@@ -26793,7 +26793,7 @@ var SmartSources2 = class extends SmartEntities2 {
           return acc;
         }, []);
       } catch (e) {
-        console.error(`Error getting embed queue:`, e);
+        console.error(`获取嵌入队列时出错：`, e);
       }
     }
     return this._embed_queue;
@@ -26860,7 +26860,7 @@ var SmartSources2 = class extends SmartEntities2 {
     }
     this.notices?.remove("pruning_collection");
     this.notices?.show("done_pruning_collection", { collection_key: this.block_collection.collection_key, count: remove_smart_blocks.length });
-    console.log(`Pruned ${remove_smart_blocks.length} blocks:
+    console.log(`修剪了 ${remove_smart_blocks.length} 块:
 ${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join("\n")}`);
     await this.data_fs.remove_dir(this.data_dir, true);
     await this.process_save_queue({ force: true });
@@ -26939,21 +26939,21 @@ ${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join("\n")}`
 };
 var settings_config4 = {
   file_exclusions: {
-    name: "File Exclusions",
+    name: "文件排除",
     description: "Comma-separated list of files to exclude.",
     type: "text",
     default: "",
     callback: "update_exclusions"
   },
   folder_exclusions: {
-    name: "Folder Exclusions",
+    name: "文件夹排除",
     description: "Comma-separated list of folders to exclude.",
     type: "text",
     default: "",
     callback: "update_exclusions"
   },
   excluded_headings: {
-    name: "Excluded Headings",
+    name: "排除的标题",
     description: "Comma-separated list of headings to exclude.",
     type: "text",
     default: ""
@@ -26963,154 +26963,154 @@ var settings_config4 = {
 // node_modules/smart-chat-obsidian/src/utils/ScTranslations.json
 var ScTranslations_default = {
   en: {
-    name: "English",
+    name: "英文",
     pronouns: ["my", "I", "me", "mine", "our", "ours", "us", "we"],
     context_prefix_prompt: "Context from lookup:",
-    context_suffix_prompt: 'Use the provided context to respond like "Based on your notes..."',
+    context_suffix_prompt: 'Use the provided context to respond like "基于您的笔记..."',
     initial_message: "Hi there, welcome to the Smart Chat. Ask me a question about your notes and I'll try to answer it."
   },
   es: {
-    name: "Espa\xF1ol",
+    name: "西班牙语",
     pronouns: ["mi", "yo", "m\xED", "t\xFA", "mis"],
     context_prefix_prompt: "Contexto de b\xFAsqueda:",
     context_suffix_prompt: 'Usa el contexto proporcionado para responder como "Bas\xE1ndote en tus notas..."',
     initial_message: "Hola, bienvenido al Smart Chat. Hazme una pregunta sobre tus apuntes y tratar\xE9 de responderla."
   },
   fr: {
-    name: "Fran\xE7ais",
+    name: "法语",
     pronouns: ["me", "mon", "ma", "mes", "moi", "nous", "notre", "nos", "je", "j'", "m'"],
     context_prefix_prompt: "Contexte de recherche :",
     context_suffix_prompt: `Utilisez le contexte fourni pour r\xE9pondre comme "D'apr\xE8s vos notes..."`,
     initial_message: "Bonjour, bienvenue dans le Smart Chat. Posez-moi une question sur vos notes et j'essaierai d'y r\xE9pondre."
   },
   de: {
-    name: "Deutsch",
+    name: "德国",
     pronouns: ["mein", "meine", "meinen", "meiner", "meines", "mir", "uns", "unser", "unseren", "unserer", "unseres"],
     context_prefix_prompt: "Kontext aus Suche:",
     context_suffix_prompt: 'Verwenden Sie den bereitgestellten Kontext, um zu antworten wie "Basierend auf Ihren Notizen..."',
     initial_message: "Hallo, willkommen beim Smart Chat. Stellen Sie mir eine Frage zu Ihren Notizen, und ich werde versuchen, sie zu beantworten."
   },
   it: {
-    name: "Italiano",
+    name: "意大利语",
     pronouns: ["mio", "mia", "miei", "mie", "noi", "nostro", "nostri", "nostra", "nostre"],
     context_prefix_prompt: "Contesto dalla ricerca:",
     context_suffix_prompt: 'Usa il contesto fornito per rispondere come "Basandoti sui tuoi appunti..."',
     initial_message: "Ciao, benvenuto al Smart Chat. Fai una domanda sui tuoi appunti e cercher\xF2 di risponderti."
   },
   pt: {
-    name: "Portugu\xEAs",
+    name: "葡萄牙语",
     pronouns: ["meu", "eu", "mim", "minha", "nosso", "nossa", "n\xF3s"],
     context_prefix_prompt: "Contexto da pesquisa:",
     context_suffix_prompt: 'Use o contexto fornecido para responder como "Com base em suas anota\xE7\xF5es..."',
     initial_message: "Ol\xE1, bem-vindo ao Smart Chat. Fa\xE7a-me uma pergunta sobre suas anota\xE7\xF5es e tentarei respond\xEA-la."
   },
   "pt-br": {
-    name: "Portugu\xEAs (Brasil)",
+    name: "葡萄牙语（巴西）",
     pronouns: ["eu", "me", "mim", "meu", "meus", "minha", "minhas", "nosso", "nossos", "nossa", "nossas", "n\xF3s", "nos", "a gente"],
     context_prefix_prompt: "Contexto da pesquisa:",
     context_suffix_prompt: 'Use o contexto fornecido para responder como "Com base nas suas notas..."',
     initial_message: "Ol\xE1, bem-vindo ao Smart Chat. Fa\xE7a-me uma pergunta sobre suas notas e tentarei respond\xEA-la."
   },
   ja: {
-    name: "\u65E5\u672C\u8A9E",
+    name: "日语",
     pronouns: ["\u79C1", "\u81EA\u5206", "\u50D5", "\u4FFA", "\u79C1\u9054", "\u3053\u306E"],
     context_prefix_prompt: "\u691C\u7D22\u304B\u3089\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\uFF1A",
     context_suffix_prompt: "\u63D0\u4F9B\u3055\u308C\u305F\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u3092\u4F7F\u7528\u3057\u3066\u300C\u3053\u306E\u30CE\u30FC\u30C8\u306B\u57FA\u3065\u3044\u3066...\u300D\u306E\u3088\u3046\u306B\u5FDC\u7B54\u3057\u3066\u304F\u3060\u3055\u3044",
     initial_message: "\u3053\u3093\u306B\u3061\u306F\u3001Smart Chat\u3078\u3088\u3046\u3053\u305D\u3002\u3042\u306A\u305F\u306E\u30CE\u30FC\u30C8\u306B\u95A2\u3059\u308B\u8CEA\u554F\u3092\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u304A\u7B54\u3048\u3057\u307E\u3059\u3002"
   },
   ko: {
-    name: "\uD55C\uAD6D\uC5B4",
+    name: "韩语",
     pronouns: ["\uB098", "\uB0B4", "\uB098\uC758", "\uC800", "\uC81C", "\uC6B0\uB9AC", "\uC800\uD76C"],
     context_prefix_prompt: "\uAC80\uC0C9\uC5D0\uC11C\uC758 \uCEE8\uD14D\uC2A4\uD2B8:",
     context_suffix_prompt: '\uC81C\uACF5\uB41C \uCEE8\uD14D\uC2A4\uD2B8\uB97C \uC0AC\uC6A9\uD558\uC5EC "\uB2F9\uC2E0\uC758 \uB178\uD2B8\uC5D0 \uAE30\uBC18\uD558\uC5EC..."\uC640 \uAC19\uC774 \uB2F5\uBCC0\uD558\uC138\uC694',
     initial_message: "\uC548\uB155\uD558\uC138\uC694, Smart Chat\uC5D0 \uC624\uC2E0 \uAC83\uC744 \uD658\uC601\uD569\uB2C8\uB2E4. \uB178\uD2B8\uC5D0 \uAD00\uD55C \uC9C8\uBB38\uC774 \uC788\uC73C\uC2DC\uBA74 \uB9D0\uC500\uD574 \uC8FC\uC138\uC694. \uC81C\uAC00 \uB2F5\uBCC0\uD574 \uB4DC\uB9AC\uACA0\uC2B5\uB2C8\uB2E4."
   },
   zh: {
-    name: "\u4E2D\u6587\uFF08\u7B80\u4F53\uFF09",
+    name: "简体中文",
     pronouns: ["\u6211", "\u6211\u7684", "\u6211\u4EEC", "\u6211\u4EEC\u7684"],
     context_prefix_prompt: "\u67E5\u627E\u7684\u4E0A\u4E0B\u6587\uFF1A",
     context_suffix_prompt: "\u4F7F\u7528\u63D0\u4F9B\u7684\u4E0A\u4E0B\u6587\uFF0C\u4EE5\u201C\u6839\u636E\u4F60\u7684\u7B14\u8BB0...\u201D\u7684\u65B9\u5F0F\u56DE\u7B54",
     initial_message: "\u4F60\u597D\uFF0C\u6B22\u8FCE\u4F7F\u7528 Smart Chat\u3002\u8BF7\u95EE\u6211\u5173\u4E8E\u4F60\u7684\u7B14\u8BB0\u7684\u95EE\u9898\uFF0C\u6211\u4F1A\u5C3D\u529B\u56DE\u7B54\u3002"
   },
   "zh-TW": {
-    name: "\u4E2D\u6587\uFF08\u7E41\u4F53\uFF09",
+    name: "中文（繁体）",
     pronouns: ["\u6211", "\u6211\u7684", "\u6211\u5011", "\u6211\u5011\u7684"],
     context_prefix_prompt: "\u67E5\u627E\u7684\u4E0A\u4E0B\u6587\uFF1A",
     context_suffix_prompt: "\u4F7F\u7528\u63D0\u4F9B\u7684\u4E0A\u4E0B\u6587\uFF0C\u4EE5\u300C\u6839\u64DA\u60A8\u7684\u7B46\u8A18...\u300D\u7684\u65B9\u5F0F\u56DE\u7B54",
     initial_message: "\u55E8\uFF0C\u6B61\u8FCE\u4F86\u5230 Smart Chat\u3002\u8ACB\u554F\u6211\u95DC\u65BC\u60A8\u7684\u7B46\u8A18\u7684\u554F\u984C\uFF0C\u6211\u6703\u76E1\u529B\u56DE\u7B54\u3002"
   },
   hi: {
-    name: "\u0939\u093F\u0928\u094D\u0926\u0940",
+    name: "印地语",
     pronouns: ["\u092E\u0948\u0902", "\u092E\u0941\u091D\u0947", "\u092E\u0947\u0930\u093E", "\u092E\u0947\u0930\u0947", "\u092E\u0947\u0930\u0940", "\u0939\u092E", "\u0939\u092E\u0947\u0902", "\u0939\u092E\u093E\u0930\u093E", "\u0939\u092E\u093E\u0930\u0947", "\u0939\u092E\u093E\u0930\u0940"],
     context_prefix_prompt: "\u0916\u094B\u091C \u0938\u0947 \u0938\u0902\u0926\u0930\u094D\u092D:",
     context_suffix_prompt: '\u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u093F\u090F \u0917\u090F \u0938\u0902\u0926\u0930\u094D\u092D \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0915\u0947 "\u0906\u092A\u0915\u0947 \u0928\u094B\u091F\u094D\u0938 \u0915\u0947 \u0906\u0927\u093E\u0930 \u092A\u0930..." \u0915\u0940 \u0924\u0930\u0939 \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\u0902',
     initial_message: "\u0928\u092E\u0938\u094D\u0924\u0947, Smart Chat \u092E\u0947\u0902 \u0906\u092A\u0915\u093E \u0938\u094D\u0935\u093E\u0917\u0924 \u0939\u0948\u0964 \u0905\u092A\u0928\u0947 \u0928\u094B\u091F\u094D\u0938 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u092E\u0941\u091D\u0938\u0947 \u0915\u094B\u0908 \u092A\u094D\u0930\u0936\u094D\u0928 \u092A\u0942\u091B\u0947\u0902 \u0914\u0930 \u092E\u0948\u0902 \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\u0928\u0947 \u0915\u093E \u092A\u094D\u0930\u092F\u093E\u0938 \u0915\u0930\u0942\u0902\u0917\u093E\u0964"
   },
   ar: {
-    name: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629",
+    name: "阿拉伯语",
     pronouns: ["\u0623\u0646\u0627", "\u0644\u064A", "\u0646\u062D\u0646", "\u0644\u0646\u0627", "\u064A", "\u0646\u0627"],
     context_prefix_prompt: "\u0633\u064A\u0627\u0642 \u0645\u0646 \u0627\u0644\u0628\u062D\u062B:",
     context_suffix_prompt: '\u0627\u0633\u062A\u062E\u062F\u0645 \u0627\u0644\u0633\u064A\u0627\u0642 \u0627\u0644\u0645\u0642\u062F\u0645 \u0644\u0644\u0631\u062F \u0645\u062B\u0644 "\u0628\u0646\u0627\u0621\u064B \u0639\u0644\u0649 \u0645\u0644\u0627\u062D\u0638\u0627\u062A\u0643..."',
     initial_message: "\u0645\u0631\u062D\u0628\u0627\u064B \u0628\u0643 \u0641\u064A Smart Chat. \u0627\u0633\u0623\u0644\u0646\u064A \u0633\u0624\u0627\u0644\u0627\u064B \u062D\u0648\u0644 \u0645\u0644\u0627\u062D\u0638\u0627\u062A\u0643 \u0648\u0633\u0623\u062D\u0627\u0648\u0644 \u0627\u0644\u0625\u062C\u0627\u0628\u0629 \u0639\u0644\u064A\u0647."
   },
   bn: {
-    name: "\u09AC\u09BE\u0982\u09B2\u09BE",
+    name: "班加拉",
     pronouns: ["\u0986\u09AE\u09BF", "\u0986\u09AE\u09BE\u09B0", "\u0986\u09AE\u09BE\u0995\u09C7", "\u0986\u09AE\u09B0\u09BE", "\u0986\u09AE\u09BE\u09A6\u09C7\u09B0", "\u0986\u09AE\u09BE\u09A6\u09C7\u09B0\u0995\u09C7"],
     context_prefix_prompt: "\u0985\u09A8\u09C1\u09B8\u09A8\u09CD\u09A7\u09BE\u09A8 \u09A5\u09C7\u0995\u09C7 \u09AA\u09CD\u09B0\u09C7\u0995\u09CD\u09B7\u09BE\u09AA\u099F:",
     context_suffix_prompt: '\u09AA\u09CD\u09B0\u09A6\u09A4\u09CD\u09A4 \u09AA\u09CD\u09B0\u09B8\u0999\u09CD\u0997 \u09AC\u09CD\u09AF\u09AC\u09B9\u09BE\u09B0 \u0995\u09B0\u09C7 "\u0986\u09AA\u09A8\u09BE\u09B0 \u09A8\u09CB\u099F\u09C7\u09B0 \u09AD\u09BF\u09A4\u09CD\u09A4\u09BF\u09A4\u09C7..." \u098F\u09B0 \u09AE\u09A4\u09CB \u0995\u09B0\u09C7 \u0989\u09A4\u09CD\u09A4\u09B0 \u09A6\u09BF\u09A8',
     initial_message: "\u09B9\u09CD\u09AF\u09BE\u09B2\u09CB, Smart Chat-\u098F \u0986\u09AA\u09A8\u09BE\u0995\u09C7 \u09B8\u09CD\u09AC\u09BE\u0997\u09A4\u09AE\u0964 \u0986\u09AA\u09A8\u09BE\u09B0 \u09A8\u09CB\u099F \u09B8\u09AE\u09CD\u09AA\u09B0\u09CD\u0995\u09C7 \u0986\u09AE\u09BE\u0995\u09C7 \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8, \u0986\u09AE\u09BF \u0989\u09A4\u09CD\u09A4\u09B0 \u09A6\u09C7\u0993\u09AF\u09BC\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09AC\u0964"
   },
   ur: {
-    name: "\u0627\u0631\u062F\u0648",
+    name: "乌尔都",
     pronouns: ["\u0645\u06CC\u06BA", "\u0645\u062C\u06BE\u06D2", "\u0645\u06CC\u0631\u0627", "\u06C1\u0645", "\u06C1\u0645\u06CC\u06BA", "\u06C1\u0645\u0627\u0631\u0627"],
     context_prefix_prompt: "\u062A\u0644\u0627\u0634 \u0938\u0947 \u0633\u06CC\u0627\u0642 \u0648 \u0633\u0628\u0627\u0642:",
     context_suffix_prompt: '\u0641\u0631\u0627\u06C1\u0645 \u06A9\u0631\u062F\u06C1 \u0633\u06CC\u0627\u0642 \u0648 \u0633\u0628\u0627\u0642 \u06A9\u0627 \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06A9\u0631\u062A\u06D2 \u06C1\u0648\u0626\u06D2 \u0627\u06CC\u0633\u06D2 \u062C\u0648\u0627\u0628 \u062F\u06CC\u06BA \u062C\u06CC\u0633\u06D2 "\u0622\u067E \u06A9\u06D2 \u0646\u0648\u0679\u0633 \u0915\u0940 \u0628\u0646\u06CC\u0627\u062F \u067E\u0631..."',
     initial_message: "\u062E\u0648\u0634 \u0622\u0645\u062F\u06CC\u062F\u060C Smart Chat \u0645\u06CC\u06BA\u06D4 \u0627\u067E\u0646\u06D2 \u0646\u0648\u0679\u0633 \u06A9\u06D2 \u0628\u0627\u0631\u06D2 \u0645\u06CC\u06BA \u0645\u062C\u06BE \u0633\u06D2 \u06A9\u0648\u0626\u06CC \u0633\u0648\u0627\u0644 \u067E\u0648\u0686\u06BE\u06CC\u06BA \u0627\u0648\u0631 \u0645\u06CC\u06BA \u062C\u0648\u0627\u0628 \u062F\u06CC\u0646\u06D2 \u06A9\u06CC \u06A9\u0648\u0634\u0634 \u06A9\u0631\u0648\u06BA \u06AF\u0627\u06D4"
   },
   sw: {
-    name: "Kiswahili",
+    name: "斯瓦希里语",
     pronouns: ["mimi", "yangu", "sisi", "yetu"],
     context_prefix_prompt: "Muktadha kutoka utafutaji:",
     context_suffix_prompt: 'Tumia muktadha uliotolewa kujibu kama "Kulingana na maelezo yako..."',
     initial_message: "Hujambo, karibu kwenye Smart Chat. Niulize swali kuhusu maelezo yako na nitajaribu kujibu."
   },
   pl: {
-    name: "Polski",
+    name: "波兰语",
     pronouns: ["ja", "mnie", "m\xF3j", "moja", "moje", "my", "nas", "nasz", "nasza", "nasze"],
     context_prefix_prompt: "Kontekst z wyszukiwania:",
     context_suffix_prompt: 'U\u017Cyj podanego kontekstu, aby odpowiedzie\u0107 jak "Na podstawie twoich notatek..."',
     initial_message: "Cze\u015B\u0107, witaj w Smart Chat. Zadaj mi pytanie dotycz\u0105ce twoich notatek, a postaram si\u0119 odpowiedzie\u0107."
   },
   uk: {
-    name: "\u0423\u043A\u0440\u0430\u0457\u043D\u0441\u044C\u043A\u0430",
+    name: "乌克兰语",
     pronouns: ["\u044F", "\u043C\u0435\u043D\u0456", "\u043C\u0456\u0439", "\u043C\u043E\u044F", "\u043C\u043E\u0454", "\u043C\u0438", "\u043D\u0430\u0441", "\u043D\u0430\u0448", "\u043D\u0430\u0448\u0430", "\u043D\u0430\u0448\u0435"],
     context_prefix_prompt: "\u041A\u043E\u043D\u0442\u0435\u043A\u0441\u0442 \u0437 \u043F\u043E\u0448\u0443\u043A\u0443:",
     context_suffix_prompt: '\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0439\u0442\u0435 \u043D\u0430\u0434\u0430\u043D\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043A\u0441\u0442, \u0449\u043E\u0431 \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0441\u0442\u0438 \u044F\u043A "\u041D\u0430 \u043E\u0441\u043D\u043E\u0432\u0456 \u0432\u0430\u0448\u0438\u0445 \u043D\u043E\u0442\u0430\u0442\u043E\u043A..."',
     initial_message: "\u041F\u0440\u0438\u0432\u0456\u0442, \u043B\u0430\u0441\u043A\u0430\u0432\u043E \u043F\u0440\u043E\u0441\u0438\u043C\u043E \u0434\u043E Smart Chat. \u0417\u0430\u0434\u0430\u0439\u0442\u0435 \u043C\u0435\u043D\u0456 \u043F\u0438\u0442\u0430\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0430\u0448\u0456 \u043D\u043E\u0442\u0430\u0442\u043A\u0438, \u0456 \u044F \u0441\u043F\u0440\u043E\u0431\u0443\u044E \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0441\u0442\u0438."
   },
   nl: {
-    name: "Nederlands",
+    name: "荷兰的",
     pronouns: ["ik", "mij", "me", "mijn", "wij", "we", "ons", "onze"],
     context_prefix_prompt: "Context van zoekopdracht:",
     context_suffix_prompt: 'Gebruik de verstrekte context om te reageren als "Gebaseerd op uw notities..."',
     initial_message: "Hallo, welkom bij Smart Chat. Stel me een vraag over uw notities en ik zal proberen deze te beantwoorden."
   },
   sv: {
-    name: "Svenska",
+    name: "瑞典语",
     pronouns: ["jag", "mig", "min", "mitt", "mina", "vi", "oss", "v\xE5r", "v\xE5rt", "v\xE5ra"],
     context_prefix_prompt: "Kontext fr\xE5n s\xF6kning:",
     context_suffix_prompt: 'Anv\xE4nd den tillhandah\xE5llna kontexten f\xF6r att svara som "Baserat p\xE5 dina anteckningar..."',
     initial_message: "Hej, v\xE4lkommen till Smart Chat. St\xE4ll en fr\xE5ga om dina anteckningar s\xE5 ska jag f\xF6rs\xF6ka svara."
   },
   tr: {
-    name: "T\xFCrk\xE7e",
+    name: "土耳其",
     pronouns: ["ben", "bana", "benim", "biz", "bize", "bizim"],
     context_prefix_prompt: "Arama ba\u011Flam\u0131:",
     context_suffix_prompt: 'Verilen ba\u011Flam\u0131 kullanarak "Notlar\u0131n\u0131za dayanarak..." \u015Feklinde cevap verin',
     initial_message: "Merhaba, Smart Chat'e ho\u015F geldiniz. Notlar\u0131n\u0131z hakk\u0131nda bana bir soru sorun, yan\u0131tlamaya \xE7al\u0131\u015Faca\u011F\u0131m."
   },
   ru: {
-    name: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439",
+    name: "俄罗斯的",
     pronouns: ["\u044F", "\u043C\u043E\u0451", "\u043C\u043E\u0435", "\u043C\u043E\u0439", "\u043C\u043D\u0435", "\u043C\u043E\u0438\u0445", "\u043C\u043E\u0438", "\u043C\u043E\u0451\u043C", "\u043C\u043E\u0435\u043C", "\u043D\u0430\u0448", "\u043D\u0430\u0448\u0435", "\u043D\u0430\u0448\u0435\u043C", "\u043D\u0430\u0448\u0435\u043C\u0443", "\u043D\u0430\u0448\u0438\u043C", "\u043D\u0430\u0448\u0438", "\u043C\u044B"],
     context_prefix_prompt: "\u041A\u043E\u043D\u0442\u0435\u043A\u0441\u0442 \u0438\u0437 \u043F\u043E\u0438\u0441\u043A\u0430:",
     context_suffix_prompt: '\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0439 \u043A\u043E\u043D\u0442\u0435\u043A\u0441\u0442, \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043A\u0430\u043A "\u041D\u0430 \u043E\u0441\u043D\u043E\u0432\u0435 \u0432\u0430\u0448\u0438\u0445 \u0437\u0430\u043F\u0438\u0441\u0435\u0439..."',
@@ -27200,7 +27200,7 @@ var SmartThreads = class extends SmartSources2 {
     return this._chat_model;
   }
   reload_chat_model() {
-    console.log("reload_chat_model");
+    console.log("重新加载聊天模型");
     this.chat_model.unload();
     this._chat_model = null;
   }
@@ -27249,26 +27249,26 @@ var SmartThreads = class extends SmartSources2 {
   get settings_config() {
     return {
       "language": {
-        name: "Language",
+        name: "语言",
         type: "dropdown",
         options_callback: "get_language_options",
-        description: "The language to use for the chat.",
+        description: "聊天使用的语言。",
         default: "en"
       },
       "review_context": {
-        name: "Review Context",
+        name: "审查上下文",
         type: "toggle",
         default: false,
-        description: "Whether to review the retrieved context before the AI completes the message."
+        description: "在AI完成消息之前，是否查看检索到的上下文。"
       },
       "lookup_limit": {
-        name: "Lookup Limit",
+        name: "查找限制",
         type: "number",
         default: 10,
-        description: "The maximum number of context items to retrieve via lookup."
+        description: "通过查找检索的最大上下文项数。"
       },
       "send_tool_output_in_user_message": {
-        name: "Send Tool Output in User Message",
+        name: "发送工具输出至用户消息",
         type: "toggle",
         default: false,
         description: "Whether to send tool output in the user message."
@@ -27327,10 +27327,10 @@ var SmartThreads = class extends SmartSources2 {
     return null;
   }
   async process_embed_queue() {
-    console.log("skipping embed queue processing for SmartThreads");
+    console.log("跳过SmartThreads的嵌入队列处理");
   }
   async process_load_queue() {
-    console.log("skipping load queue processing for SmartThreads");
+    console.log("跳过对SmartThreads的加载队列处理");
   }
 };
 
@@ -27356,7 +27356,7 @@ function build_html15(thread, opts = {}) {
       </div>
       <div class="sc-config-error-notice" style="display: none;"></div>
       <div class="sc-chat-form">
-        <textarea class="sc-chat-input" placeholder="Use @ to add context. Try &quot;Based on my notes&quot; or &quot;Summarize [[this note]]&quot; or &quot;Important tasks in /folder/&quot;"></textarea>
+        <textarea class="sc-chat-input" placeholder="Use @ to add context. 试试&quot;基于我的笔记&quot;,或者&quot;总结[[此笔记]]&quot;,或者&quot;/folder/中的重要任务&quot;"></textarea>
         <div class="sc-btn-container">
           <span id="sc-abort-button" style="display: none;">${this.get_icon_html("square")}</span>
           <button class="send-button" id="sc-send-button">
@@ -27623,14 +27623,14 @@ var SmartThread = class extends SmartSource2 {
     lookup: {
       type: "function",
       function: {
-        name: "lookup",
-        description: "Performs a semantic search of the user's data to surface relevant content.",
+        name: "查找",
+        description: "对用户数据执行语义搜索以显示相关内容。",
         parameters: {
           type: "object",
           properties: {
             hypotheticals: {
               type: "object",
-              description: "Predicted relevant notes in markdown format. Provide at least three.",
+              description: "预测相关笔记以Markdown格式呈现。至少提供三个。",
               properties: {
                 "1": { type: "string" },
                 "2": { type: "string" },
@@ -27691,7 +27691,7 @@ var SmartThread = class extends SmartSource2 {
       this.#extract_context_from_message_content(new_msg_data);
       await this.env.smart_messages.create_or_update(new_msg_data);
     } catch (error) {
-      console.error("Error in handle_message_from_user:", error);
+      console.error("处理用户消息时出错：", error);
     }
   }
   /**
@@ -27784,7 +27784,7 @@ var SmartThread = class extends SmartSource2 {
       if (msg.context?.has_self_ref || msg.context?.folder_refs) {
         request.tools = [this.tools["lookup"]];
         if (msg.is_last_message && msg.role === "user") {
-          request.tool_choice = { type: "function", function: { name: "lookup" } };
+          request.tool_choice = { type: "function", function: { name: "查找" } };
         }
       }
     }
@@ -27857,7 +27857,7 @@ var SmartThread = class extends SmartSource2 {
   error_handler(response) {
     this.hide_typing_indicator();
     this.render_error(response);
-    console.error("error_handler", response);
+    console.error("错误处理程序", response);
   }
   /**
    * Renders an error message in the UI.
@@ -27999,7 +27999,7 @@ var SmartThread = class extends SmartSource2 {
       if (last_user_msg_index !== -1 && last_user_msg_index !== request.messages.length - 1) {
         const last_user_msg = request.messages.splice(last_user_msg_index, 1)[0];
         request.messages.push(last_user_msg);
-        console.log("Moved last user message to the end of the request for better context handling.");
+        console.log("将最后一条用户消息移动到请求末尾，以便更好地处理上下文。");
       }
     }
   }
@@ -28476,7 +28476,7 @@ var SmartBlock2 = class extends SmartEntity2 {
       return true;
     } catch (e) {
       console.error(e, e.stack);
-      console.error(`Error getting should_embed for ${this.key}: ` + JSON.stringify(e || {}, null, 2));
+      console.error(`获取 ${this.key} 的 should_embed 时发生错误: ` + JSON.stringify(e || {}, null, 2));
     }
   }
   /**
@@ -28727,7 +28727,7 @@ var SmartMessages = class extends SmartBlocks2 {
     return null;
   }
   async process_embed_queue() {
-    console.log("skipping embed queue processing for SmartMessages");
+    console.log("跳过SmartMessages的嵌入队列处理");
   }
 };
 
@@ -28747,7 +28747,7 @@ function build_html17(message, opts = {}) {
       <div class="sc-message-content" data-content="${encodeURIComponent(content)}">
         <span>${content}</span>
         <div class="sc-msg-buttons">
-          <span class="sc-msg-button" title="Copy message to clipboard">${this.get_icon_html("copy")}</span>
+          <span class="sc-msg-button" title="复制消息到剪贴板">${this.get_icon_html("copy")}</span>
           ${has_branches ? `
             <span class="sc-msg-button cycle-branch" title="Cycle through message variations">${message.branch_i.split("-").pop()} / ${branches.length + 1} ${this.get_icon_html("chevron-right")}</span>
           ` : ""}
@@ -28780,9 +28780,9 @@ async function post_process20(message, frag, opts) {
   if (copy_button) {
     copy_button.addEventListener("click", () => {
       navigator.clipboard.writeText(message.content).then(() => {
-        console.log("Message copied to clipboard");
+        console.log("消息已复制到剪贴板");
       }).catch((err) => {
-        console.error("Failed to copy message: ", err);
+        console.error("复制邮件失败：", err);
       });
     });
   }
@@ -28873,7 +28873,7 @@ function build_html18(message, opts = {}) {
       <ul class="sc-context-list" id="context-list-${message.data.id}" hidden>
         ${lookup_results.map((result, index) => `
           <li class="sc-context-item" data-index="${index}">
-            ${review_context ? `<button class="sc-context-remove-btn" title="Remove">${this.get_icon_html("x")}</button>` : ""}
+            ${review_context ? `<button class="sc-context-remove-btn" title="清除">${this.get_icon_html("x")}</button>` : ""}
             <span class="sc-context-item-path">${result.key}</span>
             <span class="sc-context-item-score">Score: ${result.score.toFixed(2)}</span>
           </li>
@@ -29038,7 +29038,7 @@ async function post_process23(message, frag, opts) {
           copy_button.classList.remove("sc-copied");
         }, 1e3);
       }).catch((err) => {
-        console.error("Failed to copy system message:", err);
+        console.error("复制系统消息失败:", err);
       });
     });
   }
@@ -29259,7 +29259,7 @@ ${lookup_content[index].content}
       }));
       return contents;
     } catch (error) {
-      console.error(`Error fetching internal links content:`, error);
+      console.error(`获取内部链接内容时出错：`, error);
       return [];
     }
   }
@@ -29332,7 +29332,7 @@ ${content_item.content}
           } else {
             this_message.content.push({
               type: "text",
-              text: `Image not found: ${part.input.image_path}`
+              text: `找不到图像：${part.input.Image_path}`
             });
           }
         }
@@ -29508,11 +29508,11 @@ var SmartThread2 = class extends SmartThread {
             break;
           default:
             console.warn(`Unhandled tool call: ${tool_call.function.name}`);
-            await this.render_error({ message: `No handler for tool: ${tool_call.function.name}` });
+            await this.render_error({ message: `工具 ${tool_call.function.name} 没有对应的处理程序` });
         }
       } catch (error) {
-        console.error(`Error handling tool call ${tool_call.function.name}:`, error);
-        await this.render_error({ message: `Failed to execute tool: ${tool_call.function.name}`, error });
+        console.error(`错误处理工具调用${tool_call.function.name}：`, error);
+        await this.render_error({ message: `执行工具失败：${tool_call.function.name}`, error });
       }
     }
   }
@@ -30195,7 +30195,7 @@ async function build_html23(scope_plugin) {
       </div>
 
       <div data-connections-settings-container>
-        <h2>Connections view</h2>
+        <h2>连接视图</h2>
       </div>
 
       <div data-ribbon-icons-settings>
@@ -30373,7 +30373,7 @@ async function wait_for_env_to_load(scope, opts = {}) {
     }
     while (!wait_for_states.includes(scope.env.state)) {
       if (container) {
-        const loading_msg = scope.env?.obsidian_is_syncing ? "Waiting for Obsidian Sync to finish..." : "Loading Obsidian Smart Environment...";
+        const loading_msg = scope.env?.obsidian_is_syncing ? "等待 Obsidian 同步完成..." : "Loading Obsidian Smart Environment...";
         container.empty();
         scope.env.smart_view.safe_inner_html(container, loading_msg);
       } else {
@@ -30401,14 +30401,14 @@ var SmartObsidianView = class extends import_obsidian31.ItemView {
    * @returns {string}
    */
   static get view_type() {
-    throw new Error("view_type must be implemented in subclass");
+    throw new Error("view_type 必须在子类中实现");
   }
   /**
    * The display text for this view. Must be implemented in subclasses.
    * @returns {string}
    */
   static get display_text() {
-    throw new Error("display_text must be implemented in subclass");
+    throw new Error("display_text 必须在子类中实现");
   }
   /**
    * The icon name for this view.
@@ -30493,7 +30493,7 @@ var SmartObsidianView = class extends import_obsidian31.ItemView {
   register_plugin_events() {
   }
   render_view() {
-    throw new Error("render_view must be implemented in subclass");
+    throw new Error("render_view 必须在子类中实现");
   }
   get container() {
     return this.containerEl.children[1];
@@ -30517,7 +30517,7 @@ var SmartObsidianView = class extends import_obsidian31.ItemView {
           <circle cx="50" cy="100" r="9" fill="currentColor"></circle>
           <circle cx="30" cy="50" r="9" fill="currentColor"></circle>
         </svg>
-        <p><a style="font-weight: 700;" href="https://smartconnections.app/">Smart Connections</a></p>
+        <p><a style="font-weight: 700;" href="https://smartconnections.app/">智能连接</a></p>
       </div>
     `;
   }
@@ -30552,7 +30552,7 @@ var ConnectionsView = class extends SmartObsidianView {
       }
     }));
   }
-  /* ------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------ */
   async render_view(target = null, container = this.container) {
     if (container.checkVisibility?.() === false) return;
     if (!target) target = this.app.workspace.getActiveFile()?.path;
@@ -30623,7 +30623,7 @@ var ConnectionsView = class extends SmartObsidianView {
     container.empty();
     container.appendChild(frag);
   }
-  /* ------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------ */
   async refresh() {
     const key = this.container.querySelector(".sc-list")?.dataset.key;
     if (!key) return;
@@ -30649,7 +30649,7 @@ var ScLookupView = class extends SmartObsidianView {
   }
   async render_view(query = "", container = this.container) {
     container.empty();
-    container.createEl("span", { text: "Loading lookup..." });
+    container.createEl("span", { text: "正在加载查找。。。" });
     const frag = await this.env.render_component("lookup", this.env.smart_sources, {
       attribution: this.attribution,
       query
@@ -30743,7 +30743,7 @@ var SmartChatsView = class extends SmartObsidianView {
       this.env.events?.emit("clipboard:copied");
       this.plugin.notices.show("copied_to_clipboard", { content });
     }).catch((err) => {
-      console.error("Failed to copy message: ", err);
+      console.error("复制邮件失败：", err);
       this.env.events?.emit("clipboard:copy_failed", { error: err.message });
       this.plugin.notices.show("copy_failed");
     });
@@ -30848,7 +30848,7 @@ var ScOmniModal = class extends import_obsidian33.FuzzySuggestModal {
     super(app2);
     this.app = app2;
     this.view = view;
-    this.setPlaceholder("Select input type...");
+    this.setPlaceholder("选择输入类型...");
     this.inputEl.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") this.selectActiveSuggestion(e);
     });
@@ -30880,7 +30880,7 @@ var ContextSelectModal = class extends import_obsidian33.FuzzySuggestModal {
     super(app2);
     this.app = app2;
     this.view = view;
-    this.setPlaceholder("Find and select a context...");
+    this.setPlaceholder("查找并选择上下文。。。");
     this.inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Escape" || e.key === "ArrowLeft") {
         this.view.open_omni_modal();
@@ -30960,7 +30960,7 @@ var ScFolderSelectModal = class extends ContextSelectModal {
 var ScImageSelectModal = class extends ScFileSelectModal {
   constructor(app2, view) {
     super(app2, view);
-    this.setPlaceholder("Type the name of an image...");
+    this.setPlaceholder("键入图像的名称。。。");
   }
   get image_extensions() {
     return [
@@ -30987,7 +30987,7 @@ var SmartChatGPTView = class extends SmartObsidianView {
     return "smart-chatgpt-view";
   }
   static get display_text() {
-    return "Smart ChatGPT";
+    return "智能ChatGPT";
   }
   static get icon_name() {
     return "bot";
@@ -31010,7 +31010,7 @@ var SmartChatGPTView = class extends SmartObsidianView {
     if (workspace.rightSplit.collapsed) workspace.rightSplit.toggle();
   }
   onload() {
-    console.log("loading view");
+    console.log("加载视图");
     this.initialize();
   }
   initialize() {
@@ -31022,13 +31022,13 @@ var SmartChatGPTView = class extends SmartObsidianView {
     buttonContainer.style.gap = "8px";
     buttonContainer.style.marginBottom = "8px";
     const refreshButton = buttonContainer.createEl("button", {
-      text: "Refresh"
+      text: "刷新"
     });
     refreshButton.addEventListener("click", () => {
       this.initialize();
     });
     const copyUrlButton = buttonContainer.createEl("button", {
-      text: "Copy URL"
+      text: "复制URL"
     });
     copyUrlButton.addEventListener("click", () => {
       const current_url = this.frame?.getAttribute("src");
@@ -31082,7 +31082,7 @@ async function wait_for_env_to_load2(scope, opts = {}) {
     }
     while (!wait_for_states.includes(scope.env.state)) {
       if (container) {
-        const loading_msg = scope.env?.obsidian_is_syncing ? "Waiting for Obsidian Sync to finish..." : "Loading Obsidian Smart Environment...";
+        const loading_msg = scope.env?.obsidian_is_syncing ? "等待 Obsidian 同步完成..." : "Loading Obsidian Smart Environment...";
         container.empty();
         scope.env.smart_view.safe_inner_html(container, loading_msg);
       } else {
@@ -31743,7 +31743,7 @@ var Collection3 = class {
    */
   get_many(keys = []) {
     if (!Array.isArray(keys)) {
-      console.error("get_many called with non-array keys:", keys);
+      console.error("get_many被非数组键调用:", keys);
       return [];
     }
     return keys.map((key) => this.get(key)).filter(Boolean);
@@ -32163,7 +32163,7 @@ var CollectionDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save a single item by its key using its associated `ItemDataAdapter`.
@@ -32172,7 +32172,7 @@ var CollectionDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete a single item by its key. This may involve updating or removing its file,
@@ -32182,7 +32182,7 @@ var CollectionDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is deleted.
    */
   async delete_item(key) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued load operations. Typically orchestrates calling `load_item()` 
@@ -32191,7 +32191,7 @@ var CollectionDataAdapter3 = class {
    * @returns {Promise<void>}
    */
   async process_load_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Process any queued save operations. Typically orchestrates calling `save_item()` 
@@ -32200,7 +32200,7 @@ var CollectionDataAdapter3 = class {
    * @returns {Promise<void>}
    */
   async process_save_queue() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Load the item's data from storage if it has been updated externally.
@@ -32228,7 +32228,7 @@ var ItemDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is fully loaded.
    */
   async load() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Save the item's data to storage. May involve writing to a file or appending 
@@ -32239,7 +32239,7 @@ var ItemDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is saved.
    */
   async save(ajson = null) {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Delete the item's data from storage. May involve removing a file or writing 
@@ -32248,7 +32248,7 @@ var ItemDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item’s data is deleted.
    */
   async delete() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * Returns the file path or unique identifier used by this adapter to locate and store 
@@ -32256,7 +32256,7 @@ var ItemDataAdapter3 = class {
    * @returns {string} The path or identifier for the item's data.
    */
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   /**
    * @returns {CollectionDataAdapter} The collection data adapter that this item data adapter belongs to.
@@ -32273,7 +32273,7 @@ var ItemDataAdapter3 = class {
    * @returns {Promise<void>} Resolves when the item is loaded.
    */
   async load_if_updated() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
 };
 
@@ -32299,7 +32299,7 @@ var FileItemDataAdapter3 = class extends ItemDataAdapter3 {
     return this.item.collection.data_fs || this.item.collection.env.data_fs;
   }
   get data_path() {
-    throw new Error("Not implemented");
+    throw new Error("未实现");
   }
   async load_if_updated() {
     const data_path = this.data_path;
@@ -32307,7 +32307,7 @@ var FileItemDataAdapter3 = class extends ItemDataAdapter3 {
       const loaded_at = this.item.loaded_at || 0;
       const data_file_stat = await this.fs.stat(data_path);
       if (data_file_stat.mtime > loaded_at + 1 * 60 * 1e3) {
-        console.log(`Smart Collections: Re-loading item ${this.item.key} because it has been updated on disk`);
+        console.log(`智能集合：重新加载项目 ${this.item.key}，因为它在磁盘上已更新`);
         await this.load();
       }
     }
@@ -32368,7 +32368,7 @@ var AjsonMultiFileCollectionDataAdapter3 = class extends FileCollectionDataAdapt
       this.collection.clear_process_notice("loading_collection");
       return;
     }
-    console.log(`Loading ${this.collection.collection_key}: ${load_queue.length} items`);
+    console.log(`正在加载 ${this.collection.collection_key}: ${load_queue.length}个项目`);
     const batch_size = 100;
     for (let i = 0; i < load_queue.length; i += batch_size) {
       const batch = load_queue.slice(i, i + batch_size);
@@ -32393,7 +32393,7 @@ var AjsonMultiFileCollectionDataAdapter3 = class extends FileCollectionDataAdapt
     this.collection.emit_event("collection:save_started");
     this.collection.show_process_notice("saving_collection");
     const save_queue = Object.values(this.collection.items).filter((item) => item._queue_save);
-    console.log(`Saving ${this.collection.collection_key}: ${save_queue.length} items`);
+    console.log(`正在保存${this.collection.collection_key}: ${save_queue.length} 个项目`);
     const time_start = Date.now();
     const batch_size = 50;
     for (let i = 0; i < save_queue.length; i += batch_size) {
@@ -32967,7 +32967,7 @@ async function lookup_context(params = {}) {
   if (hypothetical_1) hypotheticals.push(hypothetical_1);
   if (hypothetical_2) hypotheticals.push(hypothetical_2);
   if (hypothetical_3) hypotheticals.push(hypothetical_3);
-  if (!hypotheticals?.length) return { error: "hypotheticals is required" };
+  if (!hypotheticals?.length) return { error: "hypotheticals 是必需的" };
   let existing_context = null;
   let existing_item_keys = [];
   if (context_key) {
@@ -33023,11 +33023,11 @@ var tool = {
         },
         hypothetical_2: {
           type: "string",
-          description: "Must be distinct from and not share any breadcrumbs with hypothetical_1."
+          description: "必须与 hypothetical_1 不同,并且不能共享任何面包屑。"
         },
         hypothetical_3: {
           type: "string",
-          description: "Must be distinct from hypothetical_1 and hypothetical_2."
+          description: "必须与 hypothetical_1 和 hypothetical_2 不同。"
         },
         in_folder: {
           type: "string",
@@ -33362,7 +33362,7 @@ var SmartChatThreads = class extends Collection3 {
   get settings_config() {
     return {
       "language": {
-        name: "Language",
+        name: "语言",
         type: "dropdown",
         options_callback: "get_language_options",
         description: "The language for the chat.",
@@ -33374,7 +33374,7 @@ var SmartChatThreads = class extends Collection3 {
         description: "Trigger lookup when user message references 'my notes', etc."
       },
       "review_context": {
-        name: "Review Context",
+        name: "审查上下文",
         type: "toggle",
         description: "Show retrieved context for approval before sending to AI."
       },
@@ -36021,13 +36021,13 @@ function build_html24(chat_threads_collection, opts = {}) {
           value=""
           placeholder="Add name to save this chat"
         />
-        <button title="New Chat" id="smart-chat-new-chat-button">
+        <button title="新建聊天" id="smart-chat-new-chat-button">
           ${this.get_icon_html("plus")}
         </button>
-        <button title="Chat History" id="smart-chat-chat-history-button">
+        <button title="聊天历史" id="smart-chat-chat-history-button">
           ${this.get_icon_html("history")}
         </button>
-        <button title="Chat Settings" id="smart-chat-chat-settings-button">
+        <button title="聊天设置" id="smart-chat-chat-settings-button">
           ${this.get_icon_html("settings")}
         </button>
         <button title="Chat Help" id="smart-chat-help-button">
@@ -39906,7 +39906,7 @@ var ScSettingsTab = class extends import_obsidian53.PluginSettingTab {
    * Called by Obsidian to display the settings tab
    */
   display() {
-    console.log("displaying settings tab");
+    console.log("显示设置选项卡");
     this.render();
   }
   get smart_view() {
@@ -39919,7 +39919,7 @@ var ScSettingsTab = class extends import_obsidian53.PluginSettingTab {
   }
   async render() {
     await wait_for_env_to_load(this, { wait_for_states: ["loading", "loaded"] });
-    this.smart_view.safe_inner_html(this.containerEl, '<div class="sc-loading">Loading main settings...</div>');
+    this.smart_view.safe_inner_html(this.containerEl, '<div class="sc-loading">加载主要设置中...</div>');
     this.plugin.env.render_component("main_settings", this.plugin).then((frag) => {
       this.containerEl.empty();
       this.containerEl.appendChild(frag);
@@ -40025,13 +40025,13 @@ var NOTICES2 = {
     timeout: 0
   },
   embed_model_not_loaded: {
-    en: "Embed model not loaded. Please wait for the model to load and try again."
+    en: "嵌入模型未加载,请等待模型加载完成后重试。"
   },
   embed_search_text_failed: {
-    en: "Failed to embed search text."
+    en: "搜索文本嵌入失败。"
   },
   error_in_embedding_search: {
-    en: "Error in embedding search. See console for details."
+    en: "嵌入搜索时出错。请查看控制台获取详细信息。"
   },
   copied_to_clipboard: {
     en: "Message: {{content}} copied successfully."
@@ -40070,7 +40070,7 @@ var NOTICES2 = {
     button: {
       en: "Pause",
       callback: (env) => {
-        console.log("pausing");
+        console.log("暂停");
         env.smart_sources.entities_vector_adapter.halt_embed_queue_processing();
       }
     },
@@ -40103,14 +40103,14 @@ var NOTICES2 = {
     timeout: 0
   },
   no_import_queue: {
-    en: "No items in import queue"
+    en: "导入队列中没有项目"
   },
   clearing_all: {
-    en: "Clearing all data...",
+    en: "正在清除所有数据...",
     timeout: 0
   },
   done_clearing_all: {
-    en: "All data cleared and reimported",
+    en: "所有数据已清除并重新导入",
     timeout: 3e3
   },
   image_extracting: {
@@ -40675,7 +40675,7 @@ var SmartConnectionsPlugin = class extends Plugin {
   }
   // async onload() { this.app.workspace.onLayoutReady(this.initialize.bind(this)); } // initialize when layout is ready
   onunload() {
-    console.log("unloading plugin");
+    console.log("卸载插件");
     this.env?.unload_main?.(this);
     this.notices?.unload();
   }
@@ -40733,7 +40733,7 @@ var SmartConnectionsPlugin = class extends Plugin {
     try {
       this.registerMarkdownCodeBlockProcessor(name, this[callback_name].bind(this));
     } catch (error) {
-      console.warn(`Error registering code block: ${name}`, error);
+      console.warn(`注册代码块时出错: ${name}`, error);
     }
   }
   get settings() {
@@ -40747,14 +40747,14 @@ var SmartConnectionsPlugin = class extends Plugin {
       this.open_connections_view();
     }, 1e3);
     if (this.app.workspace.rightSplit.collapsed) this.app.workspace.rightSplit.toggle();
-    this.add_to_gitignore("\n\n# Ignore Smart Environment folder\n.smart-env");
+    this.add_to_gitignore("\n\n# 忽略智能环境文件夹\n.smart-env");
   }
   register_views() {
     Object.values(this.item_views).forEach((View) => {
       this.registerView(View.view_type, (leaf) => new View(leaf, this));
       this.addCommand({
         id: View.view_type,
-        name: "Open: " + View.display_text + " view",
+        name: "Open: " + View.display_text + "视图",
         callback: () => {
           View.open(this.app.workspace);
         }
@@ -40868,7 +40868,7 @@ var SmartConnectionsPlugin = class extends Plugin {
       await this.app.vault.adapter.append(".gitignore", `
 
 ${message ? "# " + message + "\n" : ""}${ignore}`);
-      console.log("Added to .gitignore: " + ignore);
+      console.log("添加到.gitignore：" + ignore);
     }
   }
   async open_note(target_path, event = null) {
@@ -40891,7 +40891,7 @@ ${message ? "# " + message + "\n" : ""}${ignore}`);
     const entity = this.env.smart_sources.get(ctx.sourcePath) ?? this.env.smart_sources.init_file_path(ctx.sourcePath);
     if (!entity) {
       container.empty();
-      container.createEl("p", { text: "Entity not found: " + ctx.sourcePath });
+      container.createEl("p", { text: "实体未找到：" + ctx.sourcePath });
       return;
     }
     const connections_container = await this.env.render_component(
