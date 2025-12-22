@@ -7,6 +7,7 @@
 简介: Claude Code简直强到离谱！！！这段时间一直在玩Claude Code，越用越上头。不仅编程能力极其强悍，更是带来人机交互的新范式。用得越久越发现，它远不只是一个写代码的 AI。 杰一趁机系统地梳理了 Claude Code 在…
 tags:
   - clippings
+修改日期: 2025-10-29T09:55:07+08:00
 ---
 ## 安装
 输入下面的命令安装 Claude Code：
@@ -26,6 +27,19 @@ claude --version
 ```
 npm i -g @anthropic-ai/claude-code
 ```
+
+启动
+```
+claude
+```
+
+卸载 Claude Code
+
+```bash
+npm uninstall -g @anthropic-ai/claude-code
+```
+
+这将从你的系统中全局移除 Claude Code 包。
 
 **一、基础操作**
 ----------

@@ -1,0 +1,56 @@
+{
+  "id": "6b3e8ec4-6bfd-40e8-8a2d-8236bc93d575",
+  "title": "帮我整理这段话，使其更有条理，叙事清晰",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "帮我整理这段话，使其更有条理，叙事清晰",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n帮我整理这段话，使其更有条理，叙事清晰\n\n"
+        }
+      ],
+      "id": "5c2f2e26-24cb-43fb-8d90-52962e4564cb",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "未命名.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1764303574626,
+  "updatedAt": 1764303701883,
+  "schemaVersion": 1
+}

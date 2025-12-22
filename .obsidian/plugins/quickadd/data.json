@@ -1,26 +1,5 @@
 {
-  "choices": [
-    {
-      "id": "b57880ce-28e5-4e75-93fb-74a26ad5642e",
-      "name": "ai生成项目笔记",
-      "type": "Macro",
-      "command": true,
-      "runOnStartup": false,
-      "macro": {
-        "name": "ai生成项目笔记",
-        "id": "4d055d8e-798e-403d-8624-c38bc58397e4",
-        "commands": [
-          {
-            "name": "SmartBatchUpdate_AI_Notes",
-            "type": "UserScript",
-            "id": "09c9048e-d87b-4af2-91ae-61be9c1b46a9",
-            "path": "模版/脚本/SmartBatchUpdate_AI_Notes.js",
-            "settings": {}
-          }
-        ]
-      }
-    }
-  ],
+  "choices": [],
   "inputPrompt": "single-line",
   "devMode": false,
   "templateFolderPath": "",

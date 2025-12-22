@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "providers": [
     {
       "type": "openai",
@@ -95,13 +95,6 @@
     {
       "providerType": "anthropic",
       "providerId": "anthropic",
-      "id": "claude-sonnet-4.0",
-      "model": "claude-sonnet-4-0",
-      "enable": false
-    },
-    {
-      "providerType": "anthropic",
-      "providerId": "anthropic",
       "id": "claude-opus-4.1",
       "model": "claude-opus-4-1",
       "enable": false
@@ -109,23 +102,14 @@
     {
       "providerType": "anthropic",
       "providerId": "anthropic",
-      "id": "claude-3.7-sonnet",
-      "model": "claude-3-7-sonnet-latest",
-      "enable": false
+      "id": "claude-sonnet-4.5",
+      "model": "claude-sonnet-4-5"
     },
     {
       "providerType": "anthropic",
       "providerId": "anthropic",
-      "id": "claude-3.5-sonnet",
-      "model": "claude-3-5-sonnet-latest",
-      "enable": false
-    },
-    {
-      "providerType": "anthropic",
-      "providerId": "anthropic",
-      "id": "claude-3.5-haiku",
-      "model": "claude-3-5-haiku-latest",
-      "enable": false
+      "id": "claude-haiku-4.5",
+      "model": "claude-haiku-4-5"
     },
     {
       "providerType": "openai",
@@ -314,6 +298,34 @@
     {
       "providerType": "anthropic",
       "providerId": "anthropic",
+      "id": "claude-sonnet-4.0",
+      "model": "claude-sonnet-4-0",
+      "enable": false
+    },
+    {
+      "providerType": "anthropic",
+      "providerId": "anthropic",
+      "id": "claude-3.7-sonnet",
+      "model": "claude-3-7-sonnet-latest",
+      "enable": false
+    },
+    {
+      "providerType": "anthropic",
+      "providerId": "anthropic",
+      "id": "claude-3.5-sonnet",
+      "model": "claude-3-5-sonnet-latest",
+      "enable": false
+    },
+    {
+      "providerType": "anthropic",
+      "providerId": "anthropic",
+      "id": "claude-3.5-haiku",
+      "model": "claude-3-5-haiku-latest",
+      "enable": false
+    },
+    {
+      "providerType": "anthropic",
+      "providerId": "anthropic",
       "id": "claude-3.7-sonnet-thinking",
       "model": "claude-3-7-sonnet-latest",
       "enable": false,
@@ -464,14 +476,6 @@
     },
     {
       "providerType": "openai-compatible",
-      "providerId": "魔塔",
-      "id": "魔塔/DeepSeek-V3.1",
-      "model": "deepseek-ai/DeepSeek-V3.1",
-      "promptLevel": 1,
-      "enable": true
-    },
-    {
-      "providerType": "openai-compatible",
       "providerId": "gemini中转",
       "id": "gemini中转/gemini-2.5-pro",
       "model": "gemini-2.5-pro",
@@ -481,16 +485,16 @@
     {
       "providerType": "openai-compatible",
       "providerId": "魔塔",
-      "id": "魔塔/GLM-4.5",
-      "model": "ZhipuAI/GLM-4.5",
+      "id": "DeepSeek-V3.2",
+      "model": "deepseek-ai/DeepSeek-V3.2",
       "promptLevel": 1,
       "enable": true
     },
     {
       "providerType": "openai-compatible",
       "providerId": "魔塔",
-      "id": "魔塔/Qwen3-Next-80B-A3B-Instruct",
-      "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "id": "GLM-4.6V",
+      "model": "ZhipuAI/GLM-4.6V",
       "promptLevel": 1,
       "enable": true
     }
@@ -539,8 +543,8 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "魔塔/DeepSeek-V3.1",
-  "applyModelId": "魔塔/Qwen3-Next-80B-A3B-Instruct",
+  "chatModelId": "DeepSeek-V3.2",
+  "applyModelId": "DeepSeek-V3.2",
   "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",
   "ragOptions": {

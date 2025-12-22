@@ -1,7 +1,7 @@
 {
     "id": "smart-composer",
     "name": "Smart Composer",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "minAppVersion": "0.15.0",
     "description": "AI 聊天结合笔记上下文，智能写作辅助，一键编辑您的知识库。",
     "author": "Heesu Suh",
