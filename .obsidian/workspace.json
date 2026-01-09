@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "eb4acdb595f54eae",
+        "id": "002a4b0977defb97",
         "type": "tabs",
         "children": [
           {
-            "id": "cbef93b86fe7c6bb",
+            "id": "d12ae1ecb8c01d75",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/思考/运营活动协作/切图教程.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "切图教程"
+              "title": "新标签页"
             }
           }
         ]
@@ -53,13 +49,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/思考/运营活动协作/切图教程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "切图教程 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -89,8 +84,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,8 +184,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -200,12 +194,12 @@
             "state": {
               "type": "smart-lookup-view",
               "state": {},
-              "icon": "search",
-              "title": "Smart Lookup"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -219,23 +213,21 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
+      "obsidian-git:打开Git源代码管理": false,
       "smart-composer:Open smart composer": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "templater-obsidian:Templater": false,
       "smart-connections:Open: Smart Chat": false,
       "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Connections: Open random connection": true,
+      "smart-connections:Smart Connections: Open random connection": false,
       "obsidian42-brat:BRAT": false,
-      "i18n:I18N": false,
-      "obsidian-git:打开Git源代码管理": false
+      "i18n:I18N": false
     }
   },
-  "active": "39354fccc9b1e1ef",
+  "active": "82492a4c61449a88",
   "lastOpenFiles": [
+    "工作/思考/运营活动协作/切图教程.md",
     "工作/思考/运营活动协作/视频脚本：《协作突围记——如何让创意不卡在落地前？》.md",
-    "工作/思考/运营活动协作/切图教程.md",
-    "工作/思考/运营活动协作/切图教程.md",
     "学习/思维/MECE 原则：思维与表达的清晰利器.md",
     "学习/思维/思维能力系统性提升规划.md",
     "学习/经济/美国转向扩表在即，时间窗口已明确.md",
