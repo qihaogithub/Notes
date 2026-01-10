@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/思考/运营活动协作/切图教程.md",
+                "file": "兴趣/微信备份.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "切图教程"
+              "title": "微信备份"
             }
           }
         ]
@@ -53,13 +53,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/思考/运营活动协作/切图教程.md",
+                "file": "兴趣/微信备份.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "切图教程 的大纲"
+              "title": "微信备份 的大纲"
             }
           },
           {
@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -233,9 +232,12 @@
   },
   "active": "39354fccc9b1e1ef",
   "lastOpenFiles": [
+    "兴趣/小区/未命名.md",
+    "兴趣/微信备份.md",
+    "兴趣/小区/未命名 1.md",
+    "兴趣/小区",
+    "工作/思考/运营活动协作/切图教程.md",
     "工作/思考/运营活动协作/视频脚本：《协作突围记——如何让创意不卡在落地前？》.md",
-    "工作/思考/运营活动协作/切图教程.md",
-    "工作/思考/运营活动协作/切图教程.md",
     "学习/思维/MECE 原则：思维与表达的清晰利器.md",
     "学习/思维/思维能力系统性提升规划.md",
     "学习/经济/美国转向扩表在即，时间窗口已明确.md",
@@ -262,14 +264,11 @@
     "专业/3·体验设计/设计理论词典/名词&术语.md",
     "创建路由处理器 Create route handler.md",
     "飞书api/事件/事件.md",
-    "创建路由处理器 Create route handler2.md",
-    "注册事件 Register event4.md",
     "飞书api/事件",
     "飞书api/记录",
     "飞书api/数据表",
     "飞书api/字段",
     "飞书api",
-    "未命名.base",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
     "z·附件/Pasted image 20251011180514.png",

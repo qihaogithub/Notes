@@ -543,7 +543,7 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "DeepSeek-V3.2",
+  "chatModelId": "GLM-4.6V",
   "applyModelId": "DeepSeek-V3.2",
   "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",
