@@ -39,8 +39,8 @@
     ]
   },
   "permissionMode": "normal",
-  "model": "sonnet",
-  "thinkingBudget": "off",
+  "model": "opus",
+  "thinkingBudget": "medium",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
   "excludedTags": [],
@@ -67,7 +67,7 @@
   },
   "loadUserClaudeSettings": true,
   "activeConversationId": "conv-1768098025848-97zj35uf9",
-  "lastClaudeModel": "sonnet",
+  "lastClaudeModel": "opus",
   "lastCustomModel": "",
   "lastEnvHash": ""
 }
