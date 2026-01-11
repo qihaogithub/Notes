@@ -11,10 +11,14 @@
             "id": "17039b6416f0312f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "工作/开发/设计规范CMS/需求文档.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "需求文档"
             }
           }
         ]
@@ -63,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:工作 时长 ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -216,8 +220,16 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "4ff5829e7d48fd12",
+  "active": "17039b6416f0312f",
   "lastOpenFiles": [
+    "工作/开发/设计规范CMS/技术文档.md",
+    "工作/开发/设计规范CMS/UI界面设计文档.md",
+    "工作/开发/设计规范CMS/需求文档.md",
+    "工作/开发/设计规范CMS/备份/需求文档.md",
+    "工作/开发/设计规范CMS/备份/需求文档-v2.md",
+    "工作/开发/设计规范CMS/备份",
+    "工作/开发/设计规范CMS",
+    "工作/开发",
     "工作/思考/运营活动协作/切图教程.md",
     "工作/思考/运营活动协作/视频脚本：《协作突围记——如何让创意不卡在落地前？》.md",
     "学习/思维/MECE 原则：思维与表达的清晰利器.md",
@@ -244,16 +256,9 @@
     "工作/资料/周报/潘晨/24.6.23.md",
     "专业/2·产品设计/数据/数据·如何衡量和验证UE设计效果.md",
     "专业/3·体验设计/设计理论词典/名词&术语.md",
-    "创建路由处理器 Create route handler.md",
-    "飞书api/事件/事件.md",
-    "创建路由处理器 Create route handler2.md",
-    "注册事件 Register event4.md",
     "飞书api/事件",
     "飞书api/记录",
     "飞书api/数据表",
-    "飞书api/字段",
-    "飞书api",
-    "未命名.base",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
     "z·附件/Pasted image 20251011180514.png",
