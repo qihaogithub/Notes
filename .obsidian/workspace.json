@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "002a4b0977defb97",
+        "id": "ee352788eb8ea8ff",
         "type": "tabs",
         "children": [
           {
-            "id": "d12ae1ecb8c01d75",
+            "id": "17039b6416f0312f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.10.6"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.10.6"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -181,27 +179,17 @@
             }
           },
           {
-            "id": "639d1ce625069b1a",
+            "id": "4ff5829e7d48fd12",
             "type": "leaf",
             "state": {
-              "type": "smart-connections-view",
+              "type": "claudian-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
-            }
-          },
-          {
-            "id": "2bc02aae1d995d50",
-            "type": "leaf",
-            "state": {
-              "type": "smart-lookup-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "bot",
+              "title": "Claudian"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -224,10 +212,11 @@
       "smart-connections:Smart Connections: Open connections view": false,
       "smart-connections:Smart Connections: Open random connection": false,
       "obsidian42-brat:BRAT": false,
-      "i18n:I18N": false
+      "i18n:I18N": false,
+      "claudian:Open Claudian": false
     }
   },
-  "active": "82492a4c61449a88",
+  "active": "4ff5829e7d48fd12",
   "lastOpenFiles": [
     "工作/思考/运营活动协作/切图教程.md",
     "工作/思考/运营活动协作/视频脚本：《协作突围记——如何让创意不卡在落地前？》.md",
