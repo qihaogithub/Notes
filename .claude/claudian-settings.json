@@ -38,8 +38,8 @@
       "Remove-Partition"
     ]
   },
-  "permissionMode": "yolo",
-  "model": "haiku",
+  "permissionMode": "normal",
+  "model": "sonnet",
   "thinkingBudget": "off",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
@@ -66,8 +66,8 @@
     "windows": ""
   },
   "loadUserClaudeSettings": true,
-  "activeConversationId": "conv-1768096697149-22d6cezoc",
-  "lastClaudeModel": "haiku",
+  "activeConversationId": "conv-1768098025848-97zj35uf9",
+  "lastClaudeModel": "sonnet",
   "lastCustomModel": "",
   "lastEnvHash": ""
 }

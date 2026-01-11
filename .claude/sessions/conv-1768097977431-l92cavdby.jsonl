@@ -1,0 +1,13 @@
+{"type":"meta","id":"conv-1768097977431-l92cavdby","title":"你好","createdAt":1768097977431,"updatedAt":1768098025846,"lastResponseAt":1768098024476,"sessionId":null,"titleGenerationStatus":"failed"}
+{"type":"message","message":{"id":"msg-1768097980602-b7pl4533p","role":"user","content":"你好","timestamp":1768097980602}}
+{"type":"message","message":{"id":"msg-1768097980604-mgcvfo20i","role":"assistant","content":"","timestamp":1768097980604,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
+{"type":"message","message":{"id":"msg-1768097986564-thkg7pe7a","role":"user","content":"你好","timestamp":1768097986564}}
+{"type":"message","message":{"id":"msg-1768097986566-x4spo5x14","role":"assistant","content":"","timestamp":1768097986566,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
+{"type":"message","message":{"id":"msg-1768097992589-bxcfkrw0o","role":"user","content":"你好","timestamp":1768097992589}}
+{"type":"message","message":{"id":"msg-1768097992591-fatjslaob","role":"assistant","content":"","timestamp":1768097992591,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
+{"type":"message","message":{"id":"msg-1768098008140-i0ptbklgg","role":"user","content":"你好","timestamp":1768098008140}}
+{"type":"message","message":{"id":"msg-1768098008144-ys5el2a6f","role":"assistant","content":"","timestamp":1768098008144,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
+{"type":"message","message":{"id":"msg-1768098017816-rm7n8klpz","role":"user","content":"你好","timestamp":1768098017816}}
+{"type":"message","message":{"id":"msg-1768098017819-0uyedolx1","role":"assistant","content":"","timestamp":1768098017819,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
+{"type":"message","message":{"id":"msg-1768098023739-ohmzdetxt","role":"user","content":"你好","timestamp":1768098023739}}
+{"type":"message","message":{"id":"msg-1768098023743-6orslv63z","role":"assistant","content":"","timestamp":1768098023743,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
