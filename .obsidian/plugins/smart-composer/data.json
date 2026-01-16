@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 14,
   "providers": [
     {
       "type": "openai",
@@ -18,21 +18,20 @@
       "apiKey": ""
     },
     {
+      "type": "xai",
+      "id": "xai"
+    },
+    {
       "type": "deepseek",
       "id": "deepseek"
     },
     {
-      "type": "perplexity",
-      "id": "perplexity"
-    },
-    {
-      "type": "groq",
-      "id": "groq",
-      "apiKey": "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"
-    },
-    {
       "type": "mistral",
       "id": "mistral"
+    },
+    {
+      "type": "perplexity",
+      "id": "perplexity"
     },
     {
       "type": "openrouter",
@@ -48,8 +47,15 @@
       "id": "lm-studio"
     },
     {
-      "type": "morph",
-      "id": "morph"
+      "type": "openai-compatible",
+      "id": "groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "apiKey": "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"
+    },
+    {
+      "type": "openai-compatible",
+      "id": "morph",
+      "baseUrl": "https://api.morphllm.com/v1"
     },
     {
       "type": "openai-compatible",
@@ -95,9 +101,8 @@
     {
       "providerType": "anthropic",
       "providerId": "anthropic",
-      "id": "claude-opus-4.1",
-      "model": "claude-opus-4-1",
-      "enable": false
+      "id": "claude-opus-4.5",
+      "model": "claude-opus-4-5"
     },
     {
       "providerType": "anthropic",
@@ -114,29 +119,14 @@
     {
       "providerType": "openai",
       "providerId": "openai",
-      "id": "gpt-5",
-      "model": "gpt-5",
-      "enable": false
+      "id": "gpt-5.2",
+      "model": "gpt-5.2"
     },
     {
       "providerType": "openai",
       "providerId": "openai",
       "id": "gpt-5-mini",
       "model": "gpt-5-mini",
-      "enable": false
-    },
-    {
-      "providerType": "openai",
-      "providerId": "openai",
-      "id": "gpt-5-nano",
-      "model": "gpt-5-nano",
-      "enable": false
-    },
-    {
-      "providerType": "openai",
-      "providerId": "openai",
-      "id": "gpt-4.1",
-      "model": "gpt-4.1",
       "enable": false
     },
     {
@@ -149,8 +139,70 @@
     {
       "providerType": "openai",
       "providerId": "openai",
-      "id": "gpt-4.1-nano",
-      "model": "gpt-4.1-nano",
+      "id": "o4-mini",
+      "model": "o4-mini",
+      "enable": false,
+      "reasoning": {
+        "enabled": true,
+        "reasoning_effort": "medium"
+      }
+    },
+    {
+      "providerType": "gemini",
+      "providerId": "gemini",
+      "id": "gemini-3-pro-preview",
+      "model": "gemini-3-pro-preview"
+    },
+    {
+      "providerType": "gemini",
+      "providerId": "gemini",
+      "id": "gemini-3-flash-preview",
+      "model": "gemini-3-flash-preview"
+    },
+    {
+      "providerType": "deepseek",
+      "providerId": "deepseek",
+      "id": "deepseek-chat",
+      "model": "deepseek-chat",
+      "enable": false
+    },
+    {
+      "providerType": "deepseek",
+      "providerId": "deepseek",
+      "id": "deepseek-reasoner",
+      "model": "deepseek-reasoner",
+      "enable": false
+    },
+    {
+      "providerType": "xai",
+      "providerId": "xai",
+      "id": "grok-4-1-fast",
+      "model": "grok-4-1-fast"
+    },
+    {
+      "providerType": "xai",
+      "providerId": "xai",
+      "id": "grok-4-1-fast-non-reasoning",
+      "model": "grok-4-1-fast-non-reasoning"
+    },
+    {
+      "providerType": "anthropic",
+      "providerId": "anthropic",
+      "id": "claude-opus-4.1",
+      "model": "claude-opus-4-1",
+      "enable": false
+    },
+    {
+      "providerType": "openai",
+      "providerId": "openai",
+      "id": "gpt-5.1",
+      "model": "gpt-5.1"
+    },
+    {
+      "providerType": "openai",
+      "providerId": "openai",
+      "id": "gpt-5-nano",
+      "model": "gpt-5-nano",
       "enable": false
     },
     {
@@ -166,17 +218,6 @@
       "id": "gpt-4o-mini",
       "model": "gpt-4o-mini",
       "enable": false
-    },
-    {
-      "providerType": "openai",
-      "providerId": "openai",
-      "id": "o4-mini",
-      "model": "o4-mini",
-      "enable": false,
-      "reasoning": {
-        "enabled": true,
-        "reasoning_effort": "medium"
-      }
     },
     {
       "providerType": "openai",
@@ -222,20 +263,6 @@
       "providerId": "gemini",
       "id": "gemini-2.0-flash-lite",
       "model": "gemini-2.0-flash-lite",
-      "enable": false
-    },
-    {
-      "providerType": "deepseek",
-      "providerId": "deepseek",
-      "id": "deepseek-chat",
-      "model": "deepseek-chat",
-      "enable": false
-    },
-    {
-      "providerType": "deepseek",
-      "providerId": "deepseek",
-      "id": "deepseek-reasoner",
-      "model": "deepseek-reasoner",
       "enable": false
     },
     {
@@ -289,10 +316,31 @@
       }
     },
     {
-      "providerType": "morph",
+      "providerType": "openai-compatible",
       "providerId": "morph",
       "id": "morph-v0",
       "model": "morph-v0",
+      "enable": false
+    },
+    {
+      "providerType": "openai",
+      "providerId": "openai",
+      "id": "gpt-5",
+      "model": "gpt-5",
+      "enable": false
+    },
+    {
+      "providerType": "openai",
+      "providerId": "openai",
+      "id": "gpt-4.1",
+      "model": "gpt-4.1",
+      "enable": false
+    },
+    {
+      "providerType": "openai",
+      "providerId": "openai",
+      "id": "gpt-4.1-nano",
+      "model": "gpt-4.1-nano",
       "enable": false
     },
     {
@@ -385,14 +433,14 @@
       "enable": false
     },
     {
-      "providerType": "groq",
+      "providerType": "openai-compatible",
       "providerId": "groq",
       "id": "groq/llama-3.1-70b",
       "model": "llama-3.1-70b-versatile",
       "enable": false
     },
     {
-      "providerType": "groq",
+      "providerType": "openai-compatible",
       "providerId": "groq",
       "id": "groq/llama-3.1-8b",
       "model": "llama-3.1-8b-instant",

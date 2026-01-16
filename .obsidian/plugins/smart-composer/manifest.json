@@ -1,11 +1,11 @@
 {
-    "id": "smart-composer",
-    "name": "Smart Composer",
-    "version": "1.2.5",
-    "minAppVersion": "0.15.0",
-    "description": "AI 聊天结合笔记上下文，智能写作辅助，一键编辑您的知识库。",
-    "author": "Heesu Suh",
-    "authorUrl": "https://github.com/glowingjade",
-    "fundingUrl": "https://buymeacoffee.com/kevin.on",
-    "isDesktopOnly": false
+  "id": "smart-composer",
+  "name": "Smart Composer",
+  "version": "1.2.6",
+  "minAppVersion": "0.15.0",
+  "description": "AI chat with note context, smart writing assistance, and one-click edits for your vault.",
+  "author": "Heesu Suh",
+  "authorUrl": "https://github.com/glowingjade",
+  "fundingUrl": "https://buymeacoffee.com/kevin.on",
+  "isDesktopOnly": false
 }

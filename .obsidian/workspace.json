@@ -20,8 +20,31 @@
               "icon": "lucide-file",
               "title": "微信备份"
             }
+          },
+          {
+            "id": "f5d99744f847ca89",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.11.4"
+            }
+          },
+          {
+            "id": "95e27831516eac5c",
+            "type": "leaf",
+            "state": {
+              "type": "smart-release-notes-view",
+              "state": {},
+              "icon": "file-text",
+              "title": "Release Notes"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -156,7 +179,7 @@
               "type": "git-view",
               "state": {},
               "icon": "git-pull-request",
-              "title": "源代码管理"
+              "title": "Source Control"
             }
           },
           {
@@ -212,13 +235,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
       "smart-composer:Open smart composer": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "templater-obsidian:Templater": false,
@@ -227,10 +250,12 @@
       "smart-connections:Smart Connections: Open random connection": true,
       "obsidian42-brat:BRAT": false,
       "i18n:I18N": false,
-      "obsidian-git:打开Git源代码管理": false
+      "obsidian-git:打开Git源代码管理": false,
+      "obsidian-git:Open Git source control": false,
+      "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "39354fccc9b1e1ef",
+  "active": "95e27831516eac5c",
   "lastOpenFiles": [
     "兴趣/小区/未命名.md",
     "兴趣/微信备份.md",
