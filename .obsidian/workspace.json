@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "linux"
             }
+          },
+          {
+            "id": "1736454529ee2be1",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.11.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,7 +214,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -220,7 +233,7 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "c96c001ff92623d5",
+  "active": "1736454529ee2be1",
   "lastOpenFiles": [
     "兴趣/编程/linux",
     "工作/开发/设计规范CMS/需求文档.md",
