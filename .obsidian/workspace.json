@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "兴趣/编程/superpowers/skills/dispatching-parallel-agents/SKILLzh.md",
+                "file": "兴趣/编程/通用编程提示词.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SKILLzh"
+              "title": "通用编程提示词"
             }
           }
         ]
@@ -222,8 +222,9 @@
   },
   "active": "17039b6416f0312f",
   "lastOpenFiles": [
-    "兴趣/编程/superpowers/skills/dispatching-parallel-agents/SKILL.md",
     "兴趣/编程/superpowers/skills/dispatching-parallel-agents/SKILLzh.md",
+    "兴趣/编程/通用编程提示词.md",
+    "兴趣/编程/superpowers/skills/dispatching-parallel-agents/SKILL.md",
     "兴趣/编程/superpowers/READMEzh.md",
     "兴趣/编程/linux/linux.md",
     "兴趣/编程/superpowers/skills/systematic-debugging/test-pressure-3zh.md",
@@ -247,7 +248,6 @@
     "兴趣/编程/superpowers/skills/systematic-debugging/condition-based-waitingzh.md",
     "兴趣/编程/superpowers/skills/subagent-driven-development/spec-reviewer-promptzh.md",
     "兴趣/编程/superpowers/skills/subagent-driven-development/implementer-promptzh.md",
-    "兴趣/编程/superpowers/skills/subagent-driven-development/code-quality-reviewer-promptzh.md",
     "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/scaffold.sh",
     "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/scaffold.sh",
     "兴趣/编程/superpowers/tests/skill-triggering/prompts/test-driven-development.txt",
