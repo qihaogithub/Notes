@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "linux"
             }
-          },
-          {
-            "id": "1736454529ee2be1",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.5"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.11.5"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 344.5
+    "width": 227.50235748291016
   },
   "right": {
     "id": "df12f23aa4846d7d",
@@ -233,45 +220,45 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "1736454529ee2be1",
+  "active": "c96c001ff92623d5",
   "lastOpenFiles": [
-    "兴趣/编程/linux",
-    "工作/开发/设计规范CMS/需求文档.md",
-    "工作/开发/设计规范CMS/技术文档.md",
-    "工作/开发/设计规范CMS/UI界面设计文档.md",
-    "工作/开发/设计规范CMS/备份/需求文档.md",
-    "工作/开发/设计规范CMS/备份/需求文档-v2.md",
-    "工作/开发/设计规范CMS/备份",
-    "工作/开发/设计规范CMS",
-    "工作/开发",
-    "工作/思考/运营活动协作/切图教程.md",
-    "工作/思考/运营活动协作/视频脚本：《协作突围记——如何让创意不卡在落地前？》.md",
-    "学习/思维/MECE 原则：思维与表达的清晰利器.md",
-    "学习/思维/思维能力系统性提升规划.md",
-    "学习/经济/美国转向扩表在即，时间窗口已明确.md",
-    "模版/obsidian插件.md",
-    "学习/经济",
-    "工作/思考/运营活动协作/如何更好的协作.md",
-    "学习/思维",
-    "学习/英语/计划.md",
-    "工作/思考/运营活动协作",
-    "专业/5·视觉设计/3·设计分析/文艺海报.md",
+    "兴趣/编程/superpowers/skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/scaffold.sh",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/plan.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/scaffold.sh",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/design.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/plan.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/design.md",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/test-driven-development.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/writing-plans.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/systematic-debugging.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/requesting-code-review.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/executing-plans.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/dispatching-parallel-agents.txt",
+    "兴趣/编程/superpowers/tests/explicit-skill-requests/prompts/skip-formalities.txt",
+    "兴趣/编程/superpowers/tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+    "兴趣/编程/superpowers/skills/writing-skills/testing-skills-with-subagents.md",
+    "兴趣/编程/superpowers/skills/writing-skills/SKILL.md",
+    "兴趣/编程/superpowers/skills/writing-skills/persuasion-principles.md",
+    "兴趣/编程/superpowers/skills/writing-skills/anthropic-best-practices.md",
+    "兴趣/编程/superpowers/skills/writing-plans/SKILL.md",
+    "兴趣/编程/superpowers/skills/verification-before-completion/SKILL.md",
+    "兴趣/编程/superpowers/skills/using-superpowers/SKILL.md",
+    "兴趣/编程/superpowers/skills/using-git-worktrees/SKILL.md",
+    "兴趣/编程/superpowers/skills/test-driven-development/SKILL.md",
+    "兴趣/编程/superpowers/skills/test-driven-development/testing-anti-patterns.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/test-pressure-3.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/test-pressure-2.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/test-pressure-1.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/test-academic.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/SKILL.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/root-cause-tracing.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/defense-in-depth.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/CREATION-LOG.md",
+    "兴趣/编程/superpowers/skills/systematic-debugging/condition-based-waiting.md",
+    "兴趣/编程/superpowers/skills/subagent-driven-development/spec-reviewer-prompt.md",
+    "兴趣/编程/superpowers/skills/subagent-driven-development/SKILL.md",
     "z·附件/Pasted image 20251203114518.png",
-    "专业/5·视觉设计/3·设计分析",
-    "学习/英语/未命名.md",
-    "学习/英语/只有.md",
-    "未命名.md",
-    "工作/资料/周报/思佳/2025-08-24.md",
-    "工作/资料/产品文档/25学习页改版/25版-灰度期间年课用户情况总结-更新至5月31日.md",
-    "工作/项目/小程序/家长端小程序-项目笔记.md",
-    "工作/项目/小程序/学习报告改版/家长端学习报告改版.md",
-    "工作/资料/数据/家长端.md",
-    "工作/资料/周报/思佳/2025-10-26.md",
-    "工作/资料/周报/潘晨/24.6.23.md",
-    "专业/2·产品设计/数据/数据·如何衡量和验证UE设计效果.md",
-    "飞书api/事件",
-    "飞书api/记录",
-    "飞书api/数据表",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
     "z·附件/Pasted image 20251011180514.png",
