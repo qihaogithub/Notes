@@ -20,19 +20,8 @@
               "icon": "lucide-file",
               "title": "UI字体设计"
             }
-          },
-          {
-            "id": "c89aa4b073bd73aa",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,16 +174,6 @@
             }
           },
           {
-            "id": "639d1ce625069b1a",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
-            }
-          },
-          {
             "id": "470fa09364ce7357",
             "type": "leaf",
             "state": {
@@ -205,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -232,7 +211,7 @@
       "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "c89aa4b073bd73aa",
+  "active": "82492a4c61449a88",
   "lastOpenFiles": [
     "专业/5·视觉设计/文字/UI字体设计.md",
     "conflict-files-obsidian-git.md",

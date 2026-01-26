@@ -448,50 +448,6 @@
     },
     {
       "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/gemini-2.0-flash",
-      "model": "gemini-2.0-flash",
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/gemini-2.0-pro-exp",
-      "model": "gemini-2.0-pro-exp",
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/deepseek-reasoner",
-      "model": "deepseek-reasoner",
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/deepseek-chat",
-      "model": "deepseek-chat",
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/gemini-2.5-pro-preview-05-06",
-      "model": "gemini-2.5-pro-preview-05-06",
-      "promptLevel": 1,
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "NEWAPI",
-      "id": "NEWAPI/deepseek-r1-250120",
-      "model": "deepseek-r1-250120",
-      "promptLevel": 1,
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
       "providerId": "阿里百炼",
       "id": "阿里/deepseek-r1",
       "model": "deepseek-r1",
@@ -508,30 +464,6 @@
     },
     {
       "providerType": "openai-compatible",
-      "providerId": "火山引擎",
-      "id": "火山/deepseek-v3",
-      "model": "ep-20250526140714-IIfjf",
-      "promptLevel": 1,
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "阿里百炼",
-      "id": "阿里/通义千问3-235B-A22B",
-      "model": "通义千问3-235B-A22B",
-      "promptLevel": 1,
-      "enable": false
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "gemini中转",
-      "id": "gemini中转/gemini-2.5-pro",
-      "model": "gemini-2.5-pro",
-      "promptLevel": 1,
-      "enable": true
-    },
-    {
-      "providerType": "openai-compatible",
       "providerId": "魔塔",
       "id": "DeepSeek-V3.2",
       "model": "deepseek-ai/DeepSeek-V3.2",
@@ -543,6 +475,22 @@
       "providerId": "魔塔",
       "id": "GLM-4.6V",
       "model": "ZhipuAI/GLM-4.6V",
+      "promptLevel": 1,
+      "enable": true
+    },
+    {
+      "providerId": "魔塔",
+      "providerType": "openai-compatible",
+      "id": "GLM-4.7",
+      "model": "ZhipuAI/GLM-4.7",
+      "promptLevel": 1,
+      "enable": true
+    },
+    {
+      "providerId": "魔塔",
+      "providerType": "openai-compatible",
+      "id": "GLM-4.7-Flash",
+      "model": "ZhipuAI/GLM-4.7-Flash",
       "promptLevel": 1,
       "enable": true
     }
@@ -591,8 +539,8 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "GLM-4.6V",
-  "applyModelId": "DeepSeek-V3.2",
+  "chatModelId": "GLM-4.7",
+  "applyModelId": "GLM-4.7-Flash",
   "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",
   "ragOptions": {
