@@ -1,0 +1,3 @@
+{"type":"meta","id":"conv-1768096697149-22d6cezoc","title":"你是谁","createdAt":1768096697149,"updatedAt":1768097977429,"lastResponseAt":1768097884077,"sessionId":null,"titleGenerationStatus":"failed"}
+{"type":"message","message":{"id":"msg-1768097883352-8ngd03zr5","role":"user","content":"你是谁","timestamp":1768097883352}}
+{"type":"message","message":{"id":"msg-1768097883356-o7bicagox","role":"assistant","content":"","timestamp":1768097883356,"toolCalls":[],"contentBlocks":[{"type":"text","content":"\n\n❌ **Error:** Claude Code process exited with code 1"}]}}
