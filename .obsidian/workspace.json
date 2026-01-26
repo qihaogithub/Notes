@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "专业/5·视觉设计/文字/UI字体设计.md",
+                "file": "兴趣/编程/opencode/企业版 (Enterprise).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UI字体设计"
+              "title": "企业版 (Enterprise)"
             }
           }
         ]
@@ -184,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -211,8 +211,21 @@
       "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "470fa09364ce7357",
+  "active": "1d0e755ce487538c",
   "lastOpenFiles": [
+    "兴趣/编程/opencode/配置.md",
+    "兴趣/编程/opencode/介绍.md",
+    "兴趣/编程/opencode/migrating-to-1-0.md",
+    "兴趣/编程/opencode/usage/cli.md",
+    "兴趣/编程/opencode/configure/tools.md",
+    "兴趣/编程/opencode/configure/themes.md",
+    "兴趣/编程/opencode/configure/rules.md",
+    "兴趣/编程/opencode/configure/models.md",
+    "兴趣/编程/opencode/configure/keybinds.md",
+    "兴趣/编程/opencode/providers.md",
+    "兴趣/编程/opencode/network.md",
+    "兴趣/编程/opencode/企业版 (Enterprise).md",
+    "专业/5·视觉设计/文字/UI字体设计.md",
     "AI/6·语音/CosyVoice 2.0.md",
     "兴趣/AI/5·语音/CosyVoice 2.0.md",
     "AI/n8n/汉化.md",
@@ -231,20 +244,7 @@
     "兴趣/编程/opencode/usage/tui.md",
     "兴趣/编程/opencode/usage/share.md",
     "兴趣/编程/opencode/usage/ide.md",
-    "兴趣/编程/opencode/usage/gitlab.md",
-    "兴趣/编程/opencode/usage/github.md",
-    "兴趣/编程/opencode/usage/cli.md",
-    "兴趣/编程/opencode/configure/tools.md",
-    "兴趣/编程/opencode/configure/themes.md",
-    "兴趣/编程/opencode/configure/rules.md",
-    "兴趣/编程/opencode/configure/models.md",
-    "兴趣/编程/opencode/configure/keybinds.md",
-    "兴趣/编程/opencode/configure/agents.md",
     "兴趣/编程/opencode/usage",
-    "兴趣/编程/opencode/troubleshooting.md",
-    "兴趣/编程/opencode/providers.md",
-    "兴趣/编程/opencode/network.md",
-    "兴趣/编程/opencode/migrating-to-1-0.md",
     "兴趣/编程/opencode/configure",
     "兴趣/编程/opencode",
     "工作/开发/设计规范CMS",
