@@ -1,71 +1,81 @@
-以下是一个 **仅包含本地安装** 的详细教程，指导您如何在 Ubuntu 系统上将 n 8 n 安装到特定目录（如 `/www/wwwroot/n8n`），并配置为后台运行的服务。本教程适用于希望实现更高隔离性、可维护性和可移植性的用户。
 
----
 
-## **本地安装 n 8 n 详细教程**
+# N 8 n 本地安装与配置指南（Linux & macOS）
 
-### **1. 准备工作**
-确保您的系统满足以下条件：
-- 已安装 Node. Js 和 npm（建议使用 LTS 版本）。
-- 目标目录 `/www/wwwroot/n8n` 存在，并具有适当的权限。
+## 简介
 
-#### 检查 Node. Js 和 npm 是否已安装：
-```bash
-node -v
-npm -v
-```
+本指南详细介绍如何在 Linux (Ubuntu) 和 macOS 系统上将 n 8 n 安装到指定目录，并配置为后台运行的服务。这种安装方式提供了更高的隔离性、可维护性和可移植性。
 
-如果未安装，请运行以下命令安装 Node. Js 和 npm：
+## 1. 准备工作
 
-```bash
-# 更新包管理器
-sudo apt update
+### Linux (Ubuntu)
 
-# 安装 Node.js 和 npm
-sudo apt install nodejs npm -y
+| 要求 | 检查命令 | 安装命令 |
+|------|---------|---------|
+| Node. Js 和 npm | `node -v`<br>`npm -v` | `sudo apt update`<br>`sudo apt install nodejs npm -y` |
 
-# 验证安装
-node -v
-npm -v
-```
+### MacOS
 
----
+| 要求             | 检查命令                  | 安装命令                                                                                              |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------- |
+| Homebrew       | `brew -v`             | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` |
+| Node. Js 和 npm | `node -v`<br>`npm -v` | `brew install node`                                                                               |
 
-### **2. 创建项目目录**
-创建目标目录 `/www/wwwroot/n8n` 并进入该目录：
+## 2. 创建项目目录
+
+### Linux (Ubuntu)
 
 ```bash
-mkdir -p /www/wwwroot/n8n
+# 创建目标目录
+sudo mkdir -p /www/wwwroot/n8n
+
+# 设置目录权限
+sudo chown -R $USER:$USER /www/wwwroot/n8n
+
+# 进入目录
 cd /www/wwwroot/n8n
-```
 
-初始化 npm 项目：
-
-```bash
+# 初始化 npm 项目
 npm init -y
 ```
 
-这将在当前目录生成一个 `package.json` 文件，用于记录项目的依赖和脚本。
-
----
-
-### **3. 本地安装 n 8 n**
-修复缓存目录权限
-```
-sudo chown -R $USER:$USER /www/server/nodejs/cache
-```
-在项目目录中安装 n 8 n：
+### MacOS
 
 ```bash
+# 创建目标目录（在用户目录下）
+mkdir -p ~/n8n
+
+# 进入目录
+cd ~/n8n
+
+# 初始化 npm 项目
+npm init -y
+```
+
+## 3. 安装 n 8 n
+
+### Linux (Ubuntu)
+
+```bash
+# 修复缓存目录权限
+sudo chown -R $USER:$USER /www/server/nodejs/cache
+
+# 安装 n8n
 npm install n8n
 ```
 
-安装完成后，n 8 n 将位于 `node_modules/n8n` 中。
+### MacOS
 
----
+```bash
+# 安装 n8n
+npm install n8n
+```
 
-### **4. 配置启动脚本**
-为了简化启动命令，在 `package.json` 中添加一个启动脚本：
+## 4. 配置启动脚本
+
+### Linux 和 macOS
+
+编辑 `package.json` 文件，添加启动脚本：
 
 ```json
 {
@@ -75,126 +85,270 @@ npm install n8n
 }
 ```
 
-现在可以通过以下命令启动 n 8 n：
+现在可以通过 `npm start` 命令启动 n 8 n。
 
-```bash
-npm start
-```
+## 5. 设置用户数据目录
 
----
+### Linux (Ubuntu)
 
-### **5. 设置用户数据目录**
-为了避免默认路径冲突，可以指定 n 8 n 的用户数据目录为 `/www/wwwroot/n8n/data`。
+为了避免默认路径冲突，将 n 8 n 的用户数据目录设置为 `/www/wwwroot/n8n/data`。
 
-#### 方法 1：临时设置环境变量
-每次启动时手动设置环境变量：
+#### 方法 1：临时设置（仅当前会话有效）
 
 ```bash
 N8N_USER_FOLDER=/www/wwwroot/n8n/data npm start
 ```
 
-#### 方法 2：永久设置环境变量
-在项目根目录下创建一个 `.env` 文件，并定义环境变量：
+#### 方法 2：永久设置
 
 ```bash
+# 创建 .env 文件
 echo 'N8N_USER_FOLDER=/www/wwwroot/n8n/data' > .env
-```
 
-然后安装 `dotenv` 包以加载 `.env` 文件中的环境变量：
-
-```bash
+# 安装 dotenv 包
 npm install dotenv
+
+# 修改 package.json 的启动脚本
+sed -i 's/"start": "node \.\/node_modules\/n8n\/bin\/n8n"/"start": "node -r dotenv\/config .\/node_modules\/n8n\/bin\/n8n"/' package.json
 ```
 
-修改 `package.json` 的启动脚本：
+### MacOS
 
-```json
-{
-  "scripts": {
-    "start": "node -r dotenv/config ./node_modules/n8n/bin/n8n"
-  }
-}
-```
+为了避免默认路径冲突，将 n 8 n 的用户数据目录设置为 `~/n8n/data`。
 
-现在运行 `npm start` 时会自动加载 `.env` 文件中的环境变量。
+#### 方法 1：临时设置（仅当前会话有效）
 
----
-
-### **6. 使用 PM 2 管理服务**
-为了确保 n 8 n 在后台持续运行，可以使用 PM 2。
-
-#### 安装 PM 2：
 ```bash
+N8N_USER_FOLDER=~/n8n/data npm start
+```
+
+#### 方法 2：永久设置
+
+```bash
+# 创建 .env 文件
+echo "N8N_USER_FOLDER=~/n8n/data" > .env
+
+# 安装 dotenv 包
+npm install dotenv
+
+# 修改 package.json 的启动脚本
+sed -i '' 's/"start": "node \.\/node_modules\/n8n\/bin\/n8n"/"start": "node -r dotenv\/config .\/node_modules\/n8n\/bin\/n8n"/' package.json
+```
+
+## 6. 服务管理
+
+### Linux (使用 PM 2)
+
+```bash
+# 安装 PM2
 sudo npm install -g pm2
-```
 
-#### 启动服务：
-```bash
+# 启动服务
 pm2 start "npm start" --name n8n
-```
 
-#### 设置开机自启：
-```bash
+# 设置开机自启
 pm2 save
 pm2 startup
-```
 
-#### 查看 PM 2 状态：
-```bash
+# 查看 PM2 状态
 pm2 list
-```
 
-PM 2 的日志文件可以通过以下命令查看：
-
-```bash
+# 查看日志
 pm2 logs n8n
 ```
 
----
+### MacOS (使用 launchd)
 
-### **7. 配置防火墙**
-n 8 n 默认监听端口 `5678`。如果需要通过公网访问，请确保防火墙允许该端口：
+```bash
+# 创建 plist 文件
+cat > ~/Library/LaunchAgents/com.n8n.plist << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.n8n</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/npm</string>
+        <string>start</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>$HOME/n8n</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>$HOME/n8n/logs/n8n.log</string>
+    <key>StandardErrorPath</key>
+    <string>$HOME/n8n/logs/n8n-error.log</string>
+</dict>
+</plist>
+EOF
+
+# 创建日志目录
+mkdir -p ~/n8n/logs
+
+# 加载服务
+launchctl load ~/Library/LaunchAgents/com.n8n.plist
+
+# 启动服务
+launchctl start com.n8n
+
+# 查看服务状态
+launchctl list | grep n8n
+
+# 查看日志
+tail -f ~/n8n/logs/n8n.log
+```
+
+## 7. 配置防火墙
+
+### Linux (Ubuntu)
+
+N 8 n 默认监听端口 5678，如需通过公网访问，请确保防火墙允许该端口：
 
 ```bash
 sudo ufw allow 5678
 ```
 
----
+### MacOS
 
-### **8. 访问 n 8 n**
-n 8 n 启动后，默认监听 `http://localhost:5678`。如果服务器有外网 IP，可以通过浏览器访问：
+MacOS 默认没有启用防火墙，如需启用：
 
+```bash
+# 启用防火墙
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+# 允许端口 5678
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --addport 5678
 ```
-http://<服务器IP>:5678
-```
 
----
+## 8. 访问 n 8 n
 
-### **9. 备份与迁移**
-由于 n 8 n 是本地安装，整个项目目录（包括 `node_modules` 和数据目录）都可以轻松打包并迁移到其他机器。
+N 8 n 启动后，可通过以下地址访问：
+- 本地访问：`http://localhost:5678`
+- 外网访问：`http://<服务器IP>:5678`
 
-#### 打包项目：
+## 9. 备份与迁移
+
+### Linux (Ubuntu)
+
+#### 备份项目
+
 ```bash
 tar -czvf n8n_backup.tar.gz /www/wwwroot/n8n
 ```
 
-#### 迁移到新服务器：
-将备份文件上传到新服务器，解压后重新安装依赖：
+#### 迁移到新服务器
 
 ```bash
+# 解压备份文件
 tar -xzvf n8n_backup.tar.gz -C /www/wwwroot/
+
+# 进入目录并安装依赖
 cd /www/wwwroot/n8n
 npm install
+
+# 重新启动服务
+pm2 start "npm start" --name n8n
 ```
 
-然后按照上述步骤重新启动 n 8 n。
+### MacOS
 
----
+#### 备份项目
 
-### **10. 总结**
-通过本地安装的方式，您可以实现以下目标：
-1. **依赖隔离**：每个项目独立管理 n 8 n 的版本。
-2. **可维护性**：通过 `package.json` 和 `.env` 文件，方便管理和配置。
-3. **可移植性**：整个项目目录可以轻松打包并迁移到其他机器。
+```bash
+tar -czvf n8n_backup.tar.gz ~/n8n
+```
 
-如果您对某个步骤有疑问，或者需要进一步的帮助，请随时补充说明！
+#### 迁移到新服务器
+
+```bash
+# 解压备份文件
+tar -xzvf n8n_backup.tar.gz -C ~/
+
+# 进入目录并安装依赖
+cd ~/n8n
+npm install
+
+# 重新启动服务
+launchctl load ~/Library/LaunchAgents/com.n8n.plist
+launchctl start com.n8n
+```
+
+## 10. 配置 Webhook URL（反向代理场景）
+
+### Linux 和 macOS
+
+如果 n 8 n 运行在反向代理后面（如 Nginx），需要设置 WEBHOOK_URL：
+
+```bash
+# 临时设置
+export WEBHOOK_URL=https://你的域名.com/
+
+# 永久设置（添加到 .env 文件）
+echo 'WEBHOOK_URL=https://你的域名.com/' >> .env
+
+# 重启服务使配置生效
+# Linux
+pm2 restart n8n
+
+# macOS
+launchctl stop com.n8n
+launchctl start com.n8n
+```
+
+## 11. 升级 n 8 n
+
+### Linux 和 macOS
+
+```bash
+# 进入项目目录
+# Linux: cd /www/wwwroot/n8n
+# macOS: cd ~/n8n
+
+# 更新 n8n
+npm update n8n
+
+# 重启服务
+# Linux: pm2 restart n8n
+# macOS: launchctl stop com.n8n && launchctl start com.n8n
+
+# 验证版本
+npm list n8n
+```
+
+## 12. 汉化
+
+### Linux 和 macOS
+
+1. [下载中文语言包](https://github.com/other-blowsnow/n8n-i18n-chinese/releases)，注意版本需要和 n 8 n 相同
+![](https://qhdtc.oss-cn-chengdu.aliyuncs.com/obsidian/20250819101755147.png)
+
+2. 找到路径：
+   - Linux: `/www/wwwroot/n8n/node_modules/n8n-editor-ui/dist`
+   - macOS: `~/n8n/node_modules/n8n-editor-ui/dist`
+4. 下载对应版本的 editor-ui. Tar. Gz 文件
+5. 解压到 dist 目录下替换
+6. 设置环境变量 `N8N_DEFAULT_LOCALE=zh-CN`：
+
+   ```bash
+   echo 'N8N_DEFAULT_LOCALE=zh-CN' >> .env
+   ```
+
+7. 重启 n 8 n 服务：
+   - Linux: `pm2 restart n8n`
+   - macOS: `launchctl stop com.n8n && launchctl start com.n8n`
+
+## 常用命令参考
+
+| 操作          | Linux (PM 2)                            | macOS (launchd)                                     |              |
+| ----------- | --------------------------------------- | --------------------------------------------------- | ------------ |
+| 启动 n 8 n    | `pm2 start n8n`                         | `launchctl start com.n8n`                           |              |
+| 停止 n 8 n    | `pm2 stop n8n`                          | `launchctl stop com.n8n`                            |              |
+| 重启 n 8 n    | `pm2 restart n8n`                       | `launchctl stop com.n8n && launchctl start com.n8n` |              |
+| 查看 n 8 n 状态 | `pm2 list`                              | `launchctl list                                     | grep n 8 n ` |
+| 查看 n 8 n 日志 | `pm2 logs n8n`                          | `tail -f ~/n8n/logs/n8n.log`                        |              |
+| 更新 n 8 n    | `cd /www/wwwroot/n8n && npm update n8n` | `cd ~/n8n && npm update n8n`                        |              |

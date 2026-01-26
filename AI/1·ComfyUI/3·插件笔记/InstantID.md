@@ -1,5 +1,0 @@
----
-分类:
-  - 待补充
----
-https://github.com/cubiq/ComfyUI_InstantID
