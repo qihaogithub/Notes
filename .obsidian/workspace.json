@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "UI字体设计"
             }
+          },
+          {
+            "id": "c89aa4b073bd73aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -89,7 +104,6 @@
               "title": "书签"
             }
           }
-        ]
         ]
       }
     ],
@@ -185,13 +199,13 @@
             }
           },
           {
-            "id": "2bc02aae1d995d50",
+            "id": "470fa09364ce7357",
             "type": "leaf",
             "state": {
-              "type": "smart-lookup-view",
+              "type": "git-view",
               "state": {},
-              "icon": "search",
-              "title": "Smart Lookup"
+              "icon": "git-pull-request",
+              "title": "源代码管理"
             }
           }
         ],
@@ -221,44 +235,44 @@
       "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "1d0e755ce487538c",
+  "active": "c89aa4b073bd73aa",
   "lastOpenFiles": [
     "专业/5·视觉设计/文字/UI字体设计.md",
-    "兴趣/编程/2·项目/镜像figma/文件详情显示异常.md",
-    "兴趣/编程/2·项目/镜像figma/团队文件同步失败.md",
-    "兴趣/编程/3·笔记/Vibe-Coding-Skills测试指南.md",
-    "兴趣/编程/3·笔记/3·笔记.md",
-    "兴趣/编程/2·项目/镜像figma/自动化测试/Untitled.md",
-    "兴趣/编程/2·项目/预览/需求文档.md",
-    "兴趣/编程/2·项目/预览/Untitled.md",
-    "兴趣/编程/2·项目/切图教程.md",
-    "兴趣/编程/2·项目/今日收获内容分类说明.md",
-    "兴趣/编程/2·项目/2·项目.md",
-    "兴趣/编程/2·项目/Untitled.md",
-    "兴趣/编程/2·项目/原型图编辑网站需求文档.md",
-    "兴趣/小区/未命名 1.md",
-    "兴趣/编程/2·项目/预览",
-    "兴趣/编程/2·项目/活动编排系统/智能容器 + 原子组件.md",
-    "兴趣/编程/2·项目/活动编排系统/AI专用组件库.md",
-    "兴趣/编程/2·项目/活动编排系统/画布组件管理系统 .md",
-    "兴趣/编程/2·项目/活动编排系统/新需求文档.md",
-    "兴趣/编程/2·项目/活动编排系统/AI生成页面.md",
-    "兴趣/编程/2·项目/活动编排系统",
-    "兴趣/编程/2·项目/活动系统/资源预览系统/Untitled.md",
-    "兴趣/编程/2·项目/活动系统/资源预览系统/Untitled 2.md",
-    "兴趣/编程/2·项目/活动系统/资源预览系统/Untitled 1.md",
-    "兴趣/编程/2·项目/活动系统/插件/Untitled.md",
-    "兴趣/编程/2·项目/活动系统/问题.md",
-    "兴趣/编程/2·项目/活动系统/资源预览系统",
-    "兴趣/编程/2·项目/活动系统/插件",
-    "兴趣/编程/2·项目/活动系统",
-    "兴趣/编程/2·项目/日志自动化/Untitled.md",
-    "兴趣/编程/2·项目/日志自动化",
-    "兴趣/编程/2·项目/插件/问题.md",
-    "兴趣/编程/2·项目/插件",
-    "兴趣/编程/2·项目/镜像figma/自动化测试",
-    "兴趣/编程/2·项目/镜像figma",
-    "兴趣/小区",
+    "conflict-files-obsidian-git.md",
+    "专业/5·视觉设计/·视觉设计知识树.md",
+    "工作/开发/设计规范CMS/需求文档.md",
+    "工作/开发/设计规范CMS/技术文档.md",
+    "工作/开发/设计规范CMS/UI界面设计文档.md",
+    "工作/开发/设计规范CMS",
+    "工作/开发",
+    "兴趣/编程/通用编程提示词.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/scaffold.sh",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/planzh.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/plan.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/designzh.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/svelte-todo/design.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/scaffold.sh",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/planzh.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/plan.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/designzh.md",
+    "兴趣/编程/superpowers/tests/subagent-driven-dev/go-fractals/design.md",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/writing-plans.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/test-driven-development.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/systematic-debugging.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/requesting-code-review.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/executing-plans.txt",
+    "兴趣/编程/superpowers/tests/skill-triggering/prompts/dispatching-parallel-agents.txt",
+    "兴趣/编程/superpowers/skills/writing-skills/examples/CLAUDE_MD_TESTINGzh.md",
+    "兴趣/编程/superpowers/skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+    "兴趣/编程/superpowers/tests/claude-code/README.md",
+    "兴趣/编程/superpowers/tests/claude-code/READMEzh.md",
+    "兴趣/编程/superpowers/skills/writing-skills/testing-skills-with-subagentszh.md",
+    "兴趣/编程/superpowers/skills/writing-skills/testing-skills-with-subagents.md",
+    "兴趣/编程/superpowers/skills/writing-skills/persuasion-principleszh.md",
+    "兴趣/编程/superpowers/skills/writing-skills/persuasion-principles.md",
+    "兴趣/编程/superpowers/skills/writing-skills/anthropic-best-practiceszh.md",
+    "兴趣/编程/superpowers/skills/writing-skills/anthropic-best-practices.md",
+    "兴趣/编程/superpowers/skills/writing-skills/SKILLzh.md",
     "z·附件/Pasted image 20251203114518.png",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",

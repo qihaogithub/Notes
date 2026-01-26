@@ -1,7 +1,9 @@
 # Ignore all MP4 files
 *.mp4
 
-
-
 # Ignore Smart Environment folder
 .smart-env
+
+# Ignore AI plugin database files
+.smtcmp_json_db/
+.smtcmp_vector_db.tar.gz
