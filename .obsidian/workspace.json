@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "兴趣/编程/linux/frp.md",
+                "file": "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "frp"
+              "title": "1Panel + AI Vibe Coding 完整实战指南"
             }
           }
         ]
@@ -213,8 +213,10 @@
   },
   "active": "1d0e755ce487538c",
   "lastOpenFiles": [
-    "兴趣/编程/linux/linux.md",
     "兴趣/编程/linux/frp.md",
+    "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
+    "兴趣/编程/linux/1Panel",
+    "兴趣/编程/linux/linux.md",
     "兴趣/编程/opencode/企业版 (Enterprise).md",
     "兴趣/编程/opencode/配置.md",
     "兴趣/编程/opencode/介绍.md",
@@ -243,12 +245,10 @@
     "AI/sync.ffs_lock",
     "兴趣/编程/opencode/usage/zen.md",
     "兴趣/编程/opencode/usage/web.md",
-    "兴趣/编程/opencode/usage/tui.md",
     "兴趣/编程/opencode/usage",
     "兴趣/编程/opencode/configure",
     "兴趣/编程/opencode",
     "工作/开发/设计规范CMS",
-    "工作/开发",
     "z·附件/Pasted image 20251203114518.png",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
