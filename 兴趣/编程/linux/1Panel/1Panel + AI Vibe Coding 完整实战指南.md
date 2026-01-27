@@ -1,6 +1,6 @@
 ---
 创建日期: 2026-01-27T12:19:02+08:00
-修改日期: 2026-01-27T14:32:33+08:00
+修改日期: 2026-01-27T15:39:57+08:00
 ---
 
 
@@ -92,18 +92,7 @@ npm run build
 - **主域名**：填一个假域名，如 `mysite.local`
 - **网站目录**：1 Panel 默认会建在 `/opt/1panel/...`
 
-**骚操作**：删掉那个默认目录，建立一个软连接指向您的 dist 目录：
-```bash
-# 假设 1Panel 建的目录是 /opt/1panel/www/sites/ui-preview.local/index
-rm -rf /opt/1panel/www/sites/ui-preview.local/index
-# 建立连接：让 1Panel 直接读取您的构建结果
-ln -s /home/qihao/Projects/vibe-workspace/UI-Preview/dist /opt/1panel/www/sites/ui-preview.local/index
-```
 
-⚠️ **注意**：
-- 如果 Nginx 报 403 错误，说明 Nginx 用户没权限读取您的 Home 目录。简单粗暴的解决方法是给 dist 目录 `chmod 755`。
-- **如果报 404 错误**：检查 Nginx 配置文件中的 `root` 路径。1 Panel 生成的配置可能写的是 `/www/sites/...`（缺少 `/opt/1panel` 前缀），需要修改为 `/opt/1panel/www/sites/...`。同时检查 `access_log` 和 `error_log` 路径是否也需要修正。进入 1 Panel -> 网站 -> 设置 -> 配置文件，手动修正这些路径。
-- **如果保存配置时报错 "No such file or directory"**：说明日志目录不存在。先在终端执行 `mkdir -p /opt/1panel/www/sites/ui-preview.local/log` 创建目录，然后再保存配置。
 
 ### 3. 给 AI 的指令 (Prompt)
 
