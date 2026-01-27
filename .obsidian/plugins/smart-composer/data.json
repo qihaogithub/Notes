@@ -479,16 +479,16 @@
       "enable": true
     },
     {
-      "providerId": "魔塔",
       "providerType": "openai-compatible",
+      "providerId": "魔塔",
       "id": "GLM-4.7",
       "model": "ZhipuAI/GLM-4.7",
       "promptLevel": 1,
       "enable": true
     },
     {
-      "providerId": "魔塔",
       "providerType": "openai-compatible",
+      "providerId": "魔塔",
       "id": "GLM-4.7-Flash",
       "model": "ZhipuAI/GLM-4.7-Flash",
       "promptLevel": 1,

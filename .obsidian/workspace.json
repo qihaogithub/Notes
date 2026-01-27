@@ -205,14 +205,11 @@
       "smart-composer:Open smart composer": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "templater-obsidian:Templater": false,
-      "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Connections: Open random connection": true,
       "obsidian42-brat:BRAT": false,
-      "i18n:I18N": false,
-      "smart-connections:Smart Lookup: Open lookup view": false
+      "i18n:I18N": false
     }
   },
-  "active": "734c9b046655f697",
+  "active": "82492a4c61449a88",
   "lastOpenFiles": [
     "兴趣/编程/linux/frp.md",
     "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
