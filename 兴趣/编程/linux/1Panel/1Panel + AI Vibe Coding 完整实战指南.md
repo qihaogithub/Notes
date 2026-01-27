@@ -94,7 +94,7 @@ npm run build
 
 **骚操作**：删掉那个默认目录，建立一个软连接指向您的 dist 目录：
 ```bash
-# 假设 1Panel 建的目录是 /opt/1panel/apps/openresty/.../mysite.local/index
+# 假设 1Panel 建的目录是 /opt/1panel/www/sites/ui-preview.local/index
 rm -rf /opt/1panel/www/sites/ui-preview.local/index
 # 建立连接：让 1Panel 直接读取您的构建结果
 ln -s /home/qihao/Projects/vibe-workspace/UI-Preview/dist /opt/1panel/www/sites/ui-preview.local/index
