@@ -53,13 +53,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "兴趣/微信备份.md",
+                "file": "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "微信备份 的大纲"
+              "title": "1Panel + AI Vibe Coding 完整实战指南 的大纲"
             }
           },
           {
@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -211,7 +212,7 @@
       "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "1d0e755ce487538c",
+  "active": "734c9b046655f697",
   "lastOpenFiles": [
     "兴趣/编程/linux/frp.md",
     "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
