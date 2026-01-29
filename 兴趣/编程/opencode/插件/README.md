@@ -1,56 +1,61 @@
+---
+创建日期: 2026-01-29T17:00:37+08:00
+修改日期: 2026-01-29T17:30:35+08:00
+---
 # Antigravity + Gemini CLI OAuth Plugin for Opencode
 
-Enable Opencode to authenticate against **Antigravity** (Google's IDE) via OAuth so you can use Antigravity rate limits and access models like `gemini-3-pro` and `claude-opus-4-5-thinking` with your Google credentials.
 
-## What You Get
+使 OpenCode 能够通过 OAuth 对 **Antigravity**（Google 的 IDE）进行身份验证，以便您可以使用 Antigravity 的速率限制并使用您的 Google 凭据访问 `gemini-3-pro` 和 `claude-opus-4-5-thinking` 等模型。
 
-- **Claude Opus 4.5, Sonnet 4.5** and **Gemini 3 Pro/Flash** via Google OAuth
-- **Multi-account support** — add multiple Google accounts, auto-rotates when rate-limited
-- **Dual quota system** — access both Antigravity and Gemini CLI quotas from one plugin
-- **Thinking models** — extended thinking for Claude and Gemini 3 with configurable budgets
-- **Google Search grounding** — enable web search for Gemini models (auto or always-on)
-- **Auto-recovery** — handles session errors and tool failures automatically
-- **Plugin compatible** — works alongside other OpenCode plugins (oh-my-opencode, dcp, etc.)
+## 您将获得
+
+- 通过 Google OAuth 访问 **Claude Opus 4.5、Sonnet 4.5** 和 **Gemini 3 Pro/Flash**
+- **多账户支持** — 添加多个 Google 账户，在达到速率限制时自动轮换
+- **双重配额系统** — 从一个插件同时访问 Antigravity 和 Gemini CLI 配额
+- **思考模型** — 为 Claude 和 Gemini 3 提供可配置预算的扩展思考
+- **Google 搜索 grounding** — 为 Gemini 模型启用网络搜索（自动或始终开启）
+- **自动恢复** — 自动处理会话错误和工具失败
+- **插件兼容** — 与其他 OpenCode 插件（oh-my-opencode、dcp 等）一起使用
 
 ---
 
 <details open>
-<summary><b>⚠️ Terms of Service Warning — Read Before Installing</b></summary>
+<summary><b>⚠️ 服务条款警告 — 安装前请阅读</b></summary>
 
 > [!CAUTION]
-> Using this plugin may violate Google's Terms of Service. A small number of users have reported their Google accounts being **banned** or **shadow-banned** (restricted access without explicit notification).
+> 使用此插件可能违反 Google 的服务条款。少数用户报告其 Google 账户已被**封禁**或**被暗中封禁**（限制访问但未明确通知）。
 >
-> **High-risk scenarios:**
-> - 🚨 **Fresh Google accounts** have a very high chance of getting banned
-> - 🚨 **New accounts with Pro/Ultra subscriptions** are frequently flagged and banned
+> **高风险场景：**
+> - 🚨 **新的 Google 账户**被封禁的可能性很高
+> - 🚨 **拥有 Pro/Ultra 订阅的新账户**经常被标记并封禁
 >
-> **By using this plugin, you acknowledge:**
-> - This is an unofficial tool not endorsed by Google
-> - Your account may be suspended or permanently banned
-> - You assume all risks associated with using this plugin
+> **使用此插件，即表示您确认：**
+> - 这是一个非官方工具，未经 Google 认可
+> - 您的账户可能会被暂停或永久封禁
+> - 您承担使用此插件的所有风险
 >
-> **Recommendation:** Use an established Google account that you don't rely on for critical services. Avoid creating new accounts specifically for this plugin.
+> **建议：** 使用一个不依赖关键服务的现有 Google 账户。避免为此插件专门创建新账户。
 
 </details>
 
 ---
 
-## Installation
+## 安装
 
 <details open>
-<summary><b>For Humans</b></summary>
+<summary><b>面向普通用户</b></summary>
 
-**Option A: Let an LLM do it**
+**选项 A：让 LLM 完成**
 
-Paste this into any LLM agent (Claude Code, OpenCode, Cursor, etc.):
+将此内容粘贴到任何 LLM 代理（Claude Code、OpenCode、Cursor 等）中：
 
 ```
-Install the opencode-antigravity-auth plugin and add the Antigravity model definitions to ~/.config/opencode/opencode.json by following: https://raw.githubusercontent.com/NoeFabris/opencode-antigravity-auth/dev/README.md
+按照 https://raw.githubusercontent.com/NoeFabris/opencode-antigravity-auth/dev/README.md 的说明安装 opencode-antigravity-auth 插件并将 Antigravity 模型定义添加到 ~/.config/opencode/opencode.json
 ```
 
-**Option B: Manual setup**
+**选项 B：手动设置**
 
-1. **Add the plugin** to `~/.config/opencode/opencode.json`:
+1. **添加插件**到 `~/.config/opencode/opencode.json`：
 
    ```json
    {
@@ -58,17 +63,17 @@ Install the opencode-antigravity-auth plugin and add the Antigravity model defin
    }
    ```
 
-   > Want bleeding-edge features? Use `opencode-antigravity-auth@beta` instead.
+   > 想要最新功能？使用 `opencode-antigravity-auth@beta` 代替。
 
-2. **Login** with your Google account:
+2. **登录**您的 Google 账户：
 
    ```bash
    opencode auth login
    ```
 
-3. **Add models** — copy the [full configuration](#models) below
+3. **添加模型** — 复制下方的[完整配置](#models)
 
-4. **Use it:**
+4. **使用：**
 
    ```bash
    opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --variant=max
@@ -77,21 +82,21 @@ Install the opencode-antigravity-auth plugin and add the Antigravity model defin
 </details>
 
 <details>
-<summary><b>For LLM Agents</b></summary>
+<summary><b>面向 LLM 代理</b></summary>
 
-### Step-by-Step Instructions
+### 分步说明
 
-1. Edit the OpenCode configuration file at `~/.config/opencode/opencode.json`
+1. 编辑位于 `~/.config/opencode/opencode.json` 的 OpenCode 配置文件
    
-   > **Note**: This path works on all platforms. On Windows, `~` resolves to your user home directory (e.g., `C:\Users\YourName`).
+   > **注意**：此路径在所有平台上都有效。在 Windows 上，`~` 解析为您的用户主目录（例如 `C:\Users\YourName`）。
 
-2. Add the plugin to the `plugin` array
+2. 将插件添加到 `plugin` 数组
 
-3. Add the model definitions from the [Full models configuration](#models) section
+3. 从[完整模型配置](#models)部分添加模型定义
 
-4. Set `provider` to `"google"` and choose a model
+4. 将 `provider` 设置为 `"google"` 并选择一个模型
 
-### Verification
+### 验证
 
 ```bash
 opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --variant=max
@@ -101,40 +106,40 @@ opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --var
 
 ---
 
-## Models
+## 模型
 
-### Model Reference
+### 模型参考
 
-**Antigravity quota** (Claude + Gemini 3):
+**Antigravity 配额**（Claude + Gemini 3）：
 
-| Model | Variants | Notes |
+| 模型 | 变体 | 说明 |
 |-------|----------|-------|
-| `antigravity-gemini-3-pro` | low, high | Gemini 3 Pro with thinking |
-| `antigravity-gemini-3-flash` | minimal, low, medium, high | Gemini 3 Flash with thinking |
+| `antigravity-gemini-3-pro` | low, high | Gemini 3 Pro 带思考 |
+| `antigravity-gemini-3-flash` | minimal, low, medium, high | Gemini 3 Flash 带思考 |
 | `antigravity-claude-sonnet-4-5` | — | Claude Sonnet 4.5 |
-| `antigravity-claude-sonnet-4-5-thinking` | low, max | Claude Sonnet with extended thinking |
-| `antigravity-claude-opus-4-5-thinking` | low, max | Claude Opus with extended thinking |
+| `antigravity-claude-sonnet-4-5-thinking` | low, max | Claude Sonnet 带扩展思考 |
+| `antigravity-claude-opus-4-5-thinking` | low, max | Claude Opus 带扩展思考 |
 
-**Gemini CLI quota** (separate from Antigravity):
+**Gemini CLI 配额**（与 Antigravity 分开）：
 
-| Model | Notes |
+| 模型 | 说明 |
 |-------|-------|
 | `gemini-2.5-flash` | Gemini 2.5 Flash |
 | `gemini-2.5-pro` | Gemini 2.5 Pro |
-| `gemini-3-flash-preview` | Gemini 3 Flash (preview) |
-| `gemini-3-pro-preview` | Gemini 3 Pro (preview) |
+| `gemini-3-flash-preview` | Gemini 3 Flash（预览） |
+| `gemini-3-pro-preview` | Gemini 3 Pro（预览） |
 
-**Using variants:**
+**使用变体：**
 ```bash
 opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --variant=max
 ```
 
-For details on variant configuration and thinking levels, see [docs/MODEL-VARIANTS.md](docs/MODEL-VARIANTS.md).
+有关变体配置和思考级别的详细信息，请参阅 [docs/MODEL-VARIANTS.md](docs/MODEL-VARIANTS.md)。
 
 <details>
-<summary><b>Full models configuration (copy-paste ready)</b></summary>
+<summary><b>完整模型配置（可直接复制粘贴）</b></summary>
 
-Add this to your `~/.config/opencode/opencode.json`:
+将其添加到您的 `~/.config/opencode/opencode.json`：
 
 ```json
 {
@@ -216,71 +221,71 @@ Add this to your `~/.config/opencode/opencode.json`:
 
 ---
 
-## Multi-Account Setup
+## 多账户设置
 
-Add multiple Google accounts for higher combined quotas. The plugin automatically rotates between accounts when one is rate-limited.
+添加多个 Google 账户以获得更高的组合配额。当一个账户达到速率限制时，插件会自动在账户之间轮换。
 
 ```bash
-opencode auth login  # Run again to add more accounts
+opencode auth login  # 再次运行以添加更多账户
 ```
 
-**Account management options (via `opencode auth login`):**
-- **Check quotas** — View remaining API quota for each account
-- **Manage accounts** — Enable/disable specific accounts for rotation
+**账户管理选项（通过 `opencode auth login`）：**
+- **查看配额** — 查看每个账户的剩余 API 配额
+- **管理账户** — 启用/禁用特定账户进行轮换
 
-For details on load balancing, dual quota pools, and account storage, see [docs/MULTI-ACCOUNT.md](docs/MULTI-ACCOUNT.md).
+有关负载平衡、双重配额池和账户存储的详细信息，请参阅 [docs/MULTI-ACCOUNT.md](docs/MULTI-ACCOUNT.md)。
 
 ---
 
-## Troubleshoot
+## 故障排除
 
-> **Quick Reset**: Most issues can be resolved by deleting `~/.config/opencode/antigravity-accounts.json` and running `opencode auth login` again.
+> **快速重置**：大多数问题可以通过删除 `~/.config/opencode/antigravity-accounts.json` 并再次运行 `opencode auth login` 来解决。
 
-### Configuration Path (All Platforms)
+### 配置路径（所有平台）
 
-OpenCode uses `~/.config/opencode/` on **all platforms** including Windows.
+OpenCode 在**所有平台**（包括 Windows）上都使用 `~/.config/opencode/`。
 
-| File | Path |
+| 文件 | 路径 |
 |------|------|
-| Main config | `~/.config/opencode/opencode.json` |
-| Accounts | `~/.config/opencode/antigravity-accounts.json` |
-| Plugin config | `~/.config/opencode/antigravity.json` |
-| Debug logs | `~/.config/opencode/antigravity-logs/` |
+| 主配置 | `~/.config/opencode/opencode.json` |
+| 账户 | `~/.config/opencode/antigravity-accounts.json` |
+| 插件配置 | `~/.config/opencode/antigravity.json` |
+| 调试日志 | `~/.config/opencode/antigravity-logs/` |
 
-> **Windows users**: `~` resolves to your user home directory (e.g., `C:\Users\YourName`). Do NOT use `%APPDATA%`.
+> **Windows 用户**：`~` 解析为您的用户主目录（例如 `C:\Users\YourName`）。请勿使用 `%APPDATA%`。
 
 ---
 
-### Multi-Account Auth Issues
+### 多账户身份验证问题
 
-If you encounter authentication issues with multiple accounts:
+如果您遇到多账户的身份验证问题：
 
-1. Delete the accounts file:
+1. 删除账户文件：
    ```bash
    rm ~/.config/opencode/antigravity-accounts.json
    ```
-2. Re-authenticate:
+2. 重新验证：
    ```bash
    opencode auth login
    ```
 
 ---
 
-### 403 Permission Denied (`rising-fact-p41fc`)
+### 403 权限被拒绝 (`rising-fact-p41fc`)
 
-**Error:**
+**错误：**
 ```
 Permission 'cloudaicompanion.companions.generateChat' denied on resource 
 '//cloudaicompanion.googleapis.com/projects/rising-fact-p41fc/locations/global'
 ```
 
-**Cause:** Plugin falls back to a default project ID when no valid project is found. This works for Antigravity but fails for Gemini CLI models.
+**原因：** 当找不到有效项目时，插件会回退到默认项目 ID。这对 Antigravity 有效，但对 Gemini CLI 模型会失败。
 
-**Solution:**
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create or select a project
-3. Enable the **Gemini for Google Cloud API** (`cloudaicompanion.googleapis.com`)
-4. Add `projectId` to your accounts file:
+**解决方案：**
+1. 前往 [Google Cloud Console](https://console.cloud.google.com/)
+2. 创建或选择一个项目
+3. 启用 **Gemini for Google Cloud API** (`cloudaicompanion.googleapis.com`)
+4. 将 `projectId` 添加到您的账户文件：
    ```json
    {
      "accounts": [
@@ -293,13 +298,13 @@ Permission 'cloudaicompanion.companions.generateChat' denied on resource
    }
    ```
 
-> **Note**: Do this for each account in a multi-account setup.
+> **注意**：在多账户设置中，对每个账户都执行此操作。
 
 ---
 
-### Gemini Model Not Found
+### Gemini 模型未找到
 
-Add this to your `google` provider config:
+将此添加到您的 `google` 提供商配置中：
 
 ```json
 {
@@ -314,79 +319,79 @@ Add this to your `google` provider config:
 
 ---
 
-### Gemini 3 Models 400 Error ("Unknown name 'parameters'")
+### Gemini 3 模型 400 错误（"Unknown name 'parameters'"）
 
-**Error:**
+**错误：**
 ```
 Invalid JSON payload received. Unknown name "parameters" at 'request.tools[0]'
 ```
 
-**Causes:**
-- Tool schema incompatibility with Gemini's strict protobuf validation
-- MCP servers with malformed schemas
-- Plugin version regression
+**原因：**
+- 工具架构与 Gemini 的严格 protobuf 验证不兼容
+- 具有错误架构的 MCP 服务器
+- 插件版本回退
 
-**Solutions:**
-1. **Update to latest beta:**
+**解决方案：**
+1. **更新到最新 beta 版本：**
    ```json
    { "plugin": ["opencode-antigravity-auth@beta"] }
    ```
 
-2. **Disable MCP servers** one-by-one to find the problematic one
+2. **逐个禁用 MCP 服务器**以找到有问题的服务器
 
-3. **Add npm override:**
+3. **添加 npm 覆盖：**
    ```json
    { "provider": { "google": { "npm": "@ai-sdk/google" } } }
    ```
 
 ---
 
-### MCP Servers Causing Errors
+### MCP 服务器导致错误
 
-Some MCP servers have schemas incompatible with Antigravity's strict JSON format.
+某些 MCP 服务器的架构与 Antigravity 的严格 JSON 格式不兼容。
 
-**Common symptom:**
+**常见症状：**
 ```bash
 Invalid function name must start with a letter or underscore
 ```
 
-Sometimes it shows up as:
+有时显示为：
 ```bash
 GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function name must start with a letter or underscore
 ```
 
-This usually means an MCP tool name starts with a number (for example, a 1mcp key like `1mcp_*`). Rename the MCP key to start with a letter (e.g., `gw`) or disable that MCP entry for Antigravity models.
+这通常意味着 MCP 工具名称以数字开头（例如，1mcp 密钥如 `1mcp_*`）。将 MCP 密钥重命名为以字母开头（例如 `gw`）或为 Antigravity 模型禁用该 MCP 条目。
 
-**Diagnosis:**
-1. Disable all MCP servers in your config
-2. Enable one-by-one until error reappears
-3. Report the specific MCP in a [GitHub issue](https://github.com/NoeFabris/opencode-antigravity-auth/issues)
-
----
-
-### "All Accounts Rate-Limited" (But Quota Available)
-
-**Cause:** Cascade bug in `clearExpiredRateLimits()` in hybrid mode (fixed in recent beta).
-
-**Solutions:**
-1. Update to latest beta version
-2. If persists, delete accounts file and re-authenticate
-3. Try switching `account_selection_strategy` to `"sticky"` in `antigravity.json`
+**诊断：**
+1. 在配置中禁用所有 MCP 服务器
+2. 逐个启用，直到错误再次出现
+3. 在 [GitHub issue](https://github.com/NoeFabris/opencode-antigravity-auth/issues) 中报告特定的 MCP
 
 ---
 
-### Session Recovery
+### "所有账户已达到速率限制"（但配额可用）
 
-If you encounter errors during a session:
-1. Type `continue` to trigger the recovery mechanism
-2. If blocked, use `/undo` to revert to pre-error state
-3. Retry the operation
+**原因：** 混合模式下 `clearExpiredRateLimits()` 中的级联错误（在最近的 beta 版本中已修复）。
+
+**解决方案：**
+1. 更新到最新的 beta 版本
+2. 如果仍然存在，删除账户文件并重新验证
+3. 尝试在 `antigravity.json` 中将 `account_selection_strategy` 切换为 `"sticky"`
 
 ---
 
-### Using with Oh-My-OpenCode
+### 会话恢复
 
-**Important:** Disable the built-in Google auth to prevent conflicts:
+如果您在会话期间遇到错误：
+1. 输入 `continue` 触发恢复机制
+2. 如果被阻止，使用 `/undo` 恢复到错误前的状态
+3. 重试操作
+
+---
+
+### 与 Oh-My-OpenCode 一起使用
+
+**重要：** 禁用内置的 Google 身份验证以防止冲突：
 
 ```json
 // ~/.config/opencode/oh-my-opencode.json
@@ -401,53 +406,53 @@ If you encounter errors during a session:
 
 ---
 
-### Infinite `.tmp` Files Created
+### 创建无限 `.tmp` 文件
 
-**Cause:** When account is rate-limited and plugin retries infinitely, it creates many temp files.
+**原因：** 当账户达到速率限制且插件无限重试时，它会创建许多临时文件。
 
-**Workaround:**
-1. Stop OpenCode
-2. Clean up: `rm ~/.config/opencode/*.tmp`
-3. Add more accounts or wait for rate limit to expire
+**解决方法：**
+1. 停止 OpenCode
+2. 清理：`rm ~/.config/opencode/*.tmp`
+3. 添加更多账户或等待速率限制过期
 
 ---
 
-### OAuth Callback Issues
+### OAuth 回调问题
 
 <details>
-<summary><b>Safari OAuth Callback Fails (macOS)</b></summary>
+<summary><b>Safari OAuth 回调失败（macOS）</b></summary>
 
-**Symptoms:**
-- "fail to authorize" after successful Google login
-- Safari shows "Safari can't open the page"
+**症状：**
+- 成功登录 Google 后显示"授权失败"
+- Safari 显示"Safari 无法打开页面"
 
-**Cause:** Safari's "HTTPS-Only Mode" blocks `http://localhost` callback.
+**原因：** Safari 的"仅 HTTPS 模式"阻止 `http://localhost` 回调。
 
-**Solutions:**
+**解决方案：**
 
-1. **Use Chrome or Firefox** (easiest):
-   Copy the OAuth URL and paste into a different browser.
+1. **使用 Chrome 或 Firefox**（最简单）：
+   复制 OAuth URL 并粘贴到不同的浏览器中。
 
-2. **Disable HTTPS-Only Mode temporarily:**
-   - Safari > Settings (⌘,) > Privacy
-   - Uncheck "Enable HTTPS-Only Mode"
-   - Run `opencode auth login`
-   - Re-enable after authentication
+2. **临时禁用仅 HTTPS 模式：**
+   - Safari > 设置 (⌘,) > 隐私
+   - 取消勾选"启用仅 HTTPS 模式"
+   - 运行 `opencode auth login`
+   - 身份验证后重新启用
 
 </details>
 
 <details>
-<summary><b>Port Conflict (Address Already in Use)</b></summary>
+<summary><b>端口冲突（地址已被使用）</b></summary>
 
 **macOS / Linux:**
 ```bash
-# Find process using the port
+# 查找使用端口的进程
 lsof -i :51121
 
-# Kill if stale
+# 如果是陈旧进程则终止
 kill -9 <PID>
 
-# Retry
+# 重试
 opencode auth login
 ```
 
@@ -461,30 +466,30 @@ opencode auth login
 </details>
 
 <details>
-<summary><b>Docker / WSL2 / Remote Development</b></summary>
+<summary><b>Docker / WSL2 / 远程开发</b></summary>
 
-OAuth callback requires browser to reach `localhost` on the machine running OpenCode.
+OAuth 回调需要浏览器能够到达运行 OpenCode 的机器上的 `localhost`。
 
 **WSL2:**
-- Use VS Code's port forwarding, or
-- Configure Windows → WSL port forwarding
+- 使用 VS Code 的端口转发，或
+- 配置 Windows → WSL 端口转发
 
-**SSH / Remote:**
+**SSH / 远程:**
 ```bash
 ssh -L 51121:localhost:51121 user@remote
 ```
 
-**Docker / Containers:**
-- OAuth with localhost redirect doesn't work in containers
-- Wait 30s for manual URL flow, or use SSH port forwarding
+**Docker / 容器:**
+- 容器中不支持使用 localhost 重定向的 OAuth
+- 等待 30 秒以进行手动 URL 流程，或使用 SSH 端口转发
 
 </details>
 
 ---
 
-### Configuration Key Typo: `plugin` not `plugins`
+### 配置键拼写错误：`plugin` 不是 `plugins`
 
-The correct key is `plugin` (singular):
+正确的键是 `plugin`（单数）：
 
 ```json
 {
@@ -492,27 +497,27 @@ The correct key is `plugin` (singular):
 }
 ```
 
-**Not** `"plugins"` (will cause "Unrecognized key" error).
+**不是** `"plugins"`（会导致"无法识别的键"错误）。
 
 ---
 
-### Migrating Accounts Between Machines
+### 在机器之间迁移账户
 
-When copying `antigravity-accounts.json` to a new machine:
-1. Ensure the plugin is installed: `"plugin": ["opencode-antigravity-auth@beta"]`
-2. Copy `~/.config/opencode/antigravity-accounts.json`
-3. If you get "API key missing" error, the refresh token may be invalid — re-authenticate
+将 `antigravity-accounts.json` 复制到新机器时：
+1. 确保插件已安装：`"plugin": ["opencode-antigravity-auth@beta"]`
+2. 复制 `~/.config/opencode/antigravity-accounts.json`
+3. 如果出现"API 密钥缺失"错误，刷新令牌可能无效 — 重新验证
 
-## Known Plugin Interactions
-For details on load balancing, dual quota pools, and account storage, see [docs/MULTI-ACCOUNT.md](docs/MULTI-ACCOUNT.md).
+## 已知插件交互
+有关负载平衡、双重配额池和账户存储的详细信息，请参阅 [docs/MULTI-ACCOUNT.md](docs/MULTI-ACCOUNT.md)。
 
 ---
 
-## Plugin Compatibility
+## 插件兼容性
 
 ### @tarquinen/opencode-dcp
 
-DCP creates synthetic assistant messages that lack thinking blocks. **List this plugin BEFORE DCP:**
+DCP 创建缺少思考块的合成助手消息。**将此插件列在 DCP 之前：**
 
 ```json
 {
@@ -525,7 +530,7 @@ DCP creates synthetic assistant messages that lack thinking blocks. **List this 
 
 ### oh-my-opencode
 
-Disable built-in auth and override agent models in `oh-my-opencode.json`:
+在 `oh-my-opencode.json` 中禁用内置身份验证并覆盖代理模型：
 
 ```json
 {
@@ -538,17 +543,17 @@ Disable built-in auth and override agent models in `oh-my-opencode.json`:
 }
 ```
 
-> **Tip:** When spawning parallel subagents, enable `pid_offset_enabled: true` in `antigravity.json` to distribute sessions across accounts.
+> **提示：** 生成并行子代理时，在 `antigravity.json` 中启用 `pid_offset_enabled: true` 以跨账户分配会话。
 
-### Plugins you don't need
+### 您不需要的插件
 
-- **gemini-auth plugins** — Not needed. This plugin handles all Google OAuth.
+- **gemini-auth 插件** — 不需要。此插件处理所有 Google OAuth。
 
 ---
 
-## Configuration
+## 配置
 
-Create `~/.config/opencode/antigravity.json` for optional settings:
+创建 `~/.config/opencode/antigravity.json` 以进行可选设置：
 
 ```json
 {
@@ -556,121 +561,121 @@ Create `~/.config/opencode/antigravity.json` for optional settings:
 }
 ```
 
-Most users don't need to configure anything — defaults work well.
+大多数用户不需要配置任何内容 — 默认设置效果很好。
 
-### Model Behavior
+### 模型行为
 
-| Option | Default | What it does |
-|--------|---------|--------------
-| `keep_thinking` | `false` | Preserve Claude's thinking across turns. **Warning:** enabling may degrade model stability. |
-| `session_recovery` | `true` | Auto-recover from tool errors |
-| `web_search.default_mode` | `"off"` | Gemini Google Search: `"auto"` or `"off"` |
+| 选项 | 默认值 | 作用 |
+|--------|---------|--------------|
+| `keep_thinking` | `false` | 在回合间保留 Claude 的思考。**警告：** 启用可能会降低模型稳定性。 |
+| `session_recovery` | `true` | 从工具错误中自动恢复 |
+| `web_search.default_mode` | `"off"` | Gemini Google 搜索：`"auto"` 或 `"off"` |
 
-### Account Rotation
+### 账户轮换
 
-| Your Setup | Recommended Config |
+| 您的设置 | 推荐配置 |
 |------------|-------------------|
-| **1 account** | `"account_selection_strategy": "sticky"` |
-| **2-5 accounts** | Default (`"hybrid"`) works great |
-| **5+ accounts** | `"account_selection_strategy": "round-robin"` |
-| **Parallel agents** | Add `"pid_offset_enabled": true` |
+| **1 个账户** | `"account_selection_strategy": "sticky"` |
+| **2-5 个账户** | 默认（`"hybrid"`）效果很好 |
+| **5+ 个账户** | `"account_selection_strategy": "round-robin"` |
+| **并行代理** | 添加 `"pid_offset_enabled": true` |
 
-### Rate Limit Scheduling
+### 速率限制调度
 
-Control how the plugin handles rate limits:
+控制插件如何处理速率限制：
 
-| Option | Default | What it does |
+| 选项 | 默认值 | 作用 |
 |--------|---------|--------------|
-| `scheduling_mode` | `"cache_first"` | `"cache_first"` = wait for same account (preserves prompt cache), `"balance"` = switch immediately, `"performance_first"` = round-robin |
-| `max_cache_first_wait_seconds` | `60` | Max seconds to wait in cache_first mode before switching accounts |
-| `failure_ttl_seconds` | `3600` | Reset failure count after this many seconds (prevents old failures from permanently penalizing accounts) |
+| `scheduling_mode` | `"cache_first"` | `"cache_first"` = 等待同一账户（保留提示缓存），`"balance"` = 立即切换，`"performance_first"` = 轮询 |
+| `max_cache_first_wait_seconds` | `60` | 在 cache_first 模式下切换账户前等待的最长秒数 |
+| `failure_ttl_seconds` | `3600` | 在此秒数后重置失败计数（防止旧失败永久惩罚账户） |
 
-**When to use each mode:**
-- **cache_first** (default): Best for long conversations. Waits for the same account to recover, preserving your prompt cache.
-- **balance**: Best for quick tasks. Switches accounts immediately when rate-limited for maximum availability.
-- **performance_first**: Best for many short requests. Distributes load evenly across all accounts.
+**何时使用每种模式：**
+- **cache_first**（默认）：最适合长对话。等待同一账户恢复，保留您的提示缓存。
+- **balance**：最适合快速任务。达到速率限制时立即切换账户以获得最大可用性。
+- **performance_first**：最适合许多短请求。在所有账户之间均匀分配负载。
 
-### App Behavior
+### 应用行为
 
-| Option | Default | What it does |
+| 选项 | 默认值 | 作用 |
 |--------|---------|--------------|
-| `quiet_mode` | `false` | Hide toast notifications |
-| `debug` | `false` | Enable debug logging |
-| `auto_update` | `true` | Auto-update plugin |
+| `quiet_mode` | `false` | 隐藏 toast 通知 |
+| `debug` | `false` | 启用调试日志 |
+| `auto_update` | `true` | 自动更新插件 |
 
-For all options, see [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
+有关所有选项，请参阅 [docs/CONFIGURATION.md](docs/CONFIGURATION.md)。
 
-**Environment variables:**
+**环境变量：**
 ```bash
-OPENCODE_ANTIGRAVITY_DEBUG=1 opencode   # Enable debug logging
-OPENCODE_ANTIGRAVITY_DEBUG=2 opencode   # Verbose logging
+OPENCODE_ANTIGRAVITY_DEBUG=1 opencode   # 启用调试日志
+OPENCODE_ANTIGRAVITY_DEBUG=2 opencode   # 详细日志
 ```
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-See the full [Troubleshooting Guide](docs/TROUBLESHOOTING.md) for solutions to common issues including:
+请参阅完整的[故障排除指南](docs/TROUBLESHOOTING.md)，了解常见问题的解决方案，包括：
 
-- Auth problems and token refresh
-- "Model not found" errors
-- Session recovery
-- Gemini CLI permission errors
-- Safari OAuth issues
-- Plugin compatibility
-- Migration guides
-
----
-
-## Documentation
-
-- [Configuration](docs/CONFIGURATION.md) — All configuration options
-- [Multi-Account](docs/MULTI-ACCOUNT.md) — Load balancing, dual quota pools, account storage
-- [Model Variants](docs/MODEL-VARIANTS.md) — Thinking budgets and variant system
-- [Troubleshooting](docs/TROUBLESHOOTING.md) — Common issues and fixes
-- [Architecture](docs/ARCHITECTURE.md) — How the plugin works
-- [API Spec](docs/ANTIGRAVITY_API_SPEC.md) — Antigravity API reference
+- 身份验证问题和令牌刷新
+- "模型未找到"错误
+- 会话恢复
+- Gemini CLI 权限错误
+- Safari OAuth 问题
+- 插件兼容性
+- 迁移指南
 
 ---
 
-## Support
+## 文档
 
-If this plugin helps you, consider supporting its maintenance:
+- [配置](docs/CONFIGURATION.md) — 所有配置选项
+- [多账户](docs/MULTI-ACCOUNT.md) — 负载平衡、双重配额池、账户存储
+- [模型变体](docs/MODEL-VARIANTS.md) — 思考预算和变体系统
+- [故障排除](docs/TROUBLESHOOTING.md) — 常见问题和修复
+- [架构](docs/ARCHITECTURE.md) — 插件工作原理
+- [API 规范](docs/ANTIGRAVITY_API_SPEC.md) — Antigravity API 参考
+
+---
+
+## 支持
+
+如果此插件对您有帮助，请考虑支持其维护：
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S81QBOIR)
 
 ---
 
-## Credits
+## 致谢
 
 - [opencode-gemini-auth](https://github.com/jenslys/opencode-gemini-auth) by [@jenslys](https://github.com/jenslys)
 - [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)
 
-## License
+## 许可证
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT 许可证。详细信息请参阅 [LICENSE](LICENSE)。
 
 <details>
-<summary><b>Legal</b></summary>
+<summary><b>法律</b></summary>
 
-### Intended Use
+### 预期用途
 
-- Personal / internal development only
-- Respect internal quotas and data handling policies
-- Not for production services or bypassing intended limits
+- 仅用于个人/内部开发
+- 尊重内部配额和数据处理策略
+- 不用于生产服务或绕过预期限制
 
-### Warning
+### 警告
 
-By using this plugin, you acknowledge:
+使用此插件，即表示您确认：
 
-- **Terms of Service risk** — This approach may violate ToS of AI model providers
-- **Account risk** — Providers may suspend or ban accounts
-- **No guarantees** — APIs may change without notice
-- **Assumption of risk** — You assume all legal, financial, and technical risks
+- **服务条款风险** — 此方法可能违反 AI 模型提供商的服务条款
+- **账户风险** — 提供商可能会暂停或封禁账户
+- **无保证** — API 可能会在不通知的情况下更改
+- **风险承担** — 您承担所有法律、财务和技术风险
 
-### Disclaimer
+### 免责声明
 
-- Not affiliated with Google. This is an independent open-source project.
-- "Antigravity", "Gemini", "Google Cloud", and "Google" are trademarks of Google LLC.
+- 与 Google 无关。这是一个独立的开源项目。
+- "Antigravity"、"Gemini"、"Google Cloud" 和 "Google" 是 Google LLC 的商标。
 
 </details>
