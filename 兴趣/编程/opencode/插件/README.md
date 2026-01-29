@@ -1,9 +1,9 @@
 ---
 创建日期: 2026-01-29T17:00:37+08:00
-修改日期: 2026-01-29T17:30:35+08:00
+修改日期: 2026-01-29T17:37:32+08:00
 ---
-# Antigravity + Gemini CLI OAuth Plugin for Opencode
 
+# Antigravity + Gemini CLI OAuth Plugin for Opencode
 
 使 OpenCode 能够通过 OAuth 对 **Antigravity**（Google 的 IDE）进行身份验证，以便您可以使用 Antigravity 的速率限制并使用您的 Google 凭据访问 `gemini-3-pro` 和 `claude-opus-4-5-thinking` 等模型。
 
@@ -19,8 +19,7 @@
 
 ---
 
-<details open>
-<summary><b>⚠️ 服务条款警告 — 安装前请阅读</b></summary>
+## ⚠️ 服务条款警告 — 安装前请阅读
 
 > [!CAUTION]
 > 使用此插件可能违反 Google 的服务条款。少数用户报告其 Google 账户已被**封禁**或**被暗中封禁**（限制访问但未明确通知）。
@@ -36,14 +35,11 @@
 >
 > **建议：** 使用一个不依赖关键服务的现有 Google 账户。避免为此插件专门创建新账户。
 
-</details>
-
 ---
 
 ## 安装
 
-<details open>
-<summary><b>面向普通用户</b></summary>
+### 面向普通用户
 
 **选项 A：让 LLM 完成**
 
@@ -79,12 +75,9 @@
    opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --variant=max
    ```
 
-</details>
+### 面向 LLM 代理
 
-<details>
-<summary><b>面向 LLM 代理</b></summary>
-
-### 分步说明
+#### 分步说明
 
 1. 编辑位于 `~/.config/opencode/opencode.json` 的 OpenCode 配置文件
    
@@ -96,13 +89,11 @@
 
 4. 将 `provider` 设置为 `"google"` 并选择一个模型
 
-### 验证
+#### 验证
 
 ```bash
 opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --variant=max
 ```
-
-</details>
 
 ---
 
@@ -117,8 +108,8 @@ opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --var
 | `antigravity-gemini-3-pro` | low, high | Gemini 3 Pro 带思考 |
 | `antigravity-gemini-3-flash` | minimal, low, medium, high | Gemini 3 Flash 带思考 |
 | `antigravity-claude-sonnet-4-5` | — | Claude Sonnet 4.5 |
-| `antigravity-claude-sonnet-4-5-thinking` | low, max | Claude Sonnet 带扩展思考 |
-| `antigravity-claude-opus-4-5-thinking` | low, max | Claude Opus 带扩展思考 |
+| `antigravity-claude-sonnet-4-5-thinking` | low, max | Claude Sonnet 4.5 带扩展思考 |
+| `antigravity-claude-opus-4-5-thinking` | low, max | Claude Opus 4.5 带扩展思考 |
 
 **Gemini CLI 配额**（与 Antigravity 分开）：
 
@@ -136,8 +127,7 @@ opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --var
 
 有关变体配置和思考级别的详细信息，请参阅 [docs/MODEL-VARIANTS.md](docs/MODEL-VARIANTS.md)。
 
-<details>
-<summary><b>完整模型配置（可直接复制粘贴）</b></summary>
+### 完整模型配置（可直接复制粘贴）
 
 将其添加到您的 `~/.config/opencode/opencode.json`：
 
@@ -217,8 +207,6 @@ opencode run "Hello" --model=google/antigravity-claude-sonnet-4-5-thinking --var
 }
 ```
 
-</details>
-
 ---
 
 ## 多账户设置
@@ -254,8 +242,6 @@ OpenCode 在**所有平台**（包括 Windows）上都使用 `~/.config/opencode
 
 > **Windows 用户**：`~` 解析为您的用户主目录（例如 `C:\Users\YourName`）。请勿使用 `%APPDATA%`。
 
----
-
 ### 多账户身份验证问题
 
 如果您遇到多账户的身份验证问题：
@@ -268,8 +254,6 @@ OpenCode 在**所有平台**（包括 Windows）上都使用 `~/.config/opencode
    ```bash
    opencode auth login
    ```
-
----
 
 ### 403 权限被拒绝 (`rising-fact-p41fc`)
 
@@ -300,8 +284,6 @@ Permission 'cloudaicompanion.companions.generateChat' denied on resource
 
 > **注意**：在多账户设置中，对每个账户都执行此操作。
 
----
-
 ### Gemini 模型未找到
 
 将此添加到您的 `google` 提供商配置中：
@@ -316,8 +298,6 @@ Permission 'cloudaicompanion.companions.generateChat' denied on resource
   }
 }
 ```
-
----
 
 ### Gemini 3 模型 400 错误（"Unknown name 'parameters'"）
 
@@ -344,8 +324,6 @@ Invalid JSON payload received. Unknown name "parameters" at 'request.tools[0]'
    { "provider": { "google": { "npm": "@ai-sdk/google" } } }
    ```
 
----
-
 ### MCP 服务器导致错误
 
 某些 MCP 服务器的架构与 Antigravity 的严格 JSON 格式不兼容。
@@ -367,8 +345,6 @@ GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function
 2. 逐个启用，直到错误再次出现
 3. 在 [GitHub issue](https://github.com/NoeFabris/opencode-antigravity-auth/issues) 中报告特定的 MCP
 
----
-
 ### "所有账户已达到速率限制"（但配额可用）
 
 **原因：** 混合模式下 `clearExpiredRateLimits()` 中的级联错误（在最近的 beta 版本中已修复）。
@@ -378,16 +354,12 @@ GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function
 2. 如果仍然存在，删除账户文件并重新验证
 3. 尝试在 `antigravity.json` 中将 `account_selection_strategy` 切换为 `"sticky"`
 
----
-
 ### 会话恢复
 
 如果您在会话期间遇到错误：
 1. 输入 `continue` 触发恢复机制
 2. 如果被阻止，使用 `/undo` 恢复到错误前的状态
 3. 重试操作
-
----
 
 ### 与 Oh-My-OpenCode 一起使用
 
@@ -404,8 +376,6 @@ GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function
 }
 ```
 
----
-
 ### 创建无限 `.tmp` 文件
 
 **原因：** 当账户达到速率限制且插件无限重试时，它会创建许多临时文件。
@@ -415,12 +385,9 @@ GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function
 2. 清理：`rm ~/.config/opencode/*.tmp`
 3. 添加更多账户或等待速率限制过期
 
----
-
 ### OAuth 回调问题
 
-<details>
-<summary><b>Safari OAuth 回调失败（macOS）</b></summary>
+#### Safari OAuth 回调失败（macOS）
 
 **症状：**
 - 成功登录 Google 后显示"授权失败"
@@ -439,10 +406,7 @@ GenerateContentRequest.tools[0].function_declarations[12].name: Invalid function
    - 运行 `opencode auth login`
    - 身份验证后重新启用
 
-</details>
-
-<details>
-<summary><b>端口冲突（地址已被使用）</b></summary>
+#### 端口冲突（地址已被使用）
 
 **macOS / Linux:**
 ```bash
@@ -463,10 +427,7 @@ taskkill /PID <PID> /F
 opencode auth login
 ```
 
-</details>
-
-<details>
-<summary><b>Docker / WSL2 / 远程开发</b></summary>
+#### Docker / WSL2 / 远程开发
 
 OAuth 回调需要浏览器能够到达运行 OpenCode 的机器上的 `localhost`。
 
@@ -483,10 +444,6 @@ ssh -L 51121:localhost:51121 user@remote
 - 容器中不支持使用 localhost 重定向的 OAuth
 - 等待 30 秒以进行手动 URL 流程，或使用 SSH 端口转发
 
-</details>
-
----
-
 ### 配置键拼写错误：`plugin` 不是 `plugins`
 
 正确的键是 `plugin`（单数）：
@@ -499,8 +456,6 @@ ssh -L 51121:localhost:51121 user@remote
 
 **不是** `"plugins"`（会导致"无法识别的键"错误）。
 
----
-
 ### 在机器之间迁移账户
 
 将 `antigravity-accounts.json` 复制到新机器时：
@@ -509,6 +464,7 @@ ssh -L 51121:localhost:51121 user@remote
 3. 如果出现"API 密钥缺失"错误，刷新令牌可能无效 — 重新验证
 
 ## 已知插件交互
+
 有关负载平衡、双重配额池和账户存储的详细信息，请参阅 [docs/MULTI-ACCOUNT.md](docs/MULTI-ACCOUNT.md)。
 
 ---
@@ -613,20 +569,6 @@ OPENCODE_ANTIGRAVITY_DEBUG=2 opencode   # 详细日志
 
 ---
 
-## 故障排除
-
-请参阅完整的[故障排除指南](docs/TROUBLESHOOTING.md)，了解常见问题的解决方案，包括：
-
-- 身份验证问题和令牌刷新
-- "模型未找到"错误
-- 会话恢复
-- Gemini CLI 权限错误
-- Safari OAuth 问题
-- 插件兼容性
-- 迁移指南
-
----
-
 ## 文档
 
 - [配置](docs/CONFIGURATION.md) — 所有配置选项
@@ -655,8 +597,7 @@ OPENCODE_ANTIGRAVITY_DEBUG=2 opencode   # 详细日志
 
 MIT 许可证。详细信息请参阅 [LICENSE](LICENSE)。
 
-<details>
-<summary><b>法律</b></summary>
+## 法律
 
 ### 预期用途
 
@@ -677,5 +618,3 @@ MIT 许可证。详细信息请参阅 [LICENSE](LICENSE)。
 
 - 与 Google 无关。这是一个独立的开源项目。
 - "Antigravity"、"Gemini"、"Google Cloud" 和 "Google" 是 Google LLC 的商标。
-
-</details>
