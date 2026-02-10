@@ -1,6 +1,6 @@
 ---
 创建日期: 2026-02-10T10:34:03+08:00
-修改日期: 2026-02-10T10:37:51+08:00
+修改日期: 2026-02-10T10:55:02+08:00
 ---
 针对你的具体路径和权限需求，我们需要在 Linux Mint 上配置两个不同的 NFS 导出规则，分别处理“普通用户权限”和“Root 权限”。
 
@@ -39,11 +39,21 @@ sudo exportfs -ra
 
 # 重启 NFS 服务确保状态刷新
 sudo systemctl restart nfs-kernel-server
+
+# 允许来自 Mac IP 的所有访问（最直接有效） 
+sudo ufw allow from 10.130.33.34 
+
+# 刷新防火墙 
+sudo ufw reload
+
+# 验证命令：看到输出路径即代表 Linux 准备好了 
+showmount -e localhost
 ```
 
 ### 第三步：在 macOS 上挂载
 
-在 Mac 上，建议将这两个目录挂载到桌面的文件夹中，方便编程。
+**注意：** 如果你的 Mac 开启了 **iCloud 云端同步文档**，挂载在 ~/Documents 可能会触发同步冲突或图标显示异常。  
+建议：如果遇到奇怪的权限问题，请改到 ~/nfs_shares/Linux_Home 这种不被 iCloud 监控的目录。
 
 1.  **创建挂载入口：**
 ```bash
@@ -51,32 +61,45 @@ mkdir -p ~/Documents/Linux_Home
 mkdir -p ~/Documents/Linux_1Panel
 ```
 
-2.  **手动挂载测试（请替换 `LinuxIP` 为你的 Mint 实际地址）：**
+2.  **手动挂载测试（使用你测试成功的命令）：**
 ```bash
 # 挂载 qihao 目录
-sudo mount -t nfs -o resvport,rw,nolock 10.130.33.131:/home/qihao ~/Documents/Linux_Home
+sudo mount -t nfs -o resvport,rw,nolock,vers=3,tcp 10.130.33.131:/home/qihao ~/Documents/Linux_Home
 
 # 挂载 1panel 目录
-sudo mount -t nfs -o resvport,rw,nolock 10.130.33.131:/opt/1panel ~/Documents/Linux_1Panel
+sudo mount -t nfs -o resvport,rw,nolock,vers=3,tcp 10.130.33.131:/opt/1panel ~/Documents/Linux_1Panel
 ```
 
-### 第四步：设置开机自动挂载（推荐）
+### 第四步：设置开机自动挂载
 
-为了避免每次开机都要敲命令，修改 Mac 的 `/etc/fstab`：
+**关键修改点：** Mac 修改 fstab 的专用命令是 vifs 不是 vips，而且由于 macOS 的安全机制，目录路径建议加引号或确保无空格。
 
-1.  在 Mac 终端执行：`sudo vips /etc/fstab` （或者 `sudo nano /etc/fstab`）
-2.  加入以下内容（注意将 `LinuxIP` 和 `你的Mac用户名` 替换掉）：
-    ```text
-    LinuxIP:/home/qihao /Users/你的Mac用户名/Documents/Linux_Home nfs rw,resvport,nolock,hard,bg,intr 0 0
-    LinuxIP:/opt/1panel /Users/你的Mac用户名/Documents/Linux_1Panel nfs rw,resvport,nolock,hard,bg,intr 0 0
-    ```
+1. 在 Mac 终端执行：
+
+```codeBash
+sudo vifs
+```
+
+vifs 是 macOS 官方工具，它会调用 vim 编辑器并检查语法。按 i 进入编辑模式，按 Esc 后输入 :wq 保存退出。
+
+1. 加入以下内容（**注意：Mac 的 fstab 不支持带空格的路径，也不支持 ~ 缩写，必须写全路径**）：
+
+```codeText
+10.130.33.131:/home/qihao /Users/qh2/Documents/Linux_Home nfs rw,resvport,nolock,vers=3,tcp,hard,bg,intr 0 0
+10.130.33.131:/opt/1panel /Users/qh2/Documents/Linux_1Panel nfs rw,resvport,nolock,vers=3,tcp,hard,bg,intr 0 0
+```
+
+- **参数补全说明**：
+- vers=3,tcp: 确保自动挂载时也使用你测试成功的协议。
+- bg: 背景挂载。如果开机时 Linux 没开，Mac 会在后台继续尝试，不会卡在开机画面。
+- hard,intr: 确保如果网络断开，程序在尝试读写时可以被“中断”，不会导致整个 Finder 永久死掉。
+
 
 ---
 
-### 特别提醒：针对 1 panel 和编程开发
+### 特别提醒
 
-1.  **权限风险**：由于我帮你把 `/opt/1panel` 映射成了 `root`，你在 Mac 上操作该文件夹时，拥有破坏 Linux 系统文件的能力（比如误删配置文件）。**请务必谨慎操作该目录下的文件。**
-2.  **IDE 配置**：
-    *   如果你用 **VS Code**：直接打开挂载后的桌面文件夹即可。
-    *   如果你用 **JetBrains (IntelliJ/PyCharm)**：在设置中关闭 `Safe Write` 功能（`Appearance & Behavior` -> `System Settings` -> 勾选掉 `Use "safe write"`）。因为 NFS 协议下，“安全写入”有时会导致文件清空。
-3.  **Git 性能**：如果你的项目里 `.git` 文件夹非常大，Mac 的 Finder 或 IDE 扫描索引时可能会有短暂延迟。这是由于 NFS 需要频繁同步小文件元数据，属正常现象。
+1. **权限风险**：/opt/1panel 映射为 root 后具有极高危险性。
+2. **IDE 配置 (JetBrains)**：关闭 Safe Write 极其重要，否则保存文件时可能会导致文件清空或 Permission Denied。
+3. **macOS 权限弹窗**：当你第一次通过 VS Code 访问挂载目录时，Mac 可能会弹出“终端想要访问文稿文件夹”，务必点**允许**。
+4. **软链接限制**：如果在 Linux 目录下有指向 /home 之外的软链接，NFS 默认可能无法跟随（Follow symlinks），这在开发时需留意。
