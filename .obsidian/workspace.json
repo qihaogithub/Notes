@@ -39,12 +39,14 @@
             "id": "e243a3458c58cb28",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.11.7"
+                "file": "兴趣/编程/linux/NFS挂载linux到mac.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.11.7"
+              "icon": "lucide-file",
+              "title": "NFS挂载linux到mac"
             }
           }
         ],
@@ -237,6 +239,7 @@
   },
   "active": "e243a3458c58cb28",
   "lastOpenFiles": [
+    "兴趣/编程/linux/NFS挂载linux到mac.md",
     "兴趣/编程/opencode/Configure/agents.md",
     "绿豆思维英语剥离对齐.md",
     "兴趣/编程/opencode/Configure/keybinds.md",
@@ -272,7 +275,6 @@
     "兴趣/笔记优化任务.md",
     "兴趣/编程/linux/frp.md",
     "兴趣/编程/linux/linux.md",
-    "兴趣/编程/opencode/配置.md",
     "z·附件/Pasted image 20251203114518.png",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
