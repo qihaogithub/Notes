@@ -1,25 +1,8 @@
 ---
 创建日期: 2026-02-25T13:36:40+08:00
-修改日期: 2026-02-25T15:50:11+08:00
+修改日期: 2026-02-25T16:45:42+08:00
 ---
-<div align="center">
-  <h1>Kaku</h1>
-  <p><em>一款为 AI 编程而生的快速、开箱即用的终端。</em></p>
-</div>
-
-<p align="center">
-  <a href="https://github.com/tw93/Kaku/stargazers"><img src="https://img.shields.io/github/stars/tw93/Kaku?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/tw93/Kaku/releases"><img src="https://img.shields.io/github/v/tag/tw93/Kaku?label=version&style=flat-square" alt="Version"></a>
-  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="https://github.com/tw93/Kaku/commits"><img src="https://img.shields.io/github/commit-activity/m/tw93/Kaku?style=flat-square" alt="Commits"></a>
-  <a href="https://twitter.com/HiTw93"><img src="https://img.shields.io/badge/follow-Tw93-red?style=flat-square&logo=Twitter" alt="Twitter"></a>
-</p>
-
-<p align="center">
-  <img src="assets/kaku.jpeg" alt="Kaku Screenshot" width="1000" />
-  <br/>
-  Kaku 是 <a href="https://github.com/wez/wezterm">WezTerm</a> 的深度定制分支，旨在提供开箱即用的体验。
-</p>
+Kaku 是 <a href="https://github.com/wez/wezterm">WezTerm</a> 的深度定制分支，旨在提供开箱即用的体验。
 
 ## 特性
 
