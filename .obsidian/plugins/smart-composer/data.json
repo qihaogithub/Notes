@@ -95,6 +95,15 @@
       "id": "gemini中转",
       "baseUrl": "https://gemini-qihao.deno.dev/",
       "apiKey": "AIzaSyA5x-Va3MP__MEZSIxk5JCTGW3Jgdo2MIY"
+    },
+    {
+      "type": "openai-compatible",
+      "id": "aiping",
+      "apiKey": "QC-0af7e73078a79301d2d913930612cd81-66abff36d747b272634b623213203ef1",
+      "baseUrl": "https://aiping.cn/api/v1",
+      "additionalSettings": {
+        "noStainless": true
+      }
     }
   ],
   "chatModels": [
@@ -473,24 +482,16 @@
     {
       "providerType": "openai-compatible",
       "providerId": "魔塔",
-      "id": "GLM-4.6V",
-      "model": "ZhipuAI/GLM-4.6V",
-      "promptLevel": 1,
-      "enable": true
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "魔塔",
-      "id": "GLM-4.7",
-      "model": "ZhipuAI/GLM-4.7",
-      "promptLevel": 1,
-      "enable": true
-    },
-    {
-      "providerType": "openai-compatible",
-      "providerId": "魔塔",
       "id": "GLM-4.7-Flash",
       "model": "ZhipuAI/GLM-4.7-Flash",
+      "promptLevel": 1,
+      "enable": true
+    },
+    {
+      "providerId": "aiping",
+      "providerType": "openai-compatible",
+      "id": "aiping/DeepSeek-V3.2",
+      "model": "DeepSeek-V3.2",
       "promptLevel": 1,
       "enable": true
     }
@@ -539,8 +540,8 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "GLM-4.7-Flash",
-  "applyModelId": "GLM-4.7-Flash",
+  "chatModelId": "aiping/DeepSeek-V3.2",
+  "applyModelId": "aiping/DeepSeek-V3.2",
   "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",
   "ragOptions": {
