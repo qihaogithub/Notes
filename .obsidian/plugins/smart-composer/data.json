@@ -539,7 +539,7 @@
       "dimension": 1024
     }
   ],
-  "chatModelId": "GLM-4.7",
+  "chatModelId": "GLM-4.7-Flash",
   "applyModelId": "GLM-4.7-Flash",
   "embeddingModelId": "gemini/text-embedding-004",
   "systemPrompt": "Always respond in 中文",

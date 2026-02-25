@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "kj/未命名.md",
+                "file": "兴趣/AI工具/Kaku.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "Kaku"
             }
           }
         ],
@@ -213,7 +213,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -237,10 +237,14 @@
       "i18n:I18N": false
     }
   },
-  "active": "470fa09364ce7357",
+  "active": "82492a4c61449a88",
   "lastOpenFiles": [
-    "兴趣/编程/最适合 AI 编程的 Tailwind CSS 组件库.md",
     "kj/未命名.md",
+    "兴趣/AI工具/未命名.md",
+    "兴趣/AI工具/Kaku.md",
+    "兴趣/AI工具/:Kaku.md",
+    "兴趣/AI工具/README.md",
+    "兴趣/编程/最适合 AI 编程的 Tailwind CSS 组件库.md",
     "kj",
     "兴趣/编程/linux/NFS挂载linux到mac.md",
     "兴趣/编程/opencode/Configure/agents.md",
@@ -263,9 +267,7 @@
     "兴趣/编程/opencode/network.md",
     "兴趣/编程/opencode/Configure/themes.md",
     "兴趣/编程/opencode/Configure/rules.md",
-    "兴趣/编程/opencode/介绍.md",
     "兴趣/编程/opencode/插件",
-    "兴趣/编程/linux/代理.md",
     "兴趣/AI工具/Stable Diffusion/模型笔记",
     "兴趣/AI工具/Stable Diffusion/插件笔记",
     "兴趣/AI工具/Stable Diffusion/常见问题",
@@ -273,8 +275,6 @@
     "兴趣/AI工具/通用知识/模型管理",
     "兴趣/AI工具/通用知识/提示词技巧",
     "兴趣/AI工具/通用知识/性能优化",
-    "兴趣/编程/linux/1Panel/1Panel + AI Vibe Coding 完整实战指南.md",
-    "兴趣/笔记优化任务.md",
     "z·附件/Pasted image 20251203114518.png",
     "z·附件/D31480EF-B644-49E3-B147-71F2E998B8F3.png",
     "z·附件/Pasted image 20251011180538.png",
