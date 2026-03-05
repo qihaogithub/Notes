@@ -99,8 +99,8 @@
     {
       "type": "openai-compatible",
       "id": "aiping",
-      "apiKey": "QC-0af7e73078a79301d2d913930612cd81-66abff36d747b272634b623213203ef1",
       "baseUrl": "https://aiping.cn/api/v1",
+      "apiKey": "QC-0af7e73078a79301d2d913930612cd81-66abff36d747b272634b623213203ef1",
       "additionalSettings": {
         "noStainless": true
       }
@@ -488,8 +488,8 @@
       "enable": true
     },
     {
-      "providerId": "aiping",
       "providerType": "openai-compatible",
+      "providerId": "aiping",
       "id": "aiping/DeepSeek-V3.2",
       "model": "DeepSeek-V3.2",
       "promptLevel": 1,
