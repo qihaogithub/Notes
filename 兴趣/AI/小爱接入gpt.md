@@ -1,0 +1,1 @@
+https://github.com/idootop/mi-gpt?tab=readme-ov-file#docker
