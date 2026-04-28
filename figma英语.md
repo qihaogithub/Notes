@@ -9,7 +9,7 @@
 | ------------------------------------ | ------------------------ |
 | Hide version history                 | 隐藏版本历史                   |
 | Publish library...                   | 发布库...                   |
-| Export... ⌘E                         | 导出... ⌘E                 |
+| Export...                            | 导出...                    |
 | Copy current page to Figma Slides... | 将当前页面复制到 Figma Slides... |
 | Add to sidebar >                     | 添加到侧边栏 >                 |
 | Create branch...                     | 创建分支...                  |
