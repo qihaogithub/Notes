@@ -59,37 +59,3 @@ tags:
 先用 ChatGPT 快速生成作品集页面，再用 Lovart 修改文字和细节，最后根据自己的真实项目经历去润色内容。
 
 这样做出来的作品集，不只是快，也会更完整，更清楚。
-
-今天的分享就到这里，希望对你有帮助！
-
-如果你在做作品集的时候，经常卡在不知道怎么写项目背景、不知道怎么拆用户流程、不知道怎么表达设计亮点。
-
-其实也可以看看我整理的 UI/UX 设计知识库。
-
-里面放了很多作品集会用到的设计方法、项目分析思路、页面结构模板、交互说明写法和常见 UX 表达方式。
-
-不是让你照搬，而是让你在写作品集的时候，手里有一套可以参考的底稿。
-
-你知道每一页该写什么，每个模块该怎么讲，设计亮点该从哪个角度拆。
-
-这样再配合今天这套 AI 生成作品集的方法，效率会高很多。
-
-需要 UI/UX 设计知识库的同学，可以去点下面链接了解详情👇👇👇
-
-[永久买断！这套All in one的 UI / UX 设计知识库，可能是你今年最值的投资](https://mp.weixin.qq.com/s?__biz=MzIxMDQxMDkxNA==&mid=2247486869&idx=2&sn=9417adbf542d49b8fa9bf4b87d042e05&scene=21#wechat_redirect)
-
-拓展阅读：
-
-[近三个月设计圈AI新工具，盘点UI/UX全球27款AI设计工具合集！](https://mp.weixin.qq.com/s?__biz=MzIxMDQxMDkxNA==&mid=2247489608&idx=1&sn=978cc8a4ddcfd1457492e6d4c3fcd397&scene=21#wechat_redirect)
-
-[GPT Image2 搞定全套品牌方案，一键生成Logo动效+Logo品牌视觉规范！](https://mp.weixin.qq.com/s?__biz=MzIxMDQxMDkxNA==&mid=2247489398&idx=1&sn=fc67bc809815c7453a9ee16b588d35d1&scene=21#wechat_redirect)
-
-[我只花了5分钟，用AI开发了一个微信小程序！(附教程)](https://mp.weixin.qq.com/s?__biz=MzIxMDQxMDkxNA==&mid=2247488357&idx=1&sn=23c6f7f9e283c7b9a72b4a4db5670a1f&scene=21#wechat_redirect)
-
-点赞转发推荐，祝您年薪亿万！
-
-继续滑动看下一个
-
-萤柳设计
-
-向上滑动看下一个
