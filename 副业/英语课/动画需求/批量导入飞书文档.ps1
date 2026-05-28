@@ -29,20 +29,26 @@ foreach ($File in $Files) {
     
     Write-Host "`n正在导入: $FileName" -ForegroundColor Yellow
     
-    # 第一步：导入为在线 docx 文档到根目录
-    $ImportResult = lark-cli drive +import --file $File --type docx --name $FileName 2>&1
+    # 第一步：导入为在线 docx 文档到根目录，使用 --format json 确保纯 JSON 输出
+    $ImportResult = lark-cli drive +import --file $File --type docx --name $FileName --format json 2>&1 | Where-Object { $_ -match '^\{' } | Out-String
     
-    if ($LASTEXITCODE -ne 0) {
+    if (-not $ImportResult.Trim()) {
         Write-Host "  ✗ 导入失败: $File" -ForegroundColor Red
         $FailCount++
         continue
     }
     
-    # 从 JSON 输出中提取文档 token
-    $Token = ($ImportResult | ConvertFrom-Json).data.token
-    
-    if (-not $Token) {
-        Write-Host "  ✗ 未能获取文档 token" -ForegroundColor Red
+    # 解析 JSON 提取文档 token
+    try {
+        $JsonObj = $ImportResult | ConvertFrom-Json
+        if (-not $JsonObj.ok -or -not $JsonObj.data.token) {
+            Write-Host "  ✗ 导入失败: $($JsonObj.error.message)" -ForegroundColor Red
+            $FailCount++
+            continue
+        }
+        $Token = $JsonObj.data.token
+    } catch {
+        Write-Host "  ✗ 解析导入结果失败" -ForegroundColor Red
         $FailCount++
         continue
     }
@@ -51,23 +57,27 @@ foreach ($File in $Files) {
     Write-Host "  → 正在移动到知识库..." -ForegroundColor Cyan
     
     # 第二步：将文档移动到知识库节点下
-    $MoveResult = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $TargetSpaceId --target-parent-token $TargetParentToken 2>&1
+    $MoveResult = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $TargetSpaceId --target-parent-token $TargetParentToken --format json 2>&1 | Where-Object { $_ -match '^\{' } | Out-String
     
-    if ($LASTEXITCODE -ne 0) {
+    if (-not $MoveResult.Trim()) {
         Write-Host "  ✗ 移动到知识库失败" -ForegroundColor Red
         $FailCount++
         continue
     }
     
-    # 从 JSON 输出中提取 wiki token
-    $WikiToken = ($MoveResult | ConvertFrom-Json).data.wiki_token
-    
-    if ($WikiToken) {
-        $WikiUrl = "https://my.feishu.cn/wiki/$WikiToken"
-        Write-Host "  ✓ 移动成功" -ForegroundColor Green
-        Write-Host "  📄 访问链接: $WikiUrl" -ForegroundColor White
-    } else {
-        Write-Host "  ✓ 移动成功" -ForegroundColor Green
+    # 解析 JSON 提取 wiki token
+    try {
+        $MoveJsonObj = $MoveResult | ConvertFrom-Json
+        if ($MoveJsonObj.data.wiki_token) {
+            $WikiToken = $MoveJsonObj.data.wiki_token
+            $WikiUrl = "https://my.feishu.cn/wiki/$WikiToken"
+            Write-Host "  ✓ 移动成功" -ForegroundColor Green
+            Write-Host "  📄 访问链接: $WikiUrl" -ForegroundColor White
+        } else {
+            Write-Host "  ✓ 移动成功" -ForegroundColor Green
+        }
+    } catch {
+        Write-Host "  ✓ 移动成功（未能提取链接）" -ForegroundColor Green
     }
     
     $SuccessCount++
@@ -76,4 +86,8 @@ foreach ($File in $Files) {
 Write-Host "`n========================================" -ForegroundColor Gray
 Write-Host "导入完成!" -ForegroundColor Green
 Write-Host "成功: $SuccessCount 个文件" -ForegroundColor Green
-Write-Host "失败: $FailCount 个文件" -ForegroundColor $(if ($FailCount -gt 0) { "Red" } else { "Green" })
+if ($FailCount -gt 0) {
+    Write-Host "失败: $FailCount 个文件" -ForegroundColor Red
+} else {
+    Write-Host "失败: 0 个文件" -ForegroundColor Green
+}
