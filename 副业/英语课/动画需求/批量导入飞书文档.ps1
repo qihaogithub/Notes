@@ -28,16 +28,22 @@ foreach ($File in $Files) {
     Write-Host "`nImporting: $FileName"
     
     # Step 1: Import to root
-    $ImportResult = lark-cli drive +import --file $File --type docx --name $FileName --format json 2>&1 | Where-Object { $_ -match '^\{' } | Out-String
+    $RawOutput = lark-cli drive +import --file $File --type docx --name $FileName 2>&1 | Out-String
     
-    if (-not $ImportResult.Trim()) {
-        Write-Host "  [FAIL] Import failed: $File"
+    # Extract JSON from output (find the first { and last })
+    $JsonStart = $RawOutput.IndexOf("{")
+    $JsonEnd = $RawOutput.LastIndexOf("}") + 1
+    
+    if ($JsonStart -lt 0 -or $JsonEnd -le $JsonStart) {
+        Write-Host "  [FAIL] No valid output"
         $FailCount++
         continue
     }
     
+    $JsonString = $RawOutput.Substring($JsonStart, $JsonEnd - $JsonStart)
+    
     try {
-        $JsonObj = $ImportResult | ConvertFrom-Json
+        $JsonObj = $JsonString | ConvertFrom-Json
         if (-not $JsonObj.ok -or -not $JsonObj.data.token) {
             $ErrMsg = if ($JsonObj.error) { $JsonObj.error.message } else { "Unknown error" }
             Write-Host "  [FAIL] $ErrMsg"
@@ -46,7 +52,7 @@ foreach ($File in $Files) {
         }
         $Token = $JsonObj.data.token
     } catch {
-        Write-Host "  [FAIL] Parse error"
+        Write-Host "  [FAIL] Parse error: $_"
         $FailCount++
         continue
     }
@@ -55,26 +61,38 @@ foreach ($File in $Files) {
     Write-Host "  -> Moving to wiki..."
     
     # Step 2: Move to wiki
-    $MoveResult = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $TargetSpaceId --target-parent-token $TargetParentToken --format json 2>&1 | Where-Object { $_ -match '^\{' } | Out-String
+    $MoveRawOutput = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $TargetSpaceId --target-parent-token $TargetParentToken 2>&1 | Out-String
     
-    if (-not $MoveResult.Trim()) {
+    $MoveJsonStart = $MoveRawOutput.IndexOf("{")
+    $MoveJsonEnd = $MoveRawOutput.LastIndexOf("}") + 1
+    
+    if ($MoveJsonStart -lt 0 -or $MoveJsonEnd -le $MoveJsonStart) {
         Write-Host "  [FAIL] Move to wiki failed"
         $FailCount++
         continue
     }
     
+    $MoveJsonString = $MoveRawOutput.Substring($MoveJsonStart, $MoveJsonEnd - $MoveJsonStart)
+    
     try {
-        $MoveJsonObj = $MoveResult | ConvertFrom-Json
-        if ($MoveJsonObj.data.wiki_token) {
+        $MoveJsonObj = $MoveJsonString | ConvertFrom-Json
+        if ($MoveJsonObj.ok -and $MoveJsonObj.data.wiki_token) {
             $WikiToken = $MoveJsonObj.data.wiki_token
             $WikiUrl = "https://my.feishu.cn/wiki/$WikiToken"
             Write-Host "  [OK] Moved to wiki"
             Write-Host "  URL: $WikiUrl"
-        } else {
+        } elseif ($MoveJsonObj.ok) {
             Write-Host "  [OK] Moved to wiki"
+        } else {
+            $MoveErrMsg = if ($MoveJsonObj.error) { $MoveJsonObj.error.message } else { "Unknown error" }
+            Write-Host "  [FAIL] $MoveErrMsg"
+            $FailCount++
+            continue
         }
     } catch {
-        Write-Host "  [OK] Moved (no URL extracted)"
+        Write-Host "  [FAIL] Parse error: $_"
+        $FailCount++
+        continue
     }
     
     $SuccessCount++
