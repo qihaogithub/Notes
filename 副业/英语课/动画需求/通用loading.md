@@ -1,3 +1,4 @@
+![image.png](https://qhdob.oss-cn-chengdu.aliyuncs.com/assets/20260528204748.png)
 
 | 状态名称 | 触发条件 | 动画描述 |
 |----------|----------|----------|
