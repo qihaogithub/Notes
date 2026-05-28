@@ -46,12 +46,11 @@ function extractJson(output) {
 function importFile(filePath, fileName) {
   console.log(`\n[${fileName}] 开始导入...`);
 
-  // 构建完整的文件路径
-  const fullPath = path.join(SCRIPT_DIR, filePath);
+  // 使用相对路径（lark-cli 要求）
+  const relativePath = `./${filePath}`;
 
   // 执行导入命令
-  // drive +import 没有 --wiki-token 参数，需要先导入到根目录
-  const cmd = `lark-cli drive +import --file "${fullPath}" --type docx --name "${fileName}"`;
+  const cmd = `lark-cli drive +import --file "${relativePath}" --type docx --name "${fileName}"`;
   console.log(`执行命令: ${cmd}`);
   
   const output = runCommand(cmd);
