@@ -1,10 +1,10 @@
-# 批量导入 Markdown 文档到飞书知识库
-# 目标知识库: https://my.feishu.cn/wiki/NCWYwb6IdiYokMkY1qHcdT0qnWj
-# 空间 ID: 7631207211955407825
-# 父节点 token: NCWYwb6IdiYokMkY1qHcdT0qnWj
+# Batch Import Markdown to Feishu Wiki
+# Target: https://my.feishu.cn/wiki/NCWYwb6IdiYokMkY1qHcdT0qnWj
+# Space ID: 7631207211955407825
+# Parent token: NCWYwb6IdiYokMkY1qHcdT0qnWj
 
-$TargetSpaceId = "7631207211955407825"
-$TargetParentToken = "NCWYwb6IdiYokMkY1qHcdT0qnWj"
+$SpaceId = "7631207211955407825"
+$ParentToken = "NCWYwb6IdiYokMkY1qHcdT0qnWj"
 
 $Files = @(
     ".\描红题.md",
@@ -16,81 +16,53 @@ $Files = @(
 )
 
 Write-Host "Start batch import..."
-Write-Host "Target: $TargetParentToken"
 Write-Host "========================================"
 
 $SuccessCount = 0
 $FailCount = 0
 
 foreach ($File in $Files) {
-    $FileName = [System.IO.Path]::GetFileNameWithoutExtension($File)
+    $BaseName = [System.IO.Path]::GetFileNameWithoutExtension($File)
     
-    Write-Host "`nImporting: $FileName"
+    Write-Host "`nImporting: $BaseName"
     
-    # Step 1: Import to root
-    $RawOutput = lark-cli drive +import --file $File --type docx --name $FileName 2>&1 | Out-String
-    
-    # Extract JSON from output (find the first { and last })
-    $JsonStart = $RawOutput.IndexOf("{")
-    $JsonEnd = $RawOutput.LastIndexOf("}") + 1
-    
-    if ($JsonStart -lt 0 -or $JsonEnd -le $JsonStart) {
-        Write-Host "  [FAIL] No valid output"
-        $FailCount++
-        continue
-    }
-    
-    $JsonString = $RawOutput.Substring($JsonStart, $JsonEnd - $JsonStart)
+    # Step 1: Import
+    $Output1 = lark-cli drive +import --file $File --type docx --name $BaseName 2>&1 | Out-String
+    $Json1 = $Output1 -replace '[\s\S]*?(\{[\s\S]*\})[\s\S]*?', '$1'
     
     try {
-        $JsonObj = $JsonString | ConvertFrom-Json
-        if (-not $JsonObj.ok -or -not $JsonObj.data.token) {
-            $ErrMsg = if ($JsonObj.error) { $JsonObj.error.message } else { "Unknown error" }
-            Write-Host "  [FAIL] $ErrMsg"
+        $Obj1 = $Json1 | ConvertFrom-Json
+        if (-not $Obj1.ok) {
+            Write-Host "  FAIL: $($Obj1.error.message)"
             $FailCount++
             continue
         }
-        $Token = $JsonObj.data.token
+        $Token = $Obj1.data.token
     } catch {
-        Write-Host "  [FAIL] Parse error: $_"
+        Write-Host "  FAIL: Parse error"
         $FailCount++
         continue
     }
     
-    Write-Host "  [OK] Imported (token: $Token)"
-    Write-Host "  -> Moving to wiki..."
+    Write-Host "  OK: token=$Token"
     
     # Step 2: Move to wiki
-    $MoveRawOutput = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $TargetSpaceId --target-parent-token $TargetParentToken 2>&1 | Out-String
-    
-    $MoveJsonStart = $MoveRawOutput.IndexOf("{")
-    $MoveJsonEnd = $MoveRawOutput.LastIndexOf("}") + 1
-    
-    if ($MoveJsonStart -lt 0 -or $MoveJsonEnd -le $MoveJsonStart) {
-        Write-Host "  [FAIL] Move to wiki failed"
-        $FailCount++
-        continue
-    }
-    
-    $MoveJsonString = $MoveRawOutput.Substring($MoveJsonStart, $MoveJsonEnd - $MoveJsonStart)
+    $Output2 = lark-cli wiki +move --obj-type docx --obj-token $Token --target-space-id $SpaceId --target-parent-token $ParentToken 2>&1 | Out-String
+    $Json2 = $Output2 -replace '[\s\S]*?(\{[\s\S]*\})[\s\S]*?', '$1'
     
     try {
-        $MoveJsonObj = $MoveJsonString | ConvertFrom-Json
-        if ($MoveJsonObj.ok -and $MoveJsonObj.data.wiki_token) {
-            $WikiToken = $MoveJsonObj.data.wiki_token
-            $WikiUrl = "https://my.feishu.cn/wiki/$WikiToken"
-            Write-Host "  [OK] Moved to wiki"
-            Write-Host "  URL: $WikiUrl"
-        } elseif ($MoveJsonObj.ok) {
-            Write-Host "  [OK] Moved to wiki"
+        $Obj2 = $Json2 | ConvertFrom-Json
+        if ($Obj2.ok -and $Obj2.data.wiki_token) {
+            Write-Host "  OK: https://my.feishu.cn/wiki/$($Obj2.data.wiki_token)"
+        } elseif ($Obj2.ok) {
+            Write-Host "  OK: moved"
         } else {
-            $MoveErrMsg = if ($MoveJsonObj.error) { $MoveJsonObj.error.message } else { "Unknown error" }
-            Write-Host "  [FAIL] $MoveErrMsg"
+            Write-Host "  FAIL: $($Obj2.error.message)"
             $FailCount++
             continue
         }
     } catch {
-        Write-Host "  [FAIL] Parse error: $_"
+        Write-Host "  FAIL: Parse error"
         $FailCount++
         continue
     }
@@ -99,10 +71,4 @@ foreach ($File in $Files) {
 }
 
 Write-Host "`n========================================"
-Write-Host "Done!"
-Write-Host "Success: $SuccessCount"
-if ($FailCount -gt 0) {
-    Write-Host "Failed: $FailCount"
-} else {
-    Write-Host "Failed: 0"
-}
+Write-Host "Done! Success=$SuccessCount Failed=$FailCount"
