@@ -1,6 +1,3 @@
-# 通用loading
-
-## 状态列表
 
 ### riding_cycle（骑车循环）
 
