@@ -8,8 +8,9 @@ const { execSync } = require('child_process');
 const path = require('path');
 
 // 配置区 ==========================================
-// 目标 wiki 节点 token
+// 目标 wiki 节点信息
 const WIKI_TOKEN = 'Pkk5wr7YjiPBtekf2b2cIhj3neb';
+const SPACE_ID = '7527253866397188115';
 
 // 待导入的文件列表（相对于脚本所在目录）
 const FILES = [
@@ -80,7 +81,7 @@ function importFile(filePath, fileName) {
 function moveToWiki(docxToken, fileName) {
   console.log(`[${fileName}] 移动到 Wiki...`);
 
-  const cmd = `lark-cli wiki +move --obj-type docx --obj-token ${docxToken} --target-parent-token ${WIKI_TOKEN}`;
+  const cmd = `lark-cli wiki +move --obj-type docx --obj-token ${docxToken} --target-space-id ${SPACE_ID} --target-parent-token ${WIKI_TOKEN}`;
   console.log(`执行命令: ${cmd}`);
 
   const output = runCommand(cmd);
