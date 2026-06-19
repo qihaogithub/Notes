@@ -1,4 +1,4 @@
-
+希望在进入所有学习环节时添加一个加载动画。当进入学习环节时，就不要有加载的过程。
 ![image.png](https://qhdob.oss-cn-chengdu.aliyuncs.com/assets/20260528204748.png)
 
 | 状态名称 | 触发条件 | 动画描述 |
